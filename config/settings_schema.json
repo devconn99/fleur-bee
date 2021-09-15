@@ -35,6 +35,18 @@
         "label": "t:settings_schema.colors.settings.colors_accent_2.label"
       },
       {
+        "type": "color",
+        "id": "color_header_text",
+        "default": "#0c2545",
+        "label": "t:settings_schema.colors.settings.color_header_text.label"
+      },
+      {
+        "type": "color",
+        "id": "color_body_text",
+        "default": "#3d516a",
+        "label": "t:settings_schema.colors.settings.color_body_text.label"
+      },
+      {
         "type": "header",
         "content": "t:settings_schema.colors.settings.header__2.content"
       },

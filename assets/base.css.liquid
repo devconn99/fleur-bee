@@ -1,3 +1,71 @@
+/* font-family */
+@font-face {
+	font-family: 'font-cerebri-book';
+	src: url("{{ 'CerebriSans-Book.eot?' | file_url }}") format('eot'),
+	     url("{{ 'CerebriSans-Book.woff' | file_url }}") format('woff'),
+	     url("{{ 'CerebriSans-Book.ttf' | file_url }}")  format('truetype'),
+	     url("{{ 'CerebriSans-Book.svg#CerebriSans-Book' | file_url }}") format('svg');
+}
+@font-face {
+	font-family: 'font-mackinac';
+	src: url("{{ 'P22MackinacPro-Bold.eot?' | file_url }}") format('eot'),
+         url("{{ 'P22MackinacPro-Bold.woff' | file_url }}") format('otf'),
+	     url("{{ 'P22MackinacPro-Bold.woff' | file_url }}") format('woff'),
+	     url("{{ 'P22MackinacPro-Bold.ttf' | file_url }}")  format('truetype'),
+	     url("{{ 'P22MackinacPro-Bold.svg#P22MackinacPro-Bold' | file_url }}") format('svg');
+}
+@font-face {
+  font-family: 'font-primary-italic';
+  src: url("{{ 'CerebriSans-BoldItalic.woff2' | asset_url ") format('woff2'),
+      url("{{ 'CerebriSans-BoldItalic.woff' | asset_url }}") format('woff');
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'font-primary-normal';
+  src: url("{{ 'CerebriSans-Bold.woff2' | asset_url }}") format('woff2'),
+      url("{{ 'CerebriSans-Bold.woff' | asset_url }}") format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'font-secondary-italic';
+  src: url("{{ 'CerebriSans-SemiBoldItalic.woff2' | asset_url }}") format('woff2'),
+      url("{{ 'CerebriSans-SemiBoldItalic.woff' | asset_url }}") format('woff');
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'font-secondary-normal';
+  src: url("{{ 'CerebriSans-SemiBold.woff2' | asset_url }}") format('woff2'),
+      url("{{ 'CerebriSans-SemiBold.woff' | asset_url }}") format('woff');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+
+/* variables */
+:root {
+  --font-primary-italic: 'font-primary-italic';
+  --font-primary-normal: 'font-primary-normal';
+  --font-secondary-italic: 'font-secondary-italic';
+  --font-secondary-normal: 'font-secondary-normal';
+  --font-cerebri-book: 'font-cerebri-book';
+  --font-mackinac: 'font-mackinac';
+  --header-text-color : {{ settings.color_header_text }};
+  --body-text-color : {{ settings.color_body_text }};
+  --color-teal: '#be736c';
+  --color-primary: '1a3f3e';
+  --color-secondary: '#22504e'
+}
 /* Color custom properties */
 
 :root,
@@ -227,7 +295,6 @@ html.no-js .no-js-hidden {
   margin-bottom: 0;
 }
 
-body,
 .color-background-1,
 .color-background-2,
 .color-inverse,
@@ -235,6 +302,9 @@ body,
 .color-accent-2 {
   color: rgba(var(--color-foreground), 0.75);
   background-color: rgb(var(--color-background));
+}
+body {
+  color: var(--body-text-color)
 }
 
 .background-secondary {
@@ -651,10 +721,9 @@ summary {
 }
 
 summary .icon-caret {
-  position: absolute;
-  height: 0.6rem;
-  right: 1.5rem;
-  top: calc(50% - 0.2rem);
+  height: 8px;
+  max-width: 22px;
+  margin-left: 8px;
 }
 
 summary::-webkit-details-marker {
@@ -2112,7 +2181,8 @@ details[open] > .header__icon--menu .icon-hamburger {
 .header__menu-item {
   padding: 1.2rem;
   text-decoration: none;
-  color: rgba(var(--color-foreground), 0.75);
+  color: var(--color-header-text);
+  font-family: var(--font-family-cerebri);
 }
 
 .header__menu-item:hover {

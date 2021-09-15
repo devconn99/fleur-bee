@@ -1,0 +1,154 @@
+/* common css start */
+.image-with-text .wrapper {
+    display: flex;
+}
+.image-with-text .alpha {
+    position: relative;
+    max-width: 50%;
+    flex: 50%;
+    padding: 20px;
+}
+.image-with-text .beta {
+    max-width: 50%;
+    flex: 50%;
+}
+.image-with-text .beta .image {
+    width: 100%;
+    display: block;
+    height: 100%;
+    object-fit: cover;
+}
+.image-with-text .content-wrap {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+}
+.image-with-text .sub_title {
+    font-family: var(--font-cerebri-book);
+}
+.image-with-text .main_title {
+    font-family: var(--font-mackinac);
+    margin: 0;
+}
+.image-with-text .text {
+    margin: 25px 0 30px;
+}
+.image-with-text .text,.image-with-text .button-primary, .image-with-text .link {
+    font-family: var(--font-secondary-normal);
+}
+.image-with-text .button-primary {
+    font-size: 16px;
+    text-decoration: none;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10px;
+    width: 100%;
+    min-height: 44px;
+}
+.consultation-section .main_title, .purchase-section .main_title {
+    font-size: 28px;
+    color: var(--color-primary)
+}
+.consultation-section .text, .purchase-section .text {
+    font-size: 18px;
+    color: var(--color-secondary);
+}
+.image-with-text .alignment .alpha {
+    order: 2
+}
+.image-with-text .alignment .beta {
+    order: 1;
+    position: relative;
+}
+.image-with-text .overlay-image {
+    max-width: 240px;
+    position: absolute;
+    top: -20px;
+    right: -39px;
+    width: 100%;
+}
+.image-with-text .beta .image-wrap {
+    height: 100%;
+}
+/* common css end */
+
+/* hero banner css start */
+.hero-banner {
+    height: calc(100vh - 98px);
+}
+.hero-banner .main-container {
+    height: 100%;
+}
+.hero-banner .wrapper {
+    height: 100%;
+}
+.hero-banner .main_title {
+    font-size: 36px;
+    line-height: 1.4;
+    font-style: italic;
+    color: #fff;
+}
+.hero-banner .text {
+    font-size: 20px;
+    line-height: 1.4;
+    color: #fff;
+}
+.hero-banner .button-primary {
+    color: #000;
+    max-width: 210px;
+}
+.hero-banner .content-wrap {
+    max-width: 400px;
+}
+/* hero banner css end */
+
+/* consultation section css start */
+.consultation-section .sub-title {
+    margin-top: 0;
+    margin-bottom: 12px;
+    font-size: 18px;
+    color: var(--color-teal)
+}
+.consultation-section .text {
+    max-width: 420px;
+}
+.consultation-section .content-wrap {
+    max-width: 450px;
+}
+.consultation-section .button-primary {
+    color: #fff;
+    max-width: 326px;
+}
+/* consultation section css end */
+
+/* purchase section css start */
+.purchase-section .beta {
+    min-height: 480px;
+}
+.purchase-section .beta .image {
+    object-position: -15px;
+}
+.purchase-section .content-wrap {
+    max-width: 400px;
+}
+.purchase-section .text p {
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+.purchase-section .text p:last-child {
+    margin-bottom: 0;
+}
+.purchase-section .link {
+    font-size: 18px;
+    display: block;
+    margin-bottom: 12px;
+}
+.purchase-section .link:last-child {
+    margin-bottom: 0;
+    color: var(--color-teal)
+}
+/* purchase section css end */

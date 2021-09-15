@@ -1,0 +1,38 @@
+{% if image %}
+  {% assign default_size = 'master' %}
+  {% assign sizes = '100vw' %}
+  {% assign aspect_ratio = image.aspect_ratio | default: 1 %}
+
+  {% if max_width != blank %}
+    {% assign default_size = max_width | append: 'x' %}
+    {% capture sizes %}
+      (max-width: {{ max_width }}px) 100vw, {{ max_width }}px
+    {% endcapture %}
+  {% endif %}
+
+  <img
+    src="{{ image | img_url: default_size }}"
+    srcset="
+      {{ image | img_url: '50x' }} 50w,
+      {{ image | img_url: '100x' }} 100w,
+      {{ image | img_url: '300x' }} 300w,
+      {{ image | img_url: '400x' }} 400w,
+      {{ image | img_url: '600x' }} 600w,
+      {{ image | img_url: '900x' }} 900w,
+      {{ image | img_url: '1200x' }} 1200w,
+      {{ image | img_url: '1500x' }} 1500w,
+      {{ image | img_url: '1800x' }} 1800w,
+      {{ image | img_url: '2100x' }} 2100w,
+      {{ image | img_url: '2400x' }} 2400w"
+    sizes="{{ sizes }}"
+    {% if max_width != blank %}
+      width="{{ max_width }}"
+      height="{{ max_width | divided_by: aspect_ratio }}"
+    {% endif %}
+    alt="{{ image.alt | escape }}"
+    loading="{{ loading | default: 'lazy' }}"
+    {% if class != blank %}
+      class="{{ class }}"
+    {% endif %}
+  />
+{% endif %}

@@ -14,6 +14,12 @@
         "colors_accent_2": {
           "label": "Accent 2"
         },
+        "color_header_text": {
+          "label": "Header Text Color"
+        },
+        "color_body_text": {
+          "label": "Body Text Color"
+        },
         "header__1": {
           "content": "Primary colors"
         },
