@@ -643,3 +643,40 @@ class VariantRadios extends VariantSelects {
 }
 
 customElements.define('variant-radios', VariantRadios);
+
+// custom js
+
+// Header dropdown script
+$(document).ready(function(){
+  $('[data-top-menu-item]').mouseenter(function(){
+    if($(this).siblings('[data-header-dropdown-menu]').css('display') !== 'block'){
+      $('[data-header-dropdown-menu]').fadeOut();
+      $(this).siblings('[data-header-dropdown-menu]').fadeIn();
+    }
+  })
+
+  $('.custom-header').mouseleave(function(){
+    $('[data-header-dropdown-menu]').fadeOut();
+  })
+
+
+  $('.mobile_menu_button').click(function(){
+    if($('body').hasClass('open_mobile_menu')){
+      $('body').removeClass('open_mobile_menu');
+    } else {
+      $('body').addClass('open_mobile_menu');
+    }
+  })
+
+  $('[data-has-dropdown]').click(function(){
+    if($(this).hasClass('active')){
+      $(this).removeClass('active');
+      $(this).siblings('ul').slideUp();
+    } else {
+      $(this).addClass('active');
+      $(this).siblings('ul').slideDown();
+    }
+    
+  })
+ 
+}) 

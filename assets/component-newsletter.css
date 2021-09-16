@@ -11,8 +11,7 @@
   .newsletter-form {
     flex-direction: row;
     align-items: flex-start;
-    margin: 0 auto;
-    max-width: 36rem;
+    max-width: 100%;
   }
 }
 
@@ -22,6 +21,15 @@
 
 .newsletter-form__field-wrapper .field__input {
   padding-right: 5rem;
+  flex: 1;
+  border: 1px solid #fff;
+  color: #fff;
+  border-radius: 5px;
+  margin-right: 12px;
+  font-family: var(--font-cerebri-medium);
+  outline: 0;
+  box-shadow: none;
+  font-size: 13px;
 }
 
 .newsletter-form__message {
@@ -46,10 +54,13 @@
 }
 
 .newsletter-form__button {
-  width: 4.4rem;
+  max-width: 25%;
+  flex: 25%;
   margin: 0;
+  color: var(--color-dark-green);
+  background-color: #fff;
+  border-radius: 5px;
+  font-family: var(--font-cerebri-medium);
+  font-size: 16px
 }
 
-.newsletter-form__button .icon {
-  width: 1.5rem;
-}

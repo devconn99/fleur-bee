@@ -15,45 +15,101 @@
     <div class="header-wrapper">
       {%- if section.settings.menu != blank -%}
         <nav class="header-menu">
+          <div class="mobile_menu_button">
+            <div class="mobile_menu-bar-wrap">
+              <svg aria-hidden="true" focusable="false" role="presentation" class="icon mobile_menu-icon-hamburger" viewBox="0 0 37 40"><path d="M33.5 25h-30c-1.1 0-2-.9-2-2s.9-2 2-2h30c1.1 0 2 .9 2 2s-.9 2-2 2zm0-11.5h-30c-1.1 0-2-.9-2-2s.9-2 2-2h30c1.1 0 2 .9 2 2s-.9 2-2 2zm0 23h-30c-1.1 0-2-.9-2-2s.9-2 2-2h30c1.1 0 2 .9 2 2s-.9 2-2 2z"></path></svg>
+              <svg aria-hidden="true" focusable="false" role="presentation" class="mobile_menu-icon-close" viewBox="0 0 37 40"><path d="M21.3 23l11-11c.8-.8.8-2 0-2.8-.8-.8-2-.8-2.8 0l-11 11-11-11c-.8-.8-2-.8-2.8 0-.8.8-.8 2 0 2.8l11 11-11 11c-.8.8-.8 2 0 2.8.4.4.9.6 1.4.6s1-.2 1.4-.6l11-11 11 11c.4.4.9.6 1.4.6s1-.2 1.4-.6c.8-.8.8-2 0-2.8l-11-11z"></path></svg>
+            </div>
+            <label class="mobile_menu_label">MENU</label>
+          </div>
           <ul class="menu-list">
             {%- for link in section.settings.menu.links -%}
               <li class="menu-item">
                 {%- if link.links != blank -%}
-                      <summary class="menu-link-wrap">
+                      <summary class="menu-link-wrap" data-top-menu-item>
                         <span class="menu-link {% if link.child_active %}menu-active-link{% endif %}">{{ link.title | escape }}</span>
                         {% render 'icon-caret' %}
                       </summary>
-                      <ul class="header-submenu">
+
+                      {% if link.levels == 1 %}
+                      <ul class="header-submenu" data-header-dropdown-menu>
                         {%- for childlink in link.links -%}
-                          <li class="menu-item">
-                            {%- if childlink.links == blank -%}
-                              <a href="{{ childlink.url }}" class="menu-link">
+                          <li class="sub-menu-item">
+                              <a href="{{ childlink.url }}" class="sub-menu-link">
                                 {{ childlink.title | escape }}
                               </a>
-                            {%- else -%}
-                              <details>
-                                <summary class="menu-link-wrap">
-                                  {{ childlink.title | escape }}
-                                  {% render 'icon-caret' %}
-                                </summary>
-                                <ul class="header_submenu">
-                                  {%- for grandchildlink in childlink.links -%}
-                                    <li class="menu-item">
-                                      <a href="{{ grandchildlink.url }}" class="menu-link">
-                                        {{ grandchildlink.title | escape }}
-                                      </a>
-                                    </li>
-                                  {%- endfor -%}
-                                </ul>
-                              </details>
-                            {%- endif -%}
                           </li>
                         {%- endfor -%}
                       </ul>
-                    </details>
-                  </details-disclosure>
+                      {% endif %}
+
+                      {% if link.levels == 2 %}
+                      <div class="mega_menu" data-header-dropdown-menu>
+                        <div class="mega_menu-container">
+                          <div class="mega_menu-row">
+                            <div class="mega_menu-list-outer-wrap">
+                              {%- for childlink in link.links -%}
+                              <div class="mega_menu-inner-wrap">
+                                <ul class="mega_menu-list">
+                                  <li class="mega_menu-item mega_menu-heading">{{ childlink.title | escape }}</li>
+                                  {%- for grandchildlink in childlink.links -%}
+                                    <li class="mega_menu-item mega_menu-text">
+                                      <a href="{{ grandchildlink.url }}" class="mega_menu-link">
+                                        {{ grandchildlink.title | escape }}
+                                      </a>
+                                    </li>
+                                  {% endfor %}
+                                </ul>
+                              </div>
+                              {% endfor %}
+                              <!-- <div class="mega_menu-inner-wrap">
+                                <ul class="mega_menu-list">
+                                  <li class="mega_menu-item mega_menu-heading">By Product Type</li>
+                                  <li class="mega_menu-item mega_menu-text">By Product Type</li>
+                                  <li class="mega_menu-item mega_menu-text">By Product Type</li>
+                                  <li class="mega_menu-item mega_menu-text">By Product Type</li>
+                                  <li class="mega_menu-item mega_menu-text">By Product Type</li>
+                                  <li class="mega_menu-item mega_menu-text">By Product Type</li>
+                                  <li class="mega_menu-item mega_menu-text">By Product Type</li>
+                                  <li class="mega_menu-item mega_menu-text">By Product Type</li>
+                                  <li class="mega_menu-item mega_menu-text">By Product Type</li>
+                                </ul>
+                              </div>
+                              <div class="mega_menu-inner-wrap">
+                                <ul class="mega_menu-list">
+                                  <li class="mega_menu-item mega_menu-heading">By Product Type</li>
+                                  <li class="mega_menu-item mega_menu-text">By Product Type</li>
+                                  <li class="mega_menu-item mega_menu-text">By Product Type</li>
+                                  <li class="mega_menu-item mega_menu-text">By Product Type</li>
+                                  <li class="mega_menu-item mega_menu-text">By Product Type</li>
+                                  <li class="mega_menu-item mega_menu-text">By Product Type</li>
+                                  <li class="mega_menu-item mega_menu-text">By Product Type</li>
+                                  <li class="mega_menu-item mega_menu-text">By Product Type</li>
+                                  <li class="mega_menu-item mega_menu-text">By Product Type</li>
+                                </ul>
+                              </div> -->
+                            </div>
+                            <div class="mega_menu-collection-wrap">
+                              {% for block in section.blocks %}
+                                {% if block.settings.collection_image != blank %}
+                                  <div class="mega_menu-collection-item">
+                                    <a href="{{ block.settings.collection_url }}" class="mega_menu-collection-item-inner-wrap">
+                                      <div class="mega_menu-collection-img-wrap">
+                                        {% render 'responsive--image' with block.settings.collection_image as image, max_width: 320px, class: 'mega_menu-collection-img' %}
+                                      </div>
+                                      <h3 class="mega_menu-collection-title">{{ block.settings.collection_title }}</h3>
+                                    </a>
+                                  </div>
+                                {% endif %}
+                              {% endfor %}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      {% endif %}
+                      
                 {%- else -%}
-                  <a href="{{ link.url }}" class="menu-link">
+                  <a href="{{ link.url }}" class="menu-link" data-top-menu-item>
                     <span>{{ link.title | escape }}</span>
                   </a>
                 {%- endif -%}
@@ -136,7 +192,61 @@
       </div>
     </div>
   </div>
+
+  <div class="header_mobile-menu">
+    <div class="header_mobile-menu-container">
+      <div class="header_mobile-top-menu-list-wrap">
+        <ul class="header_mobile-top-menu-list">
+          {%- for link in section.settings.mobile_menu.links -%}
+            {%- if link.links != blank -%}
+              <li class=" header_mobile-top-menu-item">
+                <summary class="header_mobile-top-menu-wrap" data-has-dropdown >
+                  <span class="header_mobile-top-menu-link {% if link.child_active %}menu-active-link{% endif %}">{{ link.title | escape }}</span>
+                  <span class="header_mobile-button">
+                    <span class="open">-</span>
+                    <span class="close">+</span>
+                  </span>
+                </summary>
+                <ul class="header_mobile-menu-top-list {% if link.levels == 1 %} header_mobile-menu-last-level {% endif %}">
+                  {%- for childlink in link.links -%}
+                    {%- if childlink.links != blank -%}
+                      <li class="header_mobile-child-item header_mobile-child-menu-link">
+                        <summary data-has-dropdown>
+                          {{ childlink.title | escape }}
+                          <span class="header_mobile-button">
+                            <span class="open">-</span>
+                            <span class="close">+</span>
+                          </span>
+                        </summary>
+                        <ul class="header_mobile-menu-grandchild-main-list {% if link.levels == 2 %} header_mobile-menu-last-level {% endif %}">
+                          {%- for grandchildlink in childlink.links -%}
+                              <a href="{{ grandchildlink.url }}" class="header_mobile-menu-grandchild-main-link">
+                                <span>{{ grandchildlink.title | escape }}</span>
+                              </a>
+                          {% endfor %}
+                        </ul>
+                      </li>
+                    {% else %}
+                      <a href="{{ childlink.url }}" class="header_mobile-menu-grandchild-main-link">
+                        <span>{{ childlink.title | escape }}</span>
+                      </a>
+                    {% endif %}
+                  {% endfor %}
+                </ul>
+              </li>
+            {% else %}
+              <a href="{{ link.url }}" class="header_mobile-top-menu-link header_mobile-top-menu-item">
+                <span>{{ link.title | escape }}</span>
+              </a>
+            {% endif %}
+          {% endfor %}  
+        </ul>
+      </div>
+    </div>
+  </div>
 </header>
+
+
 
 {%- if request.page_type != 'cart' -%}
   {%- render 'cart-notification' -%}
@@ -186,6 +296,7 @@
 {% schema %}
 {
   "name": "Header",
+  "max_blocks": 2,
   "settings": [
     {
       "type": "header",
@@ -200,7 +311,35 @@
     {
       "type": "link_list",
       "id": "menu",
-      "label": "Menu"
+      "label": "Destkop Menu"
+    },
+    {
+      "type": "link_list",
+      "id": "mobile_menu",
+      "label": "Mobile Menu"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "Mega_menu_collection",
+      "name": "Mega Menu Collection List",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "collection_image",
+          "label": "Collection Image"
+        },
+        {
+          "type": "url",
+          "id": "collection_url",
+          "label": "Collection Link"
+        },
+        {
+          "type": "text",
+          "id": "collection_title",
+          "label": "Collection Title"
+        }
+      ]
     }
   ]
 }

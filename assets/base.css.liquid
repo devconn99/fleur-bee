@@ -7,12 +7,28 @@
 	     url("{{ 'CerebriSans-Book.svg#CerebriSans-Book' | file_url }}") format('svg');
 }
 @font-face {
-	font-family: 'font-mackinac';
+	font-family: 'font-mackinac-bold';
 	src: url("{{ 'P22MackinacPro-Bold.eot?' | file_url }}") format('eot'),
          url("{{ 'P22MackinacPro-Bold.woff' | file_url }}") format('otf'),
 	     url("{{ 'P22MackinacPro-Bold.woff' | file_url }}") format('woff'),
 	     url("{{ 'P22MackinacPro-Bold.ttf' | file_url }}")  format('truetype'),
 	     url("{{ 'P22MackinacPro-Bold.svg#P22MackinacPro-Bold' | file_url }}") format('svg');
+}
+@font-face {
+  font-family: 'font-mackinac-medium';
+  src: url("{{ 'PMackinacProMedium.woff2' | asset_url }}") format('woff2'),
+      url("{{ 'PMackinacProMedium.woff' | asset_url }}") format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'font-cerebri-medium';
+  src: url("{{ 'CerebriSans-Medium.woff2' | asset_url }}") format('woff2'),
+      url("{{ 'CerebriSans-Medium.woff' | asset_url }}") format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: 'font-primary-italic';
@@ -49,6 +65,14 @@
   font-style: normal;
   font-display: swap;
 }
+@font-face {
+  font-family: 'font-cerebri-regular';
+  src: url("{{ 'CerebriSans-Regular.woff2' | asset_url }}") format('woff2'),
+      url("{{ 'CerebriSans-Regular.woff' | asset_url }}") format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 
 
 
@@ -59,12 +83,16 @@
   --font-secondary-italic: 'font-secondary-italic';
   --font-secondary-normal: 'font-secondary-normal';
   --font-cerebri-book: 'font-cerebri-book';
-  --font-mackinac: 'font-mackinac';
+  --font-cerebri-medium: 'font-cerebri-medium';
+  --font-mackinac-bold: 'font-mackinac-bold';
+  --font-mackinac-medium: 'font-mackinac-medium';
+  --font-cerebri-regular: 'font-cerebri-regular';
   --header-text-color : {{ settings.color_header_text }};
   --body-text-color : {{ settings.color_body_text }};
   --color-teal: '#be736c';
   --color-primary: '1a3f3e';
-  --color-secondary: '#22504e'
+  --color-secondary: '#22504e';
+  --color-dark-green: '#073b36';
 }
 /* Color custom properties */
 
@@ -508,7 +536,6 @@ blockquote {
 .caption-large,
 .customer .field input,
 .customer select,
-.field__input,
 .form__label,
 .select__select {
   font-size: 1.3rem;
@@ -1015,7 +1042,7 @@ summary::-webkit-details-marker {
   }
 
   .grid--4-col-tablet .grid__item {
-    width: calc(25% - 1rem * 3 / 4);
+    width: calc(17% - 1rem * 3 / 4);
   }
 
   .grid--3-col-tablet .grid__item {
@@ -1179,7 +1206,6 @@ deferred-media {
 /* component-button */
 /* Button - default */
 
-.button,
 .shopify-challenge__button,
 .customer button {
   cursor: pointer;
@@ -1240,7 +1266,7 @@ deferred-media {
 
 /* Button - hover */
 
-.button:not([disabled]):hover,
+
 .shopify-challenge__button:hover,
 .customer button:hover {
   box-shadow: 0 0 0 0.2rem rgba(var(--color-button), var(--alpha-button-border));
@@ -1422,7 +1448,6 @@ details[open] > .share-button__fallback {
   color: rgba(var(--color-foreground), 0.75);
 }
 
-.field__input:hover,
 .select__select:hover,
 .customer .field input:hover,
 .customer select:hover,
@@ -1430,7 +1455,6 @@ details[open] > .share-button__fallback {
   box-shadow: 0 0 0 0.2rem rgba(var(--color-foreground), 0.55);
 }
 
-.field__input:focus,
 .select__select:focus,
 .customer .field input:focus,
 .customer select:focus,
@@ -1497,7 +1521,7 @@ details[open] > .share-button__fallback {
   position: absolute;
   transition: top var(--duration-short) ease,
     font-size var(--duration-short) ease;
-  color: rgba(var(--color-foreground), 0.75);
+  color: #fff;
   letter-spacing: 0.1rem;
   line-height: 1.5;
 }
@@ -1543,9 +1567,6 @@ details[open] > .share-button__fallback {
   justify-content: center;
   overflow: hidden;
   padding: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
   width: 4.4rem;
 }
 
@@ -2068,7 +2089,6 @@ details[open] > .search-modal {
 
 .search-modal {
   opacity: 0;
-  border-bottom: 0.1rem solid rgba(var(--color-foreground), 0.08);
   height: 100%;
 }
 

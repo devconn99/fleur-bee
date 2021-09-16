@@ -4,8 +4,6 @@
 }
 .image-with-text .alpha {
     position: relative;
-    max-width: 50%;
-    flex: 50%;
     padding: 20px;
 }
 .image-with-text .beta {
@@ -21,24 +19,20 @@
 .image-with-text .content-wrap {
     position: absolute;
     top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
     width: 100%;
 }
-.image-with-text .sub_title {
+.image-with-text .pre_header {
     font-family: var(--font-cerebri-book);
 }
 .image-with-text .main_title {
-    font-family: var(--font-mackinac);
+    font-family: var( --font-mackinac-medium);
     margin: 0;
 }
 .image-with-text .text {
     margin: 25px 0 30px;
+    font-family: var(--font-cerebri-regular);
 }
-.image-with-text .text,.image-with-text .button-primary, .image-with-text .link {
-    font-family: var(--font-secondary-normal);
-}
-.image-with-text .button-primary {
+.image-with-text .button {
     font-size: 16px;
     text-decoration: none;
     height: 100%;
@@ -48,14 +42,28 @@
     padding: 0 10px;
     width: 100%;
     min-height: 44px;
+    font-family: var(--font-secondary-normal);
+    letter-spacing: 0.5px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease-in-out;
 }
-.consultation-section .main_title, .purchase-section .main_title {
-    font-size: 28px;
+.image-with-text .button:last-child {
+    margin-bottom: 0;
+}
+.block-style-2 .main_title, .block-style-3 .main_title {
     color: var(--color-primary)
 }
-.consultation-section .text, .purchase-section .text {
+.block-style-2 .text, .block-style-3 .text {
     font-size: 18px;
-    color: var(--color-secondary);
+}
+.image-with-text .link {
+    font-size: 18px;
+    display: block;
+    margin-bottom: 12px;
+    font-family: var(--font-cerebri-regular);
+}
+.image-with-text .link:last-child {
+    margin-bottom: 0;
 }
 .image-with-text .alignment .alpha {
     order: 2
@@ -65,10 +73,7 @@
     position: relative;
 }
 .image-with-text .overlay-image {
-    max-width: 240px;
     position: absolute;
-    top: -20px;
-    right: -39px;
     width: 100%;
 }
 .image-with-text .beta .image-wrap {
@@ -77,78 +82,164 @@
 /* common css end */
 
 /* hero banner css start */
-.hero-banner {
+.block-style-1 {
     height: calc(100vh - 98px);
 }
-.hero-banner .main-container {
+.block-style-1 .main-container {
     height: 100%;
 }
-.hero-banner .wrapper {
+.block-style-1 .wrapper {
     height: 100%;
 }
-.hero-banner .main_title {
-    font-size: 36px;
+.block-style-1 .main_title {
     line-height: 1.4;
     font-style: italic;
     color: #fff;
 }
-.hero-banner .text {
+.block-style-1 .text {
     font-size: 20px;
     line-height: 1.4;
-    color: #fff;
 }
-.hero-banner .button-primary {
-    color: #000;
+.block-style-1 .button-primary {
     max-width: 210px;
 }
-.hero-banner .content-wrap {
+.block-style-1 .content-wrap {
     max-width: 400px;
 }
 /* hero banner css end */
 
 /* consultation section css start */
-.consultation-section .sub-title {
+.block-style-2 .sub-title {
     margin-top: 0;
     margin-bottom: 12px;
     font-size: 18px;
     color: var(--color-teal)
 }
-.consultation-section .text {
+.block-style-2 .text {
     max-width: 420px;
 }
-.consultation-section .content-wrap {
+.block-style-2 .content-wrap {
     max-width: 450px;
 }
-.consultation-section .button-primary {
-    color: #fff;
+.block-style-2 .button-primary, .block-style-2 .button-secondary {
     max-width: 326px;
 }
 /* consultation section css end */
 
 /* purchase section css start */
-.purchase-section .beta {
+.block-style-3 .beta {
     min-height: 480px;
 }
-.purchase-section .beta .image {
+.block-style-3 .beta .image {
     object-position: -15px;
 }
-.purchase-section .content-wrap {
+.block-style-3 .content-wrap {
     max-width: 400px;
 }
-.purchase-section .text p {
+.block-style-3 .text p {
     margin-top: 0;
     margin-bottom: 15px;
 }
-.purchase-section .text p:last-child {
+.block-style-3 .text p:last-child {
     margin-bottom: 0;
-}
-.purchase-section .link {
-    font-size: 18px;
-    display: block;
-    margin-bottom: 12px;
-}
-.purchase-section .link:last-child {
-    margin-bottom: 0;
-    color: var(--color-teal)
 }
 /* purchase section css end */
+
+@media screen and (max-width: 1279px) {
+    .block-style-2 .main-container {
+        padding: 0 30px !important;
+    }
+}
+@media screen and (max-width: 768px ) {
+    .block-style-1 .content-wrap {
+        max-width: 290px;
+    }
+    .block-style-1 .text {
+        font-size: 16px;
+    }
+    .block-style-1 .button-primary {
+        max-width: 190px;
+    }
+    .pre_header {
+        font-size: 14px;
+    }
+    .image-with-text .main_title {
+        font-size: 22px !important;
+    }
+    .block-style-2 .text, .block-style-3 .text {
+        font-size: 14px;
+    }
+    .block-style-2 .button-primary, .block-style-2 .button-secondary {
+        max-width: 280px;
+    }
+    .block-style-3 .beta .image {
+        object-position: -45px;
+    }
+    .block-style-3 .beta {
+        min-height: 340px;
+    }
+    .image-with-text .link {
+        font-size: 14px;
+        margin-bottom: 8px;
+    }
+    .block-style-3 .content-wrap {
+        max-width: 274px;
+    }
+    .image-with-text .text {
+        margin: 16px 0 20px;
+    }
+    .image-with-text .button {
+        font-size: 14px;
+        min-height: 40px;
+    }
+}
+@media screen and (max-width: 480px ) {
+    .block-style-1 {
+        height: auto;
+    }
+    .image-with-text .wrapper {
+        flex-wrap: wrap;
+    }
+    .image-with-text .alpha {
+        max-width: 100% !important;
+        flex: 100% !important;
+        order: 2;
+    }
+    .image-with-text .beta {
+        max-width: 100% !important;
+        flex: 100% !important;
+        order: 1;
+    }
+    .block-style-1 .beta {
+        max-height: 400px;
+    }
+    .image-with-text .content-wrap {
+        position: unset;
+        top: unset;
+        left: unset !important;
+        transform: unset !important;
+        max-width: 320px;
+    }
+    .image-with-text .alpha {
+        padding: 45px 20px;
+    }
+    .image-with-text .button {
+        font-size: 11px;
+        min-height: 34px;
+    }
+    .block-style-1 .button-primary {
+        max-width: 160px;
+    }
+    .block-style-2 .button-primary, .block-style-2 .button-secondary {
+        max-width: 230px;
+    }
+    .block-style-2 .alpha, .block-style-3 .alpha {
+        margin-bottom: -45px;
+    }
+    .image-with-text .stack-order .alpha {
+        order: 1
+    }
+    .image-with-text .stack-order .beta {
+        order: 2
+    }
+}

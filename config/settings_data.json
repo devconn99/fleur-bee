@@ -82,16 +82,10 @@
               "type": "link_list",
               "settings": {
               }
-            },
-            "text": {
-              "type": "text",
-              "settings": {
-              }
             }
           },
           "block_order": [
-            "menu",
-            "text"
+            "menu"
           ],
           "settings": {
             "color_scheme": "accent-1"
