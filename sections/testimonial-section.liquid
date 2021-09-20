@@ -1,0 +1,159 @@
+{{ 'testimonial-section.css' | asset_url | stylesheet_tag }}
+
+<style>
+    .testimonial-section .testimonial-top-txt, .testimonial-section .testimonial-bottom-txt {
+        color: {{ section.settings.text_color }}
+    }
+    .testimonial-section .stars-img g {
+        fill: {{ section.settings.star_color }}
+    }
+</style>
+<div class="testimonial-section">
+    <div class="main_container">
+        <div class="testimonial-content-wrappers">
+            {% for block in section.blocks %}
+                <div class="testimonial-content-wrap block-{{ forloop.index }}">
+                    <div class="testimonial-text-wrap">
+                        <div class="stars-img">
+                            {% render 'framework--icons', icon: 'star' %}
+                            {% render 'framework--icons', icon: 'star' %}
+                            {% render 'framework--icons', icon: 'star' %}
+                            {% render 'framework--icons', icon: 'star' %}
+                            {% render 'framework--icons', icon: 'star' %}
+                        </div>
+                        {% if block.settings.text != blank %}
+                            <p class="testimonial-top-txt">{{ block.settings.text }}</p>
+                        {% endif %}
+                        {% if block.settings.sub_text != blank %}
+                            <p class="testimonial-bottom-txt">{{ block.settings.sub_text }}</p>
+                        {% endif %}
+                    </div>
+                    <div class="testimonial-image-wrap">
+                        {% if section.settings.show_photo %}
+                            {% if block.settings.profile_pic != blank %}
+                                <div class="testimonial-person-img">
+                                    {% render 'responsive--image' with block.settings.profile_pic as image, max_width: 80px, class: 'profile-image' %}
+                                </div>
+                            {% endif %}
+                        {% endif %}
+                        {% if block.settings.customer_name != blank %}
+                            <span class="testimonial-img-name">{{ block.settings.customer_name }}</span>
+                        {% endif %}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<script>
+
+jQuery(function($) {
+  
+  // Function which adds the 'animated' class to any '.animatable' in view
+  var doAnimations = function() {
+    
+    // Calc current offset and get all animatables
+    var offset = $(window).scrollTop() + $(window).height(),
+        $animatables = $('.testimonial-content-wrap');
+    
+    // Unbind scroll handler if we have no animatables
+    if ($animatables.length == 0) {
+      $(window).off('scroll', doAnimations);
+    }
+    
+    // Check all animatables and animate them if necessary
+		$animatables.each(function(i) {
+            var $animatable = $(this);
+			if (($animatable.offset().top + $animatable.height() - 20) < offset) {
+                $animatable.addClass('animated');
+			}
+    });
+
+	};
+  
+  // Hook doAnimations on scroll, and trigger a scroll
+	$(window).on('scroll', doAnimations);
+    $(window).trigger('scroll');
+
+});
+</script>
+
+{% schema %}
+{
+    "name": "Testimonial-section",
+    "settings": [
+        {
+            "type": "header",
+            "content": "Option",
+            "info": "-------"
+        },
+        {
+            "type": "checkbox",
+            "id": "show_photo",
+            "label": "Show Customer Photo",
+            "default": true
+        },
+        {
+            "type": "header",
+            "content": "Color",
+            "info": "-------"
+        },
+        {
+            "type": "color",
+            "id": "star_color",
+            "label": "Start Color"
+        },
+        {
+            "type": "color",
+            "id": "text_color",
+            "label": "Text Color"
+        }
+    ],
+    "blocks": [
+        {
+            "name": "Reviews",
+            "type": "review",
+            "settings": [
+                {
+                    "type": "header",
+                    "content": "Image",
+                    "info": "-------"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "profile_pic",
+                    "label": "Profile Picture"
+                },
+                {
+                    "type": "header",
+                    "content": "Content",
+                    "info": "-------"
+                },
+                {
+                    "type": "text",
+                    "id": "text",
+                    "label": "Text"
+                },
+                {
+                    "type": "text",
+                    "id": "sub_text",
+                    "label": "Sub Text"
+                },
+                {
+                    "type": "text",
+                    "id": "customer_name",
+                    "label": "Customer Name"
+                }
+            ]
+       }
+    ],
+    "presets": [
+       {
+           "name": "Testimonial Section",
+           "category": "Testimonial Section"
+       }
+    ]
+}
+{% endschema %}
+

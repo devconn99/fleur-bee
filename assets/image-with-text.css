@@ -83,7 +83,7 @@
 
 /* hero banner css start */
 .block-style-1 {
-    height: calc(100vh - 98px);
+    height: calc(100vh - 104px);
 }
 .block-style-1 .main-container {
     height: 100%;
@@ -148,6 +148,12 @@
 @media screen and (max-width: 1279px) {
     .block-style-2 .main-container {
         padding: 0 30px !important;
+    }
+}
+@media screen and (max-width: 991px) {
+    .block-style-1 {
+        height: calc(100vh - 70px);
+        margin-top: 70px;
     }
 }
 @media screen and (max-width: 768px ) {

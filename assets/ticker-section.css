@@ -1,0 +1,43 @@
+.ticker-section {
+    padding: 30px 0;
+    border-style: solid;
+    border-left: 0;
+    border-right: 0;
+}
+.ticker-section .slider-item {
+    cursor: grab;
+    display: flex;
+    align-items: center;
+    min-height: 50px;
+    padding: 0 10px;
+}
+.ticker-section .slick-slide img {
+    display: block;
+    width: 80%;
+    object-fit: cover
+}
+.ticker-section .icon-wrap {
+    max-width: 60px;
+    flex: 60px;
+    margin-right: 5px;
+}
+.ticker-section .icon-text {
+    flex: 1;
+    font-family: var(--font-cerebri-book);
+    font-size: 14px;
+    color: var(--color-primary);
+    line-height: 1.3;
+}
+
+@media screen and (max-width: 480px) {
+    .ticker-section .icon-text {
+        font-size: 12px;
+        margin-left: -8px;
+    }
+    .ticker-section {
+        padding: 18px 0;
+    }
+    .ticker-section .slick-slide img {
+        width: 60%;
+    }
+}

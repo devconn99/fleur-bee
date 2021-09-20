@@ -1,6 +1,10 @@
 .custom-header {
     padding: 25px 0;
     position: relative;
+    border-bottom: 1px solid var(--color-mint-light);
+}
+.template-index .custom-header {
+    border-bottom: 0;
 }
 .custom-header .header-container {
     padding: 0 40px;

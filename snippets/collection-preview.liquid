@@ -1,0 +1,87 @@
+{{ 'collection-preview.css' | asset_url | stylesheet_tag }}
+{{ 'component-price.css' | asset_url | stylesheet_tag }}
+
+<style>
+    @media screen and (max-width: 480px) {
+        .collection-preview .grid {
+            grid-template-columns: repeat({{ section.settings.product_per_row }}, 1fr);
+        }
+    }
+</style>
+
+<div class="collection-preview" style="background-color: {{ section.settings.bg_color }}">
+    <div class="main_container">
+        <div class="wrapper">
+            <div class="header_wrap text-center">
+                {% if template == 'collection' %}
+                    {% if section.settings.main_title != blank %}
+                        <h1 class="main-title">{{ section.settings.main_title }}</h1>
+                    {% endif %}
+                {% else %}
+                    {% if section.settings.main_title != blank %}
+                        <h2 class="main-title">{{ section.settings.main_title }}</h2>
+                    {% endif %}
+                {% endif %}
+                {% if section.settings.text != blank %}
+                    <p class="text">{{ section.settings.text }}</p>
+                {% endif %}
+            </div>
+            <div class="grid">
+                {% if template == 'collection' %}
+                    {% for product in collection.products %}
+                        {% assign title = product.title %}
+                        {% assign first_part = product.title | split: '/' | first %}
+                        {% assign second_part = product.title | split: '/' | last %}
+                        <div class="grid-item">
+                            <div class="product-image-wrap">
+                                {% render 'responsive--image' with product.featured_image as image, max_width: 340px, class: 'product-image' %}
+                            </div>
+                            <div class="product-details text-center">
+                                <div class="product-info">
+                                    <h4 class="product-name">{{ first_part }}</h4>
+                                    <h5 class="product-description">{{ second_part }}</h5>
+                                </div>
+                                <div class="price-wrap">
+                                    {%- render 'price', product: product, use_variant: true, show_badges: true, price_class: 'price--large' -%}
+                                </div>
+                                <a href="{{ product.url }}" class="button rounded-button button-{{section.settings.btn_style }}">Show Now</a>
+                            </div>
+                        </div>
+                    {% endfor %}
+                    {% else %}
+                        {% for product in section.settings.select_collection.products %}
+                            {% assign title = product.title %}
+                            {% assign first_part = product.title | split: '/' | first %}
+                            {% assign second_part = product.title | split: '/' | last %}
+                            <div class="grid-item">
+                                <div class="product-image-wrap">
+                                    {% render 'responsive--image' with product.featured_image as image, max_width: 340px, class: 'product-image' %}
+                                </div>
+                                <div class="product-details text-center">
+                                    <div class="product-info">
+                                        <h4 class="product-name">{{ first_part }}</h4>
+                                        <h5 class="product-description">{{ second_part }}</h5>
+                                    </div>
+                                    <div class="price-wrap">
+                                        {%- render 'price', product: product, use_variant: true, show_badges: true, price_class: 'price--large' -%}
+                                    </div>
+                                    <a href="{{ product.url }}" class="button rounded-button button-{{section.settings.btn_style }}">Show Now</a>
+                                    {% for tag in product.tags %}
+                                        {% if tag == 'set' %}
+                                            <span class="badge">
+                                                Best Value
+                                            </span>
+                                            {% elsif tag == 'new-arrival' %}
+                                                <span class="badge">
+                                                    New Arrival
+                                                </span>
+                                        {% endif %}
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>

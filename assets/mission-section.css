@@ -1,0 +1,74 @@
+.mission-section {
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+    position: relative;
+    min-height: 550px;
+}
+.mission-section .content-wrap {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 630px;
+}
+.mission-section .pre_header {
+    font-family: var(--font-cerebri-book);
+    margin: 0;
+}
+.mission-section .main_title {
+    font-family: var( --font-mackinac-medium);
+    margin: 0;
+}
+.mission-section .text {
+    margin: 18px 0 35px;
+    font-family: var( --font-mackinac-medium);
+    font-style: italic;
+    font-size: 30px;
+    line-height: 1.5
+}
+.mission-section .button {
+    font-size: 16px;
+    text-decoration: none;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10px;
+    width: 100%;
+    min-height: 44px;
+    font-family: var(--font-secondary-normal);
+    letter-spacing: 0.5px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease-in-out;
+    max-width: 220px;
+}
+
+@media screen and (max-width: 1279px) {
+    .mission-section .text {
+        font-size: 26px;
+    }
+}
+@media screen and (max-width: 991px) {
+    .mission-section .text {
+        font-size: 22px;
+    }
+}
+@media screen and (max-width: 480px) {
+    .mission-section {
+        min-height: 390px;
+    }
+    .mission-section .content-wrap {
+        max-width: 250px;
+        width: 100%;
+    }
+    .mission-section .button {
+        font-size: 12px;
+        min-height: 35px;
+        max-width: 156px;
+    }
+    .mission-section .text {
+        font-size: 17px;
+        margin: 12px 0 24px;
+    }
+}

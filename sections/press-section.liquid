@@ -1,0 +1,86 @@
+{{ 'press-section.css' | asset_url | stylesheet_tag }}
+
+<div class='press-section' style="background-color: {{ section.settings.bg_color }};">
+    <div class='main_container'>
+        <div class="wrapper">
+            <div class="logos desktop-logos">
+                {% for block in section.blocks %}
+                    {% if block.type == 'desktop-logo' %}
+                        <div class="logo-wrap">
+                            {% render 'responsive--image' with block.settings.logo as image, max_width: 320px, class: 'logo-image' %}
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <div class="logos mobile-logos">
+                {% for block in section.blocks %}
+                    {% if block.type == 'mobile-logo' %}
+                    <div class="logo-wrap">
+                        {% render 'responsive--image' with block.settings.logo as image, max_width: 220px, class: 'logo-image' %}
+                    </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% schema %}
+{
+    "name": "Press Section",
+    "settings": [
+        {
+            "type": "header",
+            "content": "Color",
+            "info": "-------"
+        },
+        {
+            "type": "color",
+            "id": "bg_color",
+            "label": "Background Color"
+        }
+    ],
+    "blocks": [
+        {
+            "name": "Desktop Logo",
+            "limit": 5,
+            "type": "desktop-logo",
+            "settings": [
+                {
+                    "type": "header",
+                    "content": "Image",
+                    "info": "-------"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "logo",
+                    "label": "Press Logo"
+                }
+            ]
+        },
+        {
+            "name": "Mobile Logo",
+            "limit": 3,
+            "type": "mobile-logo",
+            "settings": [
+                {
+                    "type": "header",
+                    "content": "Image",
+                    "info": "-------"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "logo",
+                    "label": "Press Logo"
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "Press Section",
+            "category": "Press Section"
+        }
+    ]
+}
+{% endschema %}
