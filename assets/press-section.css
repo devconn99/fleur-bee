@@ -21,9 +21,10 @@
     justify-content: center;
 }
 .press-section .logo-image {
-    height: 100%;
+    height: 30px;
     display: block;
-    object-fit: cover;
+    object-fit: contain;
+    width: 75%;
 }
 @media screen and (max-width: 1279px) {
     .press-section .wrapper .desktop-logos {
@@ -31,6 +32,11 @@
     }
     .press-section .logo-wrap {
         margin: 0 20px;
+    }
+}
+@media screen and (max-width: 1279px) {
+    .press-section .logo-image {
+        height: 22px;
     }
 }
 
@@ -52,5 +58,8 @@
     }
     .press-section .logo-image {
         width: 100%;
+    }
+    .press-section .logo-image {
+        height: 16px;
     }
 }

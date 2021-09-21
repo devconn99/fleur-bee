@@ -37,14 +37,20 @@
                                 {% render 'responsive--image' with product.featured_image as image, max_width: 340px, class: 'product-image' %}
                             </div>
                             <div class="product-details text-center">
-                                <div class="product-info">
-                                    <h4 class="product-name">{{ first_part }}</h4>
-                                    <h5 class="product-description">{{ second_part }}</h5>
-                                </div>
+                                {% if title contains '/' %}
+                                    <div class="product-info">
+                                        <h4 class="product-name">{{ first_part }}</h4>
+                                        <h5 class="product-description">{{ second_part }}</h5>
+                                    </div>
+                                    {% else %}
+                                    <div class="product-info">
+                                        <h4 class="product-name">{{ title }}</h4>   
+                                    </div>
+                                {% endif %}
                                 <div class="price-wrap">
                                     {%- render 'price', product: product, use_variant: true, show_badges: true, price_class: 'price--large' -%}
                                 </div>
-                                <a href="{{ product.url }}" class="button rounded-button button-{{section.settings.btn_style }}">Show Now</a>
+                                <a href="{{ product.url }}" class="button rounded-button button-{{section.settings.btn_style }}">Shop Now</a>
                             </div>
                         </div>
                     {% endfor %}
@@ -58,14 +64,20 @@
                                     {% render 'responsive--image' with product.featured_image as image, max_width: 340px, class: 'product-image' %}
                                 </div>
                                 <div class="product-details text-center">
-                                    <div class="product-info">
-                                        <h4 class="product-name">{{ first_part }}</h4>
-                                        <h5 class="product-description">{{ second_part }}</h5>
-                                    </div>
+                                    {% if title contains '/' %}
+                                        <div class="product-info">
+                                            <h4 class="product-name">{{ first_part }}</h4>
+                                            <h5 class="product-description">{{ second_part }}</h5>
+                                        </div>
+                                        {% else %}
+                                        <div class="product-info">
+                                            <h4 class="product-name">{{ title }}</h4>   
+                                        </div>
+                                    {% endif %}
                                     <div class="price-wrap">
                                         {%- render 'price', product: product, use_variant: true, show_badges: true, price_class: 'price--large' -%}
                                     </div>
-                                    <a href="{{ product.url }}" class="button rounded-button button-{{section.settings.btn_style }}">Show Now</a>
+                                    <a href="{{ product.url }}" class="button rounded-button button-{{section.settings.btn_style }}">Shop Now</a>
                                     {% for tag in product.tags %}
                                         {% if tag == 'set' %}
                                             <span class="badge">
