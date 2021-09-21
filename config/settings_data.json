@@ -3,9 +3,9 @@
     "colors_solid_button_labels": "#FFFFFF",
     "colors_accent_1": "#121212",
     "colors_accent_2": "#334FB4",
-    "colors_text": "#121212",
     "color_header_text": "#0c2545",
     "color_body_text": "#3d516a",
+    "colors_text": "#121212",
     "colors_outline_button_labels": "#121212",
     "colors_background_1": "#FFFFFF",
     "colors_background_2": "#F3F3F3",
@@ -18,7 +18,9 @@
           "announcement-bar-0": {
             "type": "announcement",
             "settings": {
-              "color_scheme": "background-1"
+              "text": "Welcome to our store",
+              "color_scheme": "background-1",
+              "link": ""
             }
           }
         },
@@ -27,8 +29,85 @@
         ],
         "settings": {
         }
+      },
+      "header": {
+        "type": "header",
+        "blocks": {
+          "ba10c9bb-c6dc-4372-982b-0f0b5d940cdc": {
+            "type": "Mega_menu_collection",
+            "settings": {
+              "collection_image": "shopify:\/\/shop_images\/col_2.png",
+              "collection_url": "",
+              "collection_title": "Shop the Starter Set"
+            }
+          },
+          "fc11ba7c-dd27-4f0e-9ae1-6024a1153392": {
+            "type": "Mega_menu_collection",
+            "settings": {
+              "collection_image": "shopify:\/\/shop_images\/col_1.jpg",
+              "collection_url": "",
+              "collection_title": "Shop All Product"
+            }
+          }
+        },
+        "block_order": [
+          "ba10c9bb-c6dc-4372-982b-0f0b5d940cdc",
+          "fc11ba7c-dd27-4f0e-9ae1-6024a1153392"
+        ],
+        "settings": {
+          "logo": "shopify:\/\/shop_images\/logo_8aa1ee37-85f3-4b8f-a12d-e3ab731164fc.png",
+          "menu": "latest-menu",
+          "mobile_menu": "latest-menu"
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "blocks": {
+          "footer-0": {
+            "type": "link_list",
+            "settings": {
+              "heading": "Shop",
+              "menu": "footer"
+            }
+          },
+          "4c4fb304-8cc4-48fa-a2cd-b8ab0acd0564": {
+            "type": "link_list",
+            "settings": {
+              "heading": "Learn",
+              "menu": "learn-footer"
+            }
+          },
+          "892d5713-47e0-472c-9a71-742064e46efa": {
+            "type": "link_list",
+            "settings": {
+              "heading": "Support",
+              "menu": "support"
+            }
+          },
+          "42480789-92b4-4ed2-8241-257c96c94c30": {
+            "type": "link_list",
+            "settings": {
+              "heading": "Quick links",
+              "menu": "support"
+            }
+          }
+        },
+        "block_order": [
+          "footer-0",
+          "4c4fb304-8cc4-48fa-a2cd-b8ab0acd0564",
+          "892d5713-47e0-472c-9a71-742064e46efa",
+          "42480789-92b4-4ed2-8241-257c96c94c30"
+        ],
+        "settings": {
+          "bg_color": "#083d3a",
+          "newsletter_enable": true,
+          "newsletter_heading": "Want 20% off your first order?"
+        }
       }
-    }
+    },
+    "content_for_index": [
+
+    ]
   },
   "presets": {
     "Default": {

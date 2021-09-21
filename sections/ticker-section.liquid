@@ -73,26 +73,29 @@
     ticker_slider.slick({
         dots: false,
         arrows: false,
-        slidesToShow: 5,
+        slidesToShow: 4,
         slidesToScroll: 1,
+        variableWidth: true,
         draggable: true,
         responsive: [
             {
-                breakpoint: 1279,
+                breakpoint: 992,
                 settings: {
-                    slidesToShow: 4
+                    slidesToShow: 4,
+                    variableWidth: false
                 }
             },
             {
                 breakpoint: 769,
                 settings: {
-                    slidesToShow: 3
+                    slidesToShow: 3,
+                    variableWidth: false
                 }
             },
             {
                 breakpoint: 480,
                 settings: {
-                    slidesToShow: 2
+                    slidesToShow: 3
                 }
             }
         ]

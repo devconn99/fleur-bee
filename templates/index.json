@@ -1,106 +1,429 @@
 {
   "sections": {
-    "image_banner": {
-      "type": "image-banner",
-      "settings": {
-        "desktop_text_box_position": "flex-end"
-      },
+    "1631672391e4d5a483": {
+      "type": "image-with-text",
       "blocks": {
-        "heading": {
-          "type": "heading",
+        "7b70e8fd-8a5b-4244-ba7f-0331a1b02580": {
+          "type": "button",
           "settings": {
-            "heading": "Talk about your brand"
-          }
-        },
-        "button": {
-          "type": "buttons",
-          "settings": {
-            "button_label_1": "Shop all",
-            "button_link_1": "shopify:\/\/collections\/all",
-            "button_label_2": ""
+            "btn_style": "primary",
+            "btn_text": "SHOP JUST DEW IT",
+            "btn_url": ""
           }
         }
       },
       "block_order": [
-        "heading",
-        "button"
-      ]
-    },
-    "rich_text": {
-      "type": "rich-text",
-      "blocks": {
-        "heading": {
-          "type": "heading"
-        },
-        "text": {
-          "type": "text"
-        },
-        "button": {
-          "type": "button"
-        }
-      },
-      "block_order": [
-        "heading",
-        "text",
-        "button"
-      ]
-    },
-    "featured_products": {
-      "type": "featured-collection",
+        "7b70e8fd-8a5b-4244-ba7f-0331a1b02580"
+      ],
       "settings": {
-        "title": "Featured products",
-        "collection": "all",
-        "image_ratio": "square"
+        "image": "shopify:\/\/shop_images\/pineapple_3_fb474355-ef28-45ef-b.png",
+        "bg_color": "",
+        "content_bg_color": "#1a3f3e",
+        "pre_header_color": "",
+        "text_color": "#ffffff",
+        "link_color": "",
+        "link_color_hover": "",
+        "primary_btn_bg_color": "#e8c52e",
+        "primary_btn_bg_color_hover": "",
+        "primary_btn_text_color": "#000000",
+        "primary_btn_text_color_hover": "",
+        "secondary_btn_border_color": "",
+        "secondary_btn_border_color_hover": "",
+        "secondary_btn_bg_color": "",
+        "secondary_btn_bg_color_hover": "",
+        "secondary_btn_text_color": "",
+        "secondary_btn_text_color_hover": "",
+        "pre_header": "",
+        "main_title": "Say yellow to happy,  hydrating skin.",
+        "text": "Introducing our new, hydrating serum packed with 8 moisturizing ingredients.",
+        "block_style": "block-style-1",
+        "pre_header_tag": "h3",
+        "title_tag": "h1",
+        "title_size_desk": 36,
+        "title_size_mob": 28,
+        "text_alignment_desk": "left",
+        "text_alignment_mob": "center",
+        "img_alignment": true,
+        "stack_order": false,
+        "show_overlay_img": false,
+        "horizantal_spacing_desk": 0,
+        "horizantal_spacing_mob": 0,
+        "vertical_spacing_desk": 0,
+        "vertical_spacing_mob": 0,
+        "overlay_img_width_desk": 240,
+        "overlay_img_width_mob": 160,
+        "top_position_desk": 20,
+        "top_position_mob": 20,
+        "lr_position_desk": 40,
+        "lr_position_mob": 40,
+        "text_side_width": 50,
+        "image_side_width": 50,
+        "text_horizantal_space": 50
       }
     },
-    "collage": {
-      "type": "collage",
+    "1631872577918ced4c": {
+      "type": "press-section",
       "blocks": {
-        "video": {
-          "type": "video"
+        "ba660b66-5fe3-4dcf-a902-09505d3bc187": {
+          "type": "desktop-logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/press-logo-1.png"
+          }
         },
-        "product": {
-            "type": "product"
+        "e305f94e-e76f-454d-87f7-479ee1dbfca7": {
+          "type": "desktop-logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/press-logo-4.png"
+          }
         },
-        "collection": {
-          "type": "collection"
+        "fafeea8f-9fe7-42f3-8668-63aa6efb6450": {
+          "type": "desktop-logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/press-logo-5.png"
+          }
+        },
+        "959eadb6-99ce-4de9-a8b1-fd1cb261fe8c": {
+          "type": "desktop-logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/press-logo-2.png"
+          }
+        },
+        "9247f551-a29d-4a0b-a43f-7a3cb04acf3e": {
+          "type": "desktop-logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/press-logo-3.png"
+          }
+        },
+        "828d28d2-cd39-4a0f-818b-736c8df0a0af": {
+          "type": "mobile-logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/press-logo-1.png"
+          }
+        },
+        "ec89d66b-ab7d-4817-8849-f0264bb9edbd": {
+          "type": "mobile-logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/press-logo-5.png"
+          }
+        },
+        "6815314a-ae80-40e1-896b-ef7b8758aea3": {
+          "type": "mobile-logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/press-logo-2.png"
+          }
         }
       },
       "block_order": [
-        "video",
-        "product",
-        "collection"
-      ]
+        "ba660b66-5fe3-4dcf-a902-09505d3bc187",
+        "e305f94e-e76f-454d-87f7-479ee1dbfca7",
+        "fafeea8f-9fe7-42f3-8668-63aa6efb6450",
+        "959eadb6-99ce-4de9-a8b1-fd1cb261fe8c",
+        "9247f551-a29d-4a0b-a43f-7a3cb04acf3e",
+        "828d28d2-cd39-4a0f-818b-736c8df0a0af",
+        "ec89d66b-ab7d-4817-8849-f0264bb9edbd",
+        "6815314a-ae80-40e1-896b-ef7b8758aea3"
+      ],
+      "settings": {
+        "bg_color": "#d5dede"
+      }
     },
-    "video": {
-      "type": "video"
+    "16318788241ddc9d17": {
+      "type": "featured-collection",
+      "settings": {
+        "bg_color": "#ffffff",
+        "select_collection": "all",
+        "main_title": "Our Family Tree",
+        "text": "",
+        "product_per_row": "2",
+        "btn_style": "primary"
+      }
     },
-    "multi_column": {
-      "type": "multicolumn",
+    "163194429315bbc248": {
+      "type": "mission-section",
       "blocks": {
-        "column1": {
-          "type": "column"
-        },
-        "column2": {
-          "type": "column"
-        },
-        "column3": {
-          "type": "column"
+        "bf3937ef-80c0-4282-a37d-5135ec7405b8": {
+          "type": "button",
+          "settings": {
+            "btn_style": "primary",
+            "btn_text": "SHOP JUST DEW IT",
+            "btn_url": ""
+          }
         }
       },
       "block_order": [
-        "column1",
-        "column2",
-        "column3"
-      ]
+        "bf3937ef-80c0-4282-a37d-5135ec7405b8"
+      ],
+      "settings": {
+        "bg_img_desk": "shopify:\/\/shop_images\/bg-image.png",
+        "bg_img_mob": "shopify:\/\/shop_images\/bg-image-mobile.png",
+        "pre_header": "HERE IS THE PREHEADER TEXT",
+        "main_title": "",
+        "text": "Here is a statement about how our products are packed with amazing ingredients and something else.",
+        "pre_header_color": "#be736c",
+        "text_color": "#083d3a",
+        "link_color": "",
+        "link_color_hover": "",
+        "primary_btn_bg_color": "#083d3a",
+        "primary_btn_bg_color_hover": "#ffffff",
+        "primary_btn_text_color": "#ffffff",
+        "primary_btn_text_color_hover": "#083d3a",
+        "secondary_btn_border_color": "",
+        "secondary_btn_border_color_hover": "",
+        "secondary_btn_bg_color": "",
+        "secondary_btn_bg_color_hover": "",
+        "secondary_btn_text_color": "",
+        "secondary_btn_text_color_hover": "",
+        "pre_header_tag": "h3",
+        "title_tag": "h2",
+        "title_size_desk": 36,
+        "title_size_mob": 28,
+        "text_alignment_desk": "center",
+        "text_alignment_mob": "center"
+      }
+    },
+    "163194693599fa82cc": {
+      "type": "ticker-section",
+      "blocks": {
+        "32055fd3-1e1f-4790-8100-22ae3e30c24a": {
+          "type": "icon_with_text",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/icon-1.png",
+            "icon_text": "Cruelty-Free"
+          }
+        },
+        "a4133e35-45df-484c-bde6-9ee94c8d7128": {
+          "type": "icon_with_text",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/icon-2.png",
+            "icon_text": "Vegan"
+          }
+        },
+        "898b6e2e-a0a7-4b2c-bbdd-e3499c1b2280": {
+          "type": "icon_with_text",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/icon-3.png",
+            "icon_text": "Recyclable Packaging"
+          }
+        },
+        "177299a8-dca7-43c0-aeba-f7c73629af07": {
+          "type": "icon_with_text",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/icon-4.png",
+            "icon_text": "Carbon Neutal"
+          }
+        },
+        "32642077-4a4c-4d42-bae4-b62a9ba5f9d6": {
+          "type": "icon_with_text",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/icon-5.png",
+            "icon_text": "Carbon Neutal"
+          }
+        },
+        "f7e5ed4d-c440-4cdb-828c-0bf22002c86c": {
+          "type": "icon_with_text",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/icon-6.png",
+            "icon_text": "Affordably Priced"
+          }
+        }
+      },
+      "block_order": [
+        "32055fd3-1e1f-4790-8100-22ae3e30c24a",
+        "a4133e35-45df-484c-bde6-9ee94c8d7128",
+        "898b6e2e-a0a7-4b2c-bbdd-e3499c1b2280",
+        "177299a8-dca7-43c0-aeba-f7c73629af07",
+        "32642077-4a4c-4d42-bae4-b62a9ba5f9d6",
+        "f7e5ed4d-c440-4cdb-828c-0bf22002c86c"
+      ],
+      "settings": {
+        "bg_color": "#ffffff",
+        "border_color_top": "#eaeded",
+        "border_color_bottom": "#d7dbdb",
+        "border_size_top": 3,
+        "border_size_bottom": 3
+      }
+    },
+    "1631952471b8425c13": {
+      "type": "testimonial-section",
+      "blocks": {
+        "1c2dffa5-3de8-4c02-845c-a6c56f48fb3b": {
+          "type": "review",
+          "settings": {
+            "profile_pic": "shopify:\/\/shop_images\/Person.png",
+            "text": "In one day, it made my skin glow and evened out my skin tone.",
+            "sub_text": "I have tried so many expensive vitamin C serums, but they all made me breakout. This is the only vitamin C product that worked for my skin!",
+            "customer_name": "LAUREN A."
+          }
+        },
+        "590a634a-9f72-4d5e-831f-733f29d0e563": {
+          "type": "review",
+          "settings": {
+            "profile_pic": "shopify:\/\/shop_images\/Person.png",
+            "text": "This is the best skincare ever. Line two of quote is here.",
+            "sub_text": "I have tried so many expensive vitamin C serums, but they all made me breakout. This is the only vitamin C product that worked for my skin!",
+            "customer_name": "LAUREN B."
+          }
+        },
+        "734a4fb5-391c-4dd0-971a-69e784e5ef0e": {
+          "type": "review",
+          "settings": {
+            "profile_pic": "shopify:\/\/shop_images\/Person.png",
+            "text": "You have to try this stuff. Game changer. Line 3.",
+            "sub_text": "I have tried so many expensive vitamin C serums, but they all made me breakout. This is the only vitamin C product that worked for my skin!",
+            "customer_name": "LAUREN C."
+          }
+        }
+      },
+      "block_order": [
+        "1c2dffa5-3de8-4c02-845c-a6c56f48fb3b",
+        "590a634a-9f72-4d5e-831f-733f29d0e563",
+        "734a4fb5-391c-4dd0-971a-69e784e5ef0e"
+      ],
+      "settings": {
+        "show_photo": true,
+        "star_color": "#bf756e",
+        "text_color": "#25514f"
+      }
+    },
+    "163167563228142441": {
+      "type": "image-with-text",
+      "blocks": {
+        "dfb8a5e6-9a71-48a7-ae2f-f7886871556a": {
+          "type": "button",
+          "settings": {
+            "btn_style": "primary",
+            "btn_text": "Book Your Free Consultation",
+            "btn_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "dfb8a5e6-9a71-48a7-ae2f-f7886871556a"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Images_0e795137-8737-4bee-884f-17262a7628a5.png",
+        "bg_color": "#f6eded",
+        "content_bg_color": "",
+        "pre_header_color": "#be736c",
+        "text_color": "#22504e",
+        "link_color": "",
+        "link_color_hover": "",
+        "primary_btn_bg_color": "#1a3f3e",
+        "primary_btn_bg_color_hover": "#ffffff",
+        "primary_btn_text_color": "#ffffff",
+        "primary_btn_text_color_hover": "#1a3f3e",
+        "secondary_btn_border_color": "#000000",
+        "secondary_btn_border_color_hover": "",
+        "secondary_btn_bg_color": "#ffffff",
+        "secondary_btn_bg_color_hover": "#1a3f3e",
+        "secondary_btn_text_color": "#1a3f3e",
+        "secondary_btn_text_color_hover": "#ffffff",
+        "pre_header": "VIRTUAL SKINCARE CONSULTATION",
+        "main_title": "Want skincare personalized for your specific needs?",
+        "text": "Book a complimentary 20-minute video session, and one of our licensed aestheticians will build you a customized routine.",
+        "block_style": "block-style-2",
+        "pre_header_tag": "h3",
+        "title_tag": "h1",
+        "title_size_desk": 26,
+        "title_size_mob": 18,
+        "text_alignment_desk": "left",
+        "text_alignment_mob": "center",
+        "img_alignment": true,
+        "stack_order": false,
+        "show_overlay_img": false,
+        "horizantal_spacing_desk": 0,
+        "horizantal_spacing_mob": 10,
+        "vertical_spacing_desk": 70,
+        "vertical_spacing_mob": 40,
+        "overlay_img_width_desk": 100,
+        "overlay_img_width_mob": 160,
+        "top_position_desk": 20,
+        "top_position_mob": 20,
+        "lr_position_desk": 40,
+        "lr_position_mob": 40,
+        "text_side_width": 45,
+        "image_side_width": 55,
+        "text_horizantal_space": 50
+      }
+    },
+    "1631676770314a51f5": {
+      "type": "image-with-text",
+      "blocks": {
+        "8ae522fe-9f74-4b5a-af5f-8fdeeeeb6279": {
+          "type": "link",
+          "settings": {
+            "link_text": "Our Charitable Contributions",
+            "link_url": ""
+          }
+        },
+        "5fd17e43-b8da-438e-99cd-d1a70afd28d1": {
+          "type": "link",
+          "settings": {
+            "link_text": "Shop Our Collection",
+            "link_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "8ae522fe-9f74-4b5a-af5f-8fdeeeeb6279",
+        "5fd17e43-b8da-438e-99cd-d1a70afd28d1"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/DSC3409-Edit.png",
+        "overlay_img": "shopify:\/\/shop_images\/image.png",
+        "bg_color": "",
+        "content_bg_color": "",
+        "pre_header_color": "",
+        "text_color": "#22504e",
+        "link_color": "#be736c",
+        "link_color_hover": "#1a3f3e",
+        "primary_btn_bg_color": "",
+        "primary_btn_bg_color_hover": "",
+        "primary_btn_text_color": "",
+        "primary_btn_text_color_hover": "",
+        "secondary_btn_border_color": "",
+        "secondary_btn_border_color_hover": "",
+        "secondary_btn_bg_color": "",
+        "secondary_btn_bg_color_hover": "",
+        "secondary_btn_text_color": "",
+        "secondary_btn_text_color_hover": "",
+        "pre_header": "",
+        "main_title": "Beyond Skincare",
+        "text": "<p>1% of your purchase will go to Days for Girls which provides me menstrual care and education to girls in need.<\/p>\n\n<p>Lorem ipsum dolor sit amet, consectitur adipisiing elit, sed to eiusmod tempor inciditunt ut labore et dolore\nmagna aliqua.<\/p>",
+        "block_style": "block-style-3",
+        "pre_header_tag": "h2",
+        "title_tag": "h1",
+        "title_size_desk": 28,
+        "title_size_mob": 22,
+        "text_alignment_desk": "left",
+        "text_alignment_mob": "center",
+        "img_alignment": false,
+        "stack_order": false,
+        "show_overlay_img": true,
+        "horizantal_spacing_desk": 30,
+        "horizantal_spacing_mob": 20,
+        "vertical_spacing_desk": 90,
+        "vertical_spacing_mob": 50,
+        "overlay_img_width_desk": 160,
+        "overlay_img_width_mob": 120,
+        "top_position_desk": 20,
+        "top_position_mob": 18,
+        "lr_position_desk": 20,
+        "lr_position_mob": 6,
+        "text_side_width": 50,
+        "image_side_width": 50,
+        "text_horizantal_space": 50
+      }
     }
   },
   "order": [
-    "image_banner",
-    "rich_text",
-    "featured_products",
-    "collage",
-    "video",
-    "multi_column"
+    "1631672391e4d5a483",
+    "1631872577918ced4c",
+    "16318788241ddc9d17",
+    "163194429315bbc248",
+    "163194693599fa82cc",
+    "1631952471b8425c13",
+    "163167563228142441",
+    "1631676770314a51f5"
   ]
 }
