@@ -9,7 +9,8 @@
     display: flex;
     align-items: center;
     min-height: 50px;
-    padding: 0 40px;
+    padding: 0 20px;
+    justify-content: center;
 }
 .ticker-section .slick-slide img {
     display: block;
@@ -22,7 +23,6 @@
     margin-right: 5px;
 }
 .ticker-section .icon-text {
-    flex: 1;
     font-family: var(--font-cerebri-book);
     font-size: 14px;
     color: var(--color-primary);
@@ -47,13 +47,13 @@
         min-width: 55px;
     }
     .ticker-section .icon-text {
-        font-size: 12px;
-        margin-left: -8px;
+        font-size: 10px;
+        margin-left: -25px;
     }
     .ticker-section {
         padding: 18px 0;
     }
     .ticker-section .slick-slide img {
-        width: 60%;
+        width: 45%;
     }
 }

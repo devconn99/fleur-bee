@@ -219,10 +219,6 @@ fieldset.product-form__input .form__label {
 
 /* Product info */
 
-.product__info-container > * + * {
-  margin: 1.5rem 0;
-}
-
 .product__info-container .product-form,
 .product__info-container .product__description {
   margin: 2.5rem 0;
@@ -751,4 +747,95 @@ a.product__text {
   height: auto;
   margin: 0;
   width: 2.2rem;
+}
+
+/* custom css start */
+.product .product-name {
+  font-size: 24px;
+  font-family: var(--font-cerebri-book);
+  color: var(--color-mint-dark);
+  line-height: 1.3;
+  margin-bottom: 0;
+}
+.product .product-description {
+  font-size: 26px;
+  line-height: 1.4;
+  margin: 2px 0 6px;
+  font-family: var(--font-mackinac-medium);
+  color: var(--color-Xdark-green)
+}
+.product .price-with-rating {
+  display: flex;
+  align-items: center;
+}
+.product .price-with-rating .stars-img {
+  display: flex;
+  align-items: center;
+  margin: 0 5px;
+}
+.product .price-with-rating svg {
+  width: 16px;
+  height: 16px;
+}
+.product .price-with-rating .rating_text {
+  font-size: 16px;
+  font-family: var(--font-cerebri-book);
+  color: var(--color-normal-green)
+}
+.product .price-item {
+  font-size: 26px;
+  font-family: var(--font-mackinac-medium);
+  line-height: 1;
+  display: flex
+}
+.product .price__regular .price-item {
+  color: var(--color-Xdark-green)
+}
+.product .price__sale .price-item {
+  color: var(--color-normal-mint)
+}
+.product .product__description .primary-descriptor, .product .product__description p, .product .product__description li  {
+  font-size: 16px;
+  font-family: var(--font-cerebri-book);
+  line-height: 1.5;
+  color: var(--color-normal-green)
+}
+.product .icon-with-text-wrap {
+  display: flex;
+  margin: 0 -10px;
+}
+.product .icon-with-text-wrap .new-icon-outer {
+  padding: 0 10px;
+}
+.product .icon-with-text-wrap .new-icon-inner {
+  display: flex;
+  align-items: center;
+}
+.product .new-icon-inner img {
+  max-width: 28px;
+  height: 28px;
+  flex: 24px;
+  margin-right: 8px;
+}
+.product .new-icon-inner .new-icon-text {
+  font-size: 12px;
+  margin: 0;
+}
+.product .product-btn-group {
+  display: flex;
+}
+.product .product-btn-group .product-form__quantity {
+  max-width: 30%;
+  flex: 30%;
+  min-width: unset;
+}
+.product .product-btn-group .product-form {
+  flex: 1;
+  margin: 0;
+}
+
+@media screen and (max-width: 991px) {
+  .template-product #MainContent {
+    margin-top: 70px;
+  }
 }

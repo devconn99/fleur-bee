@@ -79,19 +79,56 @@
               {{- block.settings.text -}}
             </p>
           {%- when 'title' -%}
-            <h1 class="product__title" {{ block.shopify_attributes }}>
-              {{ product.title | escape }}
-            </h1>
+          {% assign title = product.title %}
+          {% assign first_part = product.title | split: '/' | first %}
+          {% assign second_part = product.title | split: '/' | last %}
+          {% if title contains '/' %}
+              <h1 class="product-name">{{ first_part }}</h1>
+              <h1 class="product-description">{{ second_part }}</h1>
+            {% else %}
+              <h1 class="product-name">{{ title }}</h1>   
+          {% endif %}
           {%- when 'price' -%}
-            <div class="no-js-hidden" id="price-{{ section.id }}" {{ block.shopify_attributes }}>
-              {%- render 'price', product: product, use_variant: true, show_badges: true, price_class: 'price--large' -%}
+            <div class="price-with-rating">
+              <div class="no-js-hidden" id="price-{{ section.id }}" {{ block.shopify_attributes }}>
+                {%- render 'price', product: product, use_variant: true, show_badges: true, price_class: 'price--large' -%}
+              </div>
+              {%- if product.metafields.reviews.rating.value != blank -%}
+                {% liquid
+                 assign rating_decimal = 0 
+                 assign decimal = product.metafields.reviews.rating.value.rating | modulo: 1 
+                 if decimal >= 0.3 and decimal <= 0.7
+                  assign rating_decimal = 0.5
+                elsif decimal > 0.7
+                  assign rating_decimal = 1
+                 endif 
+                %}
+                <div class="rating" role="img" aria-label="{{ 'accessibility.star_reviews_info' | t: rating_value: product.metafields.reviews.rating.value, rating_max: product.metafields.reviews.rating.value.scale_max }}">
+                  <div class="stars-img">
+                    {% render 'framework--icons', icon: 'star' %}
+                    {% render 'framework--icons', icon: 'star' %}
+                    {% render 'framework--icons', icon: 'star' %}
+                    {% render 'framework--icons', icon: 'star' %}
+                    {% render 'framework--icons', icon: 'star' %}
+                  </div>
+                </div>
+                <p class="rating-text caption">
+                  <span aria-hidden="true">{{ product.metafields.reviews.rating.value }} / {{ product.metafields.reviews.rating.value.scale_max }}</span>
+                </p>
+                <p class="rating-count caption">
+                  <span aria-hidden="true" class="rating_text">{{ product.metafields.reviews.rating_count }} reviews</span>
+                  <span class="visually-hidden">{{ product.metafields.reviews.rating_count }} {{ "accessibility.total_reviews" | t }}</span>
+                </p>
+              {%- endif -%}
             </div>
+            {%- comment -%}
             <div {{ block.shopify_attributes }}>
               {%- form 'product', product, id: 'product-form-installment', class: 'installment caption-large' -%}
                 <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
                 {{ form | payment_terms }}
               {%- endform -%}
             </div>
+            {%- endcomment -%}
           {%- when 'description' -%}
             {%- if product.description != blank -%}
               <div class="product__description rte">
@@ -119,29 +156,53 @@
               </details>
             </div>
           {%- when 'quantity_selector' -%}
-            <div class="product-form__input product-form__quantity" {{ block.shopify_attributes }}>
-              <label class="form__label" for="Quantity-{{ section.id }}">
-                {{ 'products.product.quantity.label' | t }}
-              </label>
-              
-              <quantity-input class="quantity">
-                <button class="quantity__button no-js-hidden" name="minus" type="button">
-                  <span class="visually-hidden">{{ 'products.product.quantity.decrease' | t: product: product.title | escape }}</span>
-                  {% render 'icon-minus' %}
-                </button>
-                <input class="quantity__input"
-                    type="number"
-                    name="quantity"
-                    id="Quantity-{{ section.id }}"
-                    min="1"
-                    value="1"
-                    form="product-form-{{ section.id }}"
-                  >
-                <button class="quantity__button no-js-hidden" name="plus" type="button">
-                  <span class="visually-hidden">{{ 'products.product.quantity.increase' | t: product: product.title | escape }}</span>
-                  {% render 'icon-plus' %}
-                </button>
-              </quantity-input>
+            <div class="product-btn-group">
+              <div class="product-form__input product-form__quantity" {{ block.shopify_attributes }}>
+                <label class="form__label" for="Quantity-{{ section.id }}">
+                  {{ 'products.product.quantity.label' | t }}
+                </label>
+                
+                <quantity-input class="quantity">
+                  <button class="quantity__button no-js-hidden" name="minus" type="button">
+                    <span class="visually-hidden">{{ 'products.product.quantity.decrease' | t: product: product.title | escape }}</span>
+                    {% render 'icon-minus' %}
+                  </button>
+                  <input class="quantity__input"
+                      type="number"
+                      name="quantity"
+                      id="Quantity-{{ section.id }}"
+                      min="1"
+                      value="1"
+                      form="product-form-{{ section.id }}"
+                    >
+                  <button class="quantity__button no-js-hidden" name="plus" type="button">
+                    <span class="visually-hidden">{{ 'products.product.quantity.increase' | t: product: product.title | escape }}</span>
+                    {% render 'icon-plus' %}
+                  </button>
+                </quantity-input>
+              </div>
+              <product-form class="product-form">
+                {%- form 'product', product, id: product_form_id, class: 'form', novalidate: 'novalidate', data-type: 'add-to-cart-form' -%}
+                  <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+                  <div class="product-form__buttons">
+                    <button
+                      type="submit"
+                      name="add"
+                      class="product-form__submit button button--full-width {% if block.settings.show_dynamic_checkout and product.selling_plan_groups == empty %}button--secondary{% else %}button--primary{% endif %}"
+                    {% if product.selected_or_first_available_variant.available == false %}disabled{% endif %}
+                    >
+                        {%- if product.selected_or_first_available_variant.available -%}
+                          {{ 'products.product.add_to_cart' | t }}
+                        {%- else -%}
+                          {{ 'products.product.sold_out' | t }}
+                        {%- endif -%}
+                    </button>
+                    {%- if block.settings.show_dynamic_checkout -%}
+                      {{ form | payment_button }}
+                    {%- endif -%}
+                  </div>
+                {%- endform -%}
+              </product-form>
             </div>
           {%- when 'popup' -%}
               <modal-opener class="product-popup-modal__opener no-js-hidden" data-modal="#PopupModal-{{ block.id }}" {{ block.shopify_attributes }}>
@@ -263,6 +324,7 @@
             </noscript>
           {%- when 'buy_buttons' -%}
             <div {{ block.shopify_attributes }}>
+              {%- comment -%}
               <product-form class="product-form">
                 {%- form 'product', product, id: product_form_id, class: 'form', novalidate: 'novalidate', data-type: 'add-to-cart-form' -%}
                   <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
@@ -285,6 +347,7 @@
                   </div>
                 {%- endform -%}
               </product-form>
+              {%- endcomment -%}
 
               {{ 'component-pickup-availability.css' | asset_url | stylesheet_tag }}
 
@@ -309,28 +372,7 @@
             </div>
 
             <script src="{{ 'pickup-availability.js' | asset_url }}" defer="defer"></script>
-          {%- when 'rating' -%}
-            {%- if product.metafields.reviews.rating.value != blank -%}
-              {% liquid
-               assign rating_decimal = 0 
-               assign decimal = product.metafields.reviews.rating.value.rating | modulo: 1 
-               if decimal >= 0.3 and decimal <= 0.7
-                assign rating_decimal = 0.5
-              elsif decimal > 0.7
-                assign rating_decimal = 1
-               endif 
-              %}
-              <div class="rating" role="img" aria-label="{{ 'accessibility.star_reviews_info' | t: rating_value: product.metafields.reviews.rating.value, rating_max: product.metafields.reviews.rating.value.scale_max }}">
-                <span aria-hidden="true" class="rating-star color-icon-{{ settings.accent_icons }}" style="--rating: {{ product.metafields.reviews.rating.value.rating | floor }}; --rating-max: {{ product.metafields.reviews.rating.value.scale_max }}; --rating-decimal: {{ rating_decimal }};"></span>
-              </div>
-              <p class="rating-text caption">
-                <span aria-hidden="true">{{ product.metafields.reviews.rating.value }} / {{ product.metafields.reviews.rating.value.scale_max }}</span>
-              </p>
-              <p class="rating-count caption">
-                <span aria-hidden="true">({{ product.metafields.reviews.rating_count }})</span>
-                <span class="visually-hidden">{{ product.metafields.reviews.rating_count }} {{ "accessibility.total_reviews" | t }}</span>
-              </p>
-            {%- endif -%}
+            
           {%- endcase -%}
         {%- endfor -%}
       </div>
