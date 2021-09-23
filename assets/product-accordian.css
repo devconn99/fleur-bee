@@ -1,0 +1,60 @@
+.product-accordians {
+    margin-top: 25px;
+}
+.product-accordians .accordian-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    cursor: pointer
+}
+.product-accordians .accordian-body {
+    display: none;
+    padding: 0 0 18px 0;
+}
+.product-accordians .accordian-open {
+    display: none;
+}
+.product-accordians .active .accordian-open {
+    display: block;
+}
+.product-accordians .active .accordian-close {
+    display: none;
+}
+.product-accordians .accordian-icon-wrap {
+    max-width: 12px;
+    flex: 12px;
+}
+.product-accordians .accordian-header-text {
+    font-size: 16px;
+    font-family: var(--font-secondary-normal);
+    color: var(--color-Xdark-green);
+    flex: 1;
+}
+.product-accordians .accordian-icon {
+    font-size: 20px;
+    color: var(--color-normal-green);
+    font-family: var(--font-primary-normal);
+}
+.product-accordians .accordian-body ul {
+    padding: 0 0 0 15px;
+    margin: 0 !important;
+}
+.product-accordians .accordian-body li, .product-accordians .accordian-body p, .product-accordians .accordian-body a {
+    font-size: 16px;
+    font-family: var(--font-cerebri-book);
+    line-height: 1.5;
+    color: var(--color-normal-green);
+}
+.product-accordians .accordian-body p {
+    margin-top: 0;
+}
+.product-accordians .accordian-body p:last-child {
+    margin-bottom: 0;
+}
+.product-accordians .accordian-item {
+    border-top: 2px solid var(--border-light-gray);
+}
+.product-accordians .accordian-item:last-child {
+    border-bottom: 2px solid var(--border-light-gray);
+}

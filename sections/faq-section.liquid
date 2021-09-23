@@ -1,0 +1,95 @@
+{{ 'faq-section.css' | asset_url | stylesheet_tag }}
+
+<div class='faq-section'>
+    <div class="main_container">
+        <div class="wrapper">
+            <div class="header-wrap text-center">
+                {% if section.settings.main_title != blank %}
+                    <h2 class="title">{{ section.settings.main_title }}</h2>
+                {% endif %}
+            </div>
+            <div class="main-faq">
+                <div class="product-accordians">
+                    {% for block in section.blocks %}
+                        {% render 'product-accordian', header_text: block.settings.header_text, body_text: block.settings.body_text %}
+                    {% endfor %}
+                </div>
+            </div>
+            <a href="#product" class='rounded-button button'>
+                {{ section.settings.btn_text }}
+                <span class="icon">
+                    {% render 'framework--icons', icon: 'up-carrot' %}
+                </span>
+            </a>
+        </div>
+    </div>
+<div>
+
+<script>
+    $('.faq-section .accordian-item.active .accordian-body').slideDown();
+        $('.faq-section .accordian-header').click(function(){
+            if($(this).parent().hasClass('active')){
+                $(this).parent().removeClass('active');
+                $(this).siblings('.accordian-body').slideUp();
+            } 
+            else {
+                $('.accordian-body').slideUp();
+                $('.accordian-item').removeClass('active');
+                $(this).parent().addClass('active');
+                $(this).siblings('.accordian-body').slideDown();
+        }
+    })
+</script>
+
+{% schema %}
+{
+    "name": "Faq Section",
+    "settings": [
+        {
+            "type": "header",
+            "content": "Content",
+            "info": "-------"
+        },
+        {
+            "type": "text",
+            "id": "main_title",
+            "label": "Main Title"
+        },
+        {
+            "type": "text",
+            "id": "btn_text",
+            "label": "Button Text",
+            "default": "Show Now"
+        }
+    ],
+    "blocks": [
+        {
+            "name": "Accordian",
+            "type": "accordian",
+            "settings": [
+                {
+                    "type": "header",
+                    "content": "Content",
+                    "info": "--------"
+                },
+                {
+                    "type": "text",
+                    "id": "header_text",
+                    "label": "Accordian Header Title"
+                },
+                {
+                    "type": "text",
+                    "id": "body_text",
+                    "label": "Accordian Body Text"
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "Faq Section",
+            "category": "Faq Section"
+        }
+    ]
+}
+{% endschema %}

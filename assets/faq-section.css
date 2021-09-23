@@ -1,0 +1,68 @@
+.faq-section .title {
+    margin-top: 0;
+    margin-bottom: 35px;
+    text-align: center;
+    text-transform: capitalize;
+    font-size: 28px;
+    font-family: var(--font-mackinac-medium);
+    color: var(--color-Xdark-green)
+}
+.faq-section .main-faq {
+    max-width: 720px;
+    margin: 0 auto 40px;
+    border: 2px solid var(--border-light-gray);
+    border-radius: 5px;
+}
+.faq-section .product-accordians {
+    margin-top: 0;
+}
+.faq-section .main-faq .accordian-item:first-child {
+    border-top: 0;
+}
+.faq-section .main-faq .accordian-item:last-child {
+    border-bottom: 0;
+}
+.faq-section .main-faq .accordian-item {
+    padding: 0 20px;
+}
+.faq-section .main-faq .accordian-header {
+    text-align: center;
+}
+.faq-section .main-faq .accordian-header-text {
+    font-family: var(--font-secondary-normal);
+}
+.faq-section .main-faq .accordian-body {
+    text-align: center;
+    color: var(--color-secondary);
+    font-family: var(--font-cerebri-book);
+    font-size: 16px;
+    line-height: 1.5;
+}
+.faq-section .button {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-size: 14px;
+    padding: 0 10px;
+    background-color: var(--color-dark-green);
+    min-height: 44px;
+    max-width: 175px;
+    justify-content: center;
+    color: #fff;
+    text-transform: uppercase;
+    margin: 0 auto;
+    font-family: var(--font-secondary-normal);
+}
+.faq-section .button  .icon {
+    max-width: 16px;
+    flex: 16px;
+    height: 16px;
+    margin-left: 8px;
+}
+.faq-section .icon svg {
+    width: 100%;
+    height: 100%
+}
+.faq-section .icon g {
+    fill: #fff
+}

@@ -32,6 +32,13 @@
     margin: 25px 0 30px;
     font-family: var(--font-cerebri-regular);
 }
+.image-with-text .text div {
+    margin-bottom: 20px;
+    line-height: 1.5
+}
+.image-with-text .text div:last-child {
+    margin-bottom: 0;
+}
 .image-with-text .button {
     font-size: 16px;
     text-decoration: none;

@@ -18,7 +18,7 @@
 {%- endif -%}
 
 <section class="page-width">
-  <div class="product grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
+  <div id="product" class="product grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
     <div class="grid__item product__media-wrapper">
       <slider-component class="slider-mobile-gutter">
         <a class="skip-to-content-link button visually-hidden" href="#ProductInfo-{{ section.id }}">
@@ -162,7 +162,7 @@
                   {{ 'products.product.quantity.label' | t }}
                 </label>
                 
-                <quantity-input class="quantity">
+                <quantity-input class="quantity rounded-button">
                   <button class="quantity__button no-js-hidden" name="minus" type="button">
                     <span class="visually-hidden">{{ 'products.product.quantity.decrease' | t: product: product.title | escape }}</span>
                     {% render 'icon-minus' %}
@@ -188,7 +188,7 @@
                     <button
                       type="submit"
                       name="add"
-                      class="product-form__submit button button--full-width {% if block.settings.show_dynamic_checkout and product.selling_plan_groups == empty %}button--secondary{% else %}button--primary{% endif %}"
+                      class="product-form__submit rounded-button button button--full-width {% if block.settings.show_dynamic_checkout and product.selling_plan_groups == empty %}button--secondary{% else %}button--primary{% endif %}"
                     {% if product.selected_or_first_available_variant.available == false %}disabled{% endif %}
                     >
                         {%- if product.selected_or_first_available_variant.available -%}
@@ -204,6 +204,7 @@
                 {%- endform -%}
               </product-form>
             </div>
+            <p class="shipping-promise">📦 Free shipping and returns on all orders</p>
           {%- when 'popup' -%}
               <modal-opener class="product-popup-modal__opener no-js-hidden" data-modal="#PopupModal-{{ block.id }}" {{ block.shopify_attributes }}>
                 <button id="ProductPopup-{{ block.id }}" class="product-popup-modal__button link" type="button" aria-haspopup="dialog">{{ block.settings.text | default: block.settings.page.title }}</button>
@@ -370,11 +371,36 @@
                 </template>
               </pickup-availability>
             </div>
-
-            <script src="{{ 'pickup-availability.js' | asset_url }}" defer="defer"></script>
             
+            <script src="{{ 'pickup-availability.js' | asset_url }}" defer="defer"></script>
           {%- endcase -%}
         {%- endfor -%}
+        {% if product.description contains '<!-- split -->' %}
+            {% assign splitDescription = product.description | split: '<!-- split -->' %}
+            {% assign loveIt = splitDescription[1] %}   
+            {% assign ingredients = splitDescription | last %}   
+            {% assign guarantee = "guarante" %}  
+            {% endif %}
+            <div class="product-accordians">
+             {% include 'product-accordian', header_text: "Why You'll Love It", body_text: loveIt %}
+             {% include 'product-accordian', header_text: "Ingredients", body_text: ingredients %}
+             {% include 'product-accordian', header_text: "Our Guarantee", body_text: guarantee %}
+            </div>
+            <script>
+              $('.product-accordians .accordian-item.active .accordian-body').slideDown();
+                  $('.product-accordians .accordian-header').click(function(){
+                      if($(this).parent().hasClass('active')){
+                          $(this).parent().removeClass('active');
+                          $(this).siblings('.accordian-body').slideUp();
+                      } 
+                      else {
+                          $('.accordian-body').slideUp();
+                          $('.accordian-item').removeClass('active');
+                          $(this).parent().addClass('active');
+                          $(this).siblings('.accordian-body').slideDown();
+                  }
+              })
+          </script>
       </div>
     </div>
   </div>

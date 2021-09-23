@@ -1,0 +1,119 @@
+{{ 'promise-section.css' | asset_url | stylesheet_tag }}
+
+<style>
+    .promise-section {
+        background-color: {{ section.settings.bg_color }};
+    }
+    .promise-section .title {
+        color: {{ section.settings.title_color }};
+    }
+    .promise-section .text {
+        color: {{ section.settings.text_color }};
+    }
+</style>
+
+<div class='promise-section'>
+    <div class="main-container">
+        <div class="wrapper">
+            <div class="left-content text-center">
+                {% if section.settings.left_main_title != blank %}
+                    <h2 class="title">{{ section.settings.left_main_title }}</h2>
+                {% endif %}
+                {% if section.settings.left_text != blank %}
+                    <p class="text">{{ section.settings.left_text }}</p>
+                {% endif %}
+            </div>
+            {% if section.settings.center_img != blank %}
+                <div class="center-image">
+                    {% render 'responsive--image' with section.settings.center_img as image, max_width: 100px, class: 'center-img' %}
+                </div>
+            {% endif %}
+            <div class="right-content text-center">
+                {% if section.settings.right_main_title != blank %}
+                    <h2 class="title">{{ section.settings.right_main_title }}</h2>
+                {% endif %}
+                {% if section.settings.right_text != blank %}
+                    <p class="text">{{ section.settings.right_text }}</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% schema %}
+{
+    "name": "Promise Section",
+    "settings": [
+        {
+            "type": "header",
+            "content": "Image",
+            "info": "-------"
+        },
+        {
+            "type": "image_picker",
+            "id": "center_img",
+            "label": "Center Image"
+        },
+        {
+            "type": "header",
+            "content": "Color",
+            "info": "-------"
+        },
+        {
+            "type": "color",
+            "id": "bg_color",
+            "label": "Background Color"
+        },
+        {
+            "type": "color",
+            "id": "title_color",
+            "label": "Title Color"
+        },
+        {
+            "type": "color",
+            "id": "text_color",
+            "label": "Text Color"
+        },
+        {
+            "type": "header",
+            "content": "Left Content",
+            "info": "-------"
+        },
+        {
+            "type": "text",
+            "id": "left_main_title",
+            "label": "Main Title (Left Side)",
+            "default": "Happiness, Guaranteed"
+        },
+        {
+            "type": "text",
+            "id": "left_text",
+            "label": "Text (Left Side)",
+            "default": "If you’re not thrilled with your order in the first 30 days, just send it back for a refund. Returns are always free and easy."
+        },
+        {
+            "type": "header",
+            "content": "Right Content",
+            "info": "-------"
+        },
+        {
+            "type": "text",
+            "id": "right_main_title",
+            "label": "Main Title (Right Side)",
+            "default": "1% Donated to Charity"
+        },
+        {
+            "type": "text",
+            "id": "right_text",
+            "label": "Text (Right Side)",
+            "default": "1% of all Fleur & Bee sales are donated to Days for Girls which provides menstrual care and education for women in need."
+        }
+    ],
+    "presets": [
+        {
+            "name": "Promise Section",
+            "category": "Promise Section"
+        }
+    ]
+}
+{% endschema %}

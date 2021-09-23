@@ -43,6 +43,11 @@
                 </div>
             {% endfor %}
         </div>
+        {% if section.settings.show_review_btn %}
+            {% if section.settings.link_text  != blank %}
+                <a href="" class="link">{{ section.settings.link_text }}</a>
+            {% endif %}
+        {% endif %}
     </div>
 </div>
 
@@ -108,6 +113,18 @@ jQuery(function($) {
             "type": "color",
             "id": "text_color",
             "label": "Text Color"
+        },
+        {
+            "type": "checkbox",
+            "id": "show_review_btn",
+            "label": "Show Review All Button",
+            "default": false
+        },
+        {
+            "type": "text",
+            "id": "link_text",
+            "label": "Link Text",
+            "default": "Read All Reviews"
         }
     ],
     "blocks": [

@@ -1,0 +1,39 @@
+{{ 'product-reviews.css' | asset_url | stylesheet_tag }}
+<div class="prod-reviews" style="background-color:{{ section.settings.product_reviews_bg }};">
+    <div class="page-width">
+        <div id="stamped-main-widget"
+            data-widget-style="standard"
+            data-product-id="{{ product.id }}"
+            data-name="{{ product.title | escape }}"
+            data-url="{{ shop.url }}{{ product.url }}"
+            data-image-url="{{ product.featured_image | product_img_url: "large" |replace: '?', '%3F' | replace: '&','%26'}}"
+            data-description="{{ product.description | escape }}"
+            data-product-sku="{{product.handle}}">
+            {{ product.metafields.stamped.reviews }}
+        </div>
+    </div>
+</div>
+
+{% schema %}
+{
+    "name": "Product Reviews",
+    "settings": [
+        {
+            "type": "header",
+            "content": "Color",
+            "info": "-------"
+        },
+        {
+            "type": "color",
+            "id": "product_reviews_bg",
+            "label": "Background Color"
+        }
+    ],
+    "presets": [
+        {
+            "name": "Product Reviews",
+            "category": "Product Reviews"
+        }
+    ]
+}
+{% endschema %}

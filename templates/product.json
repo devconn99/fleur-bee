@@ -44,13 +44,9 @@
         },
         "share": {
           "type": "share",
+          "disabled": true,
           "settings": {
             "share_label": "Share"
-          }
-        },
-        "30a529da-41fa-45f9-bbad-8278d9de72a2": {
-          "type": "rating",
-          "settings": {
           }
         }
       },
@@ -62,13 +58,291 @@
         "variant_picker",
         "quantity_selector",
         "buy_buttons",
-        "share",
-        "30a529da-41fa-45f9-bbad-8278d9de72a2"
+        "share"
       ],
       "settings": {
         "enable_sticky_info": true,
         "hide_variants": false,
         "enable_video_looping": false
+      }
+    },
+    "testimonials": {
+      "type": "testimonial-section",
+      "blocks": {
+        "4cd62034-ce41-4d6e-bd84-e801254c1301": {
+          "type": "review",
+          "settings": {
+            "profile_pic": "shopify:\/\/shop_images\/Person.png",
+            "text": "In one day, it made my skin glow and evened out my skin tone.",
+            "sub_text": "I have tried so many expensive vitamin C serums, but they all made me breakout. This is the only vitamin C product that worked for my skin!",
+            "customer_name": "LAUREN A."
+          }
+        },
+        "16f7b5c9-7904-46ae-a65f-9b1b3ad8f18a": {
+          "type": "review",
+          "settings": {
+            "profile_pic": "shopify:\/\/shop_images\/Person.png",
+            "text": "This is the best skincare ever. Line two of quote is here.",
+            "sub_text": "I have tried so many expensive vitamin C serums, but they all made me breakout. This is the only vitamin C product that worked for my skin!",
+            "customer_name": "LAUREN B."
+          }
+        },
+        "8ac87121-1b33-4c03-900a-13c7ef849e7f": {
+          "type": "review",
+          "settings": {
+            "profile_pic": "shopify:\/\/shop_images\/Person.png",
+            "text": "You have to try this stuff. Game changer. Line 3.",
+            "sub_text": "I have tried so many expensive vitamin C serums, but they all made me breakout. This is the only vitamin C product that worked for my skin!",
+            "customer_name": "LAUREN C."
+          }
+        }
+      },
+      "block_order": [
+        "4cd62034-ce41-4d6e-bd84-e801254c1301",
+        "16f7b5c9-7904-46ae-a65f-9b1b3ad8f18a",
+        "8ac87121-1b33-4c03-900a-13c7ef849e7f"
+      ],
+      "settings": {
+        "show_photo": true,
+        "star_color": "#bf756e",
+        "text_color": "#25514f",
+        "show_review_btn": true,
+        "link_text": "Read All Reviews"
+      }
+    },
+    "163239127655605f46": {
+      "type": "press-section",
+      "blocks": {
+        "d494de21-b170-45ec-9459-dab062f6c4ac": {
+          "type": "desktop-logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/press-logo-1.png"
+          }
+        },
+        "883e5ae0-ca39-44bd-a7ad-645928193617": {
+          "type": "desktop-logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/press-logo-4.png"
+          }
+        },
+        "7d76a346-fce3-4cb1-81b2-887a5ba59883": {
+          "type": "desktop-logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/press-logo-5.png"
+          }
+        },
+        "270e0b13-5e17-4733-9372-2b7e4ca371c4": {
+          "type": "desktop-logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/press-logo-2.png"
+          }
+        },
+        "d27695f1-ac08-428b-833d-38e9a05e8990": {
+          "type": "desktop-logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/press-logo-3.png"
+          }
+        }
+      },
+      "block_order": [
+        "d494de21-b170-45ec-9459-dab062f6c4ac",
+        "883e5ae0-ca39-44bd-a7ad-645928193617",
+        "7d76a346-fce3-4cb1-81b2-887a5ba59883",
+        "270e0b13-5e17-4733-9372-2b7e4ca371c4",
+        "d27695f1-ac08-428b-833d-38e9a05e8990"
+      ],
+      "settings": {
+        "bg_color": "#083d3a"
+      }
+    },
+    "1632392025c7c73e7a": {
+      "type": "ticker-section",
+      "blocks": {
+        "fcff0707-f2b1-4110-9d48-cbda351cba44": {
+          "type": "icon_with_text",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/icon-1.png",
+            "icon_text": "Cruelty-Free"
+          }
+        },
+        "00b0e01a-0306-4704-bbe9-e180e91c391e": {
+          "type": "icon_with_text",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/icon-2.png",
+            "icon_text": "Vegan"
+          }
+        },
+        "17ba1eb7-d146-46a4-a36e-720b0e0684dc": {
+          "type": "icon_with_text",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/icon-3.png",
+            "icon_text": "Recyclable Packaging"
+          }
+        },
+        "a55f14c2-c115-4b84-b090-8836bdcc580d": {
+          "type": "icon_with_text",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/icon-4.png",
+            "icon_text": "Carbon Neutal"
+          }
+        },
+        "fc4e4ee4-888e-4d73-8991-80a407cd3090": {
+          "type": "icon_with_text",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/icon-5.png",
+            "icon_text": "Carbon Neutal"
+          }
+        },
+        "8a29c65e-d926-42a9-9aa5-5015ac83d629": {
+          "type": "icon_with_text",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/icon-6.png",
+            "icon_text": "Affordably Priced"
+          }
+        }
+      },
+      "block_order": [
+        "fcff0707-f2b1-4110-9d48-cbda351cba44",
+        "00b0e01a-0306-4704-bbe9-e180e91c391e",
+        "17ba1eb7-d146-46a4-a36e-720b0e0684dc",
+        "a55f14c2-c115-4b84-b090-8836bdcc580d",
+        "fc4e4ee4-888e-4d73-8991-80a407cd3090",
+        "8a29c65e-d926-42a9-9aa5-5015ac83d629"
+      ],
+      "settings": {
+        "bg_color": "",
+        "border_color_top": "#eaeded",
+        "border_color_bottom": "#d7dbdb",
+        "border_size_top": 3,
+        "border_size_bottom": 3
+      }
+    },
+    "16323951535d40b338": {
+      "type": "image-with-text",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/DSC7266-Edit.png",
+        "bg_color": "",
+        "content_bg_color": "",
+        "pre_header_color": "#adb4b4",
+        "text_color": "#083d3a",
+        "link_color": "",
+        "link_color_hover": "",
+        "primary_btn_bg_color": "",
+        "primary_btn_bg_color_hover": "",
+        "primary_btn_text_color": "",
+        "primary_btn_text_color_hover": "",
+        "secondary_btn_border_color": "",
+        "secondary_btn_border_color_hover": "",
+        "secondary_btn_bg_color": "",
+        "secondary_btn_bg_color_hover": "",
+        "secondary_btn_text_color": "",
+        "secondary_btn_text_color_hover": "",
+        "pre_header": "PRODUCT DETAILS",
+        "main_title": "What to Expect",
+        "text": "<div>\n<b>Texture Smooth<\/b><br>\nlightweight gel  \n<\/div>\n<div>\n<b>Scent<\/b><br>\nEarthy, herbaceous, citrus \n<\/div>\n<div>\n<b>Skin Feels<\/b><br>\nSoft, smooth, nourished\n<\/div>\n<div>\n<b>Skin Look<\/b><br>\nGlowing, bright\n<\/div>",
+        "block_style": "block-style-2",
+        "pre_header_tag": "h2",
+        "title_tag": "h1",
+        "title_size_desk": 36,
+        "title_size_mob": 28,
+        "text_alignment_desk": "left",
+        "text_alignment_mob": "left",
+        "img_alignment": false,
+        "stack_order": false,
+        "show_overlay_img": false,
+        "horizantal_spacing_desk": 40,
+        "horizantal_spacing_mob": 0,
+        "vertical_spacing_desk": 70,
+        "vertical_spacing_mob": 0,
+        "overlay_img_width_desk": 240,
+        "overlay_img_width_mob": 160,
+        "top_position_desk": 20,
+        "top_position_mob": 20,
+        "lr_position_desk": 40,
+        "lr_position_mob": 40,
+        "text_side_width": 50,
+        "image_side_width": 50,
+        "text_horizantal_space": 50
+      }
+    },
+    "16323935968ce08e64": {
+      "type": "promise-secton",
+      "settings": {
+        "center_img": "shopify:\/\/shop_images\/Leaves.png",
+        "bg_color": "#e6ebeb",
+        "title_color": "#083d3a",
+        "text_color": "#22504e",
+        "left_main_title": "Happiness, Guaranteed",
+        "left_text": "If you’re not thrilled with your order in the first 30 days, just send it back for a refund. Returns are always free and easy.",
+        "right_main_title": "1% Donated to Charity",
+        "right_text": "1% of all Fleur & Bee sales are donated to Days for Girls which provides menstrual care and education for women in need."
+      }
+    },
+    "1632398385b6da2896": {
+      "type": "faq-section",
+      "blocks": {
+        "f71ef0f1-e27a-451c-a64a-3a01527754ba": {
+          "type": "accordian",
+          "settings": {
+            "header_text": "How do I use Nectar of the C?",
+            "body_text": "After cleansing, apply 2-3 drops onto your fingertips, then smooth onto your face, avoiding the eye area. Treat yourself in the morning and at night."
+          }
+        },
+        "bf6aafec-adbb-4913-a02e-f33949878cee": {
+          "type": "accordian",
+          "settings": {
+            "header_text": "What age is it designed for?",
+            "body_text": "After cleansing, apply 2-3 drops onto your fingertips, then smooth onto your face, avoiding the eye area. Treat yourself in the morning and at night."
+          }
+        },
+        "474b97b7-c7fa-42d5-a874-2cf203c0e7d1": {
+          "type": "accordian",
+          "settings": {
+            "header_text": "Will this work for my skin tone?",
+            "body_text": "After cleansing, apply 2-3 drops onto your fingertips, then smooth onto your face, avoiding the eye area. Treat yourself in the morning and at night."
+          }
+        },
+        "1473694d-6a8a-4b1c-a092-c3488a89375e": {
+          "type": "accordian",
+          "settings": {
+            "header_text": "What color should my serum be?",
+            "body_text": "After cleansing, apply 2-3 drops onto your fingertips, then smooth onto your face, avoiding the eye area. Treat yourself in the morning and at night."
+          }
+        },
+        "b0d1c107-03d8-45da-a562-b46043915856": {
+          "type": "accordian",
+          "settings": {
+            "header_text": "Is this safe to use while pregnant?",
+            "body_text": "After cleansing, apply 2-3 drops onto your fingertips, then smooth onto your face, avoiding the eye area. Treat yourself in the morning and at night."
+          }
+        },
+        "a55a253c-8175-4442-aa01-b0cb1724cf9c": {
+          "type": "accordian",
+          "settings": {
+            "header_text": "Is it gluten free?",
+            "body_text": "After cleansing, apply 2-3 drops onto your fingertips, then smooth onto your face, avoiding the eye area. Treat yourself in the morning and at night."
+          }
+        },
+        "f76d97a6-1d5d-4e66-b7e7-898ce357fc61": {
+          "type": "accordian",
+          "settings": {
+            "header_text": "Can I use this with non-Fleur & Bee products?",
+            "body_text": "After cleansing, apply 2-3 drops onto your fingertips, then smooth onto your face, avoiding the eye area. Treat yourself in the morning and at night."
+          }
+        }
+      },
+      "block_order": [
+        "f71ef0f1-e27a-451c-a64a-3a01527754ba",
+        "bf6aafec-adbb-4913-a02e-f33949878cee",
+        "474b97b7-c7fa-42d5-a874-2cf203c0e7d1",
+        "1473694d-6a8a-4b1c-a092-c3488a89375e",
+        "b0d1c107-03d8-45da-a562-b46043915856",
+        "a55a253c-8175-4442-aa01-b0cb1724cf9c",
+        "f76d97a6-1d5d-4e66-b7e7-898ce357fc61"
+      ],
+      "settings": {
+        "main_title": "Frequently Asked Questions",
+        "btn_text": "Show Now"
       }
     },
     "product-recommendations": {
@@ -82,10 +356,23 @@
         "show_vendor": false,
         "show_rating": false
       }
+    },
+    "16324044287572c9f7": {
+      "type": "product-reviews",
+      "settings": {
+        "product_reviews_bg": "#f6eded"
+      }
     }
   },
   "order": [
     "main",
-    "product-recommendations"
+    "testimonials",
+    "163239127655605f46",
+    "1632392025c7c73e7a",
+    "16323951535d40b338",
+    "16323935968ce08e64",
+    "1632398385b6da2896",
+    "product-recommendations",
+    "16324044287572c9f7"
   ]
 }
