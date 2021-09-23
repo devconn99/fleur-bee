@@ -23,14 +23,11 @@
         </div>
         <span class="button rounded-button button-{{section.settings.btn_style }}">Shop Now</span>
         {% for tag in product.tags %}
-            {% if tag == 'set' %}
+      		{% assign checkArray = tag | split:'badge-' %}
+            {% if checkArray[0] == blank %}
                 <span class="badge">
-                    Best Value
+                   {{ checkArray[1] }}
                 </span>
-                {% elsif tag == 'new-arrival' %}
-                    <span class="badge">
-                        New Arrival
-                    </span>
             {% endif %}
         {% endfor %}
     </div>
