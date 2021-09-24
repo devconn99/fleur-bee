@@ -306,6 +306,10 @@
 /* mobile menu style end */
 
 @media (max-width: 1279px) {
+    .custom-header .logo-wrap {
+        max-width: 160px;
+        flex: 160px;
+    }
     .custom-header .menu-item {
         margin: 0 15px;
     }

@@ -142,6 +142,24 @@
           "settings": {
             "logo": "shopify:\/\/shop_images\/press-logo-3.png"
           }
+        },
+        "edd1cca7-1432-49a7-98bc-279970a3d325": {
+          "type": "mobile-logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/press-logo-1.png"
+          }
+        },
+        "f3ff9196-283d-40f4-b52e-a9ac2cbf1c93": {
+          "type": "mobile-logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/press-logo-5.png"
+          }
+        },
+        "23a13b6c-0326-4568-ac62-6b55a8a48e97": {
+          "type": "mobile-logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/press-logo-2.png"
+          }
         }
       },
       "block_order": [
@@ -149,10 +167,172 @@
         "883e5ae0-ca39-44bd-a7ad-645928193617",
         "7d76a346-fce3-4cb1-81b2-887a5ba59883",
         "270e0b13-5e17-4733-9372-2b7e4ca371c4",
-        "d27695f1-ac08-428b-833d-38e9a05e8990"
+        "d27695f1-ac08-428b-833d-38e9a05e8990",
+        "edd1cca7-1432-49a7-98bc-279970a3d325",
+        "f3ff9196-283d-40f4-b52e-a9ac2cbf1c93",
+        "23a13b6c-0326-4568-ac62-6b55a8a48e97"
       ],
       "settings": {
         "bg_color": "#083d3a"
+      }
+    },
+    "1632475270c7253b55": {
+      "type": "active-section",
+      "blocks": {
+        "38044f25-fe65-4e1f-af94-7f8630b3f142": {
+          "type": "ingredients",
+          "settings": {
+            "hide_ingredients_desk": false,
+            "hide_ingredients_mob": false,
+            "ingredient": "Caffeine"
+          }
+        },
+        "c8abd6d5-e358-4383-8f5e-278096bd120e": {
+          "type": "ingredients",
+          "settings": {
+            "hide_ingredients_desk": false,
+            "hide_ingredients_mob": false,
+            "ingredient": "Peptides"
+          }
+        },
+        "ddcd3cba-4d71-4828-afa7-b347f5445e3f": {
+          "type": "ingredients",
+          "settings": {
+            "hide_ingredients_desk": false,
+            "hide_ingredients_mob": false,
+            "ingredient": "Squalane"
+          }
+        },
+        "2d402b8a-5d2b-4c3c-802c-4e5b70c028e5": {
+          "type": "ingredients",
+          "settings": {
+            "hide_ingredients_desk": false,
+            "hide_ingredients_mob": false,
+            "ingredient": "Sunflower Oil"
+          }
+        },
+        "6d4b3746-3d74-4ed9-ac31-62f074688915": {
+          "type": "ingredients",
+          "settings": {
+            "hide_ingredients_desk": false,
+            "hide_ingredients_mob": false,
+            "ingredient": "Aloe Vera"
+          }
+        },
+        "385f4930-74ca-4959-9f1a-c0d3e750be63": {
+          "type": "ingredients",
+          "settings": {
+            "hide_ingredients_desk": true,
+            "hide_ingredients_mob": false,
+            "ingredient": "Algae"
+          }
+        },
+        "d5e68469-5fb5-422e-835d-df2db944a377": {
+          "type": "ingredients",
+          "settings": {
+            "hide_ingredients_desk": true,
+            "hide_ingredients_mob": false,
+            "ingredient": "Niacinamide"
+          }
+        },
+        "ba216271-4023-48d3-a28a-c58efef8f036": {
+          "type": "ingredients",
+          "settings": {
+            "hide_ingredients_desk": true,
+            "hide_ingredients_mob": false,
+            "ingredient": "Green Tea"
+          }
+        },
+        "38a0f4d5-b130-4a89-b69b-b7b3545bfbaf": {
+          "type": "ingredients",
+          "settings": {
+            "hide_ingredients_desk": false,
+            "hide_ingredients_mob": true,
+            "ingredient": "Vitamin E"
+          }
+        },
+        "3c8c57e3-03be-4fe1-948c-91d73e5aa6ad": {
+          "type": "ingredients",
+          "settings": {
+            "hide_ingredients_desk": true,
+            "hide_ingredients_mob": true,
+            "ingredient": "Horsetail Plant"
+          }
+        },
+        "f78e0bfa-05f8-45be-a838-bce27decc24d": {
+          "type": "ingredients",
+          "settings": {
+            "hide_ingredients_desk": true,
+            "hide_ingredients_mob": true,
+            "ingredient": "Dandelion"
+          }
+        },
+        "e6d5821a-1122-494d-8b8c-d46f4442942f": {
+          "type": "ingredients",
+          "settings": {
+            "hide_ingredients_desk": true,
+            "hide_ingredients_mob": true,
+            "ingredient": "Glycerin"
+          }
+        },
+        "0e22eccc-276b-4e8d-9c51-fd0f26d422ed": {
+          "type": "ingredients",
+          "settings": {
+            "hide_ingredients_desk": true,
+            "hide_ingredients_mob": true,
+            "ingredient": "Lavender"
+          }
+        },
+        "a5d8e7f3-4c74-491b-b612-cfa5d04b7524": {
+          "type": "ingredients",
+          "settings": {
+            "hide_ingredients_desk": true,
+            "hide_ingredients_mob": true,
+            "ingredient": "Geranium"
+          }
+        },
+        "b6ed611b-754e-4166-bd51-2ef150a4f03d": {
+          "type": "ingredients",
+          "settings": {
+            "hide_ingredients_desk": true,
+            "hide_ingredients_mob": true,
+            "ingredient": "Gotu Kola"
+          }
+        },
+        "aacbfd83-ca17-48a8-bdf1-ce7ebaa112ab": {
+          "type": "ingredients",
+          "settings": {
+            "hide_ingredients_desk": true,
+            "hide_ingredients_mob": true,
+            "ingredient": "Honey Suckle"
+          }
+        }
+      },
+      "block_order": [
+        "38044f25-fe65-4e1f-af94-7f8630b3f142",
+        "c8abd6d5-e358-4383-8f5e-278096bd120e",
+        "ddcd3cba-4d71-4828-afa7-b347f5445e3f",
+        "2d402b8a-5d2b-4c3c-802c-4e5b70c028e5",
+        "6d4b3746-3d74-4ed9-ac31-62f074688915",
+        "385f4930-74ca-4959-9f1a-c0d3e750be63",
+        "d5e68469-5fb5-422e-835d-df2db944a377",
+        "ba216271-4023-48d3-a28a-c58efef8f036",
+        "38a0f4d5-b130-4a89-b69b-b7b3545bfbaf",
+        "3c8c57e3-03be-4fe1-948c-91d73e5aa6ad",
+        "f78e0bfa-05f8-45be-a838-bce27decc24d",
+        "e6d5821a-1122-494d-8b8c-d46f4442942f",
+        "0e22eccc-276b-4e8d-9c51-fd0f26d422ed",
+        "a5d8e7f3-4c74-491b-b612-cfa5d04b7524",
+        "b6ed611b-754e-4166-bd51-2ef150a4f03d",
+        "aacbfd83-ca17-48a8-bdf1-ce7ebaa112ab"
+      ],
+      "settings": {
+        "ingredients_img": "shopify:\/\/shop_images\/ingredients.png",
+        "bg_color": "#fff6e5",
+        "main_title": "18 High Performance Actives",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incidudunt ut labore et dolore magna.",
+        "link_text": "View All Actives",
+        "tooltip_text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incidudunt ut labore et dolore magna."
       }
     },
     "1632392025c7c73e7a": {
@@ -240,7 +420,7 @@
         "pre_header": "PRODUCT DETAILS",
         "main_title": "What to Expect",
         "text": "<div>\n<b>Texture Smooth<\/b><br>\nlightweight gel  \n<\/div>\n<div>\n<b>Scent<\/b><br>\nEarthy, herbaceous, citrus \n<\/div>\n<div>\n<b>Skin Feels<\/b><br>\nSoft, smooth, nourished\n<\/div>\n<div>\n<b>Skin Look<\/b><br>\nGlowing, bright\n<\/div>",
-        "block_style": "block-style-2",
+        "block_style": "block-style-3",
         "pre_header_tag": "h2",
         "title_tag": "h1",
         "title_size_desk": 36,
@@ -251,9 +431,9 @@
         "stack_order": false,
         "show_overlay_img": false,
         "horizantal_spacing_desk": 40,
-        "horizantal_spacing_mob": 0,
+        "horizantal_spacing_mob": 10,
         "vertical_spacing_desk": 70,
-        "vertical_spacing_mob": 0,
+        "vertical_spacing_mob": 40,
         "overlay_img_width_desk": 240,
         "overlay_img_width_mob": 160,
         "top_position_desk": 20,
@@ -342,19 +522,17 @@
       ],
       "settings": {
         "main_title": "Frequently Asked Questions",
-        "btn_text": "Show Now"
+        "btn_text": "Shop Now"
       }
     },
     "product-recommendations": {
       "type": "product-recommendations",
       "settings": {
-        "heading": "You may also like",
-        "image_ratio": "adapt",
-        "show_secondary_image": false,
-        "add_image_padding": false,
-        "show_image_outline": true,
-        "show_vendor": false,
-        "show_rating": false
+        "bg_color": "",
+        "main_title": "Related Products",
+        "text": "",
+        "product_per_row": "2",
+        "btn_style": "primary"
       }
     },
     "16324044287572c9f7": {
@@ -368,6 +546,7 @@
     "main",
     "testimonials",
     "163239127655605f46",
+    "1632475270c7253b55",
     "1632392025c7c73e7a",
     "16323951535d40b338",
     "16323935968ce08e64",

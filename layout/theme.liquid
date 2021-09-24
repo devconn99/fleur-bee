@@ -24,7 +24,9 @@
 
     {% render 'meta-tags' %}
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script src=" http://cdn.jsdelivr.net/jquery.slick/1.5.5/slick.min.js"></script>
+    {% if template.name == 'product' or template.name == 'index' %}
+      <script src=" http://cdn.jsdelivr.net/jquery.slick/1.5.5/slick.min.js"></script>
+    {% endif %}
     <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
     {{ content_for_header }}
 
@@ -94,8 +96,10 @@
         }
       }
     {% endstyle %}
+    {% if template.name == 'product' or template.name == 'index' %}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.0/slick/slick.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.0/slick/slick-theme.css">
+    {% endif %}
     {{ 'base.css' | asset_url | stylesheet_tag }}
     {{ 'common.css' | asset_url | stylesheet_tag }}
     {{ 'image-with-text.css' | asset_url | stylesheet_tag }}

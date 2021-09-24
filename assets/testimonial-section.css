@@ -8,6 +8,9 @@
     font-family: var(--font-secondary-normal);
     color: var(--color-Xdark-green)
 }
+.testimonial-section .wrapper {
+    position: relative;
+}
 .testimonial-content-wrappers {
     display: flex;
     justify-content: space-between;
@@ -264,6 +267,9 @@
     .testimonial-text-wrap {
         padding: 15px 20px;
         min-height: unset;
+    }
+    .testimonial-section .link {
+        font-size: 14px;
     }
     .stars-img {
         margin-bottom: 6px;

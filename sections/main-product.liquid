@@ -20,11 +20,42 @@
 <section class="page-width">
   <div id="product" class="product grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
     <div class="grid__item product__media-wrapper">
+      <div class="product-slider-nav">
+        {%- for media in product.media -%}
+          <div class="slider-item">
+            {% render 'responsive--image' with media as image, max_width: 30px, class: 'product-image' %}
+          </div>
+        {%- endfor -%}
+      </div>
+      <div class="product_slider-main">
+        {%- for media in product.media -%}
+          <div class="slider-item">
+            {% render 'responsive--image' with media as image, max_width: 500px, class: 'product-image' %}
+          </div>
+        {%- endfor -%}
+      </div>
+      {%- comment -%}
       <slider-component class="slider-mobile-gutter">
         <a class="skip-to-content-link button visually-hidden" href="#ProductInfo-{{ section.id }}">
           {{ "accessibility.skip_to_product_info" | t }}
         </a>
-        <ul class="product__media-list grid grid--peek list-unstyled slider slider--mobile" role="list">
+        <ul class="product-slider-nav product__media-list grid grid--peek list-unstyled slider slider--mobile" role="list">
+          {%- assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src' -%}
+          {%- if product.selected_or_first_available_variant.featured_media != null -%}
+            {%- assign media = product.selected_or_first_available_variant.featured_media -%}
+            <li class="product__media-item grid__item slider__slide{% if media.media_type != 'image' %} product__media-item--full{% endif %}{% if section.settings.hide_variants and variant_images contains media.src %} product__media-item--variant{% endif %}" data-media-id="{{ section.id }}-{{ media.id }}">
+              {% render 'product-thumbnail', media: media, position: 'featured', loop: section.settings.enable_video_looping, modal_id: section.id, xr_button: true %}
+            </li>
+          {%- endif -%}
+          {%- for media in product.media -%}
+            {%- unless media.id == product.selected_or_first_available_variant.featured_media.id -%}
+              <li class="product__media-item grid__item slider__slide{% if media.media_type != 'image' %} product__media-item--full{% endif %}{% if section.settings.hide_variants and variant_images contains media.src %} product__media-item--variant{% endif %}" data-media-id="{{ section.id }}-{{ media.id }}">
+                {% render 'product-thumbnail', media: media, position: forloop.index, loop: section.settings.enable_video_looping, modal_id: section.id, xr_button: true %}
+              </li>
+            {%- endunless -%}
+          {%- endfor -%}
+        </ul>
+        <ul class="product_slider-main product__media-list grid grid--peek list-unstyled slider slider--mobile" role="list">
           {%- assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src' -%}
           {%- if product.selected_or_first_available_variant.featured_media != null -%}
             {%- assign media = product.selected_or_first_available_variant.featured_media -%}
@@ -65,6 +96,7 @@
           {{ 'products.product.xr_button' | t }}
         </button>
       {%- endif -%}
+      {%- endcomment -%}
     </div>
     <div class="product__info-wrapper grid__item">
       <div id="ProductInfo-{{ section.id }}" class="product__info-container{% if section.settings.enable_sticky_info %} product__info-container--sticky{% endif %}">
@@ -83,7 +115,7 @@
           {% assign first_part = product.title | split: '/' | first %}
           {% assign second_part = product.title | split: '/' | last %}
           {% if title contains '/' %}
-              <h1 class="product-name">{{ first_part }}</h1>
+              <h2 class="product-name">{{ first_part }}</h2>
               <h1 class="product-description">{{ second_part }}</h1>
             {% else %}
               <h1 class="product-name">{{ title }}</h1>   
@@ -405,6 +437,7 @@
     </div>
   </div>
 
+  {%- comment -%}
   <product-modal id="ProductModal-{{ section.id }}" class="product-media-modal media-modal">
     <div class="product-media-modal__dialog" role="dialog" aria-label="{{ 'products.modal.label' | t }}" aria-modal="true" tabindex="-1">
       <button id="ModalClose-{{ section.id }}" type="button" class="product-media-modal__toggle" aria-label="{{ 'accessibility.close' | t }}">{% render 'icon-close' %}</button>
@@ -497,6 +530,7 @@
       </div>
     </div>
   </product-modal>
+  {%- endcomment -%}
 
   {% assign popups = section.blocks | where: "type", "popup" %}
   {%- for block in popups -%}

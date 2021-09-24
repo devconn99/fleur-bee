@@ -680,3 +680,36 @@ $(document).ready(function(){
   })
  
 }) 
+
+// product slider script
+
+
+$(document).ready(function(){
+  $('.product_slider-main').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+    fade: true,
+    asNavFor: '#product .product-slider-nav',
+    responsive: [
+        {
+          breakpoint: 768,
+          settings: {
+            dots: true,
+          }
+        }
+      ]
+  });
+  $('#product .product-slider-nav').slick({
+    slidesToShow: 5,
+    slidesToScroll: 1,
+    vertical:true,
+    asNavFor: '.product_slider-main',
+    dots: false,
+    focusOnSelect: true,
+    verticalSwiping:true
+  })
+  setTimeout(function(){
+    $('.product__media-wrapper').css({opacity: 1}) 
+  }, 100) 
+})

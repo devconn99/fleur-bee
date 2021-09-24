@@ -1,3 +1,6 @@
+.faq-section {
+    margin-bottom: 100px;
+}
 .faq-section .title {
     margin-top: 0;
     margin-bottom: 35px;
@@ -65,4 +68,36 @@
 }
 .faq-section .icon g {
     fill: #fff
+}
+
+@media screen and (max-width: 480px) {
+    .faq-section {
+        margin-bottom: 70px;
+    }
+    .faq-section .title {
+        font-size: 20px;
+    }
+    .faq-section .main-faq {
+        border: 0;
+    }
+    .faq-section .main-faq .accordian-body {
+        font-size: 13px;
+    }
+    .faq-section .main-faq .accordian-item {
+        padding: 0 10px;
+    }
+    .faq-section .main-faq .accordian-item:first-child {
+        border-top: 2px solid var(--border-light-gray);
+    }
+    .faq-section .main-faq .accordian-item:last-child {
+        border-bottom: 2px solid var(--border-light-gray);
+    }
+    .faq-section .button .icon {
+        max-width: 14px;
+        flex: 14px;
+        height: 14px;
+    }
+    .faq-section .button {
+        font-size: 12px;
+    }
 }

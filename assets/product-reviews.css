@@ -41,3 +41,15 @@
 .prod-reviews #stamped-main-widget .summary-rating-bar-content {
     background: #bf746d !important
 }
+.prod-reviews #stamped-main-widget .stamped-pagination a {
+    color: var(--color-Xdark-green);
+    font-family: var(--font-cerebri-book);
+}
+.prod-reviews #stamped-main-widget {
+    margin-bottom: 0
+}
+.prod-reviews #stamped-main-widget .stamped-summary-actions-mobile-filter, .stamped-summary-actions-clear, .stamped-summary-actions-newquestion, .stamped-summary-actions-newreview {
+    box-shadow: none !important;
+    font-family: var(--font-cerebri-book);
+}
+

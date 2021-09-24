@@ -1,0 +1,171 @@
+{{ 'active-section.css' | asset_url | stylesheet_tag }}
+
+<div class='active-section' style="background-color: {{ section.settings.bg_color }}">
+    <div class="main-container">
+        <div class="wrapper">
+            <div class="header-wrap text-center">
+                {% if section.settings.main_title != blank %}
+                    <h2 class="title">{{ section.settings.main_title }}</h2>
+                {% endif %}
+                {% if section.settings.text != blank %}
+                    <p class="text">{{ section.settings.text }}</p>
+                {% endif %}
+            </div>
+            <div class="bubbles-wrap">
+                {% for block in section.blocks %}
+                    {% if block.settings.ingredient != blank %}
+                        <div class="bubbles-inner-wrap {% if block.settings.hide_ingredients_desk %}hide-ingredients-desk{% endif %} {% if block.settings.hide_ingredients_mob %}hide-ingredients-mob{% endif %}">
+                            <span class="bubbles rounded-button">{{ block.settings.ingredient }}</span>
+                            {% if section.settings.tooltip_text != blank %}
+                                <div class="product-tooltip">
+                                    <p class="tooltip-text">{{ section.settings.tooltip_text }}</p>
+                                    <span class="close">
+                                        {% render 'framework--icons', icon: 'close' %}
+                                    </span>
+                                </div>
+                            {% endif %}
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+            {% if section.settings.link_text %}
+                <div class="link_text text-center">
+                    <a href="" class="link" id="view-actives">{{ section.settings.link_text }}</a>
+                </div>
+            {% endif %}
+            {% if section.settings.ingredients_img != blank %}
+                <div class="image-wrap">
+                    {% render 'responsive--image' with section.settings.ingredients_img as image, max_width: 1280px, class: 'ingredients-image' %}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+<script>
+    $('#view-actives').click(function(e){
+        e.preventDefault();
+        $(".hide-ingredients-desk").toggle();
+        $(this).text(function(i, text){
+          return text === "View All Actives" ? "See Less" : "View All Actives";
+      })
+    }) 
+
+    $(document).mouseup(function(e) {
+        if (!$('.product-tooltip').is(e.target) && $('.product-tooltip').has(e.target).length === 0)
+        {
+            $('.product-tooltip').hide();
+        }
+    });
+    $('.bubbles').click(function(e){
+        $('.product-tooltip').hide();
+        $(this).siblings('.product-tooltip').css({display: 'flex'});
+    })
+    $('.bubbles-inner-wrap .close').click(function(){
+        $(this).parent().fadeOut();
+    })
+
+        
+</script>
+
+{% schema %}
+{
+    "name": "Actives Section",
+    "settings": [
+        {
+            "type": "header",
+            "content": "Image",
+            "info": "-------"
+        },
+        {
+            "type": "image_picker",
+            "id": "ingredients_img",
+            "label": "Ingredients Image"
+        },
+        {
+            "type": "header",
+            "content": "Color",
+            "info": "-------"
+        },
+        {
+            "type": "color",
+            "id": "bg_color",
+            "label": "Background Color"
+        },
+        {
+            "type": "header",
+            "content": "Content",
+            "info": "-------"
+        },
+        {
+            "type": "text",
+            "id": "main_title",
+            "label": "Main Title",
+            "default": "18 High Performance Actives"
+        },
+        {
+            "type": "text",
+            "id": "text",
+            "label": "Text",
+            "default": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incidudunt ut labore et dolore magna."
+        },
+        {
+            "type": "text",
+            "id": "link_text",
+            "label": "Link Text",
+            "default": "View All Actives"
+        },
+        {
+            "type": "header",
+            "content": "Product Tooltip Content",
+            "info": "-------"
+        },
+        {
+            "type": "text",
+            "id": "tooltip_text",
+            "label": "Product Tooltip"
+        }
+    ],
+    "blocks": [
+        {
+            "name": "Ingredients",
+            "type": "ingredients",
+            "settings": [
+                {
+                    "type": "header",
+                    "content": "Option",
+                    "info": "-------"
+                },
+                {
+                    "type": "checkbox",
+                    "id": "hide_ingredients_desk",
+                    "label": "By Default Hide The Ingredients (Desktop)",
+                    "default": false
+                },
+                {
+                    "type": "checkbox",
+                    "id": "hide_ingredients_mob",
+                    "label": "By Default Hide The Ingredients (Mobile)",
+                    "default": false
+                },
+                {
+                    "type": "header",
+                    "content": "Content",
+                    "info": "-------"
+                },
+                {
+                    "type": "text",
+                    "id": "ingredient",
+                    "label": "Ingredient"
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "Actives Section",
+            "category": "Actives Section"
+        }
+    ]
+}
+{% endschema %}

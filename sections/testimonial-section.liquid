@@ -10,45 +10,47 @@
 </style>
 <div class="testimonial-section">
     <div class="main_container">
-        <div class="testimonial-content-wrappers">
-            {% for block in section.blocks %}
-                <div class="testimonial-content-wrap block-{{ forloop.index }}">
-                    <div class="testimonial-text-wrap">
-                        <div class="stars-img">
-                            {% render 'framework--icons', icon: 'star' %}
-                            {% render 'framework--icons', icon: 'star' %}
-                            {% render 'framework--icons', icon: 'star' %}
-                            {% render 'framework--icons', icon: 'star' %}
-                            {% render 'framework--icons', icon: 'star' %}
-                        </div>
-                        {% if block.settings.text != blank %}
-                            <p class="testimonial-top-txt">{{ block.settings.text }}</p>
-                        {% endif %}
-                        {% if block.settings.sub_text != blank %}
-                            <p class="testimonial-bottom-txt">{{ block.settings.sub_text }}</p>
-                        {% endif %}
-                    </div>
-                    <div class="testimonial-image-wrap">
-                        {% if section.settings.show_photo %}
-                            {% if block.settings.profile_pic != blank %}
-                                <div class="testimonial-person-img">
-                                    {% render 'responsive--image' with block.settings.profile_pic as image, max_width: 80px, class: 'profile-image' %}
-                                </div>
+        <div class="wrapper">
+            <div class="testimonial-content-wrappers">
+                {% for block in section.blocks %}
+                    <div class="testimonial-content-wrap block-{{ forloop.index }}">
+                        <div class="testimonial-text-wrap">
+                            <div class="stars-img">
+                                {% render 'framework--icons', icon: 'star' %}
+                                {% render 'framework--icons', icon: 'star' %}
+                                {% render 'framework--icons', icon: 'star' %}
+                                {% render 'framework--icons', icon: 'star' %}
+                                {% render 'framework--icons', icon: 'star' %}
+                            </div>
+                            {% if block.settings.text != blank %}
+                                <p class="testimonial-top-txt">{{ block.settings.text }}</p>
                             {% endif %}
-                        {% endif %}
-                        {% if block.settings.customer_name != blank %}
-                            <span class="testimonial-img-name">{{ block.settings.customer_name }}</span>
-                        {% endif %}
+                            {% if block.settings.sub_text != blank %}
+                                <p class="testimonial-bottom-txt">{{ block.settings.sub_text }}</p>
+                            {% endif %}
+                        </div>
+                        <div class="testimonial-image-wrap">
+                            {% if section.settings.show_photo %}
+                                {% if block.settings.profile_pic != blank %}
+                                    <div class="testimonial-person-img">
+                                        {% render 'responsive--image' with block.settings.profile_pic as image, max_width: 80px, class: 'profile-image' %}
+                                    </div>
+                                {% endif %}
+                            {% endif %}
+                            {% if block.settings.customer_name != blank %}
+                                <span class="testimonial-img-name">{{ block.settings.customer_name }}</span>
+                            {% endif %}
+                        </div>
                     </div>
-                </div>
-            {% endfor %}
+                {% endfor %}
+            </div>
         </div>
-        {% if section.settings.show_review_btn %}
-            {% if section.settings.link_text  != blank %}
-                <a href="#product-reviews" class="link">{{ section.settings.link_text }}</a>
-            {% endif %}
-        {% endif %}
     </div>
+    {% if section.settings.show_review_btn %}
+        {% if section.settings.link_text  != blank %}
+            <a href="#product-reviews" class="link">{{ section.settings.link_text }}</a>
+        {% endif %}
+    {% endif %}
 </div>
 
 <script>

@@ -255,4 +255,16 @@
     .image-with-text .stack-order .beta {
         order: 2
     }
+    .image-with-text .text div {
+        display: flex;
+    }
+    .image-with-text .text div br {
+        display: none;
+    }
+    .image-with-text .text div b {
+        margin-right: 5px;
+    }
+    .image-with-text .text div b::after {
+        content: ':';
+    }
 }
