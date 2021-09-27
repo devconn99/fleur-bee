@@ -182,128 +182,128 @@
         "38044f25-fe65-4e1f-af94-7f8630b3f142": {
           "type": "ingredients",
           "settings": {
-            "hide_ingredients_desk": false,
-            "hide_ingredients_mob": false,
+            "show_ingredients_desk": true,
+            "show_ingredients_mob": true,
             "ingredient": "Caffeine"
           }
         },
         "c8abd6d5-e358-4383-8f5e-278096bd120e": {
           "type": "ingredients",
           "settings": {
-            "hide_ingredients_desk": false,
-            "hide_ingredients_mob": false,
+            "show_ingredients_desk": true,
+            "show_ingredients_mob": true,
             "ingredient": "Peptides"
           }
         },
         "ddcd3cba-4d71-4828-afa7-b347f5445e3f": {
           "type": "ingredients",
           "settings": {
-            "hide_ingredients_desk": false,
-            "hide_ingredients_mob": false,
+            "show_ingredients_desk": true,
+            "show_ingredients_mob": true,
             "ingredient": "Squalane"
           }
         },
         "2d402b8a-5d2b-4c3c-802c-4e5b70c028e5": {
           "type": "ingredients",
           "settings": {
-            "hide_ingredients_desk": false,
-            "hide_ingredients_mob": false,
+            "show_ingredients_desk": true,
+            "show_ingredients_mob": true,
             "ingredient": "Sunflower Oil"
           }
         },
         "6d4b3746-3d74-4ed9-ac31-62f074688915": {
           "type": "ingredients",
           "settings": {
-            "hide_ingredients_desk": false,
-            "hide_ingredients_mob": false,
+            "show_ingredients_desk": true,
+            "show_ingredients_mob": true,
             "ingredient": "Aloe Vera"
           }
         },
         "385f4930-74ca-4959-9f1a-c0d3e750be63": {
           "type": "ingredients",
           "settings": {
-            "hide_ingredients_desk": true,
-            "hide_ingredients_mob": false,
+            "show_ingredients_desk": false,
+            "show_ingredients_mob": true,
             "ingredient": "Algae"
           }
         },
         "d5e68469-5fb5-422e-835d-df2db944a377": {
           "type": "ingredients",
           "settings": {
-            "hide_ingredients_desk": true,
-            "hide_ingredients_mob": false,
+            "show_ingredients_desk": false,
+            "show_ingredients_mob": true,
             "ingredient": "Niacinamide"
           }
         },
         "ba216271-4023-48d3-a28a-c58efef8f036": {
           "type": "ingredients",
           "settings": {
-            "hide_ingredients_desk": true,
-            "hide_ingredients_mob": false,
+            "show_ingredients_desk": false,
+            "show_ingredients_mob": true,
             "ingredient": "Green Tea"
           }
         },
         "38a0f4d5-b130-4a89-b69b-b7b3545bfbaf": {
           "type": "ingredients",
           "settings": {
-            "hide_ingredients_desk": false,
-            "hide_ingredients_mob": true,
+            "show_ingredients_desk": false,
+            "show_ingredients_mob": false,
             "ingredient": "Vitamin E"
           }
         },
         "3c8c57e3-03be-4fe1-948c-91d73e5aa6ad": {
           "type": "ingredients",
           "settings": {
-            "hide_ingredients_desk": true,
-            "hide_ingredients_mob": true,
+            "show_ingredients_desk": false,
+            "show_ingredients_mob": false,
             "ingredient": "Horsetail Plant"
           }
         },
         "f78e0bfa-05f8-45be-a838-bce27decc24d": {
           "type": "ingredients",
           "settings": {
-            "hide_ingredients_desk": true,
-            "hide_ingredients_mob": true,
+            "show_ingredients_desk": false,
+            "show_ingredients_mob": false,
             "ingredient": "Dandelion"
           }
         },
         "e6d5821a-1122-494d-8b8c-d46f4442942f": {
           "type": "ingredients",
           "settings": {
-            "hide_ingredients_desk": true,
-            "hide_ingredients_mob": true,
+            "show_ingredients_desk": false,
+            "show_ingredients_mob": false,
             "ingredient": "Glycerin"
           }
         },
         "0e22eccc-276b-4e8d-9c51-fd0f26d422ed": {
           "type": "ingredients",
           "settings": {
-            "hide_ingredients_desk": true,
-            "hide_ingredients_mob": true,
+            "show_ingredients_desk": false,
+            "show_ingredients_mob": false,
             "ingredient": "Lavender"
           }
         },
         "a5d8e7f3-4c74-491b-b612-cfa5d04b7524": {
           "type": "ingredients",
           "settings": {
-            "hide_ingredients_desk": true,
-            "hide_ingredients_mob": true,
+            "show_ingredients_desk": false,
+            "show_ingredients_mob": false,
             "ingredient": "Geranium"
           }
         },
         "b6ed611b-754e-4166-bd51-2ef150a4f03d": {
           "type": "ingredients",
           "settings": {
-            "hide_ingredients_desk": true,
-            "hide_ingredients_mob": true,
+            "show_ingredients_desk": false,
+            "show_ingredients_mob": false,
             "ingredient": "Gotu Kola"
           }
         },
         "aacbfd83-ca17-48a8-bdf1-ce7ebaa112ab": {
           "type": "ingredients",
           "settings": {
-            "hide_ingredients_desk": true,
-            "hide_ingredients_mob": true,
+            "show_ingredients_desk": false,
+            "show_ingredients_mob": false,
             "ingredient": "Honey Suckle"
           }
         }

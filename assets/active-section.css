@@ -52,11 +52,12 @@
     object-fit: cover;
     display: block;
 }
-.active-section .hide-ingredients-mob {
-    display: none;
-}
 .active-section .bubbles-inner-wrap {
     position: relative;
+    display: none;
+}
+.active-section .show-ingredients {
+    display: block;
 }
 .active-section .product-tooltip {
     padding: 20px;
@@ -107,14 +108,8 @@
 }
 
 @media screen and (max-width: 767px) {
-    .active-section .hide-ingredients-desk {
+    .active-section .hide-ingredients.show-ingredients-mob {
         display: block;
-    }
-    .active-section .hide-ingredients-desk.hide-ingredients-mob {
-        display: none;
-    }
-    .active-section .hide-ingredients-mob {
-        display: none;
     }
 }
 

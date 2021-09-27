@@ -14,7 +14,8 @@
             <div class="bubbles-wrap">
                 {% for block in section.blocks %}
                     {% if block.settings.ingredient != blank %}
-                        <div class="bubbles-inner-wrap {% if block.settings.hide_ingredients_desk %}hide-ingredients-desk{% endif %} {% if block.settings.hide_ingredients_mob %}hide-ingredients-mob{% endif %}">
+                        <div class="bubbles-inner-wrap {% if block.settings.show_ingredients_desk and block.settings.show_ingredients_mob %}show-ingredients {% else %}
+                        hide-ingredients{% endif %} {% if block.settings.show_ingredients_mob %} show-ingredients-mob {% endif %}">
                             <span class="bubbles rounded-button">{{ block.settings.ingredient }}</span>
                             {% if section.settings.tooltip_text != blank %}
                                 <div class="product-tooltip">
@@ -43,20 +44,32 @@
 </div>
 
 <script>
+    // script for toggle the bubbles
     $('#view-actives').click(function(e){
         e.preventDefault();
-        $(".hide-ingredients-desk").toggle();
+        const el = $(".hide-ingredients");
+        if($(window).width() < 767){
+            el.each(function(index,el){
+                if(!jQuery(el).hasClass('show-ingredients-mob')) {
+                    $(el).toggle()
+                }
+            })
+        }else {
+            $('.hide-ingredients').toggle();
+        }
         $(this).text(function(i, text){
           return text === "View All Actives" ? "See Less" : "View All Actives";
       })
     }) 
 
+    // script to hide the product tooltip when click outside the box
     $(document).mouseup(function(e) {
         if (!$('.product-tooltip').is(e.target) && $('.product-tooltip').has(e.target).length === 0)
         {
             $('.product-tooltip').hide();
         }
     });
+    // script to hide and show the product tooltip
     $('.bubbles').click(function(e){
         $('.product-tooltip').hide();
         $(this).siblings('.product-tooltip').css({display: 'flex'});
@@ -138,14 +151,14 @@
                 },
                 {
                     "type": "checkbox",
-                    "id": "hide_ingredients_desk",
-                    "label": "By Default Hide The Ingredients (Desktop)",
+                    "id": "show_ingredients_desk",
+                    "label": "By Default Show The Ingredients (Desktop)",
                     "default": false
                 },
                 {
                     "type": "checkbox",
-                    "id": "hide_ingredients_mob",
-                    "label": "By Default Hide The Ingredients (Mobile)",
+                    "id": "show_ingredients_mob",
+                    "label": "By Default Show The Ingredients (Mobile)",
                     "default": false
                 },
                 {
