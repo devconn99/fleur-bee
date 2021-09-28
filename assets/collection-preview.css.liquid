@@ -16,7 +16,6 @@
 }
 .collection-preview .grid-item {
     position: relative;
-    min-height: 420px;
     cursor: pointer;
     text-decoration: none;
 }
@@ -110,11 +109,8 @@
     margin: 0 auto;
     font-size: 16px;
     font-family: var(--font-secondary-normal);
-    position: absolute;
     bottom: 0;
     width: 100%;
-    left: 50%;
-    transform: translateX(-50%);
 }
 .collection-preview .button-primary {
     color: #fff;
@@ -133,14 +129,8 @@
     .template-collection .collection-preview {
         margin-top: 130px;
     }
-    .collection-preview .grid-item {
-        min-height: 460px;
-    }
 }
 @media screen and (max-width: 768px ) {
-    .collection-preview .grid-item {
-        min-height: 515px;
-    }
     .collection-preview .grid {
         grid-template-columns: repeat(2,1fr);
     }
@@ -180,9 +170,6 @@
         min-height: 34px;
         font-size: 10px;
     }
-    .collection-preview .grid-item {
-        min-height: 345px;
-    }
     .template-collection .collection-preview {
         margin-top: 112px;
     }
@@ -220,10 +207,5 @@
     }
     .collection-preview .price-wrap .set-price {
         margin-left: 2px;
-    }
-}
-@media screen and (max-width: 360px ) {
-    .collection-preview .grid-item {
-        min-height: 300px;
     }
 }

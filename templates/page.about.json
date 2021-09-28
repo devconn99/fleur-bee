@@ -1,0 +1,62 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "16328439462d968749": {
+      "type": "image-with-text",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/F_B-Staff-2021-lighter_1000x1000_ab53db4e-a97c-4716-9e5d-03292cf3db3f.jpg",
+        "bg_color": "#f8f0f0",
+        "content_bg_color": "",
+        "pre_header_color": "",
+        "text_color": "",
+        "link_color": "",
+        "link_color_hover": "",
+        "primary_btn_bg_color": "",
+        "primary_btn_bg_color_hover": "",
+        "primary_btn_text_color": "",
+        "primary_btn_text_color_hover": "",
+        "secondary_btn_border_color": "",
+        "secondary_btn_border_color_hover": "",
+        "secondary_btn_bg_color": "",
+        "secondary_btn_bg_color_hover": "",
+        "secondary_btn_text_color": "",
+        "secondary_btn_text_color_hover": "",
+        "pre_header": "",
+        "main_title": "Our Values",
+        "text": "We started Fleur &amp; Bee to offer natural skincare products that are good for your skin, good for your wallet, and good for our planet.",
+        "block_style": "block-style-2",
+        "pre_header_tag": "h2",
+        "title_tag": "h1",
+        "title_size_desk": 36,
+        "title_size_mob": 28,
+        "text_alignment_desk": "left",
+        "text_alignment_mob": "left",
+        "img_alignment": true,
+        "stack_order": false,
+        "show_overlay_img": false,
+        "horizantal_spacing_desk": 0,
+        "horizantal_spacing_mob": 0,
+        "vertical_spacing_desk": 0,
+        "vertical_spacing_mob": 0,
+        "overlay_img_width_desk": 240,
+        "overlay_img_width_mob": 160,
+        "top_position_desk": 20,
+        "top_position_mob": 20,
+        "lr_position_desk": 40,
+        "lr_position_mob": 40,
+        "text_side_width": 50,
+        "image_side_width": 50,
+        "text_horizantal_space": 50
+      }
+    }
+  },
+  "order": [
+    "main",
+    "16328439462d968749"
+  ]
+}
