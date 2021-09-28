@@ -15,6 +15,38 @@
   padding-left: 0;
   padding-bottom: 0;
 }
+.product-video-container {
+  position: relative;
+}
+.product-video-container .product-video {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+}
+.product-video-overlay {
+  position: absolute;
+  z-index: 9;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.product-video-button {
+  background: transparent;
+  border: none;
+}
+.product-video-button svg {
+  height: 92px;
+  width: 92px;
+  fill: #ddd;
+}
+.product-video-container img.product-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
 
 @media screen and (max-width: 749px) {
   .product-section {
@@ -844,13 +876,6 @@ a.product__text {
 .product .product-form__quantity .form__label {
   display: none
 }
-.product .product-form__quantity .quantity__input {
-  outline: none;
-  box-shadow: none;
-  font-size: 16px;
-  font-family: var(--font-primary-normal);
-  color: var(--color-normal-green)
-}
 .product .product-form__quantity .quantity__button path {
   fill: var(--color-normal-green)
 }
@@ -885,6 +910,33 @@ a.product__text {
   display: flex;
   align-items: center;
 }
+.product .js-qty {
+  width: 100%;
+  display: flex;
+}
+.product .js-qty__adjust {
+  max-width: 30%;
+  flex: 30%;
+  background-color: transparent;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+}
+.product .js-qty__adjust .icon {
+  width: 12px;
+  height: 12px;
+}
+.product .js-qty .js-qty__num {
+  font-size: 16px;
+  font-family: var(--font-primary-normal);
+  color: var(--color-normal-green);
+  flex: 1;
+  width: 100%;
+  border: 0;
+  outline: 0;
+  box-shadow: none;
+  text-align: center;
+}
 
 /* testimonial css start */
 .template-product .testimonial-section {
@@ -915,6 +967,7 @@ a.product__text {
   bottom: 45px;
   left: 50%;
   transform: translateX(-50%);
+  text-decoration: underline;
 }
 .template-product .image-with-text .beta .image {
   max-height: 500px;
@@ -1018,7 +1071,7 @@ a.product__text {
   .product .product-form__quantity .quantity__button {
     width: 3.5rem;
   }
-  .product .product-form__quantity .quantity__input {
+  .product .js-qty .js-qty__num {
     font-size: 14px;
   }
   .template-product .testimonial-content-wrap {
@@ -1117,5 +1170,24 @@ a.product__text {
   }
   .product .rating-count {
     margin-top: 2px;
+  }
+  .product .product-btn-group .product-form__quantity {
+    max-width: 32%;
+    flex: 32%;
+    margin: 0 10px 0 0;
+  }
+  .product .product-btn-group .product-form {
+    min-height: 40px;
+  }
+  .product .js-qty__adjust .icon {
+    width: 9px;
+    height: 9px;
+  }
+  .product .icon-with-text-wrap .new-icon-outer {
+    padding: 0 4px;
+  }
+  .product .new-icon-inner .new-icon-text {
+    white-space: nowrap;
+    font-size: 11px
   }
 }

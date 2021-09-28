@@ -5,12 +5,10 @@
     render 'icon-cart'
   endif
 -%}
-<span class="visually-hidden">{{ 'templates.cart.cart' | t }}</span>
 {%- if cart != empty -%}
-  <div class="cart-count-bubble">
-      {%- if cart.item_count < 100 -%}
-        <span aria-hidden="true">{{ cart.item_count }}</span>
-      {%- endif -%}
-      <span class="visually-hidden">{{ 'sections.header.cart_count' | t: count: cart.item_count }}</span>
+  <div class="cart-icon">
+    {% render 'framework--icons', icon: 'cart' %}
+    <span class="cart-count header-bar__cart-count hidden-count">{{ cart.item_count }}</span>
+    <span class="icon-label">cart</span>
   </div>
 {%- endif -%}

@@ -3,6 +3,35 @@
   display: block;
 }
 
+.template-cart .cart__ctas button {
+  width: 100%;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: inline-block;
+  width: 100%;
+  text-decoration: none;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  border: 2px solid var(--color-Xdark-green);
+  border-radius: 5px;
+  padding: 0 5px;
+  background-color: var(--color-Xdark-green);
+  color: #fff;
+  font-family: var(--font-primary-normal);
+  font-weight: 400;
+  text-transform: none;
+  white-space: normal;
+  height: 56px;
+  line-height: 52px;
+  font-size: 20px;
+}
+
 .cart__empty-text,
 .is-empty .cart__contents,
 cart-items.is-empty .title-wrapper-with-link,

@@ -2,7 +2,11 @@
 
 <script src="{{ 'details-disclosure.js' | asset_url }}" defer="defer"></script>
 <script src="{{ 'details-modal.js' | asset_url }}" defer="defer"></script>
+
+{% comment %}
 <script src="{{ 'cart-notification.js' | asset_url }}" defer="defer"></script>
+{% endcomment %}
+
 
 <svg xmlns="http://www.w3.org/2000/svg" class="hidden">
   <symbol id="icon-close" class="icon icon-close" fill="none" viewBox="0 0 18 17">
@@ -174,11 +178,13 @@
           </details>
         </details-modal>
 
-        <a href="{{ routes.cart_url }}" class="cart-icon-link" id="cart-icon-bubble">
+        <a href="{{ routes.cart_url }}" class="cart-icon-link js-drawer-open-right" id="cart-icon-bubble" aria-controls="CartDrawer" aria-expanded="false">
           <div class="cart-icon">
             {% render 'framework--icons', icon: 'cart' %}
+            <span class="cart-count header-bar__cart-count hidden-count">{{ cart.item_count }}</span>
             <span class="icon-label">cart</span>
           </div>
+          {% comment %}
           <span class="visually-hidden">{{ 'templates.cart.cart' | t }}</span>
           {%- if cart != empty -%}
             <div class="cart-count-bubble">
@@ -188,6 +194,7 @@
               <span class="visually-hidden">{{ 'sections.header.cart_count' | t: count: cart.item_count }}</span>
             </div>
           {%- endif -%}
+          {% endcomment %}
         </a>
       </div>
     </div>
@@ -248,9 +255,11 @@
 
 
 
+{% comment %}
 {%- if request.page_type != 'cart' -%}
   {%- render 'cart-notification' -%}
 {%- endif -%}
+{% endcomment %}
 
 
 <script type="application/ld+json">

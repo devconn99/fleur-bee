@@ -15,7 +15,10 @@
 
 <link rel="stylesheet" href="{{ 'component-deferred-media.css' | asset_url }}" media="print" onload="this.media='all'">
 
+{% comment %}
 <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
+{% endcomment %}
+
 
 {%- assign first_3d_model = product.media | where: "media_type", "model" | first -%}
 {%- if first_3d_model -%}
@@ -34,11 +37,27 @@
         {%- endfor -%}
       </div>
       <div class="product_slider-main">
-        {%- for media in product.media -%}
-          <div class="slider-item">
-            {% render 'responsive--image' with media as image, max_width: 500px, class: 'product-image' %}
-          </div>
-        {%- endfor -%}
+        {% for media in product.images %}
+              {%- if media.alt contains 'mp4' -%}
+                <div class="slider-item slide slide--video" data-thumb="{{ media | img_url: 'medium' }}">
+                  <div class="product-video-container">
+                    <video class="product-video" name="media" preload="auto" playsinline controls>
+                      <source src="{{ media.alt }}" type="video/mp4">
+                    </video>
+                    {% comment %}
+                    <div class="product-video-overlay">
+                      <button class="product-video-button">{%- include 'icon-play-circle' -%}</button>
+                    </div>
+                    {% endcomment %}
+                    {% render 'responsive--image' with media as image, max_width: 500px, class: 'product-image' %}
+                  </div>
+                </div>
+              {%- else -%}
+                <div class="slider-item">
+                  {% render 'responsive--image' with media as image, max_width: 500px, class: 'product-image' %}
+                </div>
+              {%- endif -%}
+        {% endfor %}
       </div>
       {%- comment -%}
       <slider-component class="slider-mobile-gutter">
@@ -203,10 +222,6 @@
                 </label>
                 
                 <quantity-input class="quantity rounded-button">
-                  <button class="quantity__button no-js-hidden" name="minus" type="button">
-                    <span class="visually-hidden">{{ 'products.product.quantity.decrease' | t: product: product.title | escape }}</span>
-                    {% render 'icon-minus' %}
-                  </button>
                   <input class="quantity__input"
                       type="number"
                       name="quantity"
@@ -215,10 +230,6 @@
                       value="1"
                       form="product-form-{{ section.id }}"
                     >
-                  <button class="quantity__button no-js-hidden" name="plus" type="button">
-                    <span class="visually-hidden">{{ 'products.product.quantity.increase' | t: product: product.title | escape }}</span>
-                    {% render 'icon-plus' %}
-                  </button>
                 </quantity-input>
               </div>
               <product-form class="product-form">
@@ -595,8 +606,43 @@
     {{ product.media | where: 'media_type', 'model' | json }}
   </script>
 
-  <script src="{{ 'product-model.js' | asset_url }}" defer></script>
+  {% comment %}
+  <script src="{{ 'product-model.js' | asset_url }}" defer></script> 
+  {% endcomment %}
 {%- endif -%}
+
+<script>
+// product slider script
+$(document).ready(function(){
+  $('.product_slider-main').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+    fade: true,
+    asNavFor: '#product .product-slider-nav',
+    responsive: [
+        {
+          breakpoint: 768,
+          settings: {
+            dots: true,
+          }
+        }
+      ]
+  });
+  $('#product .product-slider-nav').slick({
+    slidesToShow: 5,
+    slidesToScroll: 1,
+    vertical:true,
+    asNavFor: '.product_slider-main',
+    dots: false,
+    focusOnSelect: true,
+    verticalSwiping:true
+  })
+  setTimeout(function(){
+    $('.product__media-wrapper').css({opacity: 1}) 
+  }, 100) 
+})
+</script>
 
 {% schema %}
 {

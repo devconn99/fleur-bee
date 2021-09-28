@@ -1,0 +1,145 @@
+<script>
+    // Hide Header on on scroll down
+      /*
+    var didScroll;
+    var lastScrollTop = 0;
+    var delta = 5;
+    var navbarHeight = $('.site-header').outerHeight();
+    
+    $(window).scroll(function(event){
+        didScroll = true;
+    });
+    
+    setInterval(function() {
+        if (didScroll) {
+            hasScrolled();
+            didScroll = false;
+        }
+    }, 250);
+    
+    function hasScrolled() {
+        var st = $(this).scrollTop();
+        
+        // Make sure they scroll more than delta
+        if(Math.abs(lastScrollTop - st) <= delta)
+            return;
+        
+        // If they scrolled down and are past the navbar, add class .nav-up.
+        // This is necessary so you never see what is "behind" the navbar.
+        if (st > lastScrollTop && st > navbarHeight){
+            // Scroll Down
+            $('.site-header').slideUp('fast');
+        } else {
+            // Scroll Up
+            if(st + $(window).height() < $(document).height()) {
+                $('.site-header').slideDown('fast');
+            }
+        }
+        
+        lastScrollTop = st;
+        
+    }  */
+      
+    $(".js-drawer-open-right.main").click(function(){
+    setTimeout(function(){  
+    $('#CartContainer .ajaxcart__product-name').each(function(){  
+    var data =$(this).text();
+    var arr = data.split('/');
+    $(this).html("<div class='bold'>" + arr[0] + "</div><div class='subtitle'>" + arr[1] + "</div>");
+    });
+    }, 750);    
+    });   
+      
+        $(document.body).on('afterCartLoad.ajaxCart', function (evt, cart) {
+          var price = cart.total_price;
+          var minus = 0;
+          var total = parseFloat(minus - price) / 100;
+          var total2 = total.toFixed(2);      
+          var width = (price / minus) * 100;      
+          $('.progress-bar').css('width', width+'%');
+          if (cart.total_price < 0) {
+              $('.cart-total-mot').html('$'+total);
+            $('.mot-text').show();
+            $('.free-ship').hide();
+          } else {
+              $('.mot-text').hide();
+            $('.free-ship').show();
+          }    
+          $('.upsell-form').css('display', 'block');
+          $('.upsell-header').css('display', 'block');
+          if (cart.total_price < 1) {
+              $('.upsell-form').css('display', 'none');
+              $('.upsell-header').css('display', 'none');
+          }
+            $('#CartContainer .ajaxcart__row').each(function(){  
+                var data = $(this).data('variant');
+                  var datax = '.var-' + data;
+                $(datax).css('display', 'none');
+            }); 
+         });
+     $(document.body).on('afterCartLoad.ajaxCart', function (evt, cart) { 
+        var hid = true;
+    setTimeout(function() { 
+    $('.upsell-form').each(function(index,item){
+          if($(item).css("display") != "none") {
+            hid = false;
+          }
+      }).promise().done(function(){
+        if(hid == true) {
+          $('.upsell-header').css('display', 'none');
+        } else {
+          $('.upsell-header').css('display', 'block');
+        }
+      });   
+    }, 100);
+      });
+      
+      $(document).click(function(){      
+      var hid = true;
+    setTimeout(function() { 
+    $('.upsell-form').each(function(index,item){
+          if($(item).css("display") != "none") {
+            hid = false;
+          }
+      }).promise().done(function(){
+        if(hid == true) {
+          $('.upsell-header').css('display', 'none');
+        } else {
+          $('.upsell-header').css('display', 'block');
+        }
+      }); 
+    }, 100);   
+     });
+          $(".btn").click(function(){
+                  $(this).parents('.upsell-form').fadeOut();
+          }); 
+        $(document.body).on('afterChangeItem.ajaxCart', function (evt, cart) {
+          setTimeout(function(){ 
+            $('#CartContainer .ajaxcart__product-name').each(function(){  
+                var data = $(this).text();
+                var arr = data.split('/');
+                $(this).html("<div class='bold'>" + arr[0] + "</div><div class='subtitle'>" + arr[1] + "</div>");
+            }); 
+            }, 650);      
+        });     
+    </script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/shopify-cartjs/0.4.1/rivets-cart.min.js"></script>
+    <script>
+        jQuery(function() {
+              CartJS.init({{ cart | json }}, {
+                  "dataAPI": true,
+                  "requestBodyClass": "loading",
+                  "moneyFormat": "{{ shop.money_format }}",
+                  "moneyWithCurrencyFormat": "{{ shop.money_with_currency_format }}"                 
+              });
+    
+          // Re-render CartJS data- elements when the currency changes.
+          jQuery(document).on('currency.changed', function(e, oldCurrency, newCurrency) {
+            CartJS.render(e, CartJS.cart);
+          });     
+        }); 
+        $(document).on('cart.requestComplete', function(event, cart) {      
+          $('.js-drawer-open-right').trigger('click');
+          $('.cart-count').html(cart.item_count);         
+        }); 
+    </script>

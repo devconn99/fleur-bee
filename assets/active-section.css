@@ -45,6 +45,7 @@
     color: var(--color-Xdark-green);
     text-transform: capitalize;
     font-family: var(--font-secondary-normal);
+    text-decoration: underline;
 }
 .active-section .ingredients-image {
     width: 100%;

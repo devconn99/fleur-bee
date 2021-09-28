@@ -106,6 +106,17 @@
     font-family: var(--font-cerebri-book);
     line-height: 1;
 }
+.custom-header .cart-icon {
+    position: relative;
+}
+.custom-header .cart-icon .cart-count {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 12px;
+    font-size: 12px;
+    font-weight: bold;
+}
 .mobile_menu_button {
     display: none;
 }
@@ -383,6 +394,9 @@
         position: fixed;
         width: 100%;
         background-color: #fff;
+    }
+    .custom-header .cart-icon .cart-count {
+        top: 5px;
     }
 }
 @media (max-width: 480px) {
