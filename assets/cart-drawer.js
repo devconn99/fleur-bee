@@ -507,7 +507,6 @@ theme.quickAdd = function () {
 theme.init = function() {
   theme.drawersInit();
   theme.quickAdd();
-
 };
 
 $(theme.init);

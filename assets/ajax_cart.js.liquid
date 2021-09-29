@@ -325,6 +325,7 @@ var ajaxCart = (function(module, $) {
 
     // Show empty cart
     if (cart.item_count === 0) {
+      $('#upsell_container').html('');
       $cartContainer
         .append('<p>Your cart is currently empty. Get shopping!</p>');
       cartCallback(cart);
@@ -404,6 +405,68 @@ var ajaxCart = (function(module, $) {
     // });
 
     cartCallback(cart);
+    
+    function upsell_cart(){
+        let cart_item;
+        const obj_id = {};
+        for(cart_item of cart.items){
+          if(cart_item.product_id === 4186564919385) {
+            $('#upsell_container').html('');
+            return;
+          };
+          obj_id[cart_item.product_id] = cart_item.product_id;
+        }
+  
+        $.getJSON('/collections/cart-upsell-collection/products.json', function(upsell_items) {
+           
+            var rendermUpsellProducts = [];
+            let upsell_item;
+            for(upsell_item of upsell_items.products){
+              if(!obj_id[upsell_item.id]){
+                if(rendermUpsellProducts.length < 2){
+                  rendermUpsellProducts.push(upsell_item)
+                }
+              }
+            }
+            $('#upsell_container').html('');
+            rendermUpsellProducts.forEach(product => {
+              $('#upsell_container').append(`
+                    <dev data-cart-submit class="upsell-form var-${ product.variants[0].id }" data-upsell="${ product.handle }">
+                        <input type="hidden" name="return_to" value="back" />
+                        <div class="grid grid--half-gutters">
+                        <div class="grid__item three-tenths ajaxcart__product-image-wrapper">
+                          <img class="grid-view-item__image js-image-swap" src="${ product.images[0].src }" alt="${ product.title }">
+                        </div>
+                        <div class="grid__item seven-tenths ajaxcart__product-right">
+                          <div class="ajaxcart__product-name"><a href="https://fleurandbee.com/products/${ product.handle }"><div class="bold">${ product.title.split('/')[0] }</div><div class="subtitle">${ product.title.split('/')[1] }</div></a></div>
+                          <input type="hidden" class="product-select" name="id" value="${ product.variants[0].id }"/>
+                          <button class="btn btn--secondary btn--small" type="submit" name="add" data-cart-add="${ product.variants[0].id }">Add <span class="cart-divider">|</span> <span class="price">${ Shopify.formatMoney(product.variants[0].price) }</span></button>
+                        </div>
+                      </div>
+                  </dev>
+              `)
+            })
+    
+            $('[data-cart-add]').on('click', function (e) {
+              e.preventDefault()
+              e.stopPropagation()
+              var id = $(this).attr('data-cart-add')
+          
+              if (!id) {
+                return null
+              }
+          
+              return ShopifyAPI.quickshop({
+                items: [{ quantity: 1, id: id }]
+              }, ajaxCart.load)
+            })
+    
+        })
+        .fail(function() {
+          console.log( "Upsell cart error" );
+        })
+    }
+    upsell_cart();
   };
 
   cartCallback = function(cart) {

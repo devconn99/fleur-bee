@@ -170,7 +170,8 @@ a:not(.grid-view-item__link) {
     font-size: 14px;
     font-family: var(--font-cerebri-book);
     color: var(--color-secondary);
-    margin-left: 6px
+    margin-left: 6px;
+    cursor: pointer;
 }
 .ajaxcart .cart__checkout {
     width: 100%;
@@ -247,9 +248,7 @@ a:not(.grid-view-item__link) {
 .grid--half-gutters>.grid__item {
     padding-left: 20px;
 }
-.upsell-form, .upsell-header {
-    display: none;
-}
+
 .upsell-form .ajaxcart__product-name {
     line-height: 1.4;
 }

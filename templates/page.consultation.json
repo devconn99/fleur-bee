@@ -8,41 +8,54 @@
     },
     "16328439462d968749": {
       "type": "image-with-text",
+      "blocks": {
+        "f343ddf7-a233-454d-a5cf-7d24abbb5da5": {
+          "type": "button",
+          "settings": {
+            "btn_style": "primary",
+            "btn_text": "Book Your Free Consultation",
+            "btn_url": "https:\/\/fleurandbee.com\/pages\/free-skincare-consultation#book-now"
+          }
+        }
+      },
+      "block_order": [
+        "f343ddf7-a233-454d-a5cf-7d24abbb5da5"
+      ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/F_B-Staff-2021-lighter_1000x1000_ab53db4e-a97c-4716-9e5d-03292cf3db3f.jpg",
-        "bg_color": "#f8f0f0",
+        "image": "shopify:\/\/shop_images\/skincare-consultation-fleur-and-bee_86fd6848-c3ce-4d63-a1be-7ce62ffd0d4e.jpg",
+        "bg_color": "rgba(0,0,0,0)",
         "content_bg_color": "",
         "pre_header_color": "",
         "text_color": "",
         "link_color": "",
         "link_color_hover": "",
-        "primary_btn_bg_color": "",
-        "primary_btn_bg_color_hover": "",
-        "primary_btn_text_color": "",
-        "primary_btn_text_color_hover": "",
+        "primary_btn_bg_color": "#1a3f3e",
+        "primary_btn_bg_color_hover": "#1a3f3e",
+        "primary_btn_text_color": "#ffffff",
+        "primary_btn_text_color_hover": "#ffffff",
         "secondary_btn_border_color": "",
-        "secondary_btn_border_color_hover": "",
-        "secondary_btn_bg_color": "",
-        "secondary_btn_bg_color_hover": "",
+        "secondary_btn_border_color_hover": "rgba(0,0,0,0)",
+        "secondary_btn_bg_color": "rgba(0,0,0,0)",
+        "secondary_btn_bg_color_hover": "rgba(0,0,0,0)",
         "secondary_btn_text_color": "",
         "secondary_btn_text_color_hover": "",
         "pre_header": "",
-        "main_title": "Our Values",
-        "text": "We started Fleur &amp; Bee to offer natural skincare products that are good for your skin, good for your wallet, and good for our planet.",
-        "block_style": "block-style-2",
+        "main_title": "Virtual Skincare Consultation",
+        "text": "Do you want personalized product recommendations? Have skincare questions you want answered? We can help!<p>\n<br>\nBook a 15-minute, video skincare consultation with our friendly, in-house esthetician who will share personalized product recommendations and tips.<\/p>",
+        "block_style": "block-style-3",
         "pre_header_tag": "h2",
         "title_tag": "h1",
-        "title_size_desk": 36,
-        "title_size_mob": 28,
+        "title_size_desk": 40,
+        "title_size_mob": 24,
         "text_alignment_desk": "left",
-        "text_alignment_mob": "left",
-        "img_alignment": true,
+        "text_alignment_mob": "center",
+        "img_alignment": false,
         "stack_order": false,
         "show_overlay_img": false,
-        "horizantal_spacing_desk": 0,
-        "horizantal_spacing_mob": 0,
-        "vertical_spacing_desk": 0,
-        "vertical_spacing_mob": 0,
+        "horizantal_spacing_desk": 35,
+        "horizantal_spacing_mob": 5,
+        "vertical_spacing_desk": 70,
+        "vertical_spacing_mob": 15,
         "overlay_img_width_desk": 240,
         "overlay_img_width_mob": 160,
         "top_position_desk": 20,
@@ -53,10 +66,100 @@
         "image_side_width": 50,
         "text_horizantal_space": 50
       }
+    },
+    "1632893710b474473a": {
+      "type": "ticker-section",
+      "blocks": {
+        "38b1276a-12c9-4220-b089-97b6ad54cfb7": {
+          "type": "icon_with_text",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/0_1_db766563-2165-408f-a30c-cc4fcf994810.png",
+            "icon_text": ""
+          }
+        },
+        "c7dad58e-5ef5-414f-bbcb-f38dcf09d572": {
+          "type": "icon_with_text",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/100_1_bd782b5a-7bd2-4f1a-8225-b10f34b990f7.png",
+            "icon_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "38b1276a-12c9-4220-b089-97b6ad54cfb7",
+        "c7dad58e-5ef5-414f-bbcb-f38dcf09d572"
+      ],
+      "settings": {
+        "bg_color": "",
+        "border_color_top": "",
+        "border_color_bottom": "",
+        "border_size_top": 1,
+        "border_size_bottom": 1
+      }
+    },
+    "163289336754366f81": {
+      "type": "rich-text",
+      "blocks": {
+        "163289336754366f81-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "What's Included",
+            "heading_size": "h0"
+          }
+        }
+      },
+      "block_order": [
+        "163289336754366f81-0"
+      ],
+      "settings": {
+        "color_scheme": "background-1",
+        "full_width": true
+      }
+    },
+    "16328934070638c366": {
+      "type": "ticker-section",
+      "blocks": {
+        "0a35ce50-848c-4df5-aa78-f78eaa903a70": {
+          "type": "icon_with_text",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/time-test_ad832b43-b3f6-4e0f-affa-461a38a0ae8b.png",
+            "icon_text": "15 Minutes of Undivided Attention  Our licensed esthetician will meet with you over a video call, and answer all of your skincare questions."
+          }
+        },
+        "92e226e4-5879-4ffc-a447-03ae5cc7b968": {
+          "type": "icon_with_text",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/product-test_10920220-d2c7-4c4d-9246-5735d73004d9.png",
+            "icon_text": "Personalized Recommendations  We’ll provide tailored tips and products recommendations (even if they’re not ours) to help you achieve your best skin."
+          }
+        },
+        "8427577e-2d33-4198-9568-cdca8277ccd2": {
+          "type": "icon_with_text",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/gift_1_619c7c82-e744-40da-b004-7d74531ecdb3.png",
+            "icon_text": "Surprise Bonus  Each consultation comes with an exclusive surprise after the call! Curious? Complete your session to find out."
+          }
+        }
+      },
+      "block_order": [
+        "0a35ce50-848c-4df5-aa78-f78eaa903a70",
+        "92e226e4-5879-4ffc-a447-03ae5cc7b968",
+        "8427577e-2d33-4198-9568-cdca8277ccd2"
+      ],
+      "settings": {
+        "bg_color": "",
+        "border_color_top": "",
+        "border_color_bottom": "",
+        "border_size_top": 1,
+        "border_size_bottom": 1
+      }
     }
   },
   "order": [
     "main",
-    "16328439462d968749"
+    "16328439462d968749",
+    "1632893710b474473a",
+    "163289336754366f81",
+    "16328934070638c366"
   ]
 }

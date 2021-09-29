@@ -19,23 +19,6 @@
     <div id="CartContainer"></div>
     <div class="clearfix"></div>
 
-  <div class="upsell-header text-center">Complete your routine:</div>
-   {% for product in collections.cart-upsell.products %}
-    {% assign first_variant = product.first_available_variant %}
-  {% if product.available %}
-  <form data-cart-submit class="upsell-form {{ product.title | handleize }} var-{{ first_variant.id }}" data-upsell="{{ product.title | handleize }}" action="/cart/add" method="post" enctype="multipart/form-data">
-        <input type="hidden" name="return_to" value="back" />
-        <div class="grid grid--half-gutters">
-        <div class="grid__item three-tenths ajaxcart__product-image-wrapper">
-          <img class="grid-view-item__image js-image-swap" src="{{ product.featured_image.src | img_url: '120x' }}" alt="{{ product.featured_image.alt }}">
-        </div>
-        <div class="grid__item seven-tenths ajaxcart__product-right">
-          <div class="ajaxcart__product-name"><a href="{{ product.url }}"><div class="bold">{{ product.title | split:'/' | first }}</div><div class="subtitle">{{ product.title | split:'/' | last }}</div></a></div>
-          <input type="hidden" class="product-select" name="id" value="{{ first_variant.id }}"/>
-          <button class="btn btn--secondary btn--small" type="submit" name="add" data-cart-add="{{ product.variants.first.id }}">Add <span class="cart-divider">|</span> <span class="price">{{ product.price | money }}</span></button>
-        </div>
-      </div>
-  </form>
-  {% endif %}
-  {% endfor %}
-  </div>
+    <div class="upsell-header text-center">Complete your routine:</div>
+    <div id="upsell_container"></div>
+</div>
