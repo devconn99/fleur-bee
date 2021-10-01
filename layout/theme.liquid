@@ -99,11 +99,24 @@
     {% if template.name == 'product' or template.name == 'index' %}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.0/slick/slick.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.0/slick/slick-theme.css">
+    {% elsif request.page_type == 'article' %}
+    {{ 'blog-reviews.css' | asset_url | stylesheet_tag }}
     {% endif %}
+
     {{ 'base.css' | asset_url | stylesheet_tag }}
     {{ 'common.css' | asset_url | stylesheet_tag }}
     {{ 'image-with-text.css' | asset_url | stylesheet_tag }}
-    {{ 'product-accordian.css' | asset_url | stylesheet_tag }}
+    {% if template.name == 'product' %}
+      {{ 'product-accordian.css' | asset_url | stylesheet_tag }}
+      {% elsif page.handle == 'beyond-skin-care' %}
+      {{ 'charity-page.css' | asset_url | stylesheet_tag }}
+      {% elsif page.handle == 'free-skincare-consultation' %}
+      {{ 'page-consultation.css' | asset_url | stylesheet_tag }}
+      {% elsif page.handle == 'fleur-bee-recycling-guide' %}
+      {{ 'page-recycling.css' | asset_url | stylesheet_tag }}
+      {% elsif page.handle == 'skin-care-quiz-results-oiliness' %}
+      {{ 'page-quiz.css' | asset_url | stylesheet_tag }}
+    {% endif %}
 
     {%- unless settings.type_body_font.system? -%}
       <link rel="preload" as="font" href="{{ settings.type_body_font | font_url }}" type="font/woff2" crossorigin>
@@ -115,7 +128,13 @@
     <script>document.documentElement.className = document.documentElement.className.replace('no-js', 'js');</script>
   </head>
 
-  <body class='template-{{ request.page_type }}'>
+  <body class='template-{{ request.page_type }} {{ page.handle }} {% if page.handle == 'free-skincare-consultation' %}
+    consultation
+    {% elsif page.handle == 'fleur-bee-recycling-guide' %}
+      recycling-page
+    {% elsif page.handle == 'skin-care-quiz-results-oiliness' %}
+      quiz-result
+  {% endif %}'>
     <a class="skip-to-content-link button visually-hidden" href="#MainContent">
       {{ "accessibility.skip_to_text" | t }}
     </a>

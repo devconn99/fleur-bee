@@ -33,15 +33,24 @@
     #shopify-section-{{ section.id }} .button {
       margin-right: auto;
     }
+    #shopify-section-{{ section.id }} .image-group{
+        justify-content: flex-start;
+    }
   {% endif %}
   {% if section.settings.text_alignment_desk == 'center' %} 
     #shopify-section-{{ section.id }} .button {
       margin: 0 auto 15px;
     }
+    #shopify-section-{{ section.id }} .image-group{
+        justify-content: center;
+    }
   {% endif %}
   {% if section.settings.text_alignment_desk == 'right' %} 
     #shopify-section-{{ section.id }} .button {
       margin-left: auto;
+    }
+    #shopify-section-{{ section.id }} .image-group{
+        justify-content: flex-end;
     }
   {% endif %}
   #shopify-section-{{ section.id }} .overlay-image {
@@ -79,7 +88,7 @@
       padding: {{ section.settings.vertical_spacing_mob }}px 0;
     }
     #shopify-section-{{ section.id }} .main-container {
-      padding: 0 {{ section.settings.horizantal_spacing_mob }}px;
+      padding: 0 {{ section.settings.horizantal_spacing_mob }}px !important;
     }
     #shopify-section-{{ section.id }} .overlay-image {
       max-width: {{ section.settings.overlay_img_width_mob }}px;
@@ -99,6 +108,9 @@
       #shopify-section-{{ section.id }} .content-wrap {
         margin-right: auto;
       }
+      #shopify-section-{{ section.id }} .image-group{
+        justify-content: flex-start;
+      }
     {% endif %}
     {% if section.settings.text_alignment_mob == 'center' %} 
       #shopify-section-{{ section.id }} .button {
@@ -107,6 +119,9 @@
       #shopify-section-{{ section.id }} .content-wrap {
         margin: auto;
         text-align: center;
+      }
+      #shopify-section-{{ section.id }} .image-group{
+        justify-content: center;
       }
     {% endif %}
   }
@@ -140,6 +155,15 @@
               {% endif %}
             {% endif %}
           {% endfor %}
+          <div class="image-group">
+            {% for block in section.blocks %}
+              {% if block.type == 'image' %}
+                {% if block.settings.img %}
+                {% render 'responsive--image' with block.settings.img as image, max_width: 90px, class: 'content-image' %}
+                {% endif %}
+              {% endif %}
+            {% endfor %}
+          </div>
         </div>
       </div>
       <div class="beta">
@@ -642,6 +666,22 @@
           "type": "url",
           "id": "btn_url",
           "label": "Button Url"
+        }
+      ]
+    },
+    {
+      "name": "Image",
+      "type": "image",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Image",
+          "info": "-------"
+        },
+        {
+          "type": "image_picker",
+          "id": "img",
+          "label": "Image"
         }
       ]
     }

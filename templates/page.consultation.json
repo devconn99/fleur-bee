@@ -16,17 +16,31 @@
             "btn_text": "Book Your Free Consultation",
             "btn_url": "https:\/\/fleurandbee.com\/pages\/free-skincare-consultation#book-now"
           }
+        },
+        "de5128bb-fd5a-4eea-9521-45ac33f4be85": {
+          "type": "image",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/Untitled-1.png"
+          }
+        },
+        "6cac78f1-fef5-4f99-bf6e-edef1e11b073": {
+          "type": "image",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/Untitled-2.png"
+          }
         }
       },
       "block_order": [
-        "f343ddf7-a233-454d-a5cf-7d24abbb5da5"
+        "f343ddf7-a233-454d-a5cf-7d24abbb5da5",
+        "de5128bb-fd5a-4eea-9521-45ac33f4be85",
+        "6cac78f1-fef5-4f99-bf6e-edef1e11b073"
       ],
       "settings": {
         "image": "shopify:\/\/shop_images\/skincare-consultation-fleur-and-bee_86fd6848-c3ce-4d63-a1be-7ce62ffd0d4e.jpg",
         "bg_color": "rgba(0,0,0,0)",
         "content_bg_color": "",
         "pre_header_color": "",
-        "text_color": "",
+        "text_color": "#22504e",
         "link_color": "",
         "link_color_hover": "",
         "primary_btn_bg_color": "#1a3f3e",
@@ -41,21 +55,21 @@
         "secondary_btn_text_color_hover": "",
         "pre_header": "",
         "main_title": "Virtual Skincare Consultation",
-        "text": "Do you want personalized product recommendations? Have skincare questions you want answered? We can help!<p>\n<br>\nBook a 15-minute, video skincare consultation with our friendly, in-house esthetician who will share personalized product recommendations and tips.<\/p>",
+        "text": "<p>Do you want personalized product recommendations? Have skincare questions you want answered? We can help!<\/p><p>\nBook a 15-minute, video skincare consultation with our friendly, in-house esthetician who will share personalized product recommendations and tips.<\/p>",
         "block_style": "block-style-3",
         "pre_header_tag": "h2",
         "title_tag": "h1",
-        "title_size_desk": 40,
-        "title_size_mob": 24,
+        "title_size_desk": 32,
+        "title_size_mob": 22,
         "text_alignment_desk": "left",
         "text_alignment_mob": "center",
         "img_alignment": false,
         "stack_order": false,
         "show_overlay_img": false,
         "horizantal_spacing_desk": 35,
-        "horizantal_spacing_mob": 5,
-        "vertical_spacing_desk": 70,
-        "vertical_spacing_mob": 15,
+        "horizantal_spacing_mob": 20,
+        "vertical_spacing_desk": 55,
+        "vertical_spacing_mob": 30,
         "overlay_img_width_desk": 240,
         "overlay_img_width_mob": 160,
         "top_position_desk": 20,
@@ -67,99 +81,55 @@
         "text_horizantal_space": 50
       }
     },
-    "1632893710b474473a": {
-      "type": "ticker-section",
+    "16330011529c26bea8": {
+      "type": "whats-included",
       "blocks": {
-        "38b1276a-12c9-4220-b089-97b6ad54cfb7": {
-          "type": "icon_with_text",
+        "9e08fd92-fa50-4354-aac3-c17e8c49c2b0": {
+          "type": "info",
           "settings": {
-            "icon": "shopify:\/\/shop_images\/0_1_db766563-2165-408f-a30c-cc4fcf994810.png",
-            "icon_text": ""
+            "img": "shopify:\/\/shop_images\/time-test_576509b8-fca5-488c-a193-62a6ab1a064f.png",
+            "title": "15 Minutes of Undivided Attention",
+            "text": "Our licensed esthetician will meet with you over a video call, and answer all of your skincare questions."
           }
         },
-        "c7dad58e-5ef5-414f-bbcb-f38dcf09d572": {
-          "type": "icon_with_text",
+        "7088fc34-e3d7-4f36-9455-ae7db69ac9f6": {
+          "type": "info",
           "settings": {
-            "icon": "shopify:\/\/shop_images\/100_1_bd782b5a-7bd2-4f1a-8225-b10f34b990f7.png",
-            "icon_text": ""
+            "img": "shopify:\/\/shop_images\/product-test_c99f6cb4-4963-4a11-89f8-b6b88b9027db.png",
+            "title": "Personalized Recommendations",
+            "text": "We’ll provide tailored tips and products recommendations (even if they’re not ours) to help you achieve your best skin."
+          }
+        },
+        "69027a5a-33b0-41f4-bec4-16aaabd77633": {
+          "type": "info",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/gift_1_171e96d4-238c-4cea-a5aa-5c0b6cc88ced.png",
+            "title": "Surprise Bonus",
+            "text": "Each consultation comes with an exclusive surprise after the call! Curious? Complete your session to find out."
           }
         }
       },
       "block_order": [
-        "38b1276a-12c9-4220-b089-97b6ad54cfb7",
-        "c7dad58e-5ef5-414f-bbcb-f38dcf09d572"
+        "9e08fd92-fa50-4354-aac3-c17e8c49c2b0",
+        "7088fc34-e3d7-4f36-9455-ae7db69ac9f6",
+        "69027a5a-33b0-41f4-bec4-16aaabd77633"
       ],
       "settings": {
-        "bg_color": "",
-        "border_color_top": "",
-        "border_color_bottom": "",
-        "border_size_top": 1,
-        "border_size_bottom": 1
+        "main_title": "What's Included"
       }
     },
-    "163289336754366f81": {
-      "type": "rich-text",
-      "blocks": {
-        "163289336754366f81-0": {
-          "type": "heading",
-          "settings": {
-            "heading": "What's Included",
-            "heading_size": "h0"
-          }
-        }
-      },
-      "block_order": [
-        "163289336754366f81-0"
-      ],
+    "1633004711873d5f6f": {
+      "type": "book-now-section",
       "settings": {
-        "color_scheme": "background-1",
-        "full_width": true
-      }
-    },
-    "16328934070638c366": {
-      "type": "ticker-section",
-      "blocks": {
-        "0a35ce50-848c-4df5-aa78-f78eaa903a70": {
-          "type": "icon_with_text",
-          "settings": {
-            "icon": "shopify:\/\/shop_images\/time-test_ad832b43-b3f6-4e0f-affa-461a38a0ae8b.png",
-            "icon_text": "15 Minutes of Undivided Attention  Our licensed esthetician will meet with you over a video call, and answer all of your skincare questions."
-          }
-        },
-        "92e226e4-5879-4ffc-a447-03ae5cc7b968": {
-          "type": "icon_with_text",
-          "settings": {
-            "icon": "shopify:\/\/shop_images\/product-test_10920220-d2c7-4c4d-9246-5735d73004d9.png",
-            "icon_text": "Personalized Recommendations  We’ll provide tailored tips and products recommendations (even if they’re not ours) to help you achieve your best skin."
-          }
-        },
-        "8427577e-2d33-4198-9568-cdca8277ccd2": {
-          "type": "icon_with_text",
-          "settings": {
-            "icon": "shopify:\/\/shop_images\/gift_1_619c7c82-e744-40da-b004-7d74531ecdb3.png",
-            "icon_text": "Surprise Bonus  Each consultation comes with an exclusive surprise after the call! Curious? Complete your session to find out."
-          }
-        }
-      },
-      "block_order": [
-        "0a35ce50-848c-4df5-aa78-f78eaa903a70",
-        "92e226e4-5879-4ffc-a447-03ae5cc7b968",
-        "8427577e-2d33-4198-9568-cdca8277ccd2"
-      ],
-      "settings": {
-        "bg_color": "",
-        "border_color_top": "",
-        "border_color_bottom": "",
-        "border_size_top": 1,
-        "border_size_bottom": 1
+        "main_title": "Book Now",
+        "text": "Consultations are free and last 15 minutes"
       }
     }
   },
   "order": [
     "main",
     "16328439462d968749",
-    "1632893710b474473a",
-    "163289336754366f81",
-    "16328934070638c366"
+    "16330011529c26bea8",
+    "1633004711873d5f6f"
   ]
 }

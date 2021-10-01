@@ -1,0 +1,50 @@
+<div class="book-now">
+    <div class="main-container">
+        <div class="wrapper">
+            {% if section.settings.main_title != blank %}
+                <div id="book-now">
+                    <h2 class='title'>{{ section.settings.main_title }}</h2>
+                </div>
+            {% endif %}
+            {% if section.settings.text != blank %}
+                <p class='text' style="opacity:.6; text-align:center; margin-bottom:-20px;">{{ section.settings.text }}</p>
+            {% endif %}
+            <!-- Calendly inline widget begin -->
+            <div class="calendly-inline-widget" data-url="https://calendly.com/fleur-and-bee/fleur-bee-virtual-skincare-consultation?hide_event_type_details=1&hide_gdpr_banner=1&text_color=083d3a&primary_color=083d3a" style="min-width:320px;"></div>
+            <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+            <!-- Calendly inline widget end -->
+        </div>
+    </div>
+</div>
+
+
+{% schema %}
+{
+    "name": "Book Now Section",
+    "settings": [
+        {
+            "type": "header",
+            "content": "Content",
+            "info": "-------"
+        },
+        {
+            "type": "text",
+            "id": "main_title",
+            "label": "Main Title",
+            "default": "Book Now"
+        },
+        {
+            "type": "text",
+            "id": "text",
+            "label": "Text",
+            "default": "Consultations are free and last 15 minutes"
+        }
+    ],
+    "presets": [
+        {
+            "name": "Book Now Section",
+            "category": "Book Now Section"
+        }
+    ]
+}
+{% endschema %}

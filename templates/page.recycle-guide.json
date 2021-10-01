@@ -1,154 +1,37 @@
 {
   "sections": {
-    "1632894909850880ba": {
-      "type": "image-banner",
-      "blocks": {
-        "1632894909850880ba-0": {
-          "type": "heading",
-          "settings": {
-            "heading": "Product Recycling Guide",
-            "heading_size": "medium"
-          }
-        }
-      },
-      "block_order": [
-        "1632894909850880ba-0"
-      ],
-      "settings": {
-        "image": "shopify:\/\/shop_images\/fleur-and-bee-recyling-guide_0d060175-8fe3-4e2d-9ba0-df1342d7adc7.jpg",
-        "adapt_height_first_image": true,
-        "desktop_text_box_position": "center",
-        "show_text_box": false,
-        "image_overlay_opacity": 0,
-        "color_scheme": "background-1",
-        "stack_images_on_mobile": true,
-        "show_text_below": true
-      }
-    },
     "main": {
       "type": "main-page",
-      "disabled": true,
       "settings": {
       }
     },
-    "163289508757136a31": {
-      "type": "rich-text",
-      "blocks": {
-        "163289508757136a31-0": {
-          "type": "heading",
-          "settings": {
-            "heading": "",
-            "heading_size": "h1"
-          }
-        },
-        "163289508757136a31-1": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Mother Earth needs our help! From climate change to waste, we humans haven’t always treated her with the kindness and respect she deserves. Here at Fleur & Bee, we’re trying to change that. Our products are manufactured with 100% renewable wind energy, sourced with sustainable ingredients, and our goal is to be carbon neutral by the end of 2021. But, what do you do with packaging that is left after the products are all used up? Well, you've come to the right place to learn more.<\/p>"
-          }
-        }
-      },
-      "block_order": [
-        "163289508757136a31-0",
-        "163289508757136a31-1"
-      ],
-      "settings": {
-        "color_scheme": "background-1",
-        "full_width": true
-      }
-    },
-    "163289514244eb4369": {
-      "type": "rich-text",
-      "blocks": {
-        "163289514244eb4369-0": {
-          "type": "heading",
-          "settings": {
-            "heading": "Earth911 - An Important Resource",
-            "heading_size": "h1"
-          }
-        },
-        "163289514244eb4369-1": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Our packaging is up to 90% recyclable, but figuring out how to navigate different recycling programs across the country can be challenging. <a href=\"https:\/\/search.earth911.com\/\" target=\"_blank\">Earth911<\/a> is a wonderful resource that allows you to enter your zip code to find out if your municipal recycling program takes certain recyclables. If your city doesn’t recycle a certain item, Earth911 will provide you with a list of places in your area that can take it. We’ve broken down each of our packaging components below, and provided you with the type of material you need to search for in Earth911 to determine if, how, and where you can recycle it!<\/p>"
-          }
-        }
-      },
-      "block_order": [
-        "163289514244eb4369-0",
-        "163289514244eb4369-1"
-      ],
-      "settings": {
-        "color_scheme": "background-1",
-        "full_width": true
-      }
-    },
-    "16328952185b181ffe": {
-      "type": "image-banner",
-      "settings": {
-        "image": "shopify:\/\/shop_images\/recycling-fleur-and-bee-boxes_61faa984-7e70-4f00-9305-1854be65ea09.jpg",
-        "adapt_height_first_image": false,
-        "desktop_text_box_position": "center",
-        "show_text_box": false,
-        "image_overlay_opacity": 0,
-        "color_scheme": "background-1",
-        "stack_images_on_mobile": true,
-        "show_text_below": true
-      }
-    },
-    "1632895440902f8143": {
-      "type": "rich-text",
-      "blocks": {
-        "1632895440902f8143-0": {
-          "type": "heading",
-          "settings": {
-            "heading": "OUTER PACKAGING",
-            "heading_size": "h1"
-          }
-        },
-        "1632895440902f8143-1": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Our outer packaging includes our kraft shipping boxes, pink outer boxes, paper insert cards, and white padded inserts. Our kraft shipping boxes are made from 99% post-consumer content and our pink outer boxes are printed with eco-friendly soy based inks.<\/p>"
-          }
-        }
-      },
-      "block_order": [
-        "1632895440902f8143-0",
-        "1632895440902f8143-1"
-      ],
-      "settings": {
-        "color_scheme": "background-1",
-        "full_width": true
-      }
-    },
-    "1632895448c77decdb": {
+    "163300636151240a9d": {
       "type": "image-with-text",
       "blocks": {
-        "1032a308-78c9-4d0f-b869-1d0cb181f2c1": {
+        "432e2d18-c127-44d9-95f4-285fdc9a1892": {
           "type": "button",
           "settings": {
             "btn_style": "primary",
-            "btn_text": "Shop our collection",
-            "btn_url": "https:\/\/fleurandbee.com\/collections\/all"
+            "btn_text": "Shop Our Collection",
+            "btn_url": ""
           }
         }
       },
       "block_order": [
-        "1032a308-78c9-4d0f-b869-1d0cb181f2c1"
+        "432e2d18-c127-44d9-95f4-285fdc9a1892"
       ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/reviews-fleur-and-bee-skincare_f56f7d8a-9c24-4719-b2d9-d12c723d5d19.jpg",
-        "bg_color": "",
-        "content_bg_color": "rgba(0,0,0,0)",
-        "pre_header_color": "#ffffff",
-        "text_color": "#083d3a",
+        "image": "shopify:\/\/shop_images\/reviews-fleur-and-bee-skincare_013d74c1-ea8a-4995-b0f8-267322d54c9e.jpg",
+        "bg_color": "#e5e5e3",
+        "content_bg_color": "",
+        "pre_header_color": "",
+        "text_color": "",
         "link_color": "",
         "link_color_hover": "",
         "primary_btn_bg_color": "#083d3a",
-        "primary_btn_bg_color_hover": "#083d3a",
+        "primary_btn_bg_color_hover": "",
         "primary_btn_text_color": "#ffffff",
-        "primary_btn_text_color_hover": "#ffffff",
+        "primary_btn_text_color_hover": "",
         "secondary_btn_border_color": "",
         "secondary_btn_border_color_hover": "",
         "secondary_btn_bg_color": "",
@@ -162,35 +45,30 @@
         "pre_header_tag": "h2",
         "title_tag": "h1",
         "title_size_desk": 36,
-        "title_size_mob": 28,
-        "text_alignment_desk": "left",
-        "text_alignment_mob": "left",
+        "title_size_mob": 22,
+        "text_alignment_desk": "center",
+        "text_alignment_mob": "center",
         "img_alignment": true,
-        "stack_order": false,
+        "stack_order": true,
         "show_overlay_img": false,
         "horizantal_spacing_desk": 0,
         "horizantal_spacing_mob": 0,
-        "vertical_spacing_desk": 0,
-        "vertical_spacing_mob": 0,
+        "vertical_spacing_desk": 60,
+        "vertical_spacing_mob": 30,
         "overlay_img_width_desk": 240,
         "overlay_img_width_mob": 160,
         "top_position_desk": 20,
         "top_position_mob": 20,
         "lr_position_desk": 40,
         "lr_position_mob": 40,
-        "text_side_width": 40,
+        "text_side_width": 50,
         "image_side_width": 50,
         "text_horizantal_space": 50
       }
     }
   },
   "order": [
-    "1632894909850880ba",
     "main",
-    "163289508757136a31",
-    "163289514244eb4369",
-    "16328952185b181ffe",
-    "1632895440902f8143",
-    "1632895448c77decdb"
+    "163300636151240a9d"
   ]
 }

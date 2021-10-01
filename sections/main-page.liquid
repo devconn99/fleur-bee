@@ -9,7 +9,11 @@
     {{ page.title | escape }}
   </h1>
   <div class="rte">
-    {{ page.content }}
+    {% if page.content contains '<!-- feature-row -->' %}
+      {{ page.content | split: '<!-- feature-row -->' | first }}
+      {% else %}
+        {{ page.content }}
+    {% endif %}
   </div>
 </div>
 

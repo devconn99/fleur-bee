@@ -1,0 +1,79 @@
+{{ 'whats-included.css' | asset_url | stylesheet_tag }}
+<div class="included-wrapper">
+  <div class="included-container main_container">  
+    <div style="width:100%; text-align:center;">
+      <h2 class="main-title">{{ section.settings.main_title }}</h2>
+    </div>
+    {% for block in section.blocks %}
+        <div class="included-item">
+            {% if block.settings.img != blank %}
+                {% render 'responsive--image' with block.settings.img as image, max_width: 60px, class: 'image' %}
+            {% endif %}
+            {% if block.settings.title != blank %}
+                <h3 class='title'>{{ block.settings.title }}</h3>
+            {% endif %}
+            {% if block.settings.text != blank %}
+                <p class="text">{{ block.settings.text }}</p>
+            {% endif %}
+        </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+{
+    "name": "Whats Included Section",
+    "settings": [
+        {
+            "type": "header",
+            "content": "Content",
+            "info": "-------"
+        },
+        {
+            "type": "text",
+            "id": "main_title",
+            "label": "Main Title",
+            "default": "What's Included"
+        }
+    ],
+    "blocks": [
+        {
+            "name": "Info",
+            "type": "info",
+            "settings": [
+                {
+                    "type": "header",
+                    "content": "Image",
+                    "info": "-------"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "img",
+                    "label": "Image"
+                },
+                {
+                    "type": "header",
+                    "content": "Content",
+                    "info": "-------"
+                },
+                {
+                    "type": "text",
+                    "id": "title",
+                    "label": "Title"
+                },
+                {
+                    "type": "text",
+                    "id": "text",
+                    "label": "Text"
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "Whats Included Section",
+            "category": "Whats Included Section"
+        }
+    ]
+}
+{% endschema %}

@@ -282,7 +282,9 @@
       "settings": {
         "show_photo": true,
         "star_color": "#bf756e",
-        "text_color": "#25514f"
+        "text_color": "#25514f",
+        "show_review_btn": false,
+        "link_text": "Read All Reviews"
       }
     },
     "163167563228142441": {
