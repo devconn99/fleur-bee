@@ -1,0 +1,383 @@
+{% comment %}
+  Comments will not appear right after they are submitted, either to be checked for spam
+  or to await moderation. When a comment is submitted, the browser is redirected to a page
+  that includes the new comment id in its URL.
+    Example: http://shopname.myshopify.com/blogs/news/2022072-my-post?comment=3721372
+{% endcomment %}
+
+{{ 'article-template.css' | asset_url | stylesheet_tag }}
+
+{%- assign new_comment = false -%}
+{% if comment and comment.created_at %}
+  {%- assign new_comment = true -%}
+  {%- assign new_comment_id = comment.id -%}
+{% endif %}
+
+{% if new_comment %}
+  {%- assign duplicate_comment = false %}
+  {% for comment in article.comments %}
+    {% if comment.id == new_comment_id %}
+      {%- assign duplicate_comment = true %}
+      {% break %}
+    {% endif %}
+  {% endfor %}
+
+  {% if duplicate_comment %}
+    {%- assign number_of_comments = article.comments_count -%}
+  {% else %}
+    {%- assign number_of_comments = article.comments_count | plus: 1 -%}
+  {% endif %}
+{% else %}
+  {%- assign number_of_comments = article.comments_count -%}
+{% endif %}
+
+{% if article.image and section.settings.show_article_image %}<img src="{{ article.image | img_url: '1800x600', crop: 'center' }}" alt="{{ article.title }}" style="width:100%;" class="article-hero"/>{% endif %} 
+
+<div class="article-main">
+  <div class="page-width">
+    <div class="grid">
+   {% if section.settings.blog_sidebar_enable == 'left' %}
+      <div class="sidebar grid__item medium-up--one-fifth" style="padding-left:0;">
+          {% include 'blog-sidebar' %}
+      </div>
+  {% endif %}
+  {% if section.settings.blog_sidebar_enable == 'left' or section.settings.blog_sidebar_enable == 'right' %}
+       <div class="grid__item medium-up--four-fifths">
+  {% endif %}   
+      <div class=" article {% unless section.settings.blog_sidebar_enable == 'left' or section.settings.blog_sidebar_enable == 'right' %}grid__item{% endunless %}">
+        <article itemscope itemtype="http://schema.org/Article">
+  <div class="section-header text-center">
+    <h1 class="article__title {{ section.settings.title_class }}">{{ article.title }}</h1>
+    {% if section.settings.blog_show_author %}
+      <span class="article__author">{{ 'blogs.article.by_author' | t: author: article.author }}</span>
+    {% endif %}
+  
+    {% if section.settings.blog_show_date %}
+      <span class="article__date">
+        {{ article.published_at | date: section.settings.blog_date_format }}
+      </span>
+    {% endif %}
+  </div>
+  
+  <div class="rte" itemprop="articleBody">
+    {{ article.content }}
+  </div>
+  
+  {% if section.settings.show_share_buttons %}
+    {% include 'social-sharing', share_title: article.title, share_permalink: article.url, share_image: article.image %}
+  {% endif %}
+        </article>
+  
+  {% if blog.comments_enabled? %}
+    {% if number_of_comments > 0 %}
+      <hr>
+            <h2 class="h3">{{ 'blogs.comments.comments_with_count' | t: count: number_of_comments }}</h2>
+  
+            {% paginate article.comments by 5 %}
+  
+              {% comment %}
+                #comments is required, it is used as an anchor link by Shopify.
+              {% endcomment %}
+              <div id="comments">
+  
+                {% if new_comment %}
+                  <p class="note form-success">
+                    {% if blog.moderated? %}
+                      {{ 'blogs.comments.success_moderated' | t }}
+                    {% else %}
+                      {{ 'blogs.comments.success' | t }}
+                    {% endif %}
+                  </p>
+                {% endif %}
+  
+                <ul class="comments">
+                  {% comment %}
+                    If a comment was just submitted with no blank field, show it.
+                  {% endcomment %}
+                  {% if new_comment %}
+                    <li id="{{ comment.id }}" class="comment">
+                      {% include 'comment' %}
+                    </li>
+                  {% endif %}
+  
+                  {% for comment in article.comments %}
+                    {% unless comment.id == new_comment_id %}
+                      <li id="{{ comment.id }}" class="comment">
+                        {% include 'comment' %}
+                      </li>
+                    {% endunless %}
+                  {% endfor %}
+                </ul>
+  
+                {% if paginate.pages > 1 %}
+                  {% include 'pagination' %}
+                {% endif %}
+  
+              </div>
+            {% endpaginate %}
+  
+    {% endif %}
+  
+    <hr>
+          <div class="comment-form form-vertical">
+            {% form 'new_comment', article %}
+  
+              <h2 class="h3">{{ 'blogs.comments.title' | t }}</h2>
+  
+              {{ form.errors | default_errors }}
+  
+              <div class="grid">
+  
+                <div class="grid__item medium-up--one-half">
+                  <label for="CommentAuthor">{{ 'blogs.comments.name' | t }}</label>
+                  <input type="text" name="comment[author]" id="CommentAuthor" class="input-full{% if form.errors contains 'author' %} input--error{% endif %}" value="{{ form.author }}">
+                </div>
+  
+                <div class="grid__item medium-up--one-half">
+                  <label for="CommentEmail">{{ 'blogs.comments.email' | t }}</label>
+                  <input type="email" name="comment[email]" id="CommentEmail" class="input-full{% if form.errors contains 'email' %} input--error{% endif %}" value="{{ form.email }}" autocorrect="off" autocapitalize="off">
+                </div>
+  
+                <div class="grid__item">
+                  <label for="CommentBody">{{ 'blogs.comments.message' | t }}</label>
+                  <textarea name="comment[body]" id="CommentBody" class="input-full{% if form.errors contains 'body' %} input--error{% endif %}">{{ form.body }}</textarea>
+                </div>
+  
+              </div>
+  
+              {% if blog.moderated? %}
+                <p class="fine-print">{{ 'blogs.comments.moderated' | t }}</p>
+              {% endif %}
+  
+              <input type="submit" class="btn" value="{{ 'blogs.comments.post' | t }}">
+            {% endform %}
+          </div>
+  {% endif %}
+      {% comment %}      
+      <div class="text-center">
+        <a href="{{ blog.previous_article }}" class="btn">Previous Post</a>
+        <a href="{{ blog.next_article }}" class="btn">Next Post</a>
+      </div>  
+      {% endcomment %}       
+  
+      </div>
+      {% if section.settings.blog_sidebar_enable == 'left' or section.settings.blog_sidebar_enable == 'right' %}</div>{% endif %}        
+    {% if section.settings.blog_sidebar_enable == 'right' %}
+      <div class="sidebar grid__item medium-up--one-fifth">
+        {% include 'blog-sidebar' %}
+      </div>
+    {% endif %}     
+    </div>
+  </div>   
+</div>     
+    {% if section.settings.show_recent_posts %}
+    <div class="related-posts" style="background-color:{{ section.settings.recent_bg_color }};">
+    <div class="page-width">
+      <div class="section-header text-center">
+        <h2 class='title'>Related posts</h2>
+        </div>
+        <div class="blog-related-posts grid">
+        {% for article in blogs[blog.handle].articles limit: section.settings.recent_max_posts %}
+            <div class="blog-post grid__item medium-up--{{ section.settings.recent_posts_width_large }} medium--{{ section.settings.recent_posts_width_medium }} small--{{ section.settings.recent_posts_width_small }}">
+                  <div class="holder">
+                    <a href="{{ article.url }}">
+                      {% if article.image %}
+                        <img src="{{ article.image.src | img_url: 'large' }}" />
+                      {% else %}
+          {% assign my_image_url=article.content | escape %}
+          {% if my_image_url contains '&lt;img' %}
+          {% assign my_image_url = my_image_url | split: 'src=&quot;' %}
+          {% assign my_image_url = my_image_url[1] | split: '&quot;' %}
+          {% assign my_image_url = my_image_url[0] %}
+          {% assign my_image_url = my_image_url | remove: 'http:http://' %}
+          {% assign my_image_url = my_image_url | remove: 'https:' %}
+                      <img src="{{ my_image_url }}" />  
+                {% endif %}      
+                      {% endif %}
+                    </a>
+                    <div class="article__grid-meta">
+                    <a href="{{ article.url }}"><h4 class="bold h3">{{ article.title }}</h4></a>	
+                  {% if settings.blog_category_enable %}  
+                  {% for tag in article.tags %}
+                  {% if tag contains 'category-' %}
+                          <a class="cat-tag" href="{{ blog.url }}/tagged/{{tag | handleize }}"><h6>{{ tag | remove: 'category-' }}</h6></a>
+                  {% endif %}
+                  {% endfor %}  
+                  {% endif %}
+                  <div class="rte article__grid-excerpt">
+                    {% if article.excerpt.size > 0 %}
+                      {{ article.excerpt | strip_html | truncate: 170 }}
+                    {% else %}
+                      {{ article.content | strip_html | truncate: 170 }}
+                    {% endif %}
+                  </div>               
+                      <a href="{{ article.url }}" class="read-more bold">
+                        read more
+                      </a>
+                    </div>
+                  </div>
+            </div>
+        {% endfor %}
+        </div> 
+     </div>
+	 </div>
+     {% endif %}   
+{% schema %}
+  {
+    "name": "Posts",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title_class",
+        "label": "Heading Class",
+        "default": "h4",
+		"info": "h1, h2, h3, h4, h5 or h6"
+      },
+      {
+        "type": "checkbox",
+        "id": "blog_show_author",
+        "label": "Show author",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "blog_show_date",
+        "label": "Show date",
+        "default": true
+      },
+      {
+        "type": "select",
+        "id": "blog_date_format",
+        "label": "Date Format",
+        "options": [
+          {
+            "value": "%B %d, %Y",
+            "label": "September 25, 2015"
+          },
+          {
+            "value": "%b %d, %Y",
+            "label": "Sept 25, 2015"
+          },
+          {
+            "value": "%D",
+            "label": "09\/25\/2015"
+          },
+          {
+            "value": "%m.%d.%Y",
+            "label": "09.25.2015"
+          }
+        ]
+      },
+      {
+        "type": "checkbox",
+        "id": "show_share_buttons",
+        "label": "Show social sharing buttons",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "show_article_image",
+        "label": "Show article image banner"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_recent_posts",
+        "label": "Show related posts"
+      },
+      {
+        "type": "color",
+        "id": "recent_bg_color",
+        "label": "Related posts bg color"
+      },
+      {
+        "type": "text",
+        "id": "recent_max_posts",
+        "label": "Max recent posts",
+        "default": "4"
+      },
+      {
+        "type": "select",
+        "id": "recent_posts_width_large",
+        "label": "Posts per row - large size",
+        "default": "one-quarter",
+        "options": [
+          {
+            "value": "one-half",
+            "label": "2"
+          },
+          {
+            "value": "one-third",
+            "label": "3"
+          },
+          {
+            "value": "one-quarter",
+            "label": "4"
+          },
+          {
+            "value": "one-sixth",
+            "label": "6"
+          }
+        ]
+      },
+      {
+        "type": "select",
+        "id": "recent_posts_width_medium",
+        "label": "Posts per row - medium size",
+        "default": "one-half",
+        "options": [
+          {
+            "value": "one-half",
+            "label": "2"
+          },
+          {
+            "value": "one-third",
+            "label": "3"
+          },
+          {
+            "value": "one-quarter",
+            "label": "4"
+          }
+        ]
+      },
+      {
+        "type": "select",
+        "id": "recent_posts_width_small",
+        "label": "Posts per row - small size",
+        "default": "one-whole",
+        "options": [
+          {
+            "value": "one-whole",
+            "label": "1"
+          },
+          {
+            "value": "one-half",
+            "label": "2"
+          },
+          {
+            "value": "one-third",
+            "label": "3"
+          }
+        ]
+      },
+      {
+        "type": "select",
+        "id": "blog_sidebar_enable",
+        "label": "Sidebar",
+        "options": [
+          {
+            "value": "none",
+            "label": "None"
+          },
+          {
+            "value": "left",
+            "label": "Left"
+          },
+          {
+            "value": "right",
+            "label": "Right"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

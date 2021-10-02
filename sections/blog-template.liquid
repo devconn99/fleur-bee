@@ -1,0 +1,475 @@
+{{ 'blog-template.css' | asset_url | stylesheet_tag }}
+<div class="page-section">
+    <div class="feature-row-holder" {% if section.settings.blog_bg.size > 0 %}style="background-color:{{ section.settings.blog_bg }};"{% endif %}>
+      <div class="{% unless section.settings.remove_wrapper %}page-width{% endunless %}">
+      {% capture image_layout %}
+        <div class="feature-row__item">
+          {% if section.settings.blog_banner != blank %}
+            {{ section.settings.blog_banner | img_url: '1000x1000' | img_tag: section.settings.blog_banner.alt, 'feature-row__image' }}
+          {% else %}
+            {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+          {% endif %}
+        </div>
+      {% endcapture %}
+    
+      <div class="feature-row">
+        {% if section.settings.layout_header == 'left' %}
+          {{ image_layout }}
+        {% endif %}
+    
+        <div class="feature-row__item feature-row__text feature-row__text--{{ section.settings.layout }} {{ section.settings.text_align }}" {% if section.settings.padding.size > 0 %}style="padding:{{ section.settings.padding }};"{% endif %}>
+          {% if section.settings.blog_title != blank %}
+            <h1 {% if section.settings.color.size > 0 %}style="color:{{ section.settings.color }};"{% endif %}>{{ section.settings.blog_title }}</h1>
+          {% endif %}
+          {% if section.settings.blog_subtitle != blank %}
+            <div class="rte-setting featured-row__subtext" {% if section.settings.color.size > 0 %}style="color:{{ section.settings.color }};"{% endif %}>{{ section.settings.blog_subtitle }}</div>
+          {% endif %}
+          {% if section.settings.button_label != blank and section.settings.button_link != blank %}
+            <a href="{{ section.settings.button_link }}" class="btn {{ section.settings.button_class }}">
+              {{ section.settings.button_label }}
+            </a>
+          {% endif %}
+        </div>
+    
+        {% if section.settings.layout_header == 'right' %}
+          {{ image_layout }}
+        {% endif %}
+      </div>
+      </div>
+    </div>
+    </div>
+    {% paginate blog.articles by section.settings.blog_post_paginate %}
+    <div class="blog-main-grid {% if section.settings.layout == 'list' %}blog--list-view{% endif %}">  
+        <div class="page-width">    
+            {% if section.settings.blog_sidebar_enable == 'left' %}
+                  <div class="sidebar grid__item medium-up--one-fifth" style="padding-left:0;">
+                    {% include 'blog-sidebar' %}
+                  </div>
+            {% endif %}
+            {% if section.settings.blog_sidebar_enable == 'left' or section.settings.blog_sidebar_enable == 'right' %}
+                <div class="grid__item medium-up--four-fifths">
+            {% endif %}
+             <div class="grid grid--blog">
+            {% if section.settings.layout == 'grid' %}   
+          {% case section.settings.blog_post_width %}
+            {% when '20%' %}
+              {%- assign post_width = 'medium-up--one-fifth' -%}  
+              {%- assign image_size = '400x400' -%}
+            {% when '25%' %}
+              {%- assign post_width = 'medium-up--one-quarter' -%}
+              {%- assign image_size = '500x500' -%}
+            {% when '33%' %}
+              {%- assign post_width = 'medium-up--one-third' -%}
+              {%- assign image_size = '600x600' -%}
+            {% when '50%' %}
+              {%- assign post_width = 'medium-up--one-half' -%}
+              {%- assign image_size = '1024x1204' -%}
+            {% when '100%' %}
+              {%- assign post_width = 'medium-up--one-whole' -%}
+              {%- assign image_size = '2048x2048' -%}
+          {% endcase %}            
+            {% for article in blog.articles %}
+              <div class="blog-post grid__item {{ section.settings.text_alignment }} {{ post_width }} medium--{{ section.settings.blog_post_width_medium }} small--{{ section.settings.blog_post_width_small }}">
+                <div class="holder">
+                {% if article.image %}
+                  <a href="{{ article.url }}" class="article__grid-image">
+                    {{ article | img_url: '600x' | img_tag: article.title }}
+                  </a>
+                {% else %}
+                {% assign my_image_url=article.content | escape %}
+                {% if my_image_url contains '&lt;img' %}
+                {% assign my_image_url = my_image_url | split: 'src=&quot;' %}
+                {% assign my_image_url = my_image_url[1] | split: '&quot;' %}
+                {% assign my_image_url = my_image_url[0] %}
+                {% assign my_image_url = my_image_url | remove: 'http:http://' %}
+                {% assign my_image_url = my_image_url | remove: 'https:' %}
+                  <a href="{{ article.url }}" class="article__grid-image">
+                    <img src="{{ my_image_url }}" alt="{{ article.title }}" />
+                  </a>            
+                {% endif %}
+                {% endif %}
+                <div class="article__grid-meta{% if article.image %} article__grid-meta--has-image{% endif %}">
+                  <h2 class="article__title bold {{ section.settings.title_class }}">
+                    <a href="{{ article.url }}">{{ article.title }}</a>
+                  </h2>
+    
+                  {% if section.settings.blog_show_author %}
+                    <span class="article__author">{{ 'blogs.article.by_author' | t: author: article.author }}</span>
+                  {% endif %}
+    
+                  {% if section.settings.blog_show_date %}
+                    <span class="article__date">
+                      {{ article.published_at | date: section.settings.blog_date_format }}
+                    </span>
+                  {% endif %}
+                    
+                  {% if section.settings.blog_show_excerpt %}
+                  <div class="rte article__grid-excerpt">
+                    {% if article.excerpt.size > 0 %}
+                      {{ article.excerpt | strip_html | truncate: 170 }}
+                    {% else %}
+                      {{ article.content | strip_html | truncate: 170 }}
+                    {% endif %}
+                  </div>
+                  {% endif %}
+    
+                  {% if article.tags.size > 0 %}
+                    <div class="article__tags rte">
+                      {% for tag in article.tags %}
+                        <a href="{{ blog.url }}/tagged/{{ tag | handle }}" class="article__grid-tag">{{ tag }}</a>
+                      {% endfor %}
+                    </div>
+                  {% endif %}
+    
+                    {% if section.settings.blog_show_read_more %}
+                      <a href="{{ article.url }}" class="read-more bold">
+                        read more
+                      </a>
+                    {% endif %}
+    
+                    {% if blog.comments_enabled? and article.comments_count > 0 %}
+                        <a href="{{ article.url }}#comments" class="btn btn--small btn--link">
+                          {{ 'blogs.comments.comments_with_count' | t: count: article.comments_count }}
+                        </a>
+                    {% endif %}
+                  </div>
+                </div>
+              </div>                
+            {% endfor %}        
+            {% else %}
+        {% for article in blog.articles %}
+                <div class="grid__item {{ section.settings.text_alignment }}">
+                  <div class="article--listing">
+                    <h2 class="article__title {{ section.settings.title_class }}"><a href="{{ article.url }}">{{ article.title }}</a></h2>
+                    {% if section.settings.blog_show_author %}
+                      <span class="article__author">{{ 'blogs.article.by_author' | t: author: article.author }}</span>
+                    {% endif %}
+    
+                    {% if section.settings.blog_show_date %}
+                      <span class="article__date">
+                        {{ article.published_at | date: section.settings.blog_date_format }}
+                      </span>
+                    {% endif %}
+    
+                    {% if article.image %}
+                    <p>
+                      <a href="{{ article.url }}">
+                        {{ article | img_url: '1000x' | img_tag: article.title, 'article__list-image' }}
+                      </a>
+                    </p>
+                {% else %}
+                {% assign my_image_url=article.content | escape %}
+                {% if my_image_url contains '&lt;img' %}
+                {% assign my_image_url = my_image_url | split: 'src=&quot;' %}
+                {% assign my_image_url = my_image_url[1] | split: '&quot;' %}
+                {% assign my_image_url = my_image_url[0] %}
+                {% assign my_image_url = my_image_url | remove: 'http:http://' %}
+                {% assign my_image_url = my_image_url | remove: 'https:' %}
+                  <p><a href="{{ article.url }}" class="article__grid-image">
+                    <img src="{{ my_image_url }}" alt="{{ article.title }}" />
+                  </a></p>           
+                {% endif %}
+                {% endif %}
+    
+                    {% if section.settings.blog_show_excerpt %}
+                    <div class="rte">
+                      {% if article.excerpt.size > 0 %}
+                        {{ article.excerpt | strip_html | truncate: 170 }}
+                      {% else %}
+                        {{ article.content | strip_html | truncate: 170 }}
+                      {% endif %}
+                    </div>
+                    {% endif %}
+    
+                    {% if article.tags.size > 0 %}
+                      <div class="article__tags article__tags--list rte">
+                        {{ 'blogs.article.posted_in' | t }}
+                        {% for tag in article.tags %}
+                          <a href="{{ blog.url }}/tagged/{{ tag | handle }}">{{ tag }}</a>{% unless forloop.last %}, {% endunless %}
+                        {% endfor %}
+                      </div>
+                    {% endif %}
+                    {% if section.settings.blog_show_read_more or section.settings.blog_show_comments %}
+                    <ul class="list--inline article__meta-buttons">
+                      {% if article.excerpt.size > 0 and section.settings.blog_show_read_more %}
+                        <li>
+                          <a href="{{ article.url }}" class="btn btn--secondary btn--small">
+                            {{ 'blogs.article.read_more' | t }}
+                          </a>
+                        </li>
+                      {% endif %}
+    
+                      {% if blog.comments_enabled? and article.comments_count == 0 and section.settings.blog_show_comments %}
+                        <li>
+                          <a href="{{ article.url }}#comment_form" class="btn btn--secondary btn--small">
+                            {{ 'blogs.comments.title' | t }}
+                          </a>
+                        </li>
+                      {% endif %}
+    
+                      {% if blog.comments_enabled? and article.comments_count > 0 and section.settings.blog_show_comments %}
+                        <li>
+                          <a href="{{ article.url }}#comments" class="btn btn--secondary btn--small">
+                            {{ 'blogs.comments.comments_with_count' | t: count: article.comments_count }}
+                          </a>
+                        </li>
+                      {% endif %}
+                    </ul>
+                    {% endif %}
+                  </div>
+                </div>
+        {% endfor %}        
+           {% endif %}
+         </div>
+            {% if section.settings.blog_sidebar_enable == 'left' or section.settings.blog_sidebar_enable == 'right' %}</div>{% endif %}        
+        {% if section.settings.blog_sidebar_enable == 'right' %}
+          <div class="sidebar grid__item medium-up--one-fifth">
+            {% include 'blog-sidebar' %}
+          </div>
+        {% endif %}         
+          
+        </div>
+    
+      {% if paginate.pages > 1 %}
+        {% include 'pagination' %}
+      {% endif %}
+    </div>
+    
+    {% endpaginate %}
+    
+    {% schema %}
+      {
+        "name": "Blog pages",
+        "settings": [
+          {
+            "type": "select",
+            "id": "layout_header",
+            "label": "Layout",
+            "default": "left",
+            "options": [
+              {
+                "value": "left",
+                "label": "Image on left"
+              },
+              {
+                "value": "right",
+                "label": "Image on right"
+              }
+            ]
+          },
+          {
+            "type": "color",
+            "id": "blog_bg",
+            "label": "Header background color"
+          },
+          {
+            "type": "image_picker",
+            "id": "blog_banner",
+            "label": "Blog image"
+          },
+          {
+            "type": "text",
+            "id": "blog_title",
+            "label": "Blog title"
+          },
+          {
+            "type": "textarea",
+            "id": "blog_subtitle",
+            "label": "Blog subtitle"
+          },
+          {
+            "type": "text",
+            "id": "padding",
+            "label": "Text padding"
+          },
+          {
+            "type": "select",
+            "id": "layout",
+            "label": "Layout",
+            "default": "list",
+            "options": [
+              {
+                "value": "grid",
+                "label": "Grid"
+              },
+              {
+                "value": "list",
+                "label": "List"
+              }
+            ]
+          },
+          {
+            "type": "select",
+            "id": "blog_sidebar_enable",
+            "label": "Sidebar",
+            "options": [
+              {
+                "value": "none",
+                "label": "None"
+              },
+              {
+                "value": "left",
+                "label": "Left"
+              },
+              {
+                "value": "right",
+                "label": "Right"
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "id": "blog_post_paginate",
+            "label": "Paginate posts count",
+            "default": "12"
+          },
+          {
+            "type": "select",
+            "id": "blog_post_width",
+            "label": "Block width",
+            "info": "For grid view only - large size",
+            "default": "33%",
+            "options": [
+                  {
+                    "value": "20%",
+                    "label": "20%"
+                  },
+                  {
+                    "value": "25%",
+                    "label": "25%"
+                  },
+                  {
+                    "value": "33%",
+                    "label": "33.3%"
+                  },
+                  {
+                    "value": "50%",
+                    "label": "50%"
+                  },
+                  {
+                    "value": "100%",
+                    "label": "100%"
+                  }
+                ]
+          },
+          {
+            "type": "select",
+            "id": "blog_post_width_medium",
+            "label": "Block width",
+            "info": "For grid view only - medium size",
+            "default": "one-half",
+            "options": [
+                  {
+                    "value": "one-quarter",
+                    "label": "25%"
+                  },
+                  {
+                    "value": "one-third",
+                    "label": "33.3%"
+                  },
+                  {
+                    "value": "one-half",
+                    "label": "50%"
+                  },
+                  {
+                    "value": "one-whole",
+                    "label": "100%"
+                  }
+                ]
+          },
+          {
+            "type": "select",
+            "id": "blog_post_width_small",
+            "label": "Block width",
+            "info": "For grid view only - small size",
+            "default": "one-whole",
+            "options": [
+                  {
+                    "value": "one-half",
+                    "label": "50%"
+                  },
+                  {
+                    "value": "one-whole",
+                    "label": "100%"
+                  }
+                ]
+          },
+          {
+            "type": "select",
+            "id": "text_alignment",
+            "label": "Text alignment",
+            "options": [
+                  {
+                    "value": "text-center",
+                    "label": "Center"
+                  },
+                  {
+                    "value": "text-left",
+                    "label": "Left"
+                  },
+                  {
+                    "value": "text-right",
+                    "label": "Right"
+                  }
+                ]
+          },
+          {
+            "type": "text",
+            "id": "title_class",
+            "label": "Heading Class",
+            "default": "h4",
+            "info": "h1, h2, h3, h4, h5 or h6"
+          },
+          {
+            "type": "checkbox",
+            "id": "blog_show_author",
+            "label": "Show author",
+            "default": true
+          },
+          {
+            "type": "checkbox",
+            "id": "blog_show_date",
+            "label": "Show date",
+            "default": true
+          },
+          {
+            "type": "select",
+            "id": "blog_date_format",
+            "label": "Blog Date Format",
+            "options": [
+              {
+                "value": "%B %d, %Y",
+                "label": "September 25, 2015"
+              },
+              {
+                "value": "%b %d, %Y",
+                "label": "Sept 25, 2015"
+              },
+              {
+                "value": "%D",
+                "label": "09\/25\/2015"
+              },
+              {
+                "value": "%m.%d.%Y",
+                "label": "09.25.2015"
+              }
+            ]
+          },
+          {
+            "type": "checkbox",
+            "id": "blog_show_excerpt",
+            "label": "Show excerpt"
+          },
+          {
+            "type": "checkbox",
+            "id": "blog_show_read_more",
+            "label": "Show read more"
+          },
+          {
+            "type": "checkbox",
+            "id": "blog_show_comments",
+            "label": "Show comments"
+          }
+        ]
+      }
+    {% endschema %}

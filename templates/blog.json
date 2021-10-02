@@ -1,7 +1,29 @@
 {
   "sections": {
     "main": {
-      "type": "main-blog"
+      "type": "blog-template",
+      "settings": {
+        "layout_header": "right",
+        "blog_bg": "#b5d5e2",
+        "blog_banner": "shopify:\/\/shop_images\/fleur-and-bee-blog_1000x1000_86ac9d16-770c-4e8f-96be-0c37798bfce1.jpg",
+        "blog_title": "Skin Care Tips",
+        "blog_subtitle": "Everything you’ve ever wanted to know about natural skincare, and then some.",
+        "padding": "20px 12% 20px 6%",
+        "layout": "grid",
+        "blog_sidebar_enable": "none",
+        "blog_post_paginate": "9",
+        "blog_post_width": "33%",
+        "blog_post_width_medium": "one-half",
+        "blog_post_width_small": "one-whole",
+        "text_alignment": "text-left",
+        "title_class": "h3",
+        "blog_show_author": false,
+        "blog_show_date": false,
+        "blog_date_format": "%B %d, %Y",
+        "blog_show_excerpt": true,
+        "blog_show_read_more": true,
+        "blog_show_comments": false
+      }
     }
   },
   "order": [

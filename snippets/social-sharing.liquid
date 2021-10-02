@@ -1,0 +1,48 @@
+<!-- /snippets/social-sharing.liquid -->
+<div class="social-sharing">
+
+  {% if settings.share_facebook %}
+    <a target="_blank" href="//www.facebook.com/sharer.php?u={{ shop.url | append: share_permalink }}" class="btn--share share-facebook" title="{{ 'general.social.alt_text.share_on_facebook' | t }}">
+      {% include 'icon-f' %}
+      <span class="share-title" aria-hidden="true">{{ 'general.social.share_on_facebook' | t }}</span>
+      <span class="visually-hidden">{{ 'general.social.alt_text.share_on_facebook' | t }}</span>
+    </a>
+  {% endif %}
+
+  {% if settings.share_twitter %}
+    <a target="_blank" href="//twitter.com/share?text={{ share_title | url_param_escape }}&amp;url={{ shop.url | append: share_permalink }}" class="btn--share share-twitter" title="{{ 'general.social.alt_text.share_on_twitter' | t }}">
+      {% include 'icon-twitter' %}
+      <span class="share-title" aria-hidden="true">{{ 'general.social.share_on_twitter' | t }}</span>
+      <span class="visually-hidden">{{ 'general.social.alt_text.share_on_twitter' | t }}</span>
+    </a>
+  {% endif %}
+
+  {% if settings.share_pinterest %}
+    <a target="_blank" href="//pinterest.com/pin/create/button/?url={{ shop.url | append: share_permalink }}&amp;media={{ share_image | img_url: '1024x1024' }}&amp;description={{ share_title | url_param_escape }}" class="btn--share share-pinterest" title="{{ 'general.social.alt_text.share_on_pinterest' | t }}">
+      {% include 'icon-pinterest' %}
+      <span class="share-title" aria-hidden="true">{{ 'general.social.share_on_pinterest' | t }}</span>
+      <span class="visually-hidden">{{ 'general.social.alt_text.share_on_pinterest' | t }}</span>
+    </a>
+  {% endif %}
+  
+  {% if settings.share_google %}
+    <a target="_blank" href="//plus.google.com/share?url={{ shop.url | append: share_permalink }}" class="btn--share">
+      {% include 'icon-googleplus' %}
+      <span class="share-title" aria-hidden="true">+1</span>
+      <span class="visually-hidden">+1</span>
+    </a>
+  {% endif %}
+  
+  {% if settings.share_tumblr %}
+      <a target="_blank" href="http://www.tumblr.com/share?v=3&u={{ shop.url | append: share_permalink }}&t={{ share_title | url_param_escape }}" class="btn--share">
+        {% include 'icon-tumblr' %}
+        <span class="share-title" aria-hidden="true">Tumblr</span>
+        <span class="visually-hidden">Tumblr</span>
+      </a>
+  {% endif %}  
+  
+  {% if settings.share_email %}
+    <a class="btn--share" href="mailto:?subject=Thought you might like this &amp;body=Hey, I was browsing {{ shop.name | escape }} and found <a href='{{ shop.url | append: share_permalink }}'>{{ share_title | url_param_escape }}</a> and I wanted to share it with you."><i class="fa fa-envelope"></i></a>  
+  {% endif %}  
+
+</div>

@@ -1,109 +1,25 @@
 {
   "sections": {
     "main": {
-      "type": "main-article",
-      "blocks": {
-        "featured_image": {
-          "type": "featured_image",
-          "disabled": true,
-          "settings": {
-            "image_height": "adapt"
-          }
-        },
-        "title": {
-          "type": "title",
-          "disabled": true,
-          "settings": {
-            "blog_show_date": true,
-            "blog_show_author": false
-          }
-        },
-        "share": {
-          "type": "share",
-          "disabled": true,
-          "settings": {
-            "share_label": "Share"
-          }
-        },
-        "content": {
-          "type": "content",
-          "settings": {
-          }
-        }
-      },
-      "block_order": [
-        "featured_image",
-        "title",
-        "share",
-        "content"
-      ],
+      "type": "article-template",
       "settings": {
-      }
-    },
-    "163307332098739d3a": {
-      "type": "image-with-text",
-      "blocks": {
-        "3d717177-bff6-4dbc-bd06-9b3bdec147c5": {
-          "type": "button",
-          "settings": {
-            "btn_style": "primary",
-            "btn_text": "Shop Our Collection",
-            "btn_url": ""
-          }
-        }
-      },
-      "block_order": [
-        "3d717177-bff6-4dbc-bd06-9b3bdec147c5"
-      ],
-      "settings": {
-        "image": "shopify:\/\/shop_images\/reviews-fleur-and-bee-skincare_1.jpg",
-        "bg_color": "#e5e5e3",
-        "content_bg_color": "",
-        "pre_header_color": "",
-        "text_color": "#083d3a",
-        "link_color": "",
-        "link_color_hover": "",
-        "primary_btn_bg_color": "#083d3a",
-        "primary_btn_bg_color_hover": "",
-        "primary_btn_text_color": "#ffffff",
-        "primary_btn_text_color_hover": "",
-        "secondary_btn_border_color": "",
-        "secondary_btn_border_color_hover": "",
-        "secondary_btn_bg_color": "",
-        "secondary_btn_bg_color_hover": "",
-        "secondary_btn_text_color": "",
-        "secondary_btn_text_color_hover": "",
-        "pre_header": "",
-        "main_title": "Want to see for yourself?",
-        "text": "Happier, healthier skin is just a few clicks away. Returns are always free and easy.",
-        "block_style": "block-style-2",
-        "pre_header_tag": "h2",
-        "title_tag": "h1",
-        "title_size_desk": 32,
-        "title_size_mob": 28,
-        "text_alignment_desk": "center",
-        "text_alignment_mob": "center",
-        "img_alignment": true,
-        "stack_order": true,
-        "show_overlay_img": false,
-        "horizantal_spacing_desk": 0,
-        "horizantal_spacing_mob": 0,
-        "vertical_spacing_desk": 60,
-        "vertical_spacing_mob": 40,
-        "overlay_img_width_desk": 240,
-        "overlay_img_width_mob": 160,
-        "top_position_desk": 20,
-        "top_position_mob": 20,
-        "lr_position_desk": 40,
-        "lr_position_mob": 40,
-        "text_side_width": 50,
-        "image_side_width": 50,
-        "text_horizantal_space": 50
+        "title_class": "h1",
+        "blog_show_author": false,
+        "blog_show_date": true,
+        "blog_date_format": "%B %d, %Y",
+        "show_share_buttons": false,
+        "show_article_image": true,
+        "show_recent_posts": true,
+        "recent_bg_color": "#f7f8f9",
+        "recent_max_posts": "3",
+        "recent_posts_width_large": "one-third",
+        "recent_posts_width_medium": "one-half",
+        "recent_posts_width_small": "one-whole",
+        "blog_sidebar_enable": "none"
       }
     }
   },
   "order": [
-    "main",
-    "163307332098739d3a"
+    "main"
   ]
 }
