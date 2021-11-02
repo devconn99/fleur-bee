@@ -23,7 +23,7 @@
     margin-bottom: 50px;
 }
 .collection-preview .main-title {
-    font-size: 36px;
+    font-size: 32px;
     font-family: var(--font-mackinac-medium);
     color: var(--color-Xdark-green);
     margin: 0
@@ -43,6 +43,9 @@
 }
 .collection-preview .product-details {
     margin-top: 22px;
+}
+.collection-preview .product-details .product-info {
+    min-height:  4.8rem;
 }
 .collection-preview .product-name {
     font-size: 18px;
@@ -136,11 +139,14 @@
     }
 }
 @media screen and (max-width: 480px ) {
+    .collection-preview .product-details .badge {
+        top: 5px;
+    }
     .collection-preview {
         padding-bottom: 55px;
     }
     .collection-preview .main-title {
-        font-size: 28px;
+        font-size: 20px;
     }
     .collection-preview .header_wrap {
         margin-bottom: 30px;

@@ -27,6 +27,7 @@
 .image-with-text .main_title {
     font-family: var( --font-mackinac-medium);
     margin: 0;
+    font-size:  32px;
 }
 .image-with-text .text {
     margin: 25px 0 30px;
@@ -262,6 +263,9 @@
 @media screen and (max-width: 480px ) {
     .about-us .shopify-section:last-child {
         margin-top: 30px;
+    }
+    .image-with-text .main_title {
+        font-size:  20px;
     }
     .about-us .image-with-text .link {
         margin-top: -10px;

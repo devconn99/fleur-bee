@@ -57,22 +57,8 @@
   {%- endif -%}
 </noscript>
 
+{% unless media.media_type == 'video' %}
 <modal-opener class="product__modal-opener product__modal-opener--{{ media.media_type }} no-js-hidden" data-modal="#ProductModal-{{ modal_id }}">
- {%- comment -%}
-  <span class="product__media-icon motion-reduce" aria-hidden="true">
-    {%- liquid
-      case media.media_type
-      when 'video' or 'external_video'
-        render 'icon-play'
-      when 'model'
-        render 'icon-3d-model'
-      else
-        render 'icon-zoom'
-      endcase
-    -%}
-  </span>
- {%- endcomment -%}
-
   <div class="product__media media media--transparent" style="padding-top: {{ 1 | divided_by: media.preview_image.aspect_ratio | times: 100 }}%;">
     <img
       srcset="{% if media.preview_image.width >= 288 %}{{ media.preview_image | img_url: '288x' }} 288w,{% endif %}
@@ -88,17 +74,8 @@
       alt="{{ media.preview_image.alt | escape }}"
     >
   </div>
-  <button class="product__media-toggle" type="button" aria-haspopup="dialog" data-media-id="{{ media.id }}">
-    <span class="visually-hidden">
-      {%- if position == 'featured' %}
-        {{ 'products.product.media.open_featured_media' | t }}
-      {%- else -%}
-        {{ 'products.product.media.open_media' | t: index: position }}
-      {%- endif -%}
-    </span>
-  </button>
 </modal-opener>
-
+{% endunless %}
 {%- if media.media_type != 'image' -%}
   {%- if media.media_type == 'model' -%}
     <product-model class="deferred-media media media--transparent no-js-hidden" style="padding-top: 100%" data-media-id="{{ media.id }}">
@@ -140,7 +117,7 @@
           echo media | external_video_url: autoplay: true, loop: loop | external_video_tag: class: video_class, loading: "lazy"
         endif
       when 'video'
-        echo media | media_tag: image_size: "2048x", autoplay: true, loop: loop, controls: true, preload: "none", autoplay: true
+        echo media | media_tag: image_size: "2048x", autoplay: true, loop: loop, controls: true, preload: "none", autoplay: true, muted: false
       when 'model'
         echo media | media_tag: image_size: "2048x", toggleable: true
       endcase
