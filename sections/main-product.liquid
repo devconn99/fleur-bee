@@ -67,8 +67,8 @@
           {% assign first_part = product.title | split: '/' | first %}
           {% assign second_part = product.title | split: '/' | last %}
           {% if title contains '/' %}
-              <h2 class="product-name">{{ first_part }}</h2>
-              <h1 class="product-description">{{ second_part }}</h1>
+              <h1 class="product-name">{{ first_part }}</h1>
+              <h2 class="product-description">{{ second_part }}</h2>
             {% else %}
               <h1 class="product-name">{{ title }}</h1>   
           {% endif %}

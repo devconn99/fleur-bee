@@ -1272,7 +1272,7 @@ a.product__text {
   }
   .template-product .image-with-text .beta .image {
     max-height: 370px;
-    object-position: 7px 105%;
+    object-position: 100%;
   }
   .template-product .image-with-text .content-wrap {
     max-width: 220px;

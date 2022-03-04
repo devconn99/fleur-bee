@@ -102,6 +102,9 @@
     width: 100%;
     height: 36px;
 }
+.custom-header .cart-icon-link svg path, .custom-header .search-icon-wrap svg path {
+    fill: var(--color-ultra-dark-green);
+}
 .custom-header .icon-label {
     font-size: 12px;
     text-transform: uppercase;
