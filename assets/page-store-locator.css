@@ -1,0 +1,41 @@
+.store-locator .main-page-title {
+  font-family: var(--font-mackinac-bold);
+  font-size: 48px;
+  text-align: center;
+  color: var(--color-dark-green);
+  margin-bottom: 0;
+  line-height: 1;
+}
+.store-locator .page-width--narrow {
+  max-width: 100%;
+  padding: 0 10px;
+}
+.store-locator .main-text {
+  font-family: var(--font-mackinac-medium);
+  font-size: 18px;
+  color: var(--color-dark-green);
+  text-align: center;
+  margin: 0 0 40px;
+}
+
+@media screen and (max-width: 991px) {
+  .store-locator #MainContent {
+    margin-top: 80px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .store-locator #MainContent {
+    margin-top: 60px;
+  }
+  .store-locator .page-width--narrow {
+    padding: 0;
+  }
+  .store-locator .main-page-title {
+    font-size: 34px;
+    line-height: 1.3;
+  }
+  .store-locator .main-text {
+    font-size: 14px;
+  }
+}

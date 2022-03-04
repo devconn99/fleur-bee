@@ -13,7 +13,7 @@
           "settings": {
             "btn_style": "primary",
             "btn_text": "View Our Collection",
-            "btn_url": ""
+            "btn_url": "shopify:\/\/collections\/shop-all"
           }
         }
       },
@@ -21,8 +21,8 @@
         "ca88fc57-0722-4f1f-9bf6-a8add294e1ee"
       ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/skin-care-set-fleur-and-bee_1000x1000_a9303fc0-77c9-43d9-aa9e-b05b771cbe24.jpg",
-        "bg_color": "#f1dcd6",
+        "image": "shopify:\/\/shop_images\/7-simple-5-step-skincare-routine_c2a2663e-7e30-467e-b632-f97afa20794c.jpg",
+        "bg_color": "#c1cfce",
         "content_bg_color": "",
         "pre_header_color": "",
         "text_color": "",
@@ -39,11 +39,11 @@
         "secondary_btn_text_color": "",
         "secondary_btn_text_color_hover": "",
         "pre_header": "",
-        "main_title": "Shop now and support the cause.",
+        "main_title": "We believe in clean skincare for everyone.",
         "text": "",
         "block_style": "block-style-2",
         "pre_header_tag": "h2",
-        "title_tag": "h1",
+        "title_tag": "h2",
         "title_size_desk": 32,
         "title_size_mob": 22,
         "text_alignment_desk": "center",
@@ -51,6 +51,10 @@
         "img_alignment": true,
         "stack_order": false,
         "show_overlay_img": false,
+        "desk_btn_size": 16,
+        "mob_btn_size": 12,
+        "desk_btn_width": 180,
+        "mob_btn_width": 100,
         "horizantal_spacing_desk": 0,
         "horizantal_spacing_mob": 0,
         "vertical_spacing_desk": 40,

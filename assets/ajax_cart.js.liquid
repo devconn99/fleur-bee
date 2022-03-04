@@ -349,7 +349,7 @@ var ajaxCart = (function(module, $) {
        *   - A hard-coded url of no-image
       */
       if (cartItem.image != null){
-        var prodImg = cartItem.image.replace(/(\.[^.]*)$/, "_small$1").replace('http:', '');
+        var prodImg = cartItem.image.replace(/(\.[^.]*)$/, "_medium$1").replace('http:', '');
       } else {
         var prodImg = "//cdn.shopify.com/s/assets/admin/no-image-medium-cc9732cb976dd349a0df1d39816fbcc7.gif";
       }
@@ -418,20 +418,24 @@ var ajaxCart = (function(module, $) {
         }
   
         $.getJSON('/collections/cart-upsell-collection/products.json', function(upsell_items) {
-           
+           console.log({upsell_items})
             var rendermUpsellProducts = [];
             let upsell_item;
             for(upsell_item of upsell_items.products){
               if(!obj_id[upsell_item.id]){
                 if(rendermUpsellProducts.length < 2){
-                  rendermUpsellProducts.push(upsell_item)
+                  if(upsell_item.variants[0].available){
+                    rendermUpsellProducts.push(upsell_item)
+                  }
                 }
               }
             }
+
+            console.log({rendermUpsellProducts})
             $('#upsell_container').html('');
             rendermUpsellProducts.forEach(product => {
               $('#upsell_container').append(`
-                    <dev data-cart-submit class="upsell-form var-${ product.variants[0].id }" data-upsell="${ product.handle }">
+                    <div data-cart-submit class="upsell-form var-${ product.variants[0].id }" data-upsell="${ product.handle }">
                         <input type="hidden" name="return_to" value="back" />
                         <div class="grid grid--half-gutters">
                         <div class="grid__item three-tenths ajaxcart__product-image-wrapper">
@@ -443,7 +447,7 @@ var ajaxCart = (function(module, $) {
                           <button class="btn btn--secondary btn--small" type="submit" name="add" data-cart-add="${ product.variants[0].id }">Add <span class="cart-divider">|</span> <span class="price">${ Shopify.formatMoney(product.variants[0].price) }</span></button>
                         </div>
                       </div>
-                  </dev>
+                  </div>
               `)
             })
     

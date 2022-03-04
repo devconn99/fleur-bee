@@ -33,8 +33,7 @@
 }
 
 .cart-notification.animate {
-  transition: transform var(--duration-short) ease,
-    visibility 0s var(--duration-short) ease;
+  transition: transform var(--duration-short) ease, visibility 0s var(--duration-short) ease;
 }
 
 .cart-notification.active {

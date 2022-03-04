@@ -22,21 +22,48 @@
 .active-section .bubbles-wrap {
     display: flex;
     flex-wrap: wrap;
-    max-width: 620px;
+    max-width: 780px;
     margin: 30px auto 25px;
     justify-content: center;
 }
 .active-section .bubbles {
-    padding: 2px 12px;
+    padding: 4px 9px;
     background-color: #fff;
-    margin: 0 5px 15px;
-    font-size: 16px;
+    margin: 0 3px 15px;
+    font-size: 18px;
     color: var(--color-normal-green);
     text-transform: capitalize;
     font-family: var(--font-cerebri-book);
     display: block;
-    cursor: pointer
+    cursor: pointer;
+    position: relative;
+      white-space: nowrap;
 }
+.active-section .bubbles.tooltip::after,
+.active-section .bubbles.tooltip-fadeout::after{
+    cursor: initial;
+    content: "";
+    width: 20px;
+    display: inline-block;
+    height: 20px;
+    position: absolute;
+    background-color: #fff;
+    border-left: 0 solid transparent;
+    border-bottom: 1px solid #033;
+    border-top: 0 solid transparent;
+    border-right: 1px solid #033;
+    z-index: 2;
+    left: calc(50% - 10px);
+    top: calc(100% + 5px);
+    transform: rotate(-134deg);
+    border-radius: 0 0 4px 0;
+}
+.active-section .bubbles.tooltip-fadeout::after {
+    opacity: 0;
+    -webkit-transition: opacity 500ms linear;
+    transition: opacity 500ms linear;
+}
+
 .active-section .hide-ingredients-desk {
     display: none;
 }
@@ -54,7 +81,7 @@
     display: block;
 }
 .active-section .bubbles-inner-wrap {
-    position: relative;
+/*     position: relative; */
     display: none;
 }
 .active-section .show-ingredients {
@@ -66,10 +93,11 @@
     border-radius: 5px;
     position: absolute;
     width: 290px;
-    z-index: 3;
+    z-index: 1;
     border: 1px solid #033;
     display: none
 }
+/*
 .active-section .product-tooltip::after {
     content: "";
     width: 20px;
@@ -84,10 +112,10 @@
     z-index: 999;
     left: 15%;
     top: -11px;
-    transform: rotate(
--134deg);
+    transform: rotate(-134deg);
     border-radius: 0 0 4px 0;
 }
+*/
 .active-section .tooltip-text {
     margin: 0;
     font-size: 16px;
@@ -107,7 +135,11 @@
 .active-section .close g {
     stroke: var(--color-Xdark-green)
 }
-
+@media screen and (max-width: 1279px) {
+    .active-section .bubbles {
+        font-size: 17px;
+    }
+}
 @media screen and (max-width: 767px) {
     .active-section .hide-ingredients.show-ingredients-mob {
         display: block;
@@ -115,20 +147,22 @@
 }
 
 @media screen and (max-width: 480px) {
+    .active-section .bubbles-wrap {
+        position: relative;
+    }
     .active-section .bubbles-inner-wrap {
-        position: static;
+        position: unset;
     }
     .active-section .product-tooltip {
-        padding: 49px 20px 20px;
-        border-radius: 0;
-        position: fixed;
-        width: 100%;
-        height: 100%;
-        left: 0;
-        top: 69px;
-        right: 0;
-        width: 100%;
+        border-radius: 5px;
+      	max-width: 50%;
+        width: auto;
         justify-content: center;
+        align-items: center;
+      	width: 50%;
+    }
+    .active-section .tooltip-text {
+      	font-size: 12px;
     }
     .active-section .title {
         font-size: 20px;
@@ -145,11 +179,14 @@
         margin-bottom: 20px;
     }
     .active-section .bubbles {
-        padding: 2px 10px;
-        margin: 0 3px 12px;
-        font-size: 11px;
+        padding: 4px;
+        margin: 0 2px 11px;
+        font-size: 10px;
     }
-    .active-section .product-tooltip::after {
-        content: none
+    .active-section .bubbles.tooltip::after,
+  	.active-section .bubbles.tooltip-fadeout::after {
+        width: 12px;
+        height: 12px;
+        border-radius: 0 0 2px 0;
     }
 }

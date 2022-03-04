@@ -1,0 +1,47 @@
+.accessibility .main-page-title {
+  font-family: var(--font-mackinac-bold);
+  font-size: 48px;
+  color: var(--color-dark-green);
+  text-align: center;
+}
+.accessibility .rte h2 {
+  font-size: 36px;
+  font-family: var(--font-mackinac-bold);
+  color: var(--color-dark-green);
+}
+.accessibility .rte p, .accessibility .rte li {
+  font-family: var(--font-cerebri-book);
+  color: var(--color-secondary);
+  font-size: 18px;
+  line-height: 1.5;
+  margin-bottom: 40px;
+  margin-top: 0;
+}
+.accessibility .rte {
+   margin-bottom: 80px;
+}
+
+@media screen and (max-width: 1279px) {
+  .accessibility .rte h2 {
+    font-size: 24px;
+  }
+}
+@media screen and (max-width: 990px) {
+  .accessibility #MainContent {
+    margin-top: 80px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .accessibility #MainContent {
+    margin-top: 60px;
+  }
+  .accessibility .main-page-title {
+    font-size: 36px;
+  }
+  .accessibility .rte h2 {
+    font-size: 22px;
+  }
+  .accessibility .rte p, .accessibility .rte li {
+    font-size: 14px;
+  }
+}

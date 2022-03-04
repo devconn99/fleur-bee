@@ -1,0 +1,17 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-collection",
+      "settings": {
+        "bg_color": "#fcf8f5",
+        "main_title": "Moisturizers",
+        "text": "We currently offer two moisturizers: H2 Oh Yeah is ideal for dry skin, and Crème de la Cream is ideal for aging or uneven skin.",
+        "product_per_row": "2",
+        "btn_style": "primary"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

@@ -116,6 +116,9 @@
     padding:0 !important;
     margin:0 !important;
 }
+.template-article .mentioned-card-outer a {
+    align-items: center;
+}
 @media screen and (max-width:580px) {
     .blog-cta-container {
         flex-wrap:wrap;
@@ -148,6 +151,7 @@
 }
 .template-article .article-main .article__title {
     font-size: 46px;
+  	font-weight: 900;
     color: var(--color-Xdark-green);
     font-family: var(--font-mackinac-medium);
     margin-bottom: 0;
@@ -159,6 +163,27 @@
 }
 .template-article .article-main .rte {
     margin-top: 30px;
+}
+.skincare-reviews .article-hero {
+    display: none;
+}
+.skincare-reviews .article__title {
+    display: none;
+}
+.skincare-reviews .article-main .rte {
+    margin-top: 0;
+}
+.skincare-reviews .article-main .grid {
+    margin-bottom: 0;
+}
+.skincare-reviews .article-main .grid__item {
+    padding: 0;
+}
+.skincare-reviews .image-with-text .content-wrap {
+    max-width: 100%;
+}
+.skincare-reviews .image-with-text .text {
+    margin: 15px auto 20px;
 }
 .template-article .article-main .rte p {
     font-size: 18px;
@@ -249,7 +274,7 @@
 .template-article .related-posts .grid__item {
     float: left;
     padding-left: 40px;
-    min-height: 500px;
+    min-height: 480px;
     height: 1px;
     margin-bottom: 30px;
 }
@@ -266,11 +291,11 @@
     padding: 30px;
 }
 .template-article  .related-posts h4.bold {
-    min-height: 57.6px;
-    margin-bottom: 10px;
+    min-height: auto;
+    margin-bottom: 15px;
     color: var(--color-Xdark-green);
     font-family: var(--font-secondary-normal);
-    font-size: 22px;
+    font-size: 21px;
     margin-top: 0;
 }
 .template-article  .related-posts .article__grid-excerpt {
@@ -304,14 +329,28 @@
     }
     .template-article .related-posts .grid__item {
         padding-left: 25px;
+        min-height: 440px;
     }
     .template-article .related-posts .grid {
         margin-left: -25px;
     }
+    .template-article .related-posts .grid__item {
+        min-height: 430px;
+    }
+    .template-article .related-posts h4.bold {
+        font-size: 17px;
+        letter-spacing: 0.1px;
+    }
+    .template-article .related-posts .article__grid-excerpt {
+        font-size: 15px;
+    }
+    .template-article .related-posts .read-more {
+        font-size: 18px;
+    }
 }
 @media only screen and (max-width: 991px) {
     .template-article #MainContent {
-        margin-top: 72px;
+        margin-top: 99px;
     }
     .template-article .page-width {
         padding: 0 2rem;
@@ -326,9 +365,6 @@
     }
     .template-article .article-hero {
         height: 300px;
-    }
-    .template-article .related-posts .grid__item {
-        min-height: 550px;
     }
 }
 
@@ -355,6 +391,18 @@
         padding: 30px;
     }
 } 
+@media only screen and (max-width: 767px) {
+    .template-article .article-hero {
+        height: 120px;
+    }
+    .template-article .article-main .blog-cta-left {
+        max-width: 100%;
+        flex: 100%;
+    }
+    .template-article .related-posts .grid__item {
+        min-height: 400px;
+    }
+}
 @media only screen and (max-width: 560px) {
     .template-article .related-posts .grid__item {
         padding-left: 22px;
@@ -379,15 +427,11 @@
         font-size: 19px;
         margin-top: 0;
     }
-    .template-article .related-posts .grid__item {
-        min-height: 490px;
-    }
     .template-article .related-posts .article__grid-meta {
         padding: 20px;
     }
     .template-article .article-main .article__title {
         font-size: 32px;
-        max-width: 300px;
         margin: 30px auto 0;
     }
     .template-article .article-main .rte p {
@@ -424,5 +468,10 @@
     }
     .template-article .related-posts .title {
         font-size: 28px;
+    }
+}
+@media screen and (max-width: 479px) {
+    .template-article .related-posts .grid__item {
+        min-height: 490px;
     }
 }

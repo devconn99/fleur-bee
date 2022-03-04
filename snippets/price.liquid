@@ -61,9 +61,9 @@
         <span class="price-item price-item--regular">
           {{ money_price }}
 
-          {% if set %}
+          {% if product.metafields.my_fields.set_price %}
             <span class="set-price">
-              ($110 Value)
+              {{ product.metafields.my_fields.set_price }}
             </span>
           {% endif %}
         </span>

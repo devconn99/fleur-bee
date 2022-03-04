@@ -116,6 +116,12 @@
       {{ 'page-recycling.css' | asset_url | stylesheet_tag }}
       {% elsif page.handle == 'skin-care-quiz-results-oiliness' %}
       {{ 'page-quiz.css' | asset_url | stylesheet_tag }}
+      {% elsif page.handle == 'accessibility' %}
+      {{ 'page-accessibility.css' | asset_url | stylesheet_tag }}
+      {% elsif page.handle == 'store-locator' %}
+      {{ 'page-store-locator.css' | asset_url | stylesheet_tag }}
+      {% elsif page.handle == 'contact-us' %}
+      {{ 'page-contact-us.css' | asset_url | stylesheet_tag }}
     {% endif %}
 
     {%- unless settings.type_body_font.system? -%}
@@ -126,6 +132,26 @@
     {%- endunless -%}
 
     <script>document.documentElement.className = document.documentElement.className.replace('no-js', 'js');</script>
+ 
+    <!-- Start of totalleehelp Zendesk Widget script -->
+<script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=061ecf8a-577c-4136-bc74-48fe0661e2f2"> </script>
+<script type="text/javascript">
+  window.zESettings = {
+    webWidget: {
+      zIndex: 9999999999999,
+      offset: {
+        horizontal: '50px',
+        vertical: '0px',
+        mobile: {
+        horizontal: '-14px',
+        vertical: '48px'
+        }
+      }
+    }
+  };
+</script>
+<!-- End of totalleehelp Zendesk Widget script -->  
+
   </head>
 
   <body class='template-{{ request.page_type }} {{ page.handle }} {% if page.handle == 'free-skincare-consultation' %}
@@ -134,12 +160,14 @@
       recycling-page
     {% elsif page.handle == 'skin-care-quiz-results-oiliness' %}
       quiz-result
+      {% elsif article.handle == 'news/fleur-bee-skincare-reviews' %}
+        skincare-reviews
   {% endif %}'>
     <a class="skip-to-content-link button visually-hidden" href="#MainContent">
       {{ "accessibility.skip_to_text" | t }}
     </a>
     {% render 'cart-drawer' %}
-    <!-- {% section 'announcement-bar' %} -->
+    {% section 'announcement--bar' %}
     {% section 'header' %}
 
     <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
@@ -201,6 +229,76 @@
       window.accessibilityStrings = {
         shareSuccess: `{{ 'general.share.success_message' | t }}`,
       }
+      
+
+<!-- This site is converting visitors into subscribers and customers with OptinMonster - https://optinmonster.com -->
+<script type="text/javascript" src="https://a.optmnstr.com/app/js/api.min.js" data-account="44507" data-user="38823" async></script>
+<!-- / https://optinmonster.com -->
+<script async type="text/javascript" data-api-key="pubkey-s5ZeCi3koWT52J6Bgn36p189sZ4mbu" id="stamped-script-widget" src="https://cdn-stamped-io.azureedge.net/files/widget.min.js"></script>
+ <!-- / SumoMe -->
+  <script async>(function(s,u,m,o,j,v){j=u.createElement(m);v=u.getElementsByTagName(m)[0];j.async=1;j.src=o;j.dataset.sumoSiteId='04d0951043134f0d3db4db1114c37d33075019d55e66f94dbe0b02b46e9b69db';v.parentNode.insertBefore(j,v)})(window,document,'script','//load.sumo.com/');</script>
+
+      
     </script>
+  
+           <!-- Accessibe Start -->
+<script>
+	(function(){
+    	var s	= document.createElement('script');
+    	var h	= document.querySelector('head') || document.body;
+    	s.src	= 'https://acsbapp.com/apps/app/dist/js/app.js';
+    	s.async  = true;
+    	s.onload = function(){
+        	acsbJS.init({
+            	statementLink	: '',
+            	footerHtml   	: '',
+            	hideMobile   	: false,
+            	hideTrigger  	: false,
+            	disableBgProcess : false,
+         	   language     	: 'en',
+            	position     	: 'left',
+            	leadColor    	: '#083535',
+            	triggerColor 	: '#083535',
+            	triggerRadius	: '50%',
+            	triggerPositionX : 'left',
+            	triggerPositionY : 'bottom',
+            	triggerIcon  	: 'wheels',
+            	triggerSize  	: 'small',
+            	triggerOffsetX   : 20,
+            	triggerOffsetY   : 20,
+            	mobile       	: {
+   	             triggerSize  	: 'small',
+                	triggerPositionX : 'left',
+                	triggerPositionY : 'bottom',
+                	triggerOffsetX   : 5,
+                	triggerOffsetY   : 5,
+                	triggerRadius    : '50%'
+            	}
+        	});
+    	};
+    	h.appendChild(s);
+	})();
+</script>
+     <!-- Accessibe End -->
+  {% render 'preorder-now' %}
+<style>
+
+  
+  .stamped-main-badge[data-id="7529074131181"] span.stamped-badge-caption span {
+    font-size: initial !important;
+} 
+.stamped-main-badge[data-id="7529074131181"] .fa-star-half-o:before, .stamped-main-badge[data-id="7529074131181"] .fa-star-o:before, .stamped-main-badge[data-id="7529074131181"] .fa-star:before, .stamped-main-badge[data-id="7529074131181"] .stamped-fa-star-half-o:before, .stamped-main-badge[data-id="7529074131181"] .stamped-fa-star-o:before, .stamped-main-badge[data-id="7529074131181"] .stamped-fa-star:before {
+    font-size: 16px !important;
+    }
+ @media only screen and (max-width: 480px) { 
+  span.stamped-starrating.stamped-badge-starrating {
+    width: 9rem !important;
+    display: inline-block;
+}
+span.stamped-badge {
+    flex-flow: wrap;
+}
+  }
+  </style>
   </body>
 </html>

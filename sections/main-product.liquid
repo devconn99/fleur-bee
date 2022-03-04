@@ -19,7 +19,6 @@
 <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
 {% endcomment %}
 
-
 {%- assign first_3d_model = product.media | where: "media_type", "model" | first -%}
 {%- if first_3d_model -%}
   {{ 'component-product-model.css' | asset_url | stylesheet_tag }}
@@ -33,21 +32,21 @@
         {%- for media in product.media -%}
           <div class="slider-item">
             {% if media.media_type == 'video' %}
-             {% render 'responsive--image' with media as image, max_width: 30px, class: 'product-image' %}
+              {% render 'responsive--image' with media as image, max_width: 30px, class: 'product-image' %}
               <div class="product-video-overlay">
                  {%- include 'icon-play-circle' -%}
               </div>
             {% else %}
-            {% render 'responsive--image' with media as image, max_width: 30px, class: 'product-image' %}
+              {% render 'responsive--image' with media as image, max_width: 30px, class: 'product-image' %}
             {% endif %}
           </div>
         {%- endfor -%}
       </div>
       <div class="product_slider-main">
-                {% for media in product.media %}
-                <div class="slider-item">
-                  {% render 'product-thumbnail' media: media, max_width: 500px, loop: section.settings.enable_video_looping %}
-                </div>
+        {% for media in product.media %}
+          <div class="slider-item {% if media.media_type == 'video' %} video-slide {% endif %}">
+            {% render 'product-thumbnail' media: media, max_width: 500px, loop: section.settings.enable_video_looping %}
+          </div>
         {% endfor %}
       </div>
     </div>
@@ -74,39 +73,11 @@
               <h1 class="product-name">{{ title }}</h1>   
           {% endif %}
           {%- when 'price' -%}
-            <div class="price-with-rating {% if set %} product-set-rating {% endif %}">
+            <div class="price-with-rating {% if set %} product-set-rating {% else%} product-info {% endif %}">
               <div class="no-js-hidden" id="price-{{ section.id }}" {{ block.shopify_attributes }}>
                 {%- render 'price', product: product, use_variant: true, show_badges: true, price_class: 'price--large' -%}
               </div>
-              {%- if product.metafields.reviews.rating.value != blank -%}
-                {% liquid
-                 assign rating_decimal = 0 
-                 assign decimal = product.metafields.reviews.rating.value.rating | modulo: 1 
-                 if decimal >= 0.3 and decimal <= 0.7
-                  assign rating_decimal = 0.5
-                elsif decimal > 0.7
-                  assign rating_decimal = 1
-                 endif 
-                %}
-                <div class="rating-wrap">
-                  <div class="rating" role="img" aria-label="{{ 'accessibility.star_reviews_info' | t: rating_value: product.metafields.reviews.rating.value, rating_max: product.metafields.reviews.rating.value.scale_max }}">
-                    <div class="stars-img">
-                      {% render 'framework--icons', icon: 'star' %}
-                      {% render 'framework--icons', icon: 'star' %}
-                      {% render 'framework--icons', icon: 'star' %}
-                      {% render 'framework--icons', icon: 'star' %}
-                      {% render 'framework--icons', icon: 'star' %}
-                    </div>
-                  </div>
-                  <p class="rating-text caption">
-                    <span aria-hidden="true">{{ product.metafields.reviews.rating.value }} / {{ product.metafields.reviews.rating.value.scale_max }}</span>
-                  </p>
-                  <p class="rating-count caption">
-                    <span aria-hidden="true" class="rating_text">{{ product.metafields.reviews.rating_count }} reviews</span>
-                    <span class="visually-hidden">{{ product.metafields.reviews.rating_count }} {{ "accessibility.total_reviews" | t }}</span>
-                  </p>
-                </div>
-              {%- endif -%}
+              <span class="stamped-product-reviews-badge stamped-main-badge" data-id="{{ product.id }}" style="display: block;">{{ product.metafields.stamped.badge }}</span>
             </div>
             {%- comment -%}
             <div {{ block.shopify_attributes }}>
@@ -118,8 +89,9 @@
             {%- endcomment -%}
           {%- when 'description' -%}
             {%- if product.description != blank -%}
+              {% assign rte =  product.description | split: '<!-- split -->' | first %}
               <div class="product__description rte">
-                {{ product.description }}
+                {{ rte }}
               </div>
             {%- endif -%}
           {%- when 'custom_liquid' -%}
@@ -144,24 +116,24 @@
             </div>
           {%- when 'quantity_selector' -%}
             <div class="product-btn-group">
-              <div class="product-form__input product-form__quantity" {{ block.shopify_attributes }}>
-                <label class="form__label" for="Quantity-{{ section.id }}">
-                  {{ 'products.product.quantity.label' | t }}
-                </label>
-                
-                <quantity-input class="quantity rounded-button">
-                  <input class="quantity__input"
-                      type="number"
-                      name="quantity"
-                      id="Quantity-{{ section.id }}"
-                      min="1"
-                      value="1"
-                      form="product-form-{{ section.id }}"
-                    >
-                </quantity-input>
-              </div>
               <product-form class="product-form">
                 {%- form 'product', product, id: product_form_id, class: 'form', novalidate: 'novalidate', data-type: 'add-to-cart-form' -%}
+                  <div class="product-form__input product-form__quantity" {{ block.shopify_attributes }}>
+                    <label class="form__label" for="Quantity-{{ section.id }}">
+                      {{ 'products.product.quantity.label' | t }}
+                    </label>
+
+                    <quantity-input class="quantity rounded-button">
+                      <input class="quantity__input"
+                          type="number"
+                          name="quantity"
+                          id="Quantity-{{ section.id }}"
+                          min="1"
+                          value="1"
+                          form="product-form-{{ section.id }}"
+                        >
+                    </quantity-input>
+                  </div>
                   <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
                   <div class="product-form__buttons">
                     <button
@@ -169,12 +141,31 @@
                       name="add"
                       class="product-form__submit rounded-button button button--full-width {% if block.settings.show_dynamic_checkout and product.selling_plan_groups == empty %}button--secondary{% else %}button--primary{% endif %}"
                     {% if product.selected_or_first_available_variant.available == false %}disabled{% endif %}
+                    {% unless product.has_only_default_variant %}
+                      {% if option.selected_value == blank %}
+                        disabled
+                      {% endif %}
+                    {% endunless %}
                     >
+                      {% unless product.has_only_default_variant %}
+                        {%- for option in product.options_with_values -%}
+                          {% if option.selected_value %}
+                            make a selection
+                            {% else %}
+                              {%- if product.selected_or_first_available_variant.available -%}
+                                {{ 'products.product.add_to_cart' | t }}
+                              {%- else -%}
+                                {{ 'products.product.sold_out' | t }}
+                            {%- endif -%}
+                          {% endif %}
+                      {% endfor %}
+                      {% else %}
                         {%- if product.selected_or_first_available_variant.available -%}
                           {{ 'products.product.add_to_cart' | t }}
                         {%- else -%}
                           {{ 'products.product.sold_out' | t }}
                         {%- endif -%}
+                      {% endunless %}
                     </button>
                     {%- if block.settings.show_dynamic_checkout -%}
                       {{ form | payment_button }}
@@ -183,7 +174,7 @@
                 {%- endform -%}
               </product-form>
             </div>
-            <p class="shipping-promise">📦 Free shipping and returns on all orders</p>
+            <p class="shipping-promise">📦 Free shipping on all orders</p>
           {%- when 'popup' -%}
               <modal-opener class="product-popup-modal__opener no-js-hidden" data-modal="#PopupModal-{{ block.id }}" {{ block.shopify_attributes }}>
                 <button id="ProductPopup-{{ block.id }}" class="product-popup-modal__button link" type="button" aria-haspopup="dialog">{{ block.settings.text | default: block.settings.page.title }}</button>
@@ -231,20 +222,38 @@
               {%- if block.settings.picker_type == 'button' -%}
                 <variant-radios class="no-js-hidden" data-section="{{ section.id }}" data-url="{{ product.url }}" {{ block.shopify_attributes }}>
                   {%- for option in product.options_with_values -%}
-                      <fieldset class="js product-form__input">
-                        <legend class="form__label">{{ option.name }}</legend>
-                        {%- for value in option.values -%}
-                          <input type="radio" id="{{ section.id }}-{{ option.name }}-{{ forloop.index0 }}"
-                                name="{{ option.name }}"
-                                value="{{ value | escape }}"
-                                form="product-form-{{ section.id }}"
-                                {% if option.selected_value == value %}checked{% endif %}
-                          >
-                          <label for="{{ section.id }}-{{ option.name }}-{{ forloop.index0 }}">
-                            {{ value }}
-                          </label>
-                        {%- endfor -%}
-                      </fieldset>
+                      {% if option.name == 'Color' %}
+                        <fieldset class="product-form-input color-variants">
+                          <legend class="form-label">Dermatologist tested for all skin types</legend>
+                          <div class="swatches">
+                            {%- for value in option.values -%}
+                              <input type="radio" id="{{ section.id }}-{{ option.name }}-{{ forloop.index0 }}"
+                                    name="{{ option.name }}"
+                                    value="{{ value | escape }}"
+                                    form="product-form-{{ section.id }}"
+                                    class="input"
+                              >
+                              <label class="label" for="{{ section.id }}-{{ option.name }}-{{ forloop.index0 }}" style="background-image: url('{{ product.variants[forloop.index0].metafields.color.values | img_url: 'master' }}')"></label>
+                            {%- endfor -%}
+                            <span class="skin-color"></span>
+                          </div>
+                        </fieldset>
+                      {% else %}
+                        <fieldset class="js product-form__input">
+                          <legend class="form__label">{{ option.name }}</legend>
+                          {%- for value in option.values -%}
+                            <input type="radio" id="{{ section.id }}-{{ option.name }}-{{ forloop.index0 }}"
+                                  name="{{ option.name }}"
+                                  value="{{ value | escape }}"
+                                  form="product-form-{{ section.id }}"
+                                  {% if option.selected_value == value %}checked{% endif %}
+                            >
+                            <label for="{{ section.id }}-{{ option.name }}-{{ forloop.index0 }}">
+                              {{ value }}
+                            </label>
+                          {%- endfor -%}
+                        </fieldset>
+                      {% endif %}
                   {%- endfor -%}
                   <script type="application/json">
                     {{ product.variants | json }}
@@ -361,9 +370,26 @@
             {% assign guarantee = "guarante" %}  
             {% endif %}
             <div class="product-accordians">
-             {% include 'product-accordian', header_text: "Why You'll Love It", body_text: loveIt %}
-             {% include 'product-accordian', header_text: "Ingredients", body_text: ingredients %}
-             {% include 'product-accordian', header_text: "Our Guarantee", body_text: guarantee %}
+              {% comment %}
+              {% if product.metafields.my_fields.accordion_1_title != blank %}
+              {% assign headerText1 = product.metafields.my_fields.accordion_1_title %}
+              {% include 'product-accordian', header_text: headerText1, body_text: loveIt %}
+              {% else %}
+              {% include 'product-accordian', header_text: "Why You'll Love It", body_text: loveIt %}
+              {% endif %}
+              {% endcomment %}
+              {% if product.metafields.my_fields.accordion_2_title != blank %}
+              {% assign headerText2 = product.metafields.my_fields.accordion_2_title %}
+              {% include 'product-accordian', header_text: headerText2, body_text: ingredients %}
+              {% else %}
+              {% include 'product-accordian', header_text: "Ingredients", body_text: ingredients %}
+              {% endif %}
+              {% if product.metafields.my_fields.accordion_3_title != blank %}
+              {% assign headerText3 = product.metafields.my_fields.accordion_3_title %}
+              {% include 'product-accordian', header_text: headerText3, body_text: guarantee %}
+              {% else %}
+              {% include 'product-accordian', header_text: "Our Guarantee", body_text: guarantee %}
+              {% endif %}
             </div>
             <script>
               $('.product-accordians .accordian-item.active .accordian-body').slideDown();
@@ -398,6 +424,8 @@
   {%- endfor -%}
 </section>
 
+{% render 'ingredient-model-popup' with section %}
+
 {% javascript %}
   class ProductModal extends ModalDialog {
     constructor() {
@@ -428,6 +456,7 @@
 
       if (activeMedia.nodeName == 'DEFERRED-MEDIA' && activeMedia.querySelector('template')?.content?.querySelector('.js-youtube'))
         activeMedia.loadContent();
+        
     }
   }
 
@@ -447,25 +476,27 @@
 <script>
 // product slider script
 $(document).ready(function(){
-  $('.product_slider-main').slick({
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    arrows: false,
-    fade: true,
-    asNavFor: '#product .product-slider-nav',
-    responsive: [
-        {
-          breakpoint: 768,
-          settings: {
-            dots: true,
+  $('#product .product_slider-main').slick({
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      arrows: false,
+      fade: true,
+    infinite: false,
+      asNavFor: '#product .product-slider-nav',
+      responsive: [
+          {
+            breakpoint: 768,
+            settings: {
+              dots: true,
+            }
           }
-        }
-      ]
-  });
+        ]
+    });
   $('#product .product-slider-nav').slick({
     slidesToShow: 5,
     slidesToScroll: 1,
     vertical:true,
+    infinite: false,
     asNavFor: '.product_slider-main',
     dots: false,
     focusOnSelect: true,
@@ -787,6 +818,23 @@ $(document).ready(function(){
       "id": "enable_video_looping",
       "default": false,
       "label": "t:sections.main-product.settings.enable_video_looping.label"
+    },
+    {
+      "type": "header",
+      "content": "Ingredient Model Popup",
+      "info": "-------"
+    },
+    {
+      "type": "text",
+      "id": "highlight_text",
+      "label": "Highlight Text",
+      "default": "We follow the strictest standards in the world, set by the European Union, which means we say “No Thanks!” to 1,300+ nasty ingredients. (They wouldn’t all fit in this pop-up so we’ve included an abridged list...)"
+    },
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Text",
+      "default": "No parabens, sulfates, silicones, GMOs, artificial fragrances, phthalates, dyes, petrolium, aluminum, propylene glycol, polyethylene glycol, formaldehyde, diethanolamine, triclosan, EDTA, and toulene."
     }
   ]
 }

@@ -7,10 +7,18 @@
     "color_body_text": "#3d516a",
     "colors_text": "#121212",
     "colors_outline_button_labels": "#121212",
-    "colors_background_1": "#FFFFFF",
+    "colors_background_1": "#fcf8f5",
     "colors_background_2": "#F3F3F3",
     "type_header_font": "assistant_n4",
     "type_body_font": "assistant_n4",
+    "social_twitter_link": "",
+    "social_facebook_link": "",
+    "social_instagram_link": "",
+    "favicon": "shopify:\/\/shop_images\/fleur-and-bee-favicon_47e59e65-652a-432b-91fa-3b5609917917.png",
+    "checkout_logo_image": "shopify:\/\/shop_images\/fleur-logo-green.jpg",
+    "checkout_sidebar_background_color": "#fcf8f5",
+    "checkout_accent_color": "#000000",
+    "checkout_button_color": "#08353a",
     "sections": {
       "announcement-bar": {
         "type": "announcement-bar",
@@ -36,16 +44,16 @@
           "ba10c9bb-c6dc-4372-982b-0f0b5d940cdc": {
             "type": "Mega_menu_collection",
             "settings": {
-              "collection_image": "shopify:\/\/shop_images\/col_2.png",
-              "collection_url": "",
+              "collection_image": "shopify:\/\/shop_images\/3-step-skincare-routine-starter-set-bundle.jpg",
+              "collection_url": "shopify:\/\/products\/3-step-skincare-routine",
               "collection_title": "Shop the Starter Set"
             }
           },
           "fc11ba7c-dd27-4f0e-9ae1-6024a1153392": {
             "type": "Mega_menu_collection",
             "settings": {
-              "collection_image": "shopify:\/\/shop_images\/col_1.jpg",
-              "collection_url": "",
+              "collection_image": "shopify:\/\/shop_images\/collection-of-all-natural-skincare-products_b85d998f-0e4e-4aad-82e4-8bff23eb6db2.jpg",
+              "collection_url": "shopify:\/\/collections\/shop-all",
               "collection_title": "Shop All Product"
             }
           }
@@ -55,7 +63,7 @@
           "fc11ba7c-dd27-4f0e-9ae1-6024a1153392"
         ],
         "settings": {
-          "logo": "shopify:\/\/shop_images\/logo_8aa1ee37-85f3-4b8f-a12d-e3ab731164fc.png",
+          "logo": "logo.svg",
           "menu": "latest-menu",
           "mobile_menu": "latest-menu"
         }
@@ -67,14 +75,14 @@
             "type": "link_list",
             "settings": {
               "heading": "Shop",
-              "menu": "footer"
+              "menu": "latest-shop"
             }
           },
           "4c4fb304-8cc4-48fa-a2cd-b8ab0acd0564": {
             "type": "link_list",
             "settings": {
               "heading": "Learn",
-              "menu": "learn-footer"
+              "menu": "latest-learn"
             }
           },
           "892d5713-47e0-472c-9a71-742064e46efa": {
@@ -84,11 +92,25 @@
               "menu": "support"
             }
           },
-          "42480789-92b4-4ed2-8241-257c96c94c30": {
-            "type": "link_list",
+          "47a9e21b-b0c4-42e2-aac7-e526ea713e2a": {
+            "type": "social_media",
             "settings": {
-              "heading": "Quick links",
-              "menu": "support"
+              "img": "shopify:\/\/shop_images\/chrome___newtab_2.png",
+              "link": "https:\/\/www.facebook.com\/fleurandbee\/"
+            }
+          },
+          "5c01ad5b-bb0a-4b19-a026-0d332a6e3119": {
+            "type": "social_media",
+            "settings": {
+              "img": "shopify:\/\/shop_images\/chrome___newtab_1_1.png",
+              "link": "https:\/\/twitter.com\/FleurandBee"
+            }
+          },
+          "6aa18b9c-bfa5-4933-8bc3-ef8cd0f1e608": {
+            "type": "social_media",
+            "settings": {
+              "img": "shopify:\/\/shop_images\/ins_1.png",
+              "link": "https:\/\/www.instagram.com\/fleurandbee\/?hl=en"
             }
           }
         },
@@ -96,12 +118,23 @@
           "footer-0",
           "4c4fb304-8cc4-48fa-a2cd-b8ab0acd0564",
           "892d5713-47e0-472c-9a71-742064e46efa",
-          "42480789-92b4-4ed2-8241-257c96c94c30"
+          "47a9e21b-b0c4-42e2-aac7-e526ea713e2a",
+          "5c01ad5b-bb0a-4b19-a026-0d332a6e3119",
+          "6aa18b9c-bfa5-4933-8bc3-ef8cd0f1e608"
         ],
         "settings": {
-          "bg_color": "#083d3a",
+          "bg_color": "#fcf8f5",
           "newsletter_enable": true,
-          "newsletter_heading": "Want 20% off your first order?"
+          "newsletter_heading": "Want 10% off your first order?",
+          "newsletter_text": "Plus get exclusive news and skincare tips",
+          "copyright_text": "© 2022 <a href=\"\/\"> Fleur &amp; Bee<\/a> All rights reserved. <a href=\"\/pages\/privacy-policy\">Privacy Policy<\/a>. <a href=\"\/pages\/terms-conditions\">Terms &amp; Conditions<\/a>"
+        }
+      },
+      "announcement--bar": {
+        "type": "announcement--bar",
+        "settings": {
+          "text": "We're here to help :) Call us at (855) 855-9770",
+          "link": "tel:855-855-9770"
         }
       }
     },

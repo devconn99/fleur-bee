@@ -46,6 +46,12 @@ body.js-drawer-open-right {
     border-bottom: 2px solid #e0e7e6;
     text-align: center
 }
+#CartContainer p {
+    font-size: 18px;
+    color: var(--color-secondary);
+    font-family: var(--font-cerebri-book);
+    line-height: 1.4;
+}
 .drawer__title {
     width: 100%;
     margin-bottom: 15px;
@@ -116,7 +122,6 @@ a:not(.grid-view-item__link) {
     display: block;
     margin: 0 auto;
     max-width: 100%;
-    height: 100%;
     object-fit: cover;
 }
 .ajaxcart__product .subtitle {
@@ -139,9 +144,13 @@ a:not(.grid-view-item__link) {
     border: 2px solid #e0e7e6;
     border-radius: 4px;
 }
+
 .ajaxcart__qty svg.icon {
     width: 10px;
     height: 10px;
+}
+.ajaxcart__qty svg.icon path {
+    fill: var(--color-ultra-dark-green);
 }
 .drawer .ajaxcart__qty-adjust {
     cursor: pointer;
@@ -162,6 +171,7 @@ a:not(.grid-view-item__link) {
     box-shadow: none;
     font-size: 12px;
     text-align: center;
+    color: var(--color-ultra-dark-green);
 }
 .ajaxcart__delete {
     background-color: transparent;
@@ -215,6 +225,10 @@ a:not(.grid-view-item__link) {
     font-size: 16px;
     margin: 10px 0;
     font-family: var(--font-cerebri-book);
+    color: var(--color-ultra-dark-green);
+}
+.ajaxcart__footer #cloverly-check-wrapper p {
+    color: var(--color-ultra-dark-green) !important;
 }
 .drawer input, .drawer textarea {
     border-color: #e0e7e6;
@@ -279,13 +293,15 @@ a:not(.grid-view-item__link) {
 .btn--secondary {
     background-color: #fff;
     color: var(--color-Xdark-green);
-    border-color: var(--color-Xdark-green);
+    border: 0.2rem solid var(--color-Xdark-green);
     cursor: pointer;
 }
 .btn--secondary:focus, .btn--secondary:hover {
     color: #fff;
     background-color: var(--color-Xdark-green);
     opacity: 1;
+    border-color: transparent;
+    outline-offset: 0;
 }
 .btn--secondary:focus .price, .btn--secondary:hover .price {
     color: #fff;
@@ -306,4 +322,22 @@ a:not(.grid-view-item__link) {
 }
 .cart-divider {
     margin: 0 5px;
+}
+@media screen and (max-width: 767px) {
+    .ajaxcart__row .grid__item:first-child {
+        padding-left: 0;
+    }
+    .ajaxcart__product-wrapper .bold {
+        font-size: 17px;
+        letter-spacing: 0.1px;
+    }
+    .ajaxcart__line-price span {
+        font-size: 17px;
+    }
+    #CartContainer p {
+        font-size: 16px;
+    }
+    .ajaxcart__qty {
+      max-width: 100px;
+    }
 }

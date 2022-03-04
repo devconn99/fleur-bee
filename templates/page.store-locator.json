@@ -1,0 +1,79 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+      }
+    },
+    "image-with-text": {
+      "type": "image-with-text",
+      "disabled": true,
+      "blocks": {
+        "ca88fc57-0722-4f1f-9bf6-a8add294e1ee": {
+          "type": "button",
+          "settings": {
+            "btn_style": "primary",
+            "btn_text": "View Our Collection",
+            "btn_url": "shopify:\/\/collections\/all"
+          }
+        }
+      },
+      "block_order": [
+        "ca88fc57-0722-4f1f-9bf6-a8add294e1ee"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/skin-care-set-fleur-and-bee_1000x1000_a9303fc0-77c9-43d9-aa9e-b05b771cbe24.jpg",
+        "bg_color": "#f1dcd6",
+        "content_bg_color": "",
+        "pre_header_color": "",
+        "text_color": "",
+        "link_color": "",
+        "link_color_hover": "",
+        "primary_btn_bg_color": "#1a3f3e",
+        "primary_btn_bg_color_hover": "",
+        "primary_btn_text_color": "#ffffff",
+        "primary_btn_text_color_hover": "",
+        "secondary_btn_border_color": "",
+        "secondary_btn_border_color_hover": "",
+        "secondary_btn_bg_color": "",
+        "secondary_btn_bg_color_hover": "",
+        "secondary_btn_text_color": "",
+        "secondary_btn_text_color_hover": "",
+        "pre_header": "",
+        "main_title": "Shop now and support the cause.",
+        "text": "",
+        "block_style": "block-style-2",
+        "pre_header_tag": "h2",
+        "title_tag": "h2",
+        "title_size_desk": 32,
+        "title_size_mob": 22,
+        "text_alignment_desk": "center",
+        "text_alignment_mob": "center",
+        "img_alignment": true,
+        "stack_order": false,
+        "show_overlay_img": false,
+        "desk_btn_size": 16,
+        "mob_btn_size": 12,
+        "desk_btn_width": 180,
+        "mob_btn_width": 100,
+        "horizantal_spacing_desk": 0,
+        "horizantal_spacing_mob": 0,
+        "vertical_spacing_desk": 40,
+        "vertical_spacing_mob": 45,
+        "overlay_img_width_desk": 240,
+        "overlay_img_width_mob": 160,
+        "top_position_desk": 20,
+        "top_position_mob": 20,
+        "lr_position_desk": 40,
+        "lr_position_mob": 40,
+        "text_side_width": 50,
+        "image_side_width": 50,
+        "text_horizantal_space": 50
+      }
+    }
+  },
+  "order": [
+    "main",
+    "image-with-text"
+  ]
+}

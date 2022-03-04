@@ -1,17 +1,65 @@
 {
   "sections": {
-    "main": {
-      "type": "main-page"
-    },
-    "form": {
-      "type": "contact-form",
+    "16377620545a368c5d": {
+      "type": "image-with-text",
       "settings": {
-        "heading": ""
+        "image": "shopify:\/\/shop_images\/Fleur-and-bee-customer-support-worranty-contact.jpg",
+        "bg_color": "#fcf8f5",
+        "content_bg_color": "",
+        "pre_header_color": "",
+        "text_color": "#1a3f3e",
+        "link_color": "",
+        "link_color_hover": "",
+        "primary_btn_bg_color": "",
+        "primary_btn_bg_color_hover": "",
+        "primary_btn_text_color": "",
+        "primary_btn_text_color_hover": "",
+        "secondary_btn_border_color": "",
+        "secondary_btn_border_color_hover": "",
+        "secondary_btn_bg_color": "",
+        "secondary_btn_bg_color_hover": "",
+        "secondary_btn_text_color": "",
+        "secondary_btn_text_color_hover": "",
+        "pre_header": "",
+        "main_title": "Contact Us",
+        "text": "We're here to help and will get back\nto you within 1 business day.",
+        "block_style": "block-style-2",
+        "pre_header_tag": "h2",
+        "title_tag": "h1",
+        "title_size_desk": 46,
+        "title_size_mob": 28,
+        "text_alignment_desk": "left",
+        "text_alignment_mob": "center",
+        "img_alignment": true,
+        "stack_order": false,
+        "show_overlay_img": false,
+        "desk_btn_size": 16,
+        "mob_btn_size": 12,
+        "desk_btn_width": 180,
+        "mob_btn_width": 100,
+        "horizantal_spacing_desk": 0,
+        "horizantal_spacing_mob": 0,
+        "vertical_spacing_desk": 30,
+        "vertical_spacing_mob": 20,
+        "overlay_img_width_desk": 240,
+        "overlay_img_width_mob": 160,
+        "top_position_desk": 20,
+        "top_position_mob": 20,
+        "lr_position_desk": 40,
+        "lr_position_mob": 40,
+        "text_side_width": 50,
+        "image_side_width": 35,
+        "text_horizantal_space": 100
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "settings": {
       }
     }
   },
   "order": [
-    "main",
-    "form"
+    "16377620545a368c5d",
+    "main"
   ]
 }

@@ -3,32 +3,37 @@
 {% assign first_part = product.title | split: '/' | first %}
 {% assign second_part = product.title | split: '/' | last %}
 
-<a href="{{ product.url }}" class="grid-item">
-    <div class="product-image-wrap">
-        {% render 'responsive--image' with product.featured_image as image, max_width: 340px, class: 'product-image' %}
+<a href="{{ product.url }}" class="grid-item product-item {% if product.images[1] != blank %} active-product-item {% endif %} {% if noRecommend %}
+  no-recommend-product
+{% endif %}">
+  <div class="product-image-wrap">
+    {% render 'responsive--image' with product.images[0] as image, max_width: 340px, class: 'product-image first' %}
+    {% if product.images[1] != blank %}
+      {% render 'responsive--image' with product.images[1] as image, max_width: 340px, class: 'product-image second' %}
+    {% endif %}
+  </div>
+  <div class="product-details text-center">
+    {% if title contains '/' %}
+      <div class="product-info">
+        <h4 class="product-name">{{ first_part }}</h4>
+        <h5 class="product-description">{{ second_part }}</h5>
+      </div>
+      {% else %}
+      <div class="product-info">
+        <h4 class="product-name">{{ title }}</h4>   
+      </div>
+    {% endif %}
+    <div class="price-wrap">
+      {%- render 'price', product: product, use_variant: true, show_badges: true, price_class: 'price--large' -%}
     </div>
-    <div class="product-details text-center">
-        {% if title contains '/' %}
-            <div class="product-info">
-                <h4 class="product-name">{{ first_part }}</h4>
-                <h5 class="product-description">{{ second_part }}</h5>
-            </div>
-            {% else %}
-            <div class="product-info">
-                <h4 class="product-name">{{ title }}</h4>   
-            </div>
-        {% endif %}
-        <div class="price-wrap">
-            {%- render 'price', product: product, use_variant: true, show_badges: true, price_class: 'price--large' -%}
-        </div>
-        <span class="button rounded-button button-{{section.settings.btn_style }}">Shop Now</span>
-        {% for tag in product.tags %}
-            {% assign checkArray = tag | split:'badge-' %}
-            {% if checkArray[0] == blank %}
-                <span class="badge">
-                    {{ checkArray[1] }}
-                </span>
-            {% endif %}
-        {% endfor %}
-    </div>
+    <span class="button rounded-button button-{{section.settings.btn_style }}">Shop Now</span>
+    {% for tag in product.tags %}
+      {% assign checkArray = tag | split:'badge-' %}
+      {% if checkArray[0] == blank %}
+        <span class="badge">
+          {{ checkArray[1] }}
+        </span>
+      {% endif %}
+    {% endfor %}
+  </div>
 </a>

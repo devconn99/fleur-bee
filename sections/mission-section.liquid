@@ -1,416 +1,414 @@
 {{ 'mission-section.css' | asset_url | stylesheet_tag }}
 
 <style>
+  .mission-section {
+    background-image: url("{{ section.settings.bg_img_desk | img_url: 'master' }}");
+  }
+  .mission-section .pre_header {
+    color: {{ section.settings.pre_header_color }}
+  }
+  .mission-section .main_title {
+    font-size: {{ section.settings.title_size_desk }}px;
+  }
+  .mission-section .text {
+    color: {{ section.settings.text_color }};
+  }
+  .mission-section .content-wrap {
+    text-align: {{ section.settings.text_alignment_desk }};
+  }
+  {% if section.settings.text_alignment_desk == 'left' %} 
+    .mission-section .button {
+    margin-right: auto;
+    }
+  {% endif %}
+  {% if section.settings.text_alignment_desk == 'center' %} 
+    .mission-section .button {
+    margin: 0 auto 15px;
+    }
+  {% endif %}
+  {% if section.settings.text_alignment_desk == 'right' %} 
+    .mission-section .button {
+    margin-left: auto;
+    }
+  {% endif %}
+  .mission-section .link {
+    color: {{ section.settings.link_color }}
+  }
+  .mission-section .link:hover {
+    color: {{ section.settings.link_color_hover }}
+  }
+  .mission-section .button-primary {
+    color: {{ section.settings.primary_btn_text_color }};
+    background-color: {{ section.settings.primary_btn_bg_color}}
+  }
+  .mission-section .button-primary:hover {
+    background-color: {{ section.settings.primary_btn_bg_color_hover}};
+    color: {{ section.settings.primary_btn_text_color_hover }}
+  }
+  .mission-section .button-secondary {
+    color: {{ section.settings.secondary_btn_text_color }};
+    border: 1px solid {{ section.settings.secondary_btn_border_color }};
+    background-color: {{ section.settings.secondary_btn_bg_color }}
+  }
+  .mission-section .button-secondary:hover {
+    color: {{ section.settings.secondary_btn_text_color_hover }};
+    border-color: {{ section.settings.secondary_btn_border_color_hover}};
+    background-color: {{ section.settings.secondary_btn_bg_color_hover}};
+  }
+  @media screen and (max-width: 480px) {
     .mission-section {
-        background-image: url("{{ section.settings.bg_img_desk | img_url: 'master' }}");
+      background-image: url("{{ section.settings.bg_img_mob | img_url: 'master' }}");
     }
-    .mission-section .pre_header {
-        color: {{ section.settings.pre_header_color }}
+    #shopify-section-{{ section.id }} .main_title {
+      font-size: {{ section.settings.title_size_mob }}px !important;
     }
-    .mission-section .main_title {
-        font-size: {{ section.settings.title_size_desk }}px;
+    #shopify-section-{{ section.id }} .content-wrap {
+      text-align: {{ section.settings.text_alignment_mob }};
     }
-    .mission-section .text {
-        color: {{ section.settings.text_color }};
-    }
-    .mission-section .content-wrap {
-        text-align: {{ section.settings.text_alignment_desk }};
-    }
-    {% if section.settings.text_alignment_desk == 'left' %} 
-        .mission-section .button {
+    {% if section.settings.text_alignment_mob == 'left' %} 
+      #shopify-section-{{ section.id }} .button {
+        margin: 0 auto 15px 0;
+      }
+      #shopify-section-{{ section.id }} .content-wrap {
         margin-right: auto;
-        }
+      }
     {% endif %}
-    {% if section.settings.text_alignment_desk == 'center' %} 
-        .mission-section .button {
-        margin: 0 auto 15px;
-        }
+    {% if section.settings.text_alignment_mob == 'center' %} 
+      #shopify-section-{{ section.id }} .button {
+        margin: 0 auto 10px;
+      }
+      #shopify-section-{{ section.id }} .content-wrap {
+        margin: auto;
+        text-align: center;
+      }
     {% endif %}
-    {% if section.settings.text_alignment_desk == 'right' %} 
-        .mission-section .button {
-        margin-left: auto;
-        }
-    {% endif %}
-    .mission-section .link {
-        color: {{ section.settings.link_color }}
-    }
-    .mission-section .link:hover {
-        color: {{ section.settings.link_color_hover }}
-    }
-    .mission-section .button-primary {
-        color: {{ section.settings.primary_btn_text_color }};
-        background-color: {{ section.settings.primary_btn_bg_color}}
-    }
-    .mission-section .button-primary:hover {
-        background-color: {{ section.settings.primary_btn_bg_color_hover}};
-        color: {{ section.settings.primary_btn_text_color_hover }}
-    }
-    .mission-section .button-secondary {
-        color: {{ section.settings.secondary_btn_text_color }};
-        border: 1px solid {{ section.settings.secondary_btn_border_color }};
-        background-color: {{ section.settings.secondary_btn_bg_color }}
-    }
-    .mission-section .button-secondary:hover {
-        color: {{ section.settings.secondary_btn_text_color_hover }};
-        border-color: {{ section.settings.secondary_btn_border_color_hover}};
-        background-color: {{ section.settings.secondary_btn_bg_color_hover}};
-    }
-    @media screen and (max-width: 480px) {
-        .mission-section {
-            background-image: url("{{ section.settings.bg_img_mob | img_url: 'master' }}");
-        }
-        #shopify-section-{{ section.id }} .main_title {
-            font-size: {{ section.settings.title_size_mob }}px !important;
-        }
-        #shopify-section-{{ section.id }} .content-wrap {
-            text-align: {{ section.settings.text_alignment_mob }};
-        }
-        {% if section.settings.text_alignment_mob == 'left' %} 
-        #shopify-section-{{ section.id }} .button {
-            margin: 0 auto 15px 0;
-        }
-        #shopify-section-{{ section.id }} .content-wrap {
-            margin-right: auto;
-        }
-        {% endif %}
-        {% if section.settings.text_alignment_mob == 'center' %} 
-        #shopify-section-{{ section.id }} .button {
-            margin: 0 auto 10px;
-        }
-        #shopify-section-{{ section.id }} .content-wrap {
-            margin: auto;
-            text-align: center;
-        }
-        {% endif %}
-    }
+  }
 </style>
 <div class='mission-section'>
-    <div class='main_container'>
-        <div class="wrapper">
-            <div class="content-wrap">
-                {% if section.settings.pre_header != blank %}
-                    <{{ section.settings.pre_header_tag }} class="pre_header">{{ section.settings.pre_header }}</{{ section.settings.pre_header_tag }}>
-                {% endif %}
-                {% if section.settings.main_title != blank %}
-                    <{{ section.settings.title_tag }} class="main_title">{{ section.settings.main_title }}</{{ section.settings.title_tag }}>
-                {% endif %}
-                {% if section.settings.text != blank %}
-                    <div class="text">{{ section.settings.text }}</div>
-                {% endif %}
-                {% for block in section.blocks %}
-                    {% if block.type == 'button' %}
-                    {% if block.settings.btn_text != blank %}
-                        <a href="{{ block.settings.btn_url }}" class="button button-{{ block.settings.btn_style}} rounded-button">{{ block.settings.btn_text }}</a>
-                    {% endif %}
-                    {% endif %}
-                {% endfor %}
-                {% for block in section.blocks %}
-                    {% if block.type == 'link' %}
-                    {% if block.settings.link_text != blank %}
-                        <a href="{{ block.settings.link_url }}" class="link">{{ block.settings.link_text }}</a>
-                    {% endif %}
-                    {% endif %}
-                {% endfor %}
-            </div>
-        </div>
+  <div class='main_container'>
+    <div class="wrapper">
+      <div class="content-wrap">
+        {% if section.settings.pre_header != blank %}
+          <{{ section.settings.pre_header_tag }} class="pre_header">{{ section.settings.pre_header }}</{{ section.settings.pre_header_tag }}>
+        {% endif %}
+        {% if section.settings.main_title != blank %}
+          <{{ section.settings.title_tag }} class="main_title">{{ section.settings.main_title }}</{{ section.settings.title_tag }}>
+        {% endif %}
+        {% if section.settings.text != blank %}
+          <div class="text">{{ section.settings.text }}</div>
+        {% endif %}
+        {% for block in section.blocks %}
+          {% if block.type == 'button' %}
+          {% if block.settings.btn_text != blank %}
+            <a href="{{ block.settings.btn_url }}" class="button button-{{ block.settings.btn_style}} rounded-button">{{ block.settings.btn_text }}</a>
+          {% endif %}
+          {% endif %}
+        {% endfor %}
+        {% for block in section.blocks %}
+          {% if block.type == 'link' %}
+          {% if block.settings.link_text != blank %}
+            <a href="{{ block.settings.link_url }}" class="link">{{ block.settings.link_text }}</a>
+          {% endif %}
+          {% endif %}
+        {% endfor %}
+      </div>
     </div>
+  </div>
 </div>
 
 {% schema %}
 {
-    "name": "Mission Section",
-    "settings": [
-        {
-            "type": "header",
-            "content": "Image",
-            "info": "-------"
-        },
-        {
-            "type": "image_picker",
-            "id": "bg_img_desk",
-            "label": "Background Image (Desktop)"
-        },
-        {
-            "type": "image_picker",
-            "id": "bg_img_mob",
-            "label": "Background Image (Mobile)"
-        },
-        {
-            "type": "header",
-            "content": "Content",
-            "info": "-------"
-        },
-        {
-            "type": "header",
-            "content": "Content",
-            "info": "-------"
-          },
-          {
-            "type": "text",
-            "id": "pre_header",
-            "label": "Sub Title"
-          },
-          {
-            "type": "text",
-            "id": "main_title",
-            "label": "Main Title"
-          },
-          {
-            "type": "html",
-            "id": "text",
-            "label": "Text"
-          },
-          {
-            "type": "header",
-            "content": "Color",
-            "info": "-------"
-          },
-          {
-            "type": "color",
-            "id": "pre_header_color",
-            "label": "Pre Header Color"
-          },
-          {
-            "type": "color",
-            "id": "text_color",
-            "label": "Body Text Color"
-          },
-          {
-            "type": "color",
-            "id": "link_color",
-            "label": "Link Color (Regular State)"
-          },
-          {
-            "type": "color",
-            "id": "link_color_hover",
-            "label": "Link Color (Hover)"
-          },
-          {
-            "type": "header",
-            "content": "Primary Button Color",
-            "info": "-------"
-          },
-          {
-            "type": "color",
-            "id": "primary_btn_bg_color",
-            "label": "Background Color (Regular State)"
-          },
-          {
-            "type": "color",
-            "id": "primary_btn_bg_color_hover",
-            "label": "Background Color (Hover State)"
-          },
-          {
-            "type": "color",
-            "id": "primary_btn_text_color",
-            "label": "Text Color (Regular State)"
-          },
-          {
-            "type": "color",
-            "id": "primary_btn_text_color_hover",
-            "label": "Text Color (Hover State)"
-          },
-          {
-            "type": "header",
-            "content": "Secondary Button Color",
-            "info": "-------"
-          },
-          {
-            "type": "color",
-            "id": "secondary_btn_border_color",
-            "label": "Border Color (Regular State)"
-          },
-          {
-            "type": "color",
-            "id": "secondary_btn_border_color_hover",
-            "label": "Border Color (Hover State)"
-          },
-          {
-            "type": "color",
-            "id": "secondary_btn_bg_color",
-            "label": "Background Color (Regular State)"
-          },
-          {
-            "type": "color",
-            "id": "secondary_btn_bg_color_hover",
-            "label": "Background Color (Hover State)"
-          },
-          {
-            "type": "color",
-            "id": "secondary_btn_text_color",
-            "label": "Text Color (Regular State)"
-          },
-          {
-            "type": "color",
-            "id": "secondary_btn_text_color_hover",
-            "label": "Text Color (Hover State)"
-          },
-          {
-            "type": "header",
-            "content": "Adjust the Header Tag",
-            "info": "-------"
-          },
-          {
-            "type": "select",
-            "id": "pre_header_tag",
-            "options": [
-              {
-                "value": "h2",
-                "label": "H2"
-              },
-              {
-                "value": "h3",
-                "label": "H3"
-              }
-            ],
-            "default": "h2",
-            "label": "Adjust Pre Header Tag"
-          },
-          {
-            "type": "select",
-            "id": "title_tag",
-            "options": [
-              {
-                "value": "h1",
-                "label": "H1"
-              },
-              {
-                "value": "h2",
-                "label": "H2"
-              },
-              {
-                "value": "h3",
-                "label": "H3"
-              }
-            ],
-            "default": "h1",
-            "label": "Adjust Title Tag"
-          },
-          {
-            "type": "range",
-            "id": "title_size_desk",
-            "label": "Title Font Size (Desktop)",
-            "min": 20,
-            "max": 60,
-            "step": 2,
-            "default": 36
-          },
-          {
-            "type": "range",
-            "id": "title_size_mob",
-            "label": "Title Font Size (Mobile)",
-            "min": 14,
-            "max": 40,
-            "step": 2,
-            "default": 28
-          },
-          {
-            "type": "header",
-            "content": "Text Alignment",
-            "info": "-------"
-          },
-          {
-            "type": "select",
-            "id": "text_alignment_desk",
-            "options": [
-              {
-                "value": "left",
-                "label": "Left"
-              },
-              {
-                "value": "center",
-                "label": "Center"
-              },
-              {
-                "value": "right",
-                "label": "Right"
-              }
-            ],
-            "default": "left",
-            "label": "Adjust The Alignment Of The Text (Desktop)"
-          },
-          {
-            "type": "select",
-            "id": "text_alignment_mob",
-            "options": [
-              {
-                "value": "left",
-                "label": "Left"
-              },
-              {
-                "value": "center",
-                "label": "Center"
-              }
-            ],
-            "default": "left",
-            "label": "Adjust The Alignment Of The Text (Mobile)"
-          }
-    ],
-    "blocks": [
+  "name": "Mission Section",
+  "settings": [
     {
-      "name": "Link",
-      "type": "link",
-      "settings": [
-        {
-          "type": "header",
-          "content": "Content",
-          "info": "-------"
-        },
-        {
-          "type": "text",
-          "id": "link_text",
-          "label": "Link Text"
-        },
-        {
-          "type": "url",
-          "id": "link_url",
-          "label": "Link Url"
-        }
-      ]
+      "type": "header",
+      "content": "Image",
+      "info": "-------"
     },
     {
-      "name": "Button",
-      "type": "button",
-      "settings": [
+      "type": "image_picker",
+      "id": "bg_img_desk",
+      "label": "Background Image (Desktop)"
+    },
+    {
+      "type": "image_picker",
+      "id": "bg_img_mob",
+      "label": "Background Image (Mobile)"
+    },
+    {
+      "type": "header",
+      "content": "Content",
+      "info": "-------"
+    },
+    {
+      "type": "header",
+      "content": "Content",
+      "info": "-------"
+    },
+    {
+      "type": "text",
+      "id": "pre_header",
+      "label": "Sub Title"
+    },
+    {
+      "type": "text",
+      "id": "main_title",
+      "label": "Main Title"
+    },
+    {
+      "type": "html",
+      "id": "text",
+      "label": "Text"
+    },
+    {
+      "type": "header",
+      "content": "Color",
+      "info": "-------"
+    },
+    {
+      "type": "color",
+      "id": "pre_header_color",
+      "label": "Pre Header Color"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Body Text Color"
+    },
+    {
+      "type": "color",
+      "id": "link_color",
+      "label": "Link Color (Regular State)"
+    },
+    {
+      "type": "color",
+      "id": "link_color_hover",
+      "label": "Link Color (Hover)"
+    },
+    {
+      "type": "header",
+      "content": "Primary Button Color",
+      "info": "-------"
+    },
+    {
+      "type": "color",
+      "id": "primary_btn_bg_color",
+      "label": "Background Color (Regular State)"
+    },
+    {
+      "type": "color",
+      "id": "primary_btn_bg_color_hover",
+      "label": "Background Color (Hover State)"
+    },
+    {
+      "type": "color",
+      "id": "primary_btn_text_color",
+      "label": "Text Color (Regular State)"
+    },
+    {
+      "type": "color",
+      "id": "primary_btn_text_color_hover",
+      "label": "Text Color (Hover State)"
+    },
+    {
+      "type": "header",
+      "content": "Secondary Button Color",
+      "info": "-------"
+    },
+    {
+      "type": "color",
+      "id": "secondary_btn_border_color",
+      "label": "Border Color (Regular State)"
+    },
+    {
+      "type": "color",
+      "id": "secondary_btn_border_color_hover",
+      "label": "Border Color (Hover State)"
+    },
+    {
+      "type": "color",
+      "id": "secondary_btn_bg_color",
+      "label": "Background Color (Regular State)"
+    },
+    {
+      "type": "color",
+      "id": "secondary_btn_bg_color_hover",
+      "label": "Background Color (Hover State)"
+    },
+    {
+      "type": "color",
+      "id": "secondary_btn_text_color",
+      "label": "Text Color (Regular State)"
+    },
+    {
+      "type": "color",
+      "id": "secondary_btn_text_color_hover",
+      "label": "Text Color (Hover State)"
+    },
+    {
+      "type": "header",
+      "content": "Adjust the Header Tag",
+      "info": "-------"
+    },
+    {
+      "type": "select",
+      "id": "pre_header_tag",
+      "options": [
         {
-          "type": "header",
-          "content": "Button Style",
-          "info": "-------"
+          "value": "h2",
+          "label": "H2"
         },
         {
-          "type": "select",
-          "id": "btn_style",
-          "options": [
-            {
-              "value": "primary",
-              "label": "Primary"
-            },
-            {
-              "value": "secondary",
-              "label": "Secondary"
-            }
-          ],
-          "default": "primary",
-          "label": "Button Style"
-        },
-        {
-          "type": "header",
-          "content": "Content",
-          "info": "-------"
-        },
-        {
-          "type": "text",
-          "id": "btn_text",
-          "label": "Button Text"
-        },
-        {
-          "type": "url",
-          "id": "btn_url",
-          "label": "Button Url"
+          "value": "h3",
+          "label": "H3"
         }
-      ]
+      ],
+      "default": "h2",
+      "label": "Adjust Pre Header Tag"
+    },
+    {
+      "type": "select",
+      "id": "title_tag",
+      "options": [
+        {
+          "value": "h1",
+          "label": "H1"
+        },
+        {
+          "value": "h2",
+          "label": "H2"
+        },
+        {
+          "value": "h3",
+          "label": "H3"
+        }
+      ],
+      "default": "h1",
+      "label": "Adjust Title Tag"
+    },
+    {
+      "type": "range",
+      "id": "title_size_desk",
+      "label": "Title Font Size (Desktop)",
+      "min": 20,
+      "max": 60,
+      "step": 2,
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "title_size_mob",
+      "label": "Title Font Size (Mobile)",
+      "min": 14,
+      "max": 40,
+      "step": 2,
+      "default": 28
+    },
+    {
+      "type": "header",
+      "content": "Text Alignment",
+      "info": "-------"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment_desk",
+      "options": [
+        {
+        "value": "left",
+        "label": "Left"
+        },
+        {
+        "value": "center",
+        "label": "Center"
+        },
+        {
+        "value": "right",
+        "label": "Right"
+        }
+      ],
+      "default": "left",
+      "label": "Adjust The Alignment Of The Text (Desktop)"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment_mob",
+      "options": [
+        {
+        "value": "left",
+        "label": "Left"
+        },
+        {
+        "value": "center",
+        "label": "Center"
+        }
+      ],
+      "default": "left",
+      "label": "Adjust The Alignment Of The Text (Mobile)"
     }
   ],
+  "blocks": [{
+    "name": "Link",
+    "type": "link",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Content",
+        "info": "-------"
+      },
+      {
+        "type": "text",
+        "id": "link_text",
+        "label": "Link Text"
+      },
+      {
+        "type": "url",
+        "id": "link_url",
+        "label": "Link Url"
+      }
+    ]
+  },
+  {
+    "name": "Button",
+    "type": "button",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Button Style",
+        "info": "-------"
+      },
+      {
+        "type": "select",
+        "id": "btn_style",
+        "options": [
+        {
+          "value": "primary",
+          "label": "Primary"
+        },
+        {
+          "value": "secondary",
+          "label": "Secondary"
+        }
+        ],
+        "default": "primary",
+        "label": "Button Style"
+      },
+      {
+        "type": "header",
+        "content": "Content",
+        "info": "-------"
+      },
+      {
+        "type": "text",
+        "id": "btn_text",
+        "label": "Button Text"
+      },
+      {
+        "type": "url",
+        "id": "btn_url",
+        "label": "Button Url"
+      }
+    ]
+  }],
   "presets": [
     {
       "name": "Mission Section",

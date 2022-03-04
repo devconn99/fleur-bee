@@ -63,7 +63,9 @@
       "settings": {
         "enable_sticky_info": true,
         "hide_variants": false,
-        "enable_video_looping": false
+        "enable_video_looping": false,
+        "highlight_text": "We follow the strictest standards in the world, set by the European Union, which means we say “No Thanks!” to 1,300+ nasty ingredients. (They wouldn’t all fit in this pop-up so we’ve included an abridged list...)",
+        "text": "No parabens, sulfates, silicones, GMOs, artificial fragrances, phthalates, dyes, petrolium, aluminum, propylene glycol, polyethylene glycol, formaldehyde, diethanolamine, triclosan, EDTA, and toulene."
       }
     },
     "testimonials": {
@@ -73,27 +75,27 @@
           "type": "review",
           "settings": {
             "profile_pic": "shopify:\/\/shop_images\/Person.png",
-            "text": "In one day, it made my skin glow and evened out my skin tone.",
-            "sub_text": "I have tried so many expensive vitamin C serums, but they all made me breakout. This is the only vitamin C product that worked for my skin!",
-            "customer_name": "LAUREN A."
+            "text": "Amazing cleanser",
+            "sub_text": "This cleanser is amazing. Melts my makeup right off and my skin feels so good when I am done.",
+            "customer_name": "Lynn"
           }
         },
         "16f7b5c9-7904-46ae-a65f-9b1b3ad8f18a": {
           "type": "review",
           "settings": {
             "profile_pic": "shopify:\/\/shop_images\/Person.png",
-            "text": "This is the best skincare ever. Line two of quote is here.",
-            "sub_text": "I have tried so many expensive vitamin C serums, but they all made me breakout. This is the only vitamin C product that worked for my skin!",
-            "customer_name": "LAUREN B."
+            "text": "Great Gentle Cleanser!",
+            "sub_text": "Nice gentle cleanser for my face. I have sensitive skin, so I only wash my face once a day, usually at night unless I've just gotten home for the gym then I will use a small amount. Follow this cleanser with the Crème de la Cream for the ultimate face care routine!",
+            "customer_name": "Brandon C."
           }
         },
         "8ac87121-1b33-4c03-900a-13c7ef849e7f": {
           "type": "review",
           "settings": {
             "profile_pic": "shopify:\/\/shop_images\/Person.png",
-            "text": "You have to try this stuff. Game changer. Line 3.",
-            "sub_text": "I have tried so many expensive vitamin C serums, but they all made me breakout. This is the only vitamin C product that worked for my skin!",
-            "customer_name": "LAUREN C."
+            "text": "So clean",
+            "sub_text": "This cleanser leaves my skin feeling SO clean. Other cleaners never seem to get everything off. This one is great for my sensitive skin and doesn’t dry it out. By far the best cleanser I have tried. I’ll be a life long customer",
+            "customer_name": "Hailey"
           }
         }
       },
@@ -178,13 +180,19 @@
     },
     "1632475270c7253b55": {
       "type": "active-section",
+      "disabled": true,
       "blocks": {
         "38044f25-fe65-4e1f-af94-7f8630b3f142": {
           "type": "ingredients",
           "settings": {
             "show_ingredients_desk": true,
             "show_ingredients_mob": true,
-            "ingredient": "Caffeine"
+            "ingredient": "Aloe Vera",
+            "ingredient2": "",
+            "ingredient3": "",
+            "tooltip_text": "",
+            "tooltip_text2": "",
+            "tooltip_text3": ""
           }
         },
         "c8abd6d5-e358-4383-8f5e-278096bd120e": {
@@ -192,7 +200,12 @@
           "settings": {
             "show_ingredients_desk": true,
             "show_ingredients_mob": true,
-            "ingredient": "Peptides"
+            "ingredient": "Potassium Cocoate",
+            "ingredient2": "",
+            "ingredient3": "",
+            "tooltip_text": "",
+            "tooltip_text2": "",
+            "tooltip_text3": ""
           }
         },
         "ddcd3cba-4d71-4828-afa7-b347f5445e3f": {
@@ -200,7 +213,12 @@
           "settings": {
             "show_ingredients_desk": true,
             "show_ingredients_mob": true,
-            "ingredient": "Squalane"
+            "ingredient": "Gotu Kola",
+            "ingredient2": "",
+            "ingredient3": "",
+            "tooltip_text": "",
+            "tooltip_text2": "",
+            "tooltip_text3": ""
           }
         },
         "2d402b8a-5d2b-4c3c-802c-4e5b70c028e5": {
@@ -208,7 +226,12 @@
           "settings": {
             "show_ingredients_desk": true,
             "show_ingredients_mob": true,
-            "ingredient": "Sunflower Oil"
+            "ingredient": "Wild Geranium",
+            "ingredient2": "",
+            "ingredient3": "",
+            "tooltip_text": "",
+            "tooltip_text2": "",
+            "tooltip_text3": ""
           }
         },
         "6d4b3746-3d74-4ed9-ac31-62f074688915": {
@@ -216,7 +239,12 @@
           "settings": {
             "show_ingredients_desk": true,
             "show_ingredients_mob": true,
-            "ingredient": "Aloe Vera"
+            "ingredient": "Potassium Castorate",
+            "ingredient2": "",
+            "ingredient3": "",
+            "tooltip_text": "",
+            "tooltip_text2": "",
+            "tooltip_text3": ""
           }
         },
         "385f4930-74ca-4959-9f1a-c0d3e750be63": {
@@ -224,7 +252,12 @@
           "settings": {
             "show_ingredients_desk": false,
             "show_ingredients_mob": true,
-            "ingredient": "Algae"
+            "ingredient": "Dandelion",
+            "ingredient2": "",
+            "ingredient3": "",
+            "tooltip_text": "",
+            "tooltip_text2": "",
+            "tooltip_text3": ""
           }
         },
         "d5e68469-5fb5-422e-835d-df2db944a377": {
@@ -232,7 +265,12 @@
           "settings": {
             "show_ingredients_desk": false,
             "show_ingredients_mob": true,
-            "ingredient": "Niacinamide"
+            "ingredient": "Carrageenan",
+            "ingredient2": "",
+            "ingredient3": "",
+            "tooltip_text": "",
+            "tooltip_text2": "",
+            "tooltip_text3": ""
           }
         },
         "ba216271-4023-48d3-a28a-c58efef8f036": {
@@ -240,7 +278,12 @@
           "settings": {
             "show_ingredients_desk": false,
             "show_ingredients_mob": true,
-            "ingredient": "Green Tea"
+            "ingredient": "Rosemary",
+            "ingredient2": "",
+            "ingredient3": "",
+            "tooltip_text": "",
+            "tooltip_text2": "",
+            "tooltip_text3": ""
           }
         },
         "38a0f4d5-b130-4a89-b69b-b7b3545bfbaf": {
@@ -248,7 +291,12 @@
           "settings": {
             "show_ingredients_desk": false,
             "show_ingredients_mob": false,
-            "ingredient": "Vitamin E"
+            "ingredient": "Potassium Sunflowerseedate",
+            "ingredient2": "",
+            "ingredient3": "",
+            "tooltip_text": "",
+            "tooltip_text2": "",
+            "tooltip_text3": ""
           }
         },
         "3c8c57e3-03be-4fe1-948c-91d73e5aa6ad": {
@@ -256,7 +304,12 @@
           "settings": {
             "show_ingredients_desk": false,
             "show_ingredients_mob": false,
-            "ingredient": "Horsetail Plant"
+            "ingredient": "Citric Acid",
+            "ingredient2": "",
+            "ingredient3": "",
+            "tooltip_text": "",
+            "tooltip_text2": "",
+            "tooltip_text3": ""
           }
         },
         "f78e0bfa-05f8-45be-a838-bce27decc24d": {
@@ -264,7 +317,12 @@
           "settings": {
             "show_ingredients_desk": false,
             "show_ingredients_mob": false,
-            "ingredient": "Dandelion"
+            "ingredient": "Horsetail Plant",
+            "ingredient2": "",
+            "ingredient3": "",
+            "tooltip_text": "",
+            "tooltip_text2": "",
+            "tooltip_text3": ""
           }
         },
         "e6d5821a-1122-494d-8b8c-d46f4442942f": {
@@ -272,7 +330,12 @@
           "settings": {
             "show_ingredients_desk": false,
             "show_ingredients_mob": false,
-            "ingredient": "Glycerin"
+            "ingredient": "Glycerin",
+            "ingredient2": "",
+            "ingredient3": "",
+            "tooltip_text": "",
+            "tooltip_text2": "",
+            "tooltip_text3": ""
           }
         },
         "0e22eccc-276b-4e8d-9c51-fd0f26d422ed": {
@@ -280,31 +343,12 @@
           "settings": {
             "show_ingredients_desk": false,
             "show_ingredients_mob": false,
-            "ingredient": "Lavender"
-          }
-        },
-        "a5d8e7f3-4c74-491b-b612-cfa5d04b7524": {
-          "type": "ingredients",
-          "settings": {
-            "show_ingredients_desk": false,
-            "show_ingredients_mob": false,
-            "ingredient": "Geranium"
-          }
-        },
-        "b6ed611b-754e-4166-bd51-2ef150a4f03d": {
-          "type": "ingredients",
-          "settings": {
-            "show_ingredients_desk": false,
-            "show_ingredients_mob": false,
-            "ingredient": "Gotu Kola"
-          }
-        },
-        "aacbfd83-ca17-48a8-bdf1-ce7ebaa112ab": {
-          "type": "ingredients",
-          "settings": {
-            "show_ingredients_desk": false,
-            "show_ingredients_mob": false,
-            "ingredient": "Honey Suckle"
+            "ingredient": "Pink Grapefruit Oil",
+            "ingredient2": "",
+            "ingredient3": "",
+            "tooltip_text": "",
+            "tooltip_text2": "",
+            "tooltip_text3": ""
           }
         }
       },
@@ -321,18 +365,14 @@
         "3c8c57e3-03be-4fe1-948c-91d73e5aa6ad",
         "f78e0bfa-05f8-45be-a838-bce27decc24d",
         "e6d5821a-1122-494d-8b8c-d46f4442942f",
-        "0e22eccc-276b-4e8d-9c51-fd0f26d422ed",
-        "a5d8e7f3-4c74-491b-b612-cfa5d04b7524",
-        "b6ed611b-754e-4166-bd51-2ef150a4f03d",
-        "aacbfd83-ca17-48a8-bdf1-ce7ebaa112ab"
+        "0e22eccc-276b-4e8d-9c51-fd0f26d422ed"
       ],
       "settings": {
         "ingredients_img": "shopify:\/\/shop_images\/ingredients.png",
         "bg_color": "#fff6e5",
-        "main_title": "18 High Performance Actives",
-        "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incidudunt ut labore et dolore magna.",
-        "link_text": "View All Actives",
-        "tooltip_text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incidudunt ut labore et dolore magna."
+        "main_title": "12 Nourishing Actives",
+        "text": "This face wash is formulated with nourishing botanicals to not only clean off light makeup, but also help soothe and protect your skin’s surface. Below you can learn more about some of the hero ingredients you'll find in this gentle cleanser.",
+        "link_text": "View All Actives"
       }
     },
     "1632392025c7c73e7a": {
@@ -341,42 +381,42 @@
         "fcff0707-f2b1-4110-9d48-cbda351cba44": {
           "type": "icon_with_text",
           "settings": {
-            "icon": "shopify:\/\/shop_images\/icon-1.png",
+            "icon": "shopify:\/\/shop_images\/vegan2.png",
             "icon_text": "Cruelty-Free"
           }
         },
         "00b0e01a-0306-4704-bbe9-e180e91c391e": {
           "type": "icon_with_text",
           "settings": {
-            "icon": "shopify:\/\/shop_images\/icon-2.png",
+            "icon": "shopify:\/\/shop_images\/sustainable2.png",
             "icon_text": "Vegan"
           }
         },
         "17ba1eb7-d146-46a4-a36e-720b0e0684dc": {
           "type": "icon_with_text",
           "settings": {
-            "icon": "shopify:\/\/shop_images\/icon-3.png",
+            "icon": "shopify:\/\/shop_images\/recyclable2.png",
             "icon_text": "Recyclable Packaging"
           }
         },
         "a55f14c2-c115-4b84-b090-8836bdcc580d": {
           "type": "icon_with_text",
           "settings": {
-            "icon": "shopify:\/\/shop_images\/icon-4.png",
+            "icon": "shopify:\/\/shop_images\/carbonneutral2.png",
             "icon_text": "Carbon Neutal"
           }
         },
         "fc4e4ee4-888e-4d73-8991-80a407cd3090": {
           "type": "icon_with_text",
           "settings": {
-            "icon": "shopify:\/\/shop_images\/icon-5.png",
+            "icon": "shopify:\/\/shop_images\/usa2.png",
             "icon_text": "Carbon Neutal"
           }
         },
         "8a29c65e-d926-42a9-9aa5-5015ac83d629": {
           "type": "icon_with_text",
           "settings": {
-            "icon": "shopify:\/\/shop_images\/icon-6.png",
+            "icon": "shopify:\/\/shop_images\/affordable2.png",
             "icon_text": "Affordably Priced"
           }
         }
@@ -419,7 +459,7 @@
         "secondary_btn_text_color_hover": "",
         "pre_header": "PRODUCT DETAILS",
         "main_title": "What to Expect",
-        "text": "<div>\n<b>Texture Smooth<\/b><br>\nlightweight gel  \n<\/div>\n<div>\n<b>Scent<\/b><br>\nEarthy, herbaceous, citrus \n<\/div>\n<div>\n<b>Skin Feels<\/b><br>\nSoft, smooth, nourished\n<\/div>\n<div>\n<b>Skin Look<\/b><br>\nGlowing, bright\n<\/div>",
+        "text": "<div>\n<b>Texture<\/b><br>\nSmooth, lightly foaming gel  \n<\/div>\n<div>\n<b>Scent<\/b><br>\nNeutral \n<\/div>\n<div>\n<b>Skin Feels<\/b><br>\nClean, light, smooth\n<\/div>\n<div>\n<b>Skin Look<\/b><br>\nRefreshed, renewed\n<\/div>",
         "block_style": "block-style-3",
         "pre_header_tag": "h2",
         "title_tag": "h1",
@@ -430,6 +470,10 @@
         "img_alignment": false,
         "stack_order": false,
         "show_overlay_img": false,
+        "desk_btn_size": 16,
+        "mob_btn_size": 12,
+        "desk_btn_width": 180,
+        "mob_btn_width": 100,
         "horizantal_spacing_desk": 40,
         "horizantal_spacing_mob": 10,
         "vertical_spacing_desk": 70,
@@ -464,42 +508,50 @@
         "f71ef0f1-e27a-451c-a64a-3a01527754ba": {
           "type": "accordian",
           "settings": {
-            "header_text": "How do I use Nectar of the C?",
-            "body_text": "After cleansing, apply 2-3 drops onto your fingertips, then smooth onto your face, avoiding the eye area. Treat yourself in the morning and at night."
+            "header_text": "When will I start to see results?",
+            "body_text": "Your skin will be instantly hydrated and moisturized with proper application. With consistent usage of our products, you should see full results after 2 weeks."
+          }
+        },
+        "1726264d-552c-4155-b5ed-b59146e7f184": {
+          "type": "accordian",
+          "settings": {
+            "header_text": "How long will it last?",
+            "body_text": "Crème de la Cream has a shelf life of 12 months after being opened. If used as directed, our Crème de la Cream moisturizer should last 2-3 months."
           }
         },
         "bf6aafec-adbb-4913-a02e-f33949878cee": {
           "type": "accordian",
           "settings": {
             "header_text": "What age is it designed for?",
-            "body_text": "After cleansing, apply 2-3 drops onto your fingertips, then smooth onto your face, avoiding the eye area. Treat yourself in the morning and at night."
+            "body_text": "Our Crème de la Cream moisturizer is designed for those in their 20s to their 100s! It’s especially great for people who are looking to hydrate their skin prevent or diminish the appearance of dark spots, and fine lines and wrinkles."
           }
         },
         "474b97b7-c7fa-42d5-a874-2cf203c0e7d1": {
           "type": "accordian",
           "settings": {
             "header_text": "Will this work for my skin tone?",
-            "body_text": "After cleansing, apply 2-3 drops onto your fingertips, then smooth onto your face, avoiding the eye area. Treat yourself in the morning and at night."
-          }
-        },
-        "1473694d-6a8a-4b1c-a092-c3488a89375e": {
-          "type": "accordian",
-          "settings": {
-            "header_text": "What color should my serum be?",
-            "body_text": "After cleansing, apply 2-3 drops onto your fingertips, then smooth onto your face, avoiding the eye area. Treat yourself in the morning and at night."
+            "body_text": "Absolutely! Our products will work for people of all skin tones, textures and colors."
           }
         },
         "b0d1c107-03d8-45da-a562-b46043915856": {
           "type": "accordian",
           "settings": {
             "header_text": "Is this safe to use while pregnant?",
-            "body_text": "After cleansing, apply 2-3 drops onto your fingertips, then smooth onto your face, avoiding the eye area. Treat yourself in the morning and at night."
+            "body_text": "We consider Crème de la Cream safe to use as directed while pregnant. However, we always advise pregnant women to consult with their doctor regarding questions about specific products or ingredients."
           }
         },
         "a55a253c-8175-4442-aa01-b0cb1724cf9c": {
           "type": "accordian",
           "settings": {
             "header_text": "Is it gluten free?",
+            "body_text": "Yes! All Fleur & Bee products are gluten-free."
+          }
+        },
+        "1473694d-6a8a-4b1c-a092-c3488a89375e": {
+          "type": "accordian",
+          "disabled": true,
+          "settings": {
+            "header_text": "What color should my cleanser be?",
             "body_text": "After cleansing, apply 2-3 drops onto your fingertips, then smooth onto your face, avoiding the eye area. Treat yourself in the morning and at night."
           }
         },
@@ -507,17 +559,18 @@
           "type": "accordian",
           "settings": {
             "header_text": "Can I use this with non-Fleur & Bee products?",
-            "body_text": "After cleansing, apply 2-3 drops onto your fingertips, then smooth onto your face, avoiding the eye area. Treat yourself in the morning and at night."
+            "body_text": "Definitely! We’ve designed our products to work best with each other, but they can be used as part of a routine that includes products from other brands."
           }
         }
       },
       "block_order": [
         "f71ef0f1-e27a-451c-a64a-3a01527754ba",
+        "1726264d-552c-4155-b5ed-b59146e7f184",
         "bf6aafec-adbb-4913-a02e-f33949878cee",
         "474b97b7-c7fa-42d5-a874-2cf203c0e7d1",
-        "1473694d-6a8a-4b1c-a092-c3488a89375e",
         "b0d1c107-03d8-45da-a562-b46043915856",
         "a55a253c-8175-4442-aa01-b0cb1724cf9c",
+        "1473694d-6a8a-4b1c-a092-c3488a89375e",
         "f76d97a6-1d5d-4e66-b7e7-898ce357fc61"
       ],
       "settings": {
@@ -527,6 +580,7 @@
     },
     "product-recommendations": {
       "type": "product-recommendations",
+      "disabled": true,
       "settings": {
         "bg_color": "",
         "main_title": "Related Products",

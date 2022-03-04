@@ -52,6 +52,9 @@
                 {%- if section.settings.newsletter_heading != blank -%}
                   <h2 class="footer-block__heading">{{ section.settings.newsletter_heading | escape }}</h2>
                 {%- endif -%}
+                {% if section.settings.newsletter_text != blank %}
+                  <p class="newsletter-text">{{ section.settings.newsletter_text }}</p>
+                {% endif %}
                 {%- form 'customer', id: 'ContactFooter', class: 'footer__newsletter newsletter-form' -%}
                   <input type="hidden" name="contact[tags]" value="newsletter">
                   <div class="newsletter-form__field-wrapper">
@@ -73,14 +76,14 @@
                         {% elsif form.posted_successfully? %}
                           aria-describedby="ContactFooter-success"
                         {% endif %}
-                        placeholder="{{ 'newsletter.label' | t }}"
+                        placeholder="Email Address"
                         required
                       >
                       <label class="field__label" for="NewsletterForm--{{ section.id }}">
                         {{ 'newsletter.label' | t }}
                       </label>
                       <button type="submit" class="newsletter-form__button field__button" name="commit" id="Subscribe" aria-label="{{ 'newsletter.button_label' | t }}">
-                        Submit
+                        Sign Up
                       </button>
                     </div>
                     {%- if form.errors -%}
@@ -93,21 +96,32 @@
                 {%- endform -%}
               </div>
             {%- endif -%}
+            <div class="social-icons">
+              {% for block in section.blocks %}
+                {% if block.type == 'social_media' %}
+                  <a href="{{ block.settings.link }}" class="social-link">
+                    {% render 'responsive--image' with block.settings.img as image, max_width: 90px, class: 'social-icon' %}
+                  </a>
+                {% endif %}
+              {% endfor %}
+            </div>
           </div>
         </div>
       {%- endif -%}
     </div>
   {%- endif -%}
 
-  <div class="footer__content-bottom">
-    <div class="footer__content-bottom-wrapper page-width">
-      <div class="footer__column footer__column--info">
-        <div class="footer__copyright caption">
-          <small class="copyright__content">© 2021 Fleur & Bee All rights reserved. Privacy Policy. Terms & Condtitions</small>
+  {% if section.settings.copyright_text != blank %}
+    <div class="footer__content-bottom">
+      <div class="footer__content-bottom-wrapper page-width">
+        <div class="footer__column footer__column--info">
+          <div class="footer__copyright caption">
+            <small class="copyright__content">{{section.settings.copyright_text}}</small>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  {% endif %}
 </footer>
 
 {% javascript %}
@@ -184,6 +198,28 @@
           "info": "t:sections.footer.blocks.link_list.settings.menu.info"
         }
       ]
+    },
+    
+    {
+      "name": "Social Media",
+      "type": "social_media",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Image",
+          "info": "-------"
+        },
+        {
+          "type": "image_picker",
+          "id": "img",
+          "label": "Image"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        }
+      ]
     }
   ],
   "settings": [
@@ -208,6 +244,18 @@
       "id": "newsletter_heading",
       "default": "Subscribe to our emails",
       "label": "t:sections.footer.settings.newsletter_heading.label"
+    },
+    {
+      "type": "text",
+      "id": "newsletter_text",
+      "default": "Plus get exclusive news and skincare tips",
+      "label": "Newsletter Text"
+    },
+    {
+      "type": "html",
+      "id": "copyright_text",
+      "label": "Copyright Text",
+      "default": "© 2021 Fleur & Bee All rights reserved. Privacy Policy. Terms & Condtitions"
     }
   ],
   "default": {

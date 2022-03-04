@@ -1,184 +1,247 @@
 {{ 'active-section.css' | asset_url | stylesheet_tag }}
 
 <div class='active-section' style="background-color: {{ section.settings.bg_color }}">
-    <div class="main-container">
-        <div class="wrapper">
-            <div class="header-wrap text-center">
-                {% if section.settings.main_title != blank %}
-                    <h2 class="title">{{ section.settings.main_title }}</h2>
-                {% endif %}
-                {% if section.settings.text != blank %}
-                    <p class="text">{{ section.settings.text }}</p>
-                {% endif %}
-            </div>
-            <div class="bubbles-wrap">
-                {% for block in section.blocks %}
-                    {% if block.settings.ingredient != blank %}
-                        <div class="bubbles-inner-wrap {% if block.settings.show_ingredients_desk and block.settings.show_ingredients_mob %}show-ingredients {% else %}
-                        hide-ingredients{% endif %} {% if block.settings.show_ingredients_mob %} show-ingredients-mob {% endif %}">
-                            <span class="bubbles rounded-button">{{ block.settings.ingredient }}</span>
-                            {% if section.settings.tooltip_text != blank %}
-                                <div class="product-tooltip">
-                                    <p class="tooltip-text">{{ section.settings.tooltip_text }}</p>
-                                    <span class="close">
-                                        {% render 'framework--icons', icon: 'close' %}
-                                    </span>
-                                </div>
-                            {% endif %}
-                        </div>
-                    {% endif %}
-                {% endfor %}
-            </div>
-            {% if section.settings.link_text %}
-                <div class="link_text text-center">
-                    <a href="" class="link" id="view-actives">{{ section.settings.link_text }}</a>
+  <div class="main-container">
+    <div class="wrapper">
+      <div class="header-wrap text-center">
+        {% if section.settings.main_title != blank %}
+          <h2 class="title">{{ section.settings.main_title }}</h2>
+        {% endif %}
+        {% if section.settings.text != blank %}
+          <p class="text">{{ section.settings.text }}</p>
+        {% endif %}
+      </div>
+      <div class="bubbles-wrap">
+        {% for block in section.blocks %}
+          {% if block.settings.ingredient != blank %}
+            <div class="bubbles-inner-wrap {% if block.settings.show_ingredients_desk and block.settings.show_ingredients_mob %}show-ingredients {% else %}
+             hide-ingredients{% endif %} {% if block.settings.show_ingredients_mob %} show-ingredients-mob {% endif %}">
+              <span class="bubbles rounded-button">{{ block.settings.ingredient }}</span>
+              {% if block.settings.tooltip_text != blank %}
+                <div class="product-tooltip">
+                  <p class="tooltip-text">{{ block.settings.tooltip_text }}</p>
+                  <span class="close">
+                    {% render 'framework--icons', icon: 'close' %}
+                  </span>
                 </div>
-            {% endif %}
-            {% if section.settings.ingredients_img != blank %}
-                <div class="image-wrap">
-                    {% render 'responsive--image' with section.settings.ingredients_img as image, max_width: 1280px, class: 'ingredients-image' %}
+              {% endif %}
+            </div>
+          {% endif %}
+          {% if block.settings.ingredient2 != blank %}
+            <div class="bubbles-inner-wrap {% if block.settings.show_ingredients_desk and block.settings.show_ingredients_mob %}show-ingredients {% else %}
+             hide-ingredients{% endif %} {% if block.settings.show_ingredients_mob %} show-ingredients-mob {% endif %}">
+              <span class="bubbles rounded-button">{{ block.settings.ingredient2 }}</span>
+              {% if block.settings.tooltip_text2 != blank %}
+                <div class="product-tooltip">
+                  <p class="tooltip-text">{{ block.settings.tooltip_text2 }}</p>
+                  <span class="close">
+                    {% render 'framework--icons', icon: 'close' %}
+                  </span>
                 </div>
-            {% endif %}
+              {% endif %}
+            </div>
+          {% endif %}
+          {% if block.settings.ingredient3 != blank %}
+            <div class="bubbles-inner-wrap {% if block.settings.show_ingredients_desk and block.settings.show_ingredients_mob %}show-ingredients {% else %}
+             hide-ingredients{% endif %} {% if block.settings.show_ingredients_mob %} show-ingredients-mob {% endif %}">
+              <span class="bubbles rounded-button">{{ block.settings.ingredient3 }}</span>
+              {% if block.settings.tooltip_text3 != blank %}
+                <div class="product-tooltip">
+                  <p class="tooltip-text">{{ block.settings.tooltip_text3 }}</p>
+                  <span class="close">
+                    {% render 'framework--icons', icon: 'close' %}
+                  </span>
+                </div>
+              {% endif %}
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+      {% if section.settings.link_text %}
+        <div class="link_text text-center">
+          <a href="" class="link" id="view-actives">{{ section.settings.link_text }}</a>
         </div>
+      {% endif %}
+      {% if section.settings.ingredients_img != blank %}
+        <div class="image-wrap">
+          {% render 'responsive--image' with section.settings.ingredients_img as image, max_width: 1280px, class: 'ingredients-image' %}
+        </div>
+      {% endif %}
     </div>
+  </div>
 </div>
 
 <script>
-    // script for toggle the bubbles
-    $('#view-actives').click(function(e){
-        e.preventDefault();
-        const el = $(".hide-ingredients");
-        if($(window).width() < 767){
-            el.each(function(index,el){
-                if(!jQuery(el).hasClass('show-ingredients-mob')) {
-                    $(el).toggle()
-                }
-            })
-        }else {
-            $('.hide-ingredients').toggle();
+  // script for toggle the bubbles
+  $('#view-actives').click(function(e){
+    e.preventDefault();
+    const el = $(".hide-ingredients");
+    if ($(window).width() < 767) {
+      el.each(function(index,el) {
+        if (!jQuery(el).hasClass('show-ingredients-mob')) {
+          $(el).toggle()
         }
-        $(this).text(function(i, text){
-          return text === "View All Actives" ? "See Less" : "View All Actives";
       })
-    }) 
-
-    // script to hide the product tooltip when click outside the box
-    $(document).mouseup(function(e) {
-        if (!$('.product-tooltip').is(e.target) && $('.product-tooltip').has(e.target).length === 0)
-        {
-            $('.product-tooltip').hide();
-        }
-    });
-    // script to hide and show the product tooltip
-    $('.bubbles').click(function(e){
-        $('.product-tooltip').hide();
-        $(this).siblings('.product-tooltip').css({display: 'flex'});
+    } else {
+      $('.hide-ingredients').toggle();
+    }
+    $(this).text(function(i, text){
+      return text === "View All Actives" ? "See Less" : "View All Actives";
     })
-    $('.bubbles-inner-wrap .close').click(function(){
-        $(this).parent().fadeOut();
-    })
+  })
 
-        
+  // script to hide the product tooltip when click outside the box
+  $(document).mouseup(function(e) {
+    if (!$('.product-tooltip').is(e.target) && $('.product-tooltip').has(e.target).length === 0)
+    {
+      $('.product-tooltip').hide();
+      $('.bubbles').removeClass('tooltip');
+      $('.bubbles').removeClass('tooltip-fadeout');
+    }
+  });
+  // script to hide and show the product tooltip
+  $('.bubbles').click(function(e){
+    var winWidth = window.innerWidth;
+    
+    $('.product-tooltip').hide();
+    $('.bubbles').removeClass('tooltip');
+    var tooltip = $(this).siblings('.product-tooltip');
+    tooltip.css({display: 'flex'});
+
+    if (winWidth < 426) { // if mobile
+      var left = tooltip.offset().left;
+      if (left + tooltip.outerWidth() > winWidth-10)
+        tooltip.css({right: '10px'})
+    }
+    
+    $(this).toggleClass('tooltip');
+    $(this).removeClass('tooltip-fadeout');
+  })
+  $('.bubbles-inner-wrap .close').click(function(){
+    $(this).parent().fadeOut(500);
+    $(this).parent().siblings().removeClass('tooltip');
+    $(this).parent().siblings().addClass('tooltip-fadeout');
+  })
 </script>
 
 {% schema %}
 {
-    "name": "Actives Section",
-    "settings": [
+  "name": "Actives Section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Image",
+      "info": "-------"
+    },
+    {
+      "type": "image_picker",
+      "id": "ingredients_img",
+      "label": "Ingredients Image"
+    },
+    {
+      "type": "header",
+      "content": "Color",
+      "info": "-------"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color"
+    },
+    {
+      "type": "header",
+      "content": "Content",
+      "info": "-------"
+    },
+    {
+      "type": "text",
+      "id": "main_title",
+      "label": "Main Title",
+      "default": "18 High Performance Actives"
+    },
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Text",
+      "default": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incidudunt ut labore et dolore magna."
+    },
+    {
+      "type": "text",
+      "id": "link_text",
+      "label": "Link Text",
+      "default": "View All Actives"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Ingredients",
+      "type": "ingredients",
+      "settings": [
         {
-            "type": "header",
-            "content": "Image",
-            "info": "-------"
+          "type": "header",
+          "content": "Option",
+          "info": "-------"
         },
         {
-            "type": "image_picker",
-            "id": "ingredients_img",
-            "label": "Ingredients Image"
+          "type": "checkbox",
+          "id": "show_ingredients_desk",
+          "label": "By Default Show The Ingredients (Desktop)",
+          "default": false
         },
         {
-            "type": "header",
-            "content": "Color",
-            "info": "-------"
+          "type": "checkbox",
+          "id": "show_ingredients_mob",
+          "label": "By Default Show The Ingredients (Mobile)",
+          "default": false
         },
         {
-            "type": "color",
-            "id": "bg_color",
-            "label": "Background Color"
+          "type": "header",
+          "content": "Content",
+          "info": "-------"
         },
         {
-            "type": "header",
-            "content": "Content",
-            "info": "-------"
+          "type": "text",
+          "id": "ingredient",
+          "label": "Ingredient 1"
         },
         {
-            "type": "text",
-            "id": "main_title",
-            "label": "Main Title",
-            "default": "18 High Performance Actives"
+          "type": "text",
+          "id": "ingredient2",
+          "label": "Ingredient 2"
         },
         {
-            "type": "text",
-            "id": "text",
-            "label": "Text",
-            "default": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incidudunt ut labore et dolore magna."
+          "type": "text",
+          "id": "ingredient3",
+          "label": "Ingredient 3"
         },
         {
-            "type": "text",
-            "id": "link_text",
-            "label": "Link Text",
-            "default": "View All Actives"
+          "type": "header",
+          "content": "Product Tooltip Content",
+          "info": "-------"
         },
         {
-            "type": "header",
-            "content": "Product Tooltip Content",
-            "info": "-------"
+          "type": "text",
+          "id": "tooltip_text",
+          "label": "Product Tooltip 1"
         },
         {
-            "type": "text",
-            "id": "tooltip_text",
-            "label": "Product Tooltip"
+          "type": "text",
+          "id": "tooltip_text2",
+          "label": "Product Tooltip 2"
+        },
+        {
+          "type": "text",
+          "id": "tooltip_text3",
+          "label": "Product Tooltip 3"
         }
-    ],
-    "blocks": [
-        {
-            "name": "Ingredients",
-            "type": "ingredients",
-            "settings": [
-                {
-                    "type": "header",
-                    "content": "Option",
-                    "info": "-------"
-                },
-                {
-                    "type": "checkbox",
-                    "id": "show_ingredients_desk",
-                    "label": "By Default Show The Ingredients (Desktop)",
-                    "default": false
-                },
-                {
-                    "type": "checkbox",
-                    "id": "show_ingredients_mob",
-                    "label": "By Default Show The Ingredients (Mobile)",
-                    "default": false
-                },
-                {
-                    "type": "header",
-                    "content": "Content",
-                    "info": "-------"
-                },
-                {
-                    "type": "text",
-                    "id": "ingredient",
-                    "label": "Ingredient"
-                }
-            ]
-        }
-    ],
-    "presets": [
-        {
-            "name": "Actives Section",
-            "category": "Actives Section"
-        }
-    ]
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Actives Section",
+      "category": "Actives Section"
+    }
+  ]
 }
 {% endschema %}

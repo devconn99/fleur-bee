@@ -1,61 +1,63 @@
 .promise-section {
-    padding: 53px 0 72px;
-    margin-bottom: 80px;
+  padding: 20px 0 35px;
+  margin-bottom: 80px;
 }
 .promise-section .wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .promise-section .wrapper .title {
-    font-size: 24px;
-    margin-top: 0;
-    margin-bottom: 10px;
-    font-family: var(--font-mackinac-medium)
+  font-size: 24px;
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-family: var(--font-mackinac-medium)
 }
 .promise-section .wrapper .text {
-    font-size: 18px;
-    line-height: 1.4;
-    margin: 0;
-    font-family: var(--font-cerebri-book);
-    max-width: 420px;
+  font-size: 18px;
+  line-height: 1.4;
+  margin: 0;
+  font-family: var(--font-cerebri-book);
+  max-width: 420px;
 }
 .promise-section .wrapper .center-image {
-    margin: 0 6px;
+  margin: 0 6px;
 }
 .promise-section .center-image img {
-    width: 100%;
-    height: 100%;
-    display: block;
-    object-fit: cover;
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
 }
 
 @media screen and (max-width: 991px) {
-    .promise-section {
-        padding: 53px 0 60px;
-    }
-    .promise-section .wrapper .title {
-        font-size: 18px;
-    }
-    .promise-section .wrapper .text {
-        font-size: 13px;
-    }
-    .promise-section .center-image img {
-        width: auto;
-    }
+  .promise-section {
+    padding: 53px 0 60px;
+  }
+  .promise-section .wrapper .title {
+    font-size: 18px;
+  }
+  .promise-section .wrapper .text {
+    font-size: 13px;
+  }
+  .promise-section .center-image img {
+    width: auto;
+  }
 }
 @media screen and (max-width: 768px) {
-    .promise-section .wrapper {
-        flex-wrap: wrap;
-    }
-    .promise-section .wrapper .center-image {
-        margin: 10px 0;
-        max-width: 125px;
-        flex: 125px;
-    }
-    .promise-section .center-image img {
-        width: 100%;
-        transform: rotate(
-    -85deg);
-    }
+  .promise-section .wrapper {
+    flex-wrap: wrap;
+  }
+  .promise-section .wrapper .center-image {
+    margin: 10px 0;
+    max-width: 100%;
+    flex: 100%;
+  }
+  .promise-section .center-image img {
+    width: 100%;
+    max-width: 125px;
+    margin: 0 auto;
+    transform: rotate(
+  -85deg);
+  }
 }

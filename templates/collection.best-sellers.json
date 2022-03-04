@@ -1,0 +1,17 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-collection",
+      "settings": {
+        "bg_color": "#fcf8f5",
+        "main_title": "Best Sellers",
+        "text": "Our best-selling skincare products. Loved by customers and beauty editors alike.",
+        "product_per_row": "2",
+        "btn_style": "primary"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

@@ -18,7 +18,8 @@
     </div>
     <div id="CartContainer"></div>
     <div class="clearfix"></div>
-
-    <div class="upsell-header text-center">Complete your routine:</div>
+    {% if cart.item_count != 0 %}
+      <div class="upsell-header text-center">Complete your routine:</div>
+    {% endif %}
     <div id="upsell_container"></div>
 </div>

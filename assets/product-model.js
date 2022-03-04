@@ -3,7 +3,6 @@ if (!customElements.get('product-model')) {
     constructor() {
       super();
     }
-
     loadContent() {
       super.loadContent();
 

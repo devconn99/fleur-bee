@@ -3,9 +3,9 @@
     "main": {
       "type": "main-collection",
       "settings": {
-        "bg_color": "#ffffff",
+        "bg_color": "#fcf8f5",
         "main_title": "Our Collection",
-        "text": "Here is about shopping our entire collection of skincare products made with natural ingredients.",
+        "text": "We pack each jar with the best that nature and science have to offer. All products are clean, vegan, and cruelty-free.",
         "product_per_row": "2",
         "btn_style": "primary"
       }

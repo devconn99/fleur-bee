@@ -13,7 +13,7 @@
           "settings": {
             "btn_style": "primary",
             "btn_text": "Shop Our Collection",
-            "btn_url": ""
+            "btn_url": "shopify:\/\/collections\/shop-all"
           }
         }
       },
@@ -21,11 +21,11 @@
         "432e2d18-c127-44d9-95f4-285fdc9a1892"
       ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/reviews-fleur-and-bee-skincare_013d74c1-ea8a-4995-b0f8-267322d54c9e.jpg",
-        "bg_color": "#e5e5e3",
+        "image": "shopify:\/\/shop_images\/shop-natural-skin-care-collection.jpg",
+        "bg_color": "#c1cfce",
         "content_bg_color": "",
         "pre_header_color": "",
-        "text_color": "",
+        "text_color": "#083d3a",
         "link_color": "",
         "link_color_hover": "",
         "primary_btn_bg_color": "#083d3a",
@@ -43,7 +43,7 @@
         "text": "And so does your skin. If you're ready for more good-for-your products, we've got you covered.",
         "block_style": "block-style-2",
         "pre_header_tag": "h2",
-        "title_tag": "h1",
+        "title_tag": "h2",
         "title_size_desk": 36,
         "title_size_mob": 22,
         "text_alignment_desk": "center",
@@ -51,6 +51,10 @@
         "img_alignment": true,
         "stack_order": true,
         "show_overlay_img": false,
+        "desk_btn_size": 16,
+        "mob_btn_size": 12,
+        "desk_btn_width": 180,
+        "mob_btn_width": 100,
         "horizantal_spacing_desk": 0,
         "horizantal_spacing_mob": 0,
         "vertical_spacing_desk": 60,

@@ -1,0 +1,32 @@
+.announcement--bar {
+  padding: 10px 0;
+  background-color: var(--color-ultra-dark-green);
+}
+.announcement--bar .link {
+  display: block;
+}
+.announcement--bar .text {
+  font-size: 16px;
+  color: #fff;
+  font-family: var(--font-cerebri-book);
+  margin: 0;
+  text-align: center;
+  line-height: 1;
+}
+@media screen and (max-width: 991px) {
+  .announcement--bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 767px) {
+  .announcement--bar {
+    padding: 8px 0;
+  }
+  .announcement--bar .text {
+    font-size: 12px;
+  }
+}

@@ -2,35 +2,35 @@
 {{ 'component-price.css' | asset_url | stylesheet_tag }}
 
 <style>
-    @media screen and (max-width: 480px) {
-        .collection-preview .grid {
-            grid-template-columns: repeat({{ section.settings.product_per_row }}, 1fr);
-        }
+  @media screen and (max-width: 480px) {
+    .collection-preview .grid {
+      grid-template-columns: repeat({{ section.settings.product_per_row }}, 1fr);
     }
+  }
 </style>
 <div class="collection-preview" style="background-color: {{ section.settings.bg_color }}">
   <div class="main_container">
-      <div class="wrapper">
-          <div class="header_wrap text-center">
-              {% if template == 'collection' %}
-                  {% if section.settings.main_title != blank %}
-                      <h1 class="main-title">{{ section.settings.main_title }}</h1>
-                  {% endif %}
-              {% else %}
-                  {% if section.settings.main_title != blank %}
-                      <h2 class="main-title">{{ section.settings.main_title }}</h2>
-                  {% endif %}
-              {% endif %}
-              {% if section.settings.text != blank %}
-                  <p class="text">{{ section.settings.text }}</p>
-              {% endif %}
-          </div>
-          <div class="grid">
-            {% for product in section.settings.select_collection.products %}
-                {% render 'collection-item', product: product, section: section %}
-            {% endfor %}
-          </div>
+    <div class="wrapper">
+      <div class="header_wrap text-center">
+        {% if template == 'collection' %}
+          {% if section.settings.main_title != blank %}
+            <h1 class="main-title">{{ section.settings.main_title }}</h1>
+          {% endif %}
+        {% else %}
+          {% if section.settings.main_title != blank %}
+            <h2 class="main-title">{{ section.settings.main_title }}</h2>
+          {% endif %}
+        {% endif %}
+        {% if section.settings.text != blank %}
+          <p class="text">{{ section.settings.text }}</p>
+        {% endif %}
       </div>
+      <div class="grid">
+      {% for product in section.settings.select_collection.products %}
+        {% render 'collection-item', product: product, section: section %}
+      {% endfor %}
+      </div>
+    </div>
   </div>
 </div>
 
@@ -38,87 +38,87 @@
 {
   "name": "Featured Collection",
   "settings": [
+  {
+    "type": "header",
+    "content": "Color",
+    "info": "-------"
+  },
+  {
+    "type": "color",
+    "id": "bg_color",
+    "label": "Background Color"
+  },
+  {
+    "type": "header",
+    "content": "Collection",
+    "info": "-------"
+  },
+  {
+    "type": "collection",
+    "id": "select_collection",
+    "label": "Select Collection"
+  },
+  {
+    "type": "header",
+    "content": "Content",
+    "info": "-------"
+  },
+  {
+    "type": "text",
+    "id": "main_title",
+    "label": "Main Title"
+  },
+  {
+    "type": "text",
+    "id": "text",
+    "label": "Text"
+  },
+  {
+    "type": "header",
+    "content": "Products Per Row",
+    "info": "-------"
+  },
+  {
+    "type": "select",
+    "id": "product_per_row",
+    "label": "Products Per Row (Mobile)",
+    "options": [
     {
-        "type": "header",
-        "content": "Color",
-        "info": "-------"
+      "value": "1",
+      "label": "1"
     },
     {
-        "type": "color",
-        "id": "bg_color",
-        "label": "Background Color"
-    },
-    {
-        "type": "header",
-        "content": "Collection",
-        "info": "-------"
-    },
-    {
-        "type": "collection",
-        "id": "select_collection",
-        "label": "Select Collection"
-    },
-    {
-      "type": "header",
-      "content": "Content",
-      "info": "-------"
-    },
-    {
-      "type": "text",
-      "id": "main_title",
-      "label": "Main Title"
-    },
-    {
-      "type": "text",
-      "id": "text",
-      "label": "Text"
-    },
-    {
-      "type": "header",
-      "content": "Products Per Row",
-      "info": "-------"
-    },
-    {
-      "type": "select",
-      "id": "product_per_row",
-      "label": "Products Per Row (Mobile)",
-      "options": [
-        {
-          "value": "1",
-          "label": "1"
-        },
-        {
-          "value": "2",
-          "label": "2"
-        }
-      ]
-    },
-    {
-      "type": "header",
-      "content": "Button Style",
-      "info": "-------"
-    },
-    {
-      "type": "select",
-      "id": "btn_style",
-      "label": "Button Style",
-      "options": [
-        {
-          "value": "primary",
-          "label": "Button Primary"
-        },
-        {
-          "value": "secondary",
-          "label": "Button Secondary"
-        }
-      ]
+      "value": "2",
+      "label": "2"
     }
+    ]
+  },
+  {
+    "type": "header",
+    "content": "Button Style",
+    "info": "-------"
+  },
+  {
+    "type": "select",
+    "id": "btn_style",
+    "label": "Button Style",
+    "options": [
+    {
+      "value": "primary",
+      "label": "Button Primary"
+    },
+    {
+      "value": "secondary",
+      "label": "Button Secondary"
+    }
+    ]
+  }
   ],
   "presets": [
-    {
-        "name": "Collection Preview",
-        "category": "Collection"
-    }
+  {
+    "name": "Collection Preview",
+    "category": "Collection"
+  }
   ]
 }
 {% endschema %}

@@ -1,55 +1,58 @@
+.prod-reviews {
+  padding-top: 2em;
+}
 .prod-reviews .stamped-summary-actions .stamped-summary-actions-newquestion {
-    box-shadow: none !important;
-    font-family: var(--font-cerebri-book);
+  box-shadow: none !important;
+  font-family: var(--font-cerebri-book);
 }
 .prod-reviews .stamped-summary-actions .stamped-summary-actions-newreview {
-    box-shadow: none !important;
-    font-family: var(--font-cerebri-book);
+  box-shadow: none !important;
+  font-family: var(--font-cerebri-book);
 }
 .prod-reviews .stamped-summary-text-1 {
-    font-family: var(--font-cerebri-book);
+  font-family: var(--font-cerebri-book);
 }
 .prod-reviews .stamped-summary-text{
-    font-family: var(--font-cerebri-book);
+  font-family: var(--font-cerebri-book);
 }
 .prod-reviews ul.stamped-tabs li.active {
-    font-family: var(--font-cerebri-book);
-    background: transparent !important;
+  font-family: var(--font-cerebri-book);
+  background: transparent !important;
 }
 .prod-reviews ul.stamped-tabs li {
-    font-family: var(--font-cerebri-medium);
+  font-family: var(--font-cerebri-medium);
 }
 .prod-reviews li#tab-questions[data-count][data-new-tab]:after, li#tab-reviews[data-count]:after {
-    background: #eee !important;
+  background: #eee !important;
 }
 .prod-reviews .stamped-questions-filter-label, .stamped-reviews-filter-label {
-    font-family: var(--font-cerebri-book);
+  font-family: var(--font-cerebri-book);
 }
 .prod-reviews .stamped-questions-search-text input.stamped-questions-search-input, .stamped-reviews-search-text input.stamped-reviews-search-input {
-    font-family: var(--font-cerebri-book);
+  font-family: var(--font-cerebri-book);
 }
 .prod-reviews #stamped-filter-select, .stamped-filter-select {
-    font-family: var(--font-cerebri-book);
+  font-family: var(--font-cerebri-book);
 }
 .prod-reviews .stamped-reviews-filter[data-show-filters=true] #stamped-sort-select2, .stamped-reviews-filter[data-show-filters=true] .stamped-sort-select2-wrapper {
-    font-family: var(--font-cerebri-medium);
-    font-size: 12px;
+  font-family: var(--font-cerebri-medium);
+  font-size: 12px;
 }
 .prod-reviews #stamped-main-widget .stamped-container .stamped-fa-star {
-    color: #bf746d !important
+  color: #5A2F41 !important
 }
 .prod-reviews #stamped-main-widget .summary-rating-bar-content {
-    background: #bf746d !important
+  background: #5A2F41 !important
 }
 .prod-reviews #stamped-main-widget .stamped-pagination a {
-    color: var(--color-Xdark-green);
-    font-family: var(--font-cerebri-book);
+  color: var(--color-Xdark-green);
+  font-family: var(--font-cerebri-book);
 }
 .prod-reviews #stamped-main-widget {
-    margin-bottom: 0
+  margin-bottom: 0
 }
 .prod-reviews #stamped-main-widget .stamped-summary-actions-mobile-filter, .stamped-summary-actions-clear, .stamped-summary-actions-newquestion, .stamped-summary-actions-newreview {
-    box-shadow: none !important;
-    font-family: var(--font-cerebri-book);
+  box-shadow: none !important;
+  font-family: var(--font-cerebri-book);
 }
 

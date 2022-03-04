@@ -14,19 +14,19 @@
           "settings": {
             "btn_style": "primary",
             "btn_text": "Book Your Free Consultation",
-            "btn_url": "https:\/\/fleurandbee.com\/pages\/free-skincare-consultation#book-now"
+            "btn_url": "#book-now"
           }
         },
         "de5128bb-fd5a-4eea-9521-45ac33f4be85": {
           "type": "image",
           "settings": {
-            "img": "shopify:\/\/shop_images\/Untitled-1.png"
+            "img": "shopify:\/\/shop_images\/1-0pressuretobuy.png"
           }
         },
         "6cac78f1-fef5-4f99-bf6e-edef1e11b073": {
           "type": "image",
           "settings": {
-            "img": "shopify:\/\/shop_images\/Untitled-2.png"
+            "img": "shopify:\/\/shop_images\/2-aboutyou.png"
           }
         }
       },
@@ -60,15 +60,19 @@
         "pre_header_tag": "h2",
         "title_tag": "h1",
         "title_size_desk": 32,
-        "title_size_mob": 22,
+        "title_size_mob": 26,
         "text_alignment_desk": "left",
         "text_alignment_mob": "center",
         "img_alignment": false,
         "stack_order": false,
         "show_overlay_img": false,
+        "desk_btn_size": 16,
+        "mob_btn_size": 12,
+        "desk_btn_width": 370,
+        "mob_btn_width": 100,
         "horizantal_spacing_desk": 35,
         "horizantal_spacing_mob": 20,
-        "vertical_spacing_desk": 55,
+        "vertical_spacing_desk": 80,
         "vertical_spacing_mob": 30,
         "overlay_img_width_desk": 240,
         "overlay_img_width_mob": 160,
@@ -87,7 +91,7 @@
         "9e08fd92-fa50-4354-aac3-c17e8c49c2b0": {
           "type": "info",
           "settings": {
-            "img": "shopify:\/\/shop_images\/time-test_576509b8-fca5-488c-a193-62a6ab1a064f.png",
+            "img": "shopify:\/\/shop_images\/V1-15minutes.jpg",
             "title": "15 Minutes of Undivided Attention",
             "text": "Our licensed esthetician will meet with you over a video call, and answer all of your skincare questions."
           }
@@ -95,7 +99,7 @@
         "7088fc34-e3d7-4f36-9455-ae7db69ac9f6": {
           "type": "info",
           "settings": {
-            "img": "shopify:\/\/shop_images\/product-test_c99f6cb4-4963-4a11-89f8-b6b88b9027db.png",
+            "img": "shopify:\/\/shop_images\/V1-personalizedrecs.jpg",
             "title": "Personalized Recommendations",
             "text": "We’ll provide tailored tips and products recommendations (even if they’re not ours) to help you achieve your best skin."
           }
@@ -103,7 +107,7 @@
         "69027a5a-33b0-41f4-bec4-16aaabd77633": {
           "type": "info",
           "settings": {
-            "img": "shopify:\/\/shop_images\/gift_1_171e96d4-238c-4cea-a5aa-5c0b6cc88ced.png",
+            "img": "shopify:\/\/shop_images\/V1-surprisebonus.jpg",
             "title": "Surprise Bonus",
             "text": "Each consultation comes with an exclusive surprise after the call! Curious? Complete your session to find out."
           }

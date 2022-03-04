@@ -26,30 +26,30 @@
 }
 .image-with-text .main_title {
     font-family: var( --font-mackinac-medium);
-    margin: 0;
+    margin: 0 0 12px;
     font-size:  32px;
 }
 .image-with-text .text {
-    margin: 25px 0 30px;
+    margin: 15px 0 20px;
     font-family: var(--font-cerebri-regular);
+    line-height: 1.5;
 }
 .image-with-text .text div {
     margin-bottom: 20px;
-    line-height: 1.5
+    line-height: 2;
 }
 .image-with-text .text div:last-child {
     margin-bottom: 0;
+}
+.image-with-text .button:focus { 
+    box-shadow: unset;
 }
 .image-with-text .button {
     font-size: 16px;
     text-decoration: none;
     height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0 10px;
+    padding: 1.2rem 2rem;
     width: 100%;
-    min-height: 44px;
     font-family: var(--font-secondary-normal);
     letter-spacing: 0.5px;
     margin-bottom: 20px;
@@ -103,7 +103,7 @@
 
 /* hero banner css start */
 .block-style-1 {
-    height: calc(100vh - 104px);
+    height: calc(80vh - 104px);
 }
 .block-style-1 .main-container {
     height: 100%;
@@ -113,18 +113,20 @@
 }
 .block-style-1 .main_title {
     line-height: 1.4;
-    font-style: italic;
-    color: #fff;
+    color: #08353A;
 }
 .block-style-1 .text {
     font-size: 20px;
     line-height: 1.4;
 }
 .block-style-1 .button-primary {
-    max-width: 210px;
+    max-width: 310px;
+}
+.block-style-1 .button-primary:focus {
+    box-shadow: unset;
 }
 .block-style-1 .content-wrap {
-    max-width: 400px;
+    max-width: 500px;
 }
 /* hero banner css end */
 
@@ -228,7 +230,7 @@
         max-width: 190px;
     }
     .pre_header {
-        font-size: 14px;
+        font-size: 14px !important;
     }
     .image-with-text .main_title {
         font-size: 22px !important;
@@ -320,14 +322,21 @@
     }
     .image-with-text .text div {
         display: flex;
+        margin-bottom: 0;
     }
     .image-with-text .text div br {
         display: none;
     }
     .image-with-text .text div b {
         margin-right: 5px;
+      letter-spacing: 0;
     }
     .image-with-text .text div b::after {
         content: ':';
+    }
+}
+@media screen and (max-width: 359px) {
+    .block-style-2 .text, .block-style-3 .text {
+        font-size: 13px;
     }
 }

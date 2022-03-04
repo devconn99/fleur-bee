@@ -412,7 +412,6 @@ customElements.define('modal-dialog', ModalDialog);
 class ModalOpener extends HTMLElement {
   constructor() {
     super();
-
     const button = this.querySelector('button');
     button?.addEventListener('click', () => {
       document.querySelector(this.getAttribute('data-modal'))?.show(button);
@@ -425,8 +424,9 @@ class DeferredMedia extends HTMLElement {
   constructor() {
     super();
     this.querySelector('[id^="Deferred-Poster-"]')?.addEventListener('click', this.loadContent.bind(this));
+    this.videoThumbnail = document.querySelector('.product .slider-item[data-type="video-thumbnail"]');
+    this.videoThumbnail.addEventListener('click', this.loadContent.bind(this));
   }
-
   loadContent() {
     window.pauseAllMedia();
     if (!this.getAttribute('loaded')) {
@@ -678,5 +678,9 @@ $(document).ready(function(){
     }
     
   })
- 
+
+  $('.product .swatches .label').click(function(){
+    const skinColor = $(this).prev().val();
+    $('.product .swatches .skin-color').html(skinColor)
+  })
 }) 

@@ -20,7 +20,13 @@
         </div>
         <div class="grid">
           {% for recommendation in recommendations.products %}
-              {% render 'collection-item', product: recommendation, section: section %}
+          {% assign noRecommend = false %}
+            {% for tag in recommendation.tags %}
+              {% if tag == 'no-recommend' %}
+                {% assign noRecommend = true %}
+              {% endif %}
+            {% endfor %}
+            {% render 'collection-item', product: recommendation, section: section, noRecommend: noRecommend %}
           {% endfor %}
         </div>
       {% endif %}

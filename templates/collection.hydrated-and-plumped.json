@@ -1,0 +1,17 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-collection",
+      "settings": {
+        "bg_color": "#fcf8f5",
+        "main_title": "Hydrated & Plumped",
+        "text": "These  products provide the  deep hydration your skin craves. Say \"goodbye!\" to dry skin and experience soft and supple skin.",
+        "product_per_row": "2",
+        "btn_style": "primary"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

@@ -33,7 +33,7 @@ if (!Shopify.formatMoney) {
     }
 
     function formatWithDelimiters(number, precision, thousands, decimal) {
-      precision = defaultOption(precision, 2);
+      precision = defaultOption(precision, 0);
       thousands = defaultOption(thousands, ',');
       decimal   = defaultOption(decimal, '.');
 
@@ -52,13 +52,13 @@ if (!Shopify.formatMoney) {
 
     switch(formatString.match(placeholderRegex)[1]) {
       case 'amount':
-        value = formatWithDelimiters(cents, 2);
+        value = formatWithDelimiters(cents, 0);
         break;
       case 'amount_no_decimals':
         value = formatWithDelimiters(cents, 0);
         break;
       case 'amount_with_comma_separator':
-        value = formatWithDelimiters(cents, 2, '.', ',');
+        value = formatWithDelimiters(cents, 0, '.', ',');
         break;
       case 'amount_no_decimals_with_comma_separator':
         value = formatWithDelimiters(cents, 0, '.', ',');

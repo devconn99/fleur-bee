@@ -1,6 +1,6 @@
 .mission-section {
     background-repeat: no-repeat;
-    background-size: 100% 100%;
+    background-size: cover;
     background-position: center;
     position: relative;
     min-height: 550px;
@@ -23,7 +23,6 @@
 .mission-section .text {
     margin: 18px 0 35px;
     font-family: var( --font-mackinac-medium);
-    font-style: italic;
     font-size: 30px;
     line-height: 1.5
 }
@@ -31,17 +30,14 @@
     font-size: 16px;
     text-decoration: none;
     height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0 10px;
-    width: 100%;
     min-height: 44px;
     font-family: var(--font-secondary-normal);
     letter-spacing: 0.5px;
     margin-bottom: 20px;
     transition: all 0.3s ease-in-out;
-    max-width: 220px;
+}
+.mission-section .button:focus {
+    box-shadow: unset;
 }
 
 @media screen and (max-width: 1279px) {

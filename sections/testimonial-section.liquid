@@ -28,19 +28,22 @@
                             {% if block.settings.sub_text != blank %}
                                 <p class="testimonial-bottom-txt">{{ block.settings.sub_text }}</p>
                             {% endif %}
+                            <img src="{{ 'bubble.png' | asset_url }}" alt="" class="bubble">
+                            <img src="{{ 'bubble-1.png' | asset_url }}" alt="" class="bubble-1">
+                            <img src="{{ 'bubble-2.png' | asset_url }}" alt="" class="bubble-2">
                         </div>
-                        <div class="testimonial-image-wrap">
-                            {% if section.settings.show_photo %}
+                        {% if section.settings.show_photo %}
+                            <div class="testimonial-image-wrap {% if block.settings.profile_pic == blank %}customer-info{% endif %}">
                                 {% if block.settings.profile_pic != blank %}
                                     <div class="testimonial-person-img">
                                         {% render 'responsive--image' with block.settings.profile_pic as image, max_width: 80px, class: 'profile-image' %}
                                     </div>
                                 {% endif %}
-                            {% endif %}
-                            {% if block.settings.customer_name != blank %}
-                                <span class="testimonial-img-name">{{ block.settings.customer_name }}</span>
-                            {% endif %}
-                        </div>
+                                {% if block.settings.customer_name != blank %}
+                                    <span class="testimonial-img-name">{{ block.settings.customer_name }}</span>
+                                {% endif %}
+                            </div>
+                        {% endif %}
                     </div>
                 {% endfor %}
             </div>
@@ -98,7 +101,7 @@ jQuery(function($) {
         {
             "type": "checkbox",
             "id": "show_photo",
-            "label": "Show Customer Photo",
+            "label": "Show Photo",
             "default": true
         },
         {

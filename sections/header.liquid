@@ -129,7 +129,7 @@
           <a href="{{ routes.root_url }}" class="logo-wrap">
             {%- if section.settings.logo != blank -%}
               <img
-                src="{{ section.settings.logo | img_url: 'master' }}"
+                src="{{ section.settings.logo | asset_url }}"
                 loading="lazy"
                 class="header_logo"
                 alt="{{ shop.name | escape }}"
@@ -161,18 +161,24 @@
                 <form action="{{ routes.search_url }}" method="get" role="search" class="search search-modal__form">
                   <div class="field">
                     <input class="search__input field__input" id="Search-In-Modal" type="search" name="q" value="{{ search.terms | escape }}" placeholder="{{ 'general.search.search' | t }}">
+                    {%- comment -%}
                     <label class="field__label" for="Search-In-Modal">{{ 'general.search.search' | t }}</label>
+                    {%- endcomment -%}
                     <input type="hidden" name="options[prefix]" value="last">
+                    {%- comment -%}
                     <button class="search__button field__button" aria-label="{{ 'general.search.search' | t }}">
                         {% render 'framework--icons', icon: 'search' %}
                     </button>
+                    {%- endcomment -%}
                   </div>
                 </form>
+                {%- comment -%}
                 <button type="button" class="search-modal__close-button modal__close-button link link--text focus-inset" aria-label="{{ 'accessibility.close' | t }}">
                   <svg class="icon icon-close" aria-hidden="true" focusable="false" role="presentation">
                     <use href="#icon-close">
                   </svg>
                 </button>
+                {%- endcomment -%}
               </div>
             </div>
           </details>
@@ -313,7 +319,7 @@
       "info": "-------"
     },
     {
-      "type": "image_picker",
+      "type": "text",
       "id": "logo",
       "label": "Logo"
     },

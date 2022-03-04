@@ -59,9 +59,10 @@
 
 @font-face {
   font-family: 'font-secondary-normal';
-  src: url("{{ 'CerebriSans-SemiBold.woff2' | asset_url }}") format('woff2'),
-      url("{{ 'CerebriSans-SemiBold.woff' | asset_url }}") format('woff');
-  font-weight: 600;
+  src:url("{{ 'CerebriSans-SemiBold.ttf' | asset_url }}") format('truetype'),
+      url("{{ 'CerebriSans-SemiBold.otf' | asset_url }}") format('opentype'),
+      url("{{ 'CerebriSans-SemiBold.woff' | asset_url }}") format('woff'),
+      url("{{ 'CerebriSans-SemiBold.woff2' | asset_url }}") format('woff2');
   font-style: normal;
   font-display: swap;
 }
@@ -90,19 +91,23 @@
   --header-text-color : {{ settings.color_header_text }};
   --body-text-color : {{ settings.color_body_text }};
   --color-teal: #be736c;
+  --colr-light-teal: #f7ab8d;
   --color-primary: #1a3f3e;
   --color-secondary: #22504e;
   --color-dark-green: #073b36;
   --color-Xdark-green: #083d3a;
+  --color-light-green: #466e6c;
   --color-mint: #657e7d;
   --color-normal-mint: #a4afad;
   --color-mint-light: #cfdad9;
   --color-mint-dark: #929b9b;
   --color-mint-Xdark: #567979;
   --color-normal-green: #354c4c;
+  --color-ultra-dark-green: #08353A;
   --border-color-primary: #b4c4c4;
   --border-light-gray: #ebeded;
   --color-mint-xlight: #e6ebeb;
+  --color-dark-cello: #3d516a;
 }
 /* Color custom properties */
 
@@ -1259,6 +1264,7 @@ deferred-media {
   font-size: 1.5rem;
   letter-spacing: 0.1rem;
   line-height: 1.2;
+  padding: 1.2rem 2rem;
 }
 
 .button--tertiary {
@@ -2088,6 +2094,9 @@ menu-drawer + .header__search {
 details[open] > .search-modal {
   opacity: 1;
   animation: animateMenuOpen var(--duration-default) ease;
+  top: 7.8rem;
+  background: #fff;
+  height: 5.6rem;
 }
 
 .no-js details[open] > .header__icon--search {
@@ -2097,7 +2106,8 @@ details[open] > .search-modal {
 
 .search-modal {
   opacity: 0;
-  height: 100%;
+  transition: all 0.3s ease-in-out;
+  height: 65%;
 }
 
 .search-modal__content {
@@ -2125,13 +2135,14 @@ details[open] > .search-modal {
   }
 
   .search-modal__content {
-    padding: 0 6rem;
+    padding: 0 20px;
+    margin: 0 auto;
   }
 }
 
 @media screen and (min-width: 990px) {
   .search-modal__form {
-    max-width: 47.8rem;
+    max-width: 100%;
   }
 
   .search-modal__close-button {
@@ -2272,6 +2283,18 @@ details[open] > .header__icon--menu .icon-hamburger {
   right: 2rem;
 }
 
+.contact-us .image-with-text .main_title {
+  font-family: var(--font-mackinac-bold);
+}
+.contact-us .image-with-text .text {
+  font-family: var(--font-cerebri-book);
+  font-size: 1.9rem;
+}
+.contact-us .block-style-2 .content-wrap {
+  max-width: 33.5rem;
+  left: 60%;
+}
+
 details-disclosure > details {
   position: relative;
 }
@@ -2306,7 +2329,7 @@ details-disclosure > details {
 }
 
 .badge {
-  border: 1px solid transparent;
+  border: 0.1rem solid transparent;
   border-radius: 4rem;
   display: inline-block;
   font-size: 1.2rem;
@@ -2319,3 +2342,89 @@ details-disclosure > details {
   color: rgb(var(--color-foreground));
   word-break: break-word;
 }
+.product-image-wrap .product-image.second {
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.active-product-item:hover .product-image.second {
+  opacity: 1;
+}
+.active-product-item:hover .product-image.first {
+  opacity: 0;
+}
+.product-recommendations .product-item.no-recommend-product {
+  display: none;
+}
+.skin-care-quiz .main-page-title {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-family: var(--font-mackinac-medium);
+  color: var(--color-dark-green);
+}
+.store-locator #storemapper #storemapper-form .storemapper-error {
+  z-index: 2;
+}
+.template-product .collection-preview {
+  padding-bottom: 16rem;
+}
+.search-modal {
+  border-bottom: 0.1rem solid #e0e7e6;
+}
+.search-modal .search__input {
+  padding: 0;
+  height: 5.6rem;
+  box-shadow: unset;
+  outline: none;
+  border: 0;
+  font-size: 1.8rem;
+  background-color: #fff;
+  color: #000;
+  font-family: var(--font-cerebri-book);
+}
+.search-modal .search__input::placeholder {
+  font-size: 1.8rem;
+  color: #000;
+  opacity: 0.5;
+  font-family: var(--font-cerebri-book);
+}
+@media screen and (max-width: 990px) {
+  .store-locator #storemapper #storemapper-form .storemapper-error {
+    width: 23rem;
+  }
+  .contact-us .image-with-text .main_title {
+    font-size: 4.6rem !important;
+  }
+  .contact-us .image-with-text .text {
+    font-size: 1.8rem;
+  }
+  .contact-us .block-style-2 .content-wrap {
+    text-align: center !important;
+    left: 50%;
+  }
+  details[open] > .search-modal {
+    top: 6rem;
+  }
+}
+@media screen and (max-width: 767px) {
+  .template-product .collection-preview {
+    padding-bottom: 9rem;
+  }
+}
+@media screen and (min-width: 481px) and (max-width: 680px) {
+  .contact-us .image-with-text .text {
+    font-size: 1.6rem;
+  }
+  .contact-us .image-with-text .main_title {
+    font-size: 3.6rem !important;
+  }
+}
+
+ /* background color settings */
+  body {
+    background-color: rgb(var(--color-background));
+  }
+  #shopify-section-header {
+    background-color: rgb(var(--color-background));
+  }

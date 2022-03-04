@@ -1,203 +1,169 @@
 {{ 'ticker-section.css' | asset_url | stylesheet_tag }}
 
 <style>
-    .ticker-section {
-        background-color: {{ section.settings.bg_color }};
-        border-top-color: {{ section.settings.border_color_top }};
-        border-top-width: {{ section.settings.border_size_top }}px;
-        border-bottom-color: {{ section.settings.border_color_bottom }};
-        border-bottom-width: {{ section.settings.border_size_bottom }}px;
-    }
+  .ticker-section {
+    background-color: {{ section.settings.bg_color }};
+    border-top-color: {{ section.settings.border_color_top }};
+    border-top-width: {{ section.settings.border_size_top }}px;
+    border-bottom-color: {{ section.settings.border_color_bottom }};
+    border-bottom-width: {{ section.settings.border_size_bottom }}px;
+  }
 </style>
 
 <div class='ticker-section'>
-    <div class='main-container'>
-        <div class='wrapper'>
-            <div class="ticker-slider">
-                {% for block in section.blocks %}
-                    <div class="slider-item">
-                        <div class="icon-wrap">
-                            {% render 'responsive--image' with block.settings.icon as image, max_width: 60px, class: 'icon-image' %}
-                        </div>
-                        <span class='icon-text'>{{ block.settings.icon_text }}</span>
-                    </div>
-                {% endfor %}
+  <div class='main-container'>
+    <div class='wrapper' data-marqy-inner>
+      <div class="ticker-slider" data-marqy-content style="animation-duration: 50s;">
+        {% for block in section.blocks %}
+          <div class="slider-item" data-marqy-item>
+            <div class="icon-wrap">
+              {% render 'responsive--image' with block.settings.icon as image, max_width: 60px, class: 'icon-image' %}
             </div>
-        </div>
+            <span class='icon-text'>{{ block.settings.icon_text }}</span>
+          </div>
+        {% endfor %}
+      </div>
+      <div class="ticker-slider" data-marqy-content style="animation-duration: 50s;">
+        {% for block in section.blocks %}
+          <div class="slider-item" data-marqy-item>
+            <div class="icon-wrap">
+              {% render 'responsive--image' with block.settings.icon as image, max_width: 60px, class: 'icon-image' %}
+            </div>
+            <span class='icon-text'>{{ block.settings.icon_text }}</span>
+          </div>
+        {% endfor %}
+      </div>
     </div>
+  </div>
 </div>
 
+{% comment %}
 <script>
-    // debounce from underscore.js
-    function debounce(func, wait, immediate) {
-        var timeout;
-        return function() {
-            var context = this, args = arguments;
-            var later = function() {
-                timeout = null;
-                if (!immediate) func.apply(context, args);
-            };
-            var callNow = immediate && !timeout;
-            clearTimeout(timeout);
-            timeout = setTimeout(later, wait);
-            if (callNow) func.apply(context, args);
-        };
-    };
-
-    // use x and y mousewheel event data to navigate flickity
-    function slick_handle_wheel_event(e, slick_instance, slick_is_animating) {
-    // do not trigger a slide change if another is being animated
-    if (!slick_is_animating) {
-        // pick the larger of the two delta magnitudes (x or y) to determine nav direction
-        var direction =
-        Math.abs(e.deltaX) > Math.abs(e.deltaY) ? e.deltaX : e.deltaY;
-
-        if (direction > 0) {
-        // next slide
-        slick_instance.slick("slickNext");
-        } else {
-        // prev slide
-        slick_instance.slick("slickPrev");
+  // init slider 
+  const ticker_slider = $(".ticker-slider");
+  ticker_slider.slick({
+    dots: false,
+    arrows: false,
+    slidesToShow: 5,
+    slidesToScroll: 1,
+    draggable: true,
+    infinite:true,
+    autoplay: true,
+    responsive: [
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 4,
+          variableWidth: false
         }
+      },
+      {
+        breakpoint: 769,
+        settings: {
+          slidesToShow: 3,
+          variableWidth: false
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 3
+        }
+      }
+    ]
+  });
+  ticker_slider.on('wheel', (function(e) {
+    e.preventDefault();
+    if (e.originalEvent.deltaY < 0) {
+      $(this).slick('slickPrev');
+    } else {
+      $(this).slick('slickNext');
     }
-    }
-
-    // debounce the wheel event handling since trackpads can have a lot of inertia
-    var slick_handle_wheel_event_debounced = debounce( 
-    slick_handle_wheel_event
-    , 100, true
-    );
-
-    // init slider 
-    const ticker_slider = $(".ticker-slider");
-    ticker_slider.slick({
-        dots: false,
-        arrows: false,
-        slidesToShow: 5,
-        slidesToScroll: 1,
-        draggable: true,
-        infinite:true,
-        autoplay: true,
-        responsive: [
-            {
-                breakpoint: 992,
-                settings: {
-                    slidesToShow: 4,
-                    variableWidth: false
-                }
-            },
-            {
-                breakpoint: 769,
-                settings: {
-                    slidesToShow: 3,
-                    variableWidth: false
-                }
-            },
-            {
-                breakpoint: 480,
-                settings: {
-                    slidesToShow: 3
-                }
-            }
-        ]
-    });
-    var slick_2_is_animating = false;
-
-    ticker_slider.on("afterChange", function(index) {
-    slick_2_is_animating = false;
-    });
-
-    ticker_slider.on("beforeChange", function(index) {
-    slick_2_is_animating = true;
-    });
-
-    ticker_slider.on("wheel", function(e) {
-    slick_handle_wheel_event_debounced(e.originalEvent, ticker_slider, slick_2_is_animating);  
-    });
-
+  }));
 </script>
+{% endcomment %}
 
 {% schema %}
 {
-    "name": "Ticker Section",
-    "settings": [
+  "name": "Ticker Section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Color",
+      "info": "-------"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color"
+    },
+    {
+      "type": "color",
+      "id": "border_color_top",
+      "label": "Border Color (Top)"
+    },
+    {
+      "type": "color",
+      "id": "border_color_bottom",
+      "label": "Border Color (Bottom)"
+    },
+    {
+      "type": "header",
+      "content": "Border Size",
+      "info": "-------"
+    },
+    {
+      "type": "range",
+      "id": "border_size_top",
+      "label": "Border Size (Top)",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "default": 1
+    },
+    {
+      "type": "range",
+      "id": "border_size_bottom",
+      "label": "Border Size (Bottom)",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "default": 1
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Icon With Text",
+      "type": "icon_with_text",
+      "settings": [
         {
-            "type": "header",
-            "content": "Color",
-            "info": "-------"
+          "type": "header",
+          "content": "Image",
+          "info": "-------"
         },
         {
-            "type": "color",
-            "id": "bg_color",
-            "label": "Background Color"
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon Image"
         },
         {
-            "type": "color",
-            "id": "border_color_top",
-            "label": "Border Color (Top)"
+          "type": "header",
+          "content": "Content",
+          "info": "-------"
         },
         {
-            "type": "color",
-            "id": "border_color_bottom",
-            "label": "Border Color (Bottom)"
-        },
-        {
-            "type": "header",
-            "content": "Border Size",
-            "info": "-------"
-        },
-        {
-            "type": "range",
-            "id": "border_size_top",
-            "label": "Border Size (Top)",
-            "min": 1,
-            "max": 5,
-            "step": 1,
-            "default": 1
-        },
-        {
-            "type": "range",
-            "id": "border_size_bottom",
-            "label": "Border Size (Bottom)",
-            "min": 1,
-            "max": 5,
-            "step": 1,
-            "default": 1
+          "type": "text",
+          "id": "icon_text",
+          "label": "Icon Text"
         }
-    ],
-    "blocks": [
-        {
-            "name": "Icon With Text",
-            "type": "icon_with_text",
-            "settings": [
-                {
-                    "type": "header",
-                    "content": "Image",
-                    "info": "-------"
-                },
-                {
-                    "type": "image_picker",
-                    "id": "icon",
-                    "label": "Icon Image"
-                },
-                {
-                    "type": "header",
-                    "content": "Content",
-                    "info": "-------"
-                },
-                {
-                    "type": "text",
-                    "id": "icon_text",
-                    "label": "Icon Text"
-                }
-            ]
-        }
-    ],
-    "presets": [
-        {
-            "name": "Ticker Section",
-            "category": "Ticker Section"
-        }
-    ]
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Ticker Section",
+      "category": "Ticker Section"
+    }
+  ]
 }
 {% endschema %}

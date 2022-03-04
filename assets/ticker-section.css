@@ -1,5 +1,5 @@
 .ticker-section {
-    padding: 30px 0;
+    padding: 1rem 0;
     border-style: solid;
     border-left: 0;
     border-right: 0;
@@ -8,10 +8,8 @@
     cursor: grab;
     display: flex;
     align-items: center;
-    min-height: 50px;
-    padding: 0 20px;
+    padding: 0 3rem;
     justify-content: center;
-    flex-direction: column;
 }
 .ticker-section .slick-slide img {
     display: block;
@@ -19,42 +17,80 @@
     object-fit: cover
 }
 .ticker-section .icon-wrap {
-    max-width: 60px;
-    flex: 60px;
-    margin-right: 5px;
+    max-width: 4rem;
+    flex: 4rem;
+    height: 4rem;
+    margin-right: 0;
+}
+.ticker-section .icon-image {
+    width: 100%;
 }
 .ticker-section .icon-text {
     font-family: var(--font-cerebri-book);
-    font-size: 14px;
+    font-size: 1.7rem;
     color: var(--color-primary);
     line-height: 1.3;
     white-space: nowrap;
+    margin-left: 13px;
+}
+div[data-marqy-content] {
+    display: flex;
+    flex: 1 0 auto;
+    -webkit-animation-name: marqueeL;
+    animation-name: marqueeL;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-play-state: running;
+    animation-play-state: running;
+    will-change: transform;
+}
+[data-marqy-inner] {
+    display: flex;
+}
+.ticker-section .main-container {
+    overflow: hidden;
+}
+@-webkit-keyframes marqueeL {
+    0% {
+        transform: translateZ(0);
+    }
+    to {
+        transform: translate3d(-100%, 0, 0);
+    }
+}
+@keyframes marqueeL {
+    0% {
+        transform: translateZ(0);
+    }
+    to {
+        transform: translate3d(-100%, 0, 0);
+    }
 }
 
 @media screen and (max-width: 992px) {
     .ticker-section .slider-item {
-        padding: 0 25px;
-    }
-    .ticker-section .icon-text {
-        white-space: unset;
+        padding: 0 2.5rem;
     }
 }
 
 @media screen and (max-width: 480px) {
     .ticker-section .slider-item {
-        padding: 0 16px;
-    }
-    .ticker-section .icon-wrap {
-        min-width: 55px;
+        padding: 0 1.6rem;
     }
     .ticker-section .icon-text {
-        font-size: 10px;
-        margin-left: -25px;
+        font-size: 1.6rem;
     }
     .ticker-section {
-        padding: 18px 0;
+        padding: 0.5rem 0;
     }
     .ticker-section .slick-slide img {
         width: 45%;
+    }
+    .ticker-section .icon-wrap {
+        max-width: 4rem;
+        flex: 4rem;
+        height: 4rem;
     }
 }

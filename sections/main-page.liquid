@@ -8,19 +8,30 @@
   <h1 class="main-page-title page-title h0">
     {{ page.title | escape }}
   </h1>
+  {% if page.handle == 'store-locator' %}
+    <p class="main-text">Find Fleur & Bee products at a retailer near you</p>
+  {% endif %}
+  {% if page.handle == 'contact-us' %}
+    <div class="grid">
+  {% endif %}
   <div class="rte">
     {% if page.content contains '<!-- feature-row -->' %}
       {{ page.content | split: '<!-- feature-row -->' | first }}
-      {% else %}
-        {{ page.content }}
+    {% else %}
+      {{ page.content }}
     {% endif %}
   </div>
+  {% if page.handle == 'contact-us' %}
+    {% render 'contact-form' %}
+    </div>
+  {% endif %}
 </div>
 
 {% schema %}
 {
   "name": "t:sections.main-page.name",
   "tag": "section",
-  "class": "spaced-section"
+  "class": "spaced-section",
+  "settings": []
 }
 {% endschema %}

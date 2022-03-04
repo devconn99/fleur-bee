@@ -1,0 +1,535 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {
+          }
+        },
+        "subtitle": {
+          "type": "text",
+          "settings": {
+            "text": "{{ product.metafields.descriptors.subtitle.value }}",
+            "text_style": "subtitle"
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button"
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false
+          }
+        },
+        "share": {
+          "type": "share",
+          "disabled": true,
+          "settings": {
+            "share_label": "Share"
+          }
+        }
+      },
+      "block_order": [
+        "title",
+        "subtitle",
+        "price",
+        "description",
+        "variant_picker",
+        "quantity_selector",
+        "buy_buttons",
+        "share"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "highlight_text": "We follow the strictest standards in the world, set by the European Union, which means we say “No Thanks!” to 1,300+ nasty ingredients. (They wouldn’t all fit in this pop-up so we’ve included an abridged list...)",
+        "text": "No parabens, sulfates, silicones, GMOs, artificial fragrances, phthalates, dyes, petrolium, aluminum, propylene glycol, polyethylene glycol, formaldehyde, diethanolamine, triclosan, EDTA, and toulene."
+      }
+    },
+    "testimonials": {
+      "type": "testimonial-section",
+      "blocks": {
+        "4cd62034-ce41-4d6e-bd84-e801254c1301": {
+          "type": "review",
+          "settings": {
+            "profile_pic": "shopify:\/\/shop_images\/customerreview-1.png",
+            "text": "The quality and price are unmatched in my opinion.",
+            "sub_text": "Good stuff :) I have been using Fleur & Bee products for over a year now, I consistently use the facial cleanser, moisturizer, and the vitamin c oil, I love them all.",
+            "customer_name": "Kylee"
+          }
+        },
+        "8ac87121-1b33-4c03-900a-13c7ef849e7f": {
+          "type": "review",
+          "settings": {
+            "profile_pic": "shopify:\/\/shop_images\/customerreview-3.png",
+            "text": "This is exactly what I expect of a face wash - my skin is clean and fresh without perfumes and dyes.",
+            "sub_text": "Amazing!!! It’s gentle and thorough. I won’t ever go back to trying other brands to only find that I’m disappointed. This product, the whole line of skincare, is perfect for me.",
+            "customer_name": "Della"
+          }
+        },
+        "16f7b5c9-7904-46ae-a65f-9b1b3ad8f18a": {
+          "type": "review",
+          "settings": {
+            "profile_pic": "shopify:\/\/shop_images\/customerreview-2.png",
+            "text": "My face feels so good after I use it.",
+            "sub_text": "I have bought this a few times and absolutely love it. Best product ever.",
+            "customer_name": "Mary"
+          }
+        }
+      },
+      "block_order": [
+        "4cd62034-ce41-4d6e-bd84-e801254c1301",
+        "8ac87121-1b33-4c03-900a-13c7ef849e7f",
+        "16f7b5c9-7904-46ae-a65f-9b1b3ad8f18a"
+      ],
+      "settings": {
+        "show_photo": true,
+        "star_color": "#5a2f41",
+        "text_color": "#25514f",
+        "show_review_btn": true,
+        "link_text": "Read All Reviews"
+      }
+    },
+    "163239127655605f46": {
+      "type": "press-section",
+      "blocks": {
+        "d494de21-b170-45ec-9459-dab062f6c4ac": {
+          "type": "desktop-logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/1-allure.png"
+          }
+        },
+        "883e5ae0-ca39-44bd-a7ad-645928193617": {
+          "type": "desktop-logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/2-nylon.png"
+          }
+        },
+        "7d76a346-fce3-4cb1-81b2-887a5ba59883": {
+          "type": "desktop-logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/3-cosmopolitan.png"
+          }
+        },
+        "270e0b13-5e17-4733-9372-2b7e4ca371c4": {
+          "type": "desktop-logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/4-byrdie.png"
+          }
+        },
+        "d27695f1-ac08-428b-833d-38e9a05e8990": {
+          "type": "desktop-logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/5-cnn.png"
+          }
+        },
+        "edd1cca7-1432-49a7-98bc-279970a3d325": {
+          "type": "mobile-logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/1-allure.png"
+          }
+        },
+        "f3ff9196-283d-40f4-b52e-a9ac2cbf1c93": {
+          "type": "mobile-logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/3-cosmopolitan.png"
+          }
+        },
+        "23a13b6c-0326-4568-ac62-6b55a8a48e97": {
+          "type": "mobile-logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/4-byrdie.png"
+          }
+        }
+      },
+      "block_order": [
+        "d494de21-b170-45ec-9459-dab062f6c4ac",
+        "883e5ae0-ca39-44bd-a7ad-645928193617",
+        "7d76a346-fce3-4cb1-81b2-887a5ba59883",
+        "270e0b13-5e17-4733-9372-2b7e4ca371c4",
+        "d27695f1-ac08-428b-833d-38e9a05e8990",
+        "edd1cca7-1432-49a7-98bc-279970a3d325",
+        "f3ff9196-283d-40f4-b52e-a9ac2cbf1c93",
+        "23a13b6c-0326-4568-ac62-6b55a8a48e97"
+      ],
+      "settings": {
+        "bg_color": "#5a2f41"
+      }
+    },
+    "1632475270c7253b55": {
+      "type": "active-section",
+      "blocks": {
+        "38044f25-fe65-4e1f-af94-7f8630b3f142": {
+          "type": "ingredients",
+          "settings": {
+            "show_ingredients_desk": true,
+            "show_ingredients_mob": true,
+            "ingredient": "Coconut Oil",
+            "ingredient2": "Sunflower Oil",
+            "ingredient3": "Castor Oil",
+            "tooltip_text": "cleanses & removes impurities.",
+            "tooltip_text2": "emollient; hydrates and locks in moisture.",
+            "tooltip_text3": "moisturizes & smooths skin."
+          }
+        },
+        "c8abd6d5-e358-4383-8f5e-278096bd120e": {
+          "type": "ingredients",
+          "settings": {
+            "show_ingredients_desk": true,
+            "show_ingredients_mob": true,
+            "ingredient": "Glycerin",
+            "ingredient2": "",
+            "ingredient3": "Horsetail Plant",
+            "tooltip_text": "a humectant that helps to increase hydration, relieve dryness, & refresh the skin.",
+            "tooltip_text2": "",
+            "tooltip_text3": "antioxidant with anti-aging & calming properties."
+          }
+        },
+        "ddcd3cba-4d71-4828-afa7-b347f5445e3f": {
+          "type": "ingredients",
+          "settings": {
+            "show_ingredients_desk": true,
+            "show_ingredients_mob": true,
+            "ingredient": "Dandelion",
+            "ingredient2": "Wild Geranium",
+            "ingredient3": "",
+            "tooltip_text": "rich in antioxidants with anti-aging benefits.",
+            "tooltip_text2": "natural astringent properties help to temporarily tighten skin.",
+            "tooltip_text3": ""
+          }
+        },
+        "2d402b8a-5d2b-4c3c-802c-4e5b70c028e5": {
+          "type": "ingredients",
+          "settings": {
+            "show_ingredients_desk": true,
+            "show_ingredients_mob": true,
+            "ingredient": "Pink Grapefruit Peel Oil",
+            "ingredient2": "Aloe Vera",
+            "ingredient3": "Gotu Kola",
+            "tooltip_text": "an antioxidant that helps even skin tone and adds a refreshing scent.",
+            "tooltip_text2": "moisturizes; has a calming & soothing effect, helping to relieve temporary redness.",
+            "tooltip_text3": "full of antioxidants that help prevent the look of dark spots & wrinkles."
+          }
+        },
+        "6d4b3746-3d74-4ed9-ac31-62f074688915": {
+          "type": "ingredients",
+          "settings": {
+            "show_ingredients_desk": false,
+            "show_ingredients_mob": false,
+            "ingredient": "Carrageenan",
+            "ingredient2": "",
+            "ingredient3": "",
+            "tooltip_text": "derived from red seaweed called Irish Moss; hydrates & moisturizes.",
+            "tooltip_text2": "",
+            "tooltip_text3": ""
+          }
+        },
+        "35cc7b0c-e0e3-4e1c-a473-fc2455734222": {
+          "type": "ingredients",
+          "settings": {
+            "show_ingredients_desk": false,
+            "show_ingredients_mob": false,
+            "ingredient": "Citric Acid",
+            "ingredient2": "Rosemary",
+            "ingredient3": "",
+            "tooltip_text": "AHA found in citrus fruits; helps even out skin tone & reduce the appearance of fine lines. ",
+            "tooltip_text2": "helps minimize the appearance of dark spots, purifies, & soothes.",
+            "tooltip_text3": ""
+          }
+        }
+      },
+      "block_order": [
+        "38044f25-fe65-4e1f-af94-7f8630b3f142",
+        "c8abd6d5-e358-4383-8f5e-278096bd120e",
+        "ddcd3cba-4d71-4828-afa7-b347f5445e3f",
+        "2d402b8a-5d2b-4c3c-802c-4e5b70c028e5",
+        "6d4b3746-3d74-4ed9-ac31-62f074688915",
+        "35cc7b0c-e0e3-4e1c-a473-fc2455734222"
+      ],
+      "settings": {
+        "ingredients_img": "shopify:\/\/shop_images\/facial-cleanser-ingredients-0.jpg",
+        "bg_color": "#fcf8f5",
+        "main_title": "13 Nourishing Actives",
+        "text": "Great results start with great ingredients. We pack this face wash with the best that nature and science have to offer. Each powerful ingredient plays its part in revitalizing your skin so you can look your most youthful. Learn more below about the active ingredients in this cleanser.",
+        "link_text": "View All Actives"
+      }
+    },
+    "1632392025c7c73e7a": {
+      "type": "ticker-section",
+      "blocks": {
+        "fcff0707-f2b1-4110-9d48-cbda351cba44": {
+          "type": "icon_with_text",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/vegan2.png",
+            "icon_text": "Cruelty-Free"
+          }
+        },
+        "00b0e01a-0306-4704-bbe9-e180e91c391e": {
+          "type": "icon_with_text",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/sustainable2.png",
+            "icon_text": "Vegan"
+          }
+        },
+        "17ba1eb7-d146-46a4-a36e-720b0e0684dc": {
+          "type": "icon_with_text",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/recyclable2.png",
+            "icon_text": "100% Recycled Paper Packaging"
+          }
+        },
+        "a55f14c2-c115-4b84-b090-8836bdcc580d": {
+          "type": "icon_with_text",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/carbonneutral2.png",
+            "icon_text": "Sustainably Made"
+          }
+        },
+        "fc4e4ee4-888e-4d73-8991-80a407cd3090": {
+          "type": "icon_with_text",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/usa2.png",
+            "icon_text": "Bottled in the USA"
+          }
+        },
+        "8a29c65e-d926-42a9-9aa5-5015ac83d629": {
+          "type": "icon_with_text",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/affordable.png",
+            "icon_text": "Affordably Priced"
+          }
+        },
+        "35aa013f-b199-426d-820e-0a598aee7fb8": {
+          "type": "icon_with_text",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/charity3.png",
+            "icon_text": "1% to Charity"
+          }
+        }
+      },
+      "block_order": [
+        "fcff0707-f2b1-4110-9d48-cbda351cba44",
+        "00b0e01a-0306-4704-bbe9-e180e91c391e",
+        "17ba1eb7-d146-46a4-a36e-720b0e0684dc",
+        "a55f14c2-c115-4b84-b090-8836bdcc580d",
+        "fc4e4ee4-888e-4d73-8991-80a407cd3090",
+        "8a29c65e-d926-42a9-9aa5-5015ac83d629",
+        "35aa013f-b199-426d-820e-0a598aee7fb8"
+      ],
+      "settings": {
+        "bg_color": "#c1cfce",
+        "border_color_top": "#c1cfce",
+        "border_color_bottom": "#c1cfce",
+        "border_size_top": 1,
+        "border_size_bottom": 1
+      }
+    },
+    "16323951535d40b338": {
+      "type": "image-with-text",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/so-clean-review-0.jpg",
+        "bg_color": "",
+        "content_bg_color": "",
+        "pre_header_color": "#adb4b4",
+        "text_color": "#083d3a",
+        "link_color": "",
+        "link_color_hover": "",
+        "primary_btn_bg_color": "",
+        "primary_btn_bg_color_hover": "",
+        "primary_btn_text_color": "",
+        "primary_btn_text_color_hover": "",
+        "secondary_btn_border_color": "",
+        "secondary_btn_border_color_hover": "",
+        "secondary_btn_bg_color": "",
+        "secondary_btn_bg_color_hover": "",
+        "secondary_btn_text_color": "",
+        "secondary_btn_text_color_hover": "",
+        "pre_header": "PRODUCT DETAILS",
+        "main_title": "What to Expect",
+        "text": "<div>\n<b>Texture<\/b><br>\nSmooth, lightly foaming gel  \n<\/div>\n<div>\n<b>Scent<\/b><br>\nNeutral with a touch of citrus \n<\/div>\n<div>\n<b>Skin Feels<\/b><br>\nClean, light, smooth\n<\/div>\n<div>\n<b>Skin Looks<\/b><br>\nRefreshed, renewed\n<\/div>",
+        "block_style": "block-style-3",
+        "pre_header_tag": "h3",
+        "title_tag": "h2",
+        "title_size_desk": 36,
+        "title_size_mob": 28,
+        "text_alignment_desk": "left",
+        "text_alignment_mob": "left",
+        "img_alignment": false,
+        "stack_order": false,
+        "show_overlay_img": false,
+        "desk_btn_size": 16,
+        "mob_btn_size": 12,
+        "desk_btn_width": 180,
+        "mob_btn_width": 100,
+        "horizantal_spacing_desk": 40,
+        "horizantal_spacing_mob": 10,
+        "vertical_spacing_desk": 70,
+        "vertical_spacing_mob": 40,
+        "overlay_img_width_desk": 240,
+        "overlay_img_width_mob": 160,
+        "top_position_desk": 20,
+        "top_position_mob": 20,
+        "lr_position_desk": 40,
+        "lr_position_mob": 40,
+        "text_side_width": 50,
+        "image_side_width": 50,
+        "text_horizantal_space": 50
+      }
+    },
+    "16323935968ce08e64": {
+      "type": "promise-secton",
+      "settings": {
+        "center_img": "shopify:\/\/shop_images\/Leaves.png",
+        "bg_color": "#e6ebeb",
+        "title_color": "#083d3a",
+        "text_color": "#22504e",
+        "left_main_title": "Happiness, Guaranteed",
+        "left_text": "If you’re not thrilled with your order in the first 30 days, just send it back for a refund. Returns are always free and easy.",
+        "right_main_title": "1% Donated to Charity",
+        "right_text": "1% of all Fleur & Bee sales are donated to Days for Girls, a non-profit that provides menstrual care and education for women in need."
+      }
+    },
+    "1632398385b6da2896": {
+      "type": "faq-section",
+      "blocks": {
+        "15182efb-a63d-4db8-87dd-6e8c9e8ac38b": {
+          "type": "accordian",
+          "settings": {
+            "header_text": "When will I start to see results?",
+            "body_text": "Your skin will be instantly refreshed with proper use. With consistent usage of our products, you should see full results after 2 weeks."
+          }
+        },
+        "f71ef0f1-e27a-451c-a64a-3a01527754ba": {
+          "type": "accordian",
+          "settings": {
+            "header_text": "How do I use So Clean!?",
+            "body_text": "Wet your face, then pump a small amount onto your fingertips. Gently massage onto your face, then rinse and pat dry. Use in the morning and at night."
+          }
+        },
+        "1161d16c-ae3e-4da6-ab3f-ff75bb6ca0c2": {
+          "type": "accordian",
+          "settings": {
+            "header_text": "How long will it last?",
+            "body_text": "So Clean! has a shelf life of 12 months after being opened. If used as directed, our So Clean! cleanser should last 4-5 months."
+          }
+        },
+        "bf6aafec-adbb-4913-a02e-f33949878cee": {
+          "type": "accordian",
+          "settings": {
+            "header_text": "What age is it designed for?",
+            "body_text": "Our So Clean! cleanser is designed for those in their 20s to their 100s! "
+          }
+        },
+        "474b97b7-c7fa-42d5-a874-2cf203c0e7d1": {
+          "type": "accordian",
+          "settings": {
+            "header_text": "Will this work for my skin tone?",
+            "body_text": "Absolutely! Our products will work for people of all skin tones, textures, and colors."
+          }
+        },
+        "1473694d-6a8a-4b1c-a092-c3488a89375e": {
+          "type": "accordian",
+          "settings": {
+            "header_text": "Will this work for my skin type?",
+            "body_text": "Yes. So Clean!  is designed to work for all skin types, including dry, oil and combination skin."
+          }
+        },
+        "b0d1c107-03d8-45da-a562-b46043915856": {
+          "type": "accordian",
+          "settings": {
+            "header_text": "Is this safe to use while pregnant?",
+            "body_text": "We consider So Clean! safe to use as directed while pregnant. However, we always advise women to consult with their doctor regarding questions about specific products or ingredients."
+          }
+        },
+        "a55a253c-8175-4442-aa01-b0cb1724cf9c": {
+          "type": "accordian",
+          "settings": {
+            "header_text": "Is it gluten free?",
+            "body_text": "Yes! All Fleur & Bee products are gluten-free."
+          }
+        },
+        "f76d97a6-1d5d-4e66-b7e7-898ce357fc61": {
+          "type": "accordian",
+          "settings": {
+            "header_text": "Can I use this with non-Fleur & Bee products?",
+            "body_text": "Definitely! We’ve designed our products to work best with each other, but they can be used as part of a routine that includes products from other brands."
+          }
+        },
+        "218f1065-b8e5-4837-81c1-7e83bc362130": {
+          "type": "accordian",
+          "disabled": true,
+          "settings": {
+            "header_text": "",
+            "body_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "15182efb-a63d-4db8-87dd-6e8c9e8ac38b",
+        "f71ef0f1-e27a-451c-a64a-3a01527754ba",
+        "1161d16c-ae3e-4da6-ab3f-ff75bb6ca0c2",
+        "bf6aafec-adbb-4913-a02e-f33949878cee",
+        "474b97b7-c7fa-42d5-a874-2cf203c0e7d1",
+        "1473694d-6a8a-4b1c-a092-c3488a89375e",
+        "b0d1c107-03d8-45da-a562-b46043915856",
+        "a55a253c-8175-4442-aa01-b0cb1724cf9c",
+        "f76d97a6-1d5d-4e66-b7e7-898ce357fc61",
+        "218f1065-b8e5-4837-81c1-7e83bc362130"
+      ],
+      "settings": {
+        "main_title": "Frequently Asked Questions",
+        "btn_text": "Shop Now"
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "settings": {
+        "bg_color": "",
+        "main_title": "Related Products",
+        "text": "",
+        "product_per_row": "2",
+        "btn_style": "primary"
+      }
+    },
+    "16324044287572c9f7": {
+      "type": "product-reviews",
+      "settings": {
+        "product_reviews_bg": "#f6eded"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "testimonials",
+    "163239127655605f46",
+    "1632475270c7253b55",
+    "1632392025c7c73e7a",
+    "16323951535d40b338",
+    "16323935968ce08e64",
+    "1632398385b6da2896",
+    "product-recommendations",
+    "16324044287572c9f7"
+  ]
+}

@@ -1,79 +1,80 @@
 .beyond-skin-care #MainContent {
-    margin-top: 40px;
+  margin-top: 40px;
 }
 .beyond-skin-care #MainContent .page-width {
-    max-width: 800px;
-    padding: 0 20px;
-    margin: 0 auto
+  max-width: 800px;
+  padding: 0 20px;
+  margin: 0 auto
 }
 .beyond-skin-care .main-page-title {
-    font-family: var(--font-mackinac-medium);
-    font-size: 48px;
-    max-width: 450px;
-    margin: 0 auto 20px;
-    text-align: center;
-    color: var(--color-dark-green);
+  font-family: var(--font-mackinac-medium);
+  font-size: 48px;
+  max-width: 450px;
+  margin: 0 auto 20px;
+  text-align: center;
+  color: var(--color-dark-green);
 }
 .beyond-skin-care .rte p {
-    font-family: var(--font-cerebri-book);
-    color: var(--color-secondary);
-    font-size: 18px;
+  font-family: var(--font-cerebri-book);
+  color: var(--color-secondary);
+  font-size: 18px;
 }
 .beyond-skin-care .rte iframe {
-    width: 100%;
+  width: 100%;
 }
 .beyond-skin-care .rte h2 {
-    font-size: 36px;
-    font-family: var(--font-mackinac-medium);
+  font-size: 36px;
+  font-family: var(--font-mackinac-medium);
+  color: var(--color-dark-green) !important;
 }
 .beyond-skin-care .rte a {
-    color: var(--color-secondary);
+  color: var(--color-secondary);
 }
 .beyond-skin-care .image-with-text {
-    margin-top: 110px;
+  margin-top: 110px;
 }
 .beyond-skin-care .image-with-text .content-wrap {
-    max-width: 340px;
+  max-width: 340px;
 }
 .beyond-skin-care .image-with-text .main_title {
-    margin-bottom: 30px;
+  margin-bottom: 30px;
 }
 @media screen and (max-width: 991px) {
-    .beyond-skin-care #MainContent {
-        margin-top: 72px;
-    }
-    .beyond-skin-care .main-page-title {
-        font-size: 36px;
-        max-width: 360px;
-        margin: 0 auto 15px;
-    }
-    .beyond-skin-care .image-with-text {
-        margin-top: 75px;
-    }
-    .beyond-skin-care .image-with-text .content-wrap {
-        max-width: 235px;
-    }
-    .beyond-skin-care .image-with-text .main_title {
-        margin-bottom: 20px;
-    }
+  .beyond-skin-care #MainContent {
+    margin-top: 72px;
+  }
+  .beyond-skin-care .main-page-title {
+    font-size: 36px;
+    max-width: 360px;
+    margin: 0 auto 15px;
+  }
+  .beyond-skin-care .image-with-text {
+    margin-top: 75px;
+  }
+  .beyond-skin-care .image-with-text .content-wrap {
+    max-width: 235px;
+  }
+  .beyond-skin-care .image-with-text .main_title {
+    margin-bottom: 20px;
+  }
 }
 @media screen and (max-width: 767px) {
-    .beyond-skin-care .main-page-title {
-        font-size: 22px;
-        max-width: 215px;
-        margin: 0 auto 5px;
-    }
-    .beyond-skin-care .rte p {
-        font-size: 14px;
-    }
-    .beyond-skin-care .rte div:last-child {
-        padding: 20px 0 0 !important;
-    }
-    .beyond-skin-care .rte img {
-        margin-bottom: 10px !important;
-    }
-    .beyond-skin-care .rte h2 {
-        font-size: 28px;
-        margin: 10px 0 !important;
-    }
+  .beyond-skin-care .main-page-title {
+    font-size: 22px;
+    max-width: 215px;
+    margin: 0 auto 5px;
+  }
+  .beyond-skin-care .rte p {
+    font-size: 14px;
+  }
+  .beyond-skin-care .rte div:last-child {
+    padding: 20px 0 0 !important;
+  }
+  .beyond-skin-care .rte img {
+    margin-bottom: 10px !important;
+  }
+  .beyond-skin-care .rte h2 {
+    font-size: 28px;
+    margin: 10px 0 !important;
+  }
 }

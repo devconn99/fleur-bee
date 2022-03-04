@@ -1,0 +1,33 @@
+{{ 'ingredient-model-popup.css' | asset_url | stylesheet_tag }}
+
+<div class="ingredient-popup">
+  <div class="wrapper">
+    <span class="popup-close">x</span>
+    <div class="content-wrap">
+      {% if section.settings.highlight_text != blank %}
+        <p class="text highlight-text">{{ section.settings.highlight_text }}</p>
+      {% endif %}
+      {% if section.settings.text != blank %}
+        <p class="text">{{ section.settings.text }}</p>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+<script>
+  $(".product #ingredient-myBtn").click(function(e){
+    e.preventDefault();
+    $('.ingredient-popup').fadeIn();
+  })
+  $(".ingredient-popup .popup-close").click(function(){
+    $('.ingredient-popup').fadeOut();
+  })
+
+  // script to hide the model popup when click outside the box
+  $(document).mouseup(function(e) {
+    if (!$('.ingredient-popup').is(e.target) && $('.ingredient-popup').has(e.target).length === 0)
+    {
+      $('.ingredient-popup').fadeOut();
+    }
+  });
+</script>

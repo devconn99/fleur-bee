@@ -82,15 +82,17 @@
   {%- else -%}
     <deferred-media class="deferred-media media no-js-hidden" style="padding-top: {{ 1 | divided_by: media.aspect_ratio | times: 100 }}%" data-media-id="{{ media.id }}">
   {%- endif -%}
+      
+  {%- if media.media_type == 'model' -%}
   <button id="Deferred-Poster-Modal-{{ media.id }}" class="deferred-media__poster" type="button">
     <span class="deferred-media__poster-button motion-reduce">
-      {%- if media.media_type == 'model' -%}
         <span class="visually-hidden">{{ 'products.product.media.play_model' | t }}</span>
         {%- render 'icon-3d-model' -%}
-      {%- else -%}
+        {% comment %}
+        {%- else -%}
         <span class="visually-hidden">{{ 'products.product.media.play_video' | t }}</span>
         {%- render 'icon-play' -%}
-      {%- endif -%}
+      	{% endcomment %}
     </span>
     <img
       srcset="{% if media.preview_image.width >= 288 %}{{ media.preview_image | img_url: '288x' }} 288w,{% endif %}
@@ -106,7 +108,12 @@
       alt="{{ media.preview_image.alt | escape }}"
     >
   </button>
-  <template>
+  {%- endif -%}
+      
+  {% if media.media_type != 'video' %}    
+  	<template>
+  {%- endif -%}
+    
     {%- liquid
       case media.media_type
       when 'external_video'
@@ -117,12 +124,19 @@
           echo media | external_video_url: autoplay: true, loop: loop | external_video_tag: class: video_class, loading: "lazy"
         endif
       when 'video'
-        echo media | media_tag: image_size: "2048x", autoplay: true, loop: loop, controls: true, preload: "none", autoplay: true, muted: false
+        assign videos = product.media | where: "media_type", "video" 
+      	assign video_url = videos[0].sources[1].url 
+      	echo '<video autoplay loop muted controls playsinline width="100%"><source src="' 
+        echo video_url
+        echo '" type="video/mp4"> </video>'
       when 'model'
         echo media | media_tag: image_size: "2048x", toggleable: true
       endcase
     -%}
-  </template>
+      
+  {% if media.media_type != 'video' %} 
+  	</template>
+  {%- endif -%}
 
   {%- if media.media_type == 'model' -%}
     </product-model>

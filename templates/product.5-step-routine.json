@@ -1,0 +1,475 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {
+          }
+        },
+        "subtitle": {
+          "type": "text",
+          "settings": {
+            "text": "{{ product.metafields.descriptors.subtitle.value }}",
+            "text_style": "subtitle"
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button"
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false
+          }
+        },
+        "share": {
+          "type": "share",
+          "disabled": true,
+          "settings": {
+            "share_label": "Share"
+          }
+        }
+      },
+      "block_order": [
+        "title",
+        "subtitle",
+        "price",
+        "description",
+        "variant_picker",
+        "quantity_selector",
+        "buy_buttons",
+        "share"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "highlight_text": "We follow the strictest standards in the world, set by the European Union, which means we say “No Thanks!” to 1,300+ nasty ingredients. (They wouldn’t all fit in this pop-up so we’ve included an abridged list...)",
+        "text": "No parabens, sulfates, silicones, GMOs, artificial fragrances, phthalates, dyes, petrolium, aluminum, propylene glycol, polyethylene glycol, formaldehyde, diethanolamine, triclosan, EDTA, and toulene."
+      }
+    },
+    "testimonials": {
+      "type": "testimonial-section",
+      "blocks": {
+        "8ac87121-1b33-4c03-900a-13c7ef849e7f": {
+          "type": "review",
+          "settings": {
+            "profile_pic": "shopify:\/\/shop_images\/customerreview-toner-1.png",
+            "text": "I'm 34 years old, and my husband says my face looks better than it did 7 years ago when we first met.",
+            "sub_text": "To the point where he's even thought about trying it! Lol. I love it. No irritation, not heavy and been simple enough to use everyday, even twice a day, from not having a routine at all!",
+            "customer_name": "Crystal"
+          }
+        },
+        "4cd62034-ce41-4d6e-bd84-e801254c1301": {
+          "type": "review",
+          "settings": {
+            "profile_pic": "shopify:\/\/shop_images\/customerreview-toner-2.png",
+            "text": "I can feel the difference in just 4 days.",
+            "sub_text": "My skin is so soft from using the moisturizer and the eye cream is amazing.",
+            "customer_name": "Brenda"
+          }
+        },
+        "16f7b5c9-7904-46ae-a65f-9b1b3ad8f18a": {
+          "type": "review",
+          "settings": {
+            "profile_pic": "shopify:\/\/shop_images\/customerreview-6.png",
+            "text": "My skin feels soft, healthy, and glowing.",
+            "sub_text": "It's also nice to only need to use a few products. Other lines required 7+ products and it was overwhelming.",
+            "customer_name": "Kristy"
+          }
+        }
+      },
+      "block_order": [
+        "8ac87121-1b33-4c03-900a-13c7ef849e7f",
+        "4cd62034-ce41-4d6e-bd84-e801254c1301",
+        "16f7b5c9-7904-46ae-a65f-9b1b3ad8f18a"
+      ],
+      "settings": {
+        "show_photo": true,
+        "star_color": "#5a2f41",
+        "text_color": "#25514f",
+        "show_review_btn": true,
+        "link_text": "Read All Reviews"
+      }
+    },
+    "163239127655605f46": {
+      "type": "press-section",
+      "blocks": {
+        "d494de21-b170-45ec-9459-dab062f6c4ac": {
+          "type": "desktop-logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/1-allure.png"
+          }
+        },
+        "883e5ae0-ca39-44bd-a7ad-645928193617": {
+          "type": "desktop-logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/2-nylon.png"
+          }
+        },
+        "7d76a346-fce3-4cb1-81b2-887a5ba59883": {
+          "type": "desktop-logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/3-cosmopolitan.png"
+          }
+        },
+        "270e0b13-5e17-4733-9372-2b7e4ca371c4": {
+          "type": "desktop-logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/4-byrdie.png"
+          }
+        },
+        "d27695f1-ac08-428b-833d-38e9a05e8990": {
+          "type": "desktop-logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/5-cnn.png"
+          }
+        },
+        "edd1cca7-1432-49a7-98bc-279970a3d325": {
+          "type": "mobile-logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/1-allure.png"
+          }
+        },
+        "f3ff9196-283d-40f4-b52e-a9ac2cbf1c93": {
+          "type": "mobile-logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/3-cosmopolitan.png"
+          }
+        },
+        "23a13b6c-0326-4568-ac62-6b55a8a48e97": {
+          "type": "mobile-logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/4-byrdie.png"
+          }
+        }
+      },
+      "block_order": [
+        "d494de21-b170-45ec-9459-dab062f6c4ac",
+        "883e5ae0-ca39-44bd-a7ad-645928193617",
+        "7d76a346-fce3-4cb1-81b2-887a5ba59883",
+        "270e0b13-5e17-4733-9372-2b7e4ca371c4",
+        "d27695f1-ac08-428b-833d-38e9a05e8990",
+        "edd1cca7-1432-49a7-98bc-279970a3d325",
+        "f3ff9196-283d-40f4-b52e-a9ac2cbf1c93",
+        "23a13b6c-0326-4568-ac62-6b55a8a48e97"
+      ],
+      "settings": {
+        "bg_color": "#5a2f41"
+      }
+    },
+    "1642010266315e0573": {
+      "type": "active-section",
+      "settings": {
+        "ingredients_img": "shopify:\/\/shop_images\/how-to-_build-a-5-step-skin-care-routine.jpg",
+        "bg_color": "#fcf8f5",
+        "main_title": "Build A Perfect Skincare Routine",
+        "text": "Do you want healthy, glowing skin? Following a daily skincare routine is the best way to achieve better-looking skin. This easy-to-follow 5-step skincare routine is designed to deliver results without breaking the bank. Complete this skincare routine morning and night.",
+        "link_text": ""
+      }
+    },
+    "16420125136e61ed31": {
+      "type": "ticker-section",
+      "blocks": {
+        "e4c7b75f-90eb-49ba-96bd-e62dcaf73841": {
+          "type": "icon_with_text",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/vegan3.png",
+            "icon_text": "Cruelty-Free"
+          }
+        },
+        "311a064d-a8b8-4711-a923-c08b9f14dc3b": {
+          "type": "icon_with_text",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/sustainable2.png",
+            "icon_text": "Vegan"
+          }
+        },
+        "f02042ab-dac0-4495-b485-a30498279ec9": {
+          "type": "icon_with_text",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/recyclable2.png",
+            "icon_text": "100% Recycled Paper Packaging"
+          }
+        },
+        "7e42d148-8217-4ba2-8bb4-bb6aacebb4e6": {
+          "type": "icon_with_text",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/carbonneutral2.png",
+            "icon_text": "Sustainably Made"
+          }
+        },
+        "7b783106-4d96-4e28-9eca-628f1d35e6e6": {
+          "type": "icon_with_text",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/usa3.png",
+            "icon_text": "Bottled in the USA"
+          }
+        },
+        "369debf3-d5c4-4b76-8ef5-b86912908853": {
+          "type": "icon_with_text",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/affordable.png",
+            "icon_text": "Affordably Priced"
+          }
+        },
+        "8e54742a-1122-471f-833e-6f0982356187": {
+          "type": "icon_with_text",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/charity.png",
+            "icon_text": "1% to Charity"
+          }
+        }
+      },
+      "block_order": [
+        "e4c7b75f-90eb-49ba-96bd-e62dcaf73841",
+        "311a064d-a8b8-4711-a923-c08b9f14dc3b",
+        "f02042ab-dac0-4495-b485-a30498279ec9",
+        "7e42d148-8217-4ba2-8bb4-bb6aacebb4e6",
+        "7b783106-4d96-4e28-9eca-628f1d35e6e6",
+        "369debf3-d5c4-4b76-8ef5-b86912908853",
+        "8e54742a-1122-471f-833e-6f0982356187"
+      ],
+      "settings": {
+        "bg_color": "#c1cfce",
+        "border_color_top": "#c1cfce",
+        "border_color_bottom": "#c1cfce",
+        "border_size_top": 1,
+        "border_size_bottom": 1
+      }
+    },
+    "16323951535d40b338": {
+      "type": "image-with-text",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/5-step-routine-deluxe-set-0.jpg",
+        "bg_color": "",
+        "content_bg_color": "",
+        "pre_header_color": "#adb4b4",
+        "text_color": "#083d3a",
+        "link_color": "",
+        "link_color_hover": "",
+        "primary_btn_bg_color": "",
+        "primary_btn_bg_color_hover": "",
+        "primary_btn_text_color": "",
+        "primary_btn_text_color_hover": "",
+        "secondary_btn_border_color": "",
+        "secondary_btn_border_color_hover": "",
+        "secondary_btn_bg_color": "",
+        "secondary_btn_bg_color_hover": "",
+        "secondary_btn_text_color": "",
+        "secondary_btn_text_color_hover": "",
+        "pre_header": "INSTRUCTIONS",
+        "main_title": "How to Use",
+        "text": "Follow these easy steps: \n<p style=\"margin-top:20px;\"><b>1.<\/b> Wash your face with <b>So Clean!<\/b> and lukewarm water. Rinse.<\/p>\n<p><b>2.<\/b> Spritz <b>Rose and Shine<\/b> onto your face and allow it to absorb.<\/p>\n<p><b>3.<\/b> Apply 2-3 drops of <b>Nectar of the C<\/b> onto your entire face.<\/p>\n<p><b>4.<\/b> Gently tap some <b>Eyes Eyes Baby<\/b> around your eye area.<\/p>\n<p><b>5.<\/b> Apply a generous amount of <b>H2 Oh Yeah<\/b> to your face and neck.<\/p>",
+        "block_style": "block-style-3",
+        "pre_header_tag": "h2",
+        "title_tag": "h1",
+        "title_size_desk": 36,
+        "title_size_mob": 28,
+        "text_alignment_desk": "left",
+        "text_alignment_mob": "left",
+        "img_alignment": false,
+        "stack_order": false,
+        "show_overlay_img": false,
+        "desk_btn_size": 16,
+        "mob_btn_size": 12,
+        "desk_btn_width": 180,
+        "mob_btn_width": 100,
+        "horizantal_spacing_desk": 40,
+        "horizantal_spacing_mob": 10,
+        "vertical_spacing_desk": 70,
+        "vertical_spacing_mob": 40,
+        "overlay_img_width_desk": 240,
+        "overlay_img_width_mob": 160,
+        "top_position_desk": 20,
+        "top_position_mob": 20,
+        "lr_position_desk": 40,
+        "lr_position_mob": 40,
+        "text_side_width": 50,
+        "image_side_width": 50,
+        "text_horizantal_space": 50
+      }
+    },
+    "16323935968ce08e64": {
+      "type": "promise-secton",
+      "settings": {
+        "center_img": "shopify:\/\/shop_images\/Leaves.png",
+        "bg_color": "#e6ebeb",
+        "title_color": "#083d3a",
+        "text_color": "#22504e",
+        "left_main_title": "Happiness, Guaranteed",
+        "left_text": "If you’re not thrilled with your order in the first 30 days, just send it back for a refund. Returns are always free and easy.",
+        "right_main_title": "1% Donated to Charity",
+        "right_text": "1% of all Fleur & Bee sales are donated to Days for Girls, a non-profit that provides menstrual care and education for women in need."
+      }
+    },
+    "1632398385b6da2896": {
+      "type": "faq-section",
+      "blocks": {
+        "ff3fb41b-067b-47c1-a630-ed5118826dce": {
+          "type": "accordian",
+          "settings": {
+            "header_text": "When will I start to see results?",
+            "body_text": "With consistent usage of our products, you should see visible results within 3-4 weeks."
+          }
+        },
+        "f71ef0f1-e27a-451c-a64a-3a01527754ba": {
+          "type": "accordian",
+          "settings": {
+            "header_text": "How long will it last?",
+            "body_text": "Each product has a shelf life of 12 months after being opened. On average this set lasts for 3-4 months. Some products may last longer."
+          }
+        },
+        "bf6aafec-adbb-4913-a02e-f33949878cee": {
+          "type": "accordian",
+          "settings": {
+            "header_text": "What age is it designed for?",
+            "body_text": "Our products are designed for those in their 20s to their 100s! "
+          }
+        },
+        "474b97b7-c7fa-42d5-a874-2cf203c0e7d1": {
+          "type": "accordian",
+          "settings": {
+            "header_text": "Will this work for my skin tone?",
+            "body_text": "Absolutely! Our products will work for people of all skin tones, textures and colors."
+          }
+        },
+        "b0d1c107-03d8-45da-a562-b46043915856": {
+          "type": "accordian",
+          "settings": {
+            "header_text": "Is this safe to use while pregnant?",
+            "body_text": "We consider all products in the starter set safe to use as directed while pregnant. However, we always advise pregnant women to consult with their doctor regarding questions about specific products or ingredients."
+          }
+        },
+        "a55a253c-8175-4442-aa01-b0cb1724cf9c": {
+          "type": "accordian",
+          "settings": {
+            "header_text": "Is it gluten free?",
+            "body_text": "Yes! All Fleur & Bee products are gluten-free."
+          }
+        },
+        "f76d97a6-1d5d-4e66-b7e7-898ce357fc61": {
+          "type": "accordian",
+          "settings": {
+            "header_text": "Can I use this with non-Fleur & Bee products?",
+            "body_text": "The Starter Set is designed to be a full 5-step skin care routine. However, you can supplement it with products from other brands."
+          }
+        },
+        "1473694d-6a8a-4b1c-a092-c3488a89375e": {
+          "type": "accordian",
+          "settings": {
+            "header_text": "What order do I use the products in?",
+            "body_text": "Step 1. So Clean! Cleanser<br>Step 2. Rose and Shine Toner<br>Step 3. Nectar of the C Serum<br>Step 4. H2 Oh Yeah Moisturizer<br>Step 5. Eyes Eyes Baby Eye Cream"
+          }
+        }
+      },
+      "block_order": [
+        "ff3fb41b-067b-47c1-a630-ed5118826dce",
+        "f71ef0f1-e27a-451c-a64a-3a01527754ba",
+        "bf6aafec-adbb-4913-a02e-f33949878cee",
+        "474b97b7-c7fa-42d5-a874-2cf203c0e7d1",
+        "b0d1c107-03d8-45da-a562-b46043915856",
+        "a55a253c-8175-4442-aa01-b0cb1724cf9c",
+        "f76d97a6-1d5d-4e66-b7e7-898ce357fc61",
+        "1473694d-6a8a-4b1c-a092-c3488a89375e"
+      ],
+      "settings": {
+        "main_title": "Frequently Asked Questions",
+        "btn_text": "Shop Now"
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "settings": {
+        "bg_color": "",
+        "main_title": "Related Products",
+        "text": "",
+        "product_per_row": "2",
+        "btn_style": "primary"
+      }
+    },
+    "1642011719bff5848a": {
+      "type": "image-banner",
+      "disabled": true,
+      "blocks": {
+        "164201171982ece3f8-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Image banner",
+            "heading_size": "medium"
+          }
+        },
+        "164201171982ece3f8-1": {
+          "type": "text",
+          "settings": {
+            "text": "Give customers details about the banner image(s) or content on the template."
+          }
+        },
+        "164201171982ece3f8-2": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Button label",
+            "button_link_1": "",
+            "button_style_secondary_1": false,
+            "button_label_2": "Button label",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "164201171982ece3f8-0",
+        "164201171982ece3f8-1",
+        "164201171982ece3f8-2"
+      ],
+      "settings": {
+        "adapt_height_first_image": false,
+        "desktop_text_box_position": "center",
+        "show_text_box": true,
+        "image_overlay_opacity": 0,
+        "color_scheme": "background-1",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
+    "16324044287572c9f7": {
+      "type": "product-reviews",
+      "settings": {
+        "product_reviews_bg": "#f6eded"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "testimonials",
+    "163239127655605f46",
+    "1642010266315e0573",
+    "16420125136e61ed31",
+    "16323951535d40b338",
+    "16323935968ce08e64",
+    "1632398385b6da2896",
+    "product-recommendations",
+    "1642011719bff5848a",
+    "16324044287572c9f7"
+  ]
+}

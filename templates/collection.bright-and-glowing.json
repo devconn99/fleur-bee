@@ -1,0 +1,17 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-collection",
+      "settings": {
+        "bg_color": "#fcf8f5",
+        "main_title": "Bright & Glowing",
+        "text": "Discover products designed to reveal your natural glow. Get ready for more even looking and luminous complexion.",
+        "product_per_row": "2",
+        "btn_style": "primary"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

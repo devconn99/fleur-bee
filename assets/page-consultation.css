@@ -1,79 +1,82 @@
 .consultation #MainContent {
-    margin-bottom: 40px;
+  margin-bottom: 40px;
 }
 .consultation .image-with-text .content-wrap {
-    max-width: 495px;
+  max-width: 495px;
 }
 .consultation .image-with-text .text p {
-    font-size: 17px
+  font-size: 17px
 }
 .consultation .image-with-text .button-primary {
-    max-width: 350px;
+  max-width: 350px;
 }
 .consultation .book-now .title {
-    font-size: 2em;
-    display: block;
-    text-align: center;
-    margin: 50px 0 10px;
-    font-family: var(--font-mackinac-medium);
-    color: var(--color-Xdark-green)
+  font-size: 2em;
+  display: block;
+  text-align: center;
+  margin: 50px 0 10px;
+  font-family: var(--font-mackinac-medium);
+  color: var(--color-Xdark-green)
 }
 .consultation .book-now .text {
-    margin: 0;
-    padding-bottom: 20px;
-    font-family: var(--font-cerebri-book);
-    color: var(--color-secondary)
+  margin: 0;
+  padding-bottom: 20px;
+  font-family: var(--font-cerebri-book);
+  color: var(--color-secondary)
 }
 .consultation .book-now .calendly-inline-widget {
-    height: 650px;
+  height: 650px;
 }
 
 @media only screen and (max-width: 1279px){
-    .consultation .image-with-text {
-        min-height: 710px;
-        height: 1px;
-    }
-    .consultation .image-with-text .main-container {
-        height: 100%;
-    }
-    .consultation .image-with-text .wrapper {
-        height: 100%;
-    }
-    .consultation .image-with-text .content-wrap {
-        max-width: 390px;
-    }
-    .consultation .image-with-text .image {
-        object-position: -132px 10px;
-    }
+  .consultation .image-with-text {
+    min-height: 710px;
+    height: 1px;
+  }
+  .consultation .image-with-text .main-container {
+    height: 100%;
+  }
+  .consultation .image-with-text .wrapper {
+    height: 100%;
+  }
+  .consultation .image-with-text .content-wrap {
+    max-width: 390px;
+  }
+  .consultation .image-with-text .image {
+    object-position: -132px 10px;
+  }
 }
 @media only screen and (max-width: 991px){
-    .consultation .image-with-text {
-        min-height: 665px;
-    }
-    #MainContent {
-        margin-top: 72px;
-    }
-    .consultation .image-with-text .content-wrap {
-        max-width: 286px;
-    }
-    .consultation .image-with-text .image {
-        object-position: -140px 8px;
-    }
-    .image-with-text .content-image {
-        max-width: 70px;
-        flex: 70px;
-        margin: 0 5px;
-    }
+  .consultation .image-with-text {
+    min-height: 665px;
+  }
+  #MainContent {
+    margin-top: 72px;
+  }
+  .consultation .image-with-text .content-wrap {
+    max-width: 286px;
+  }
+  .consultation .image-with-text .image {
+    object-position: -140px 8px;
+  }
+  .image-with-text .content-image {
+    max-width: 70px;
+    flex: 70px;
+    margin: 0 5px;
+  }
 }
 @media only screen and (max-width: 767px){
-    .consultation .image-with-text {
-        min-height: unset;
-        height: auto;
-    }
-    .consultation .image-with-text .image {
-        object-position: center;
-    }
-    .consultation .image-with-text .button-primary {
-        max-width: 225px;
-    }
+  .consultation .image-with-text {
+    min-height: unset;
+    height: auto;
+  }
+  .consultation .image-with-text .image {
+    object-position: center;
+  }
+  .consultation .image-with-text .button-primary {
+    max-width: 225px;
+  }
+  .consultation .book-now .calendly-inline-widget {
+    height: 480px;
+  }
 }

@@ -1,113 +1,113 @@
 .recycling-page #MainContent {
-    overflow: hidden;
+  overflow: hidden;
 }
 .recycling-page .spaced-section {
-    margin-top: 0
+  margin-top: 0
 }
 .recycling-page .main-page-title {
-    display: none;
+  display: none;
 }
 .recycling-page .review-wrapper h1 {
-    font-size: 2.55556em;
-    font-family: var(--font-mackinac-medium) !important;
-    color: #0c2545;
-    text-align: center;
+  font-size: 2.55556em;
+  font-family: var(--font-mackinac-medium) !important;
+  color: #0c2545;
+  text-align: center;
 }
 .recycling-page .rte p {
-    color: var(--color-secondary);
-    font-family: var(--font-cerebri-book);
-    font-size: 18px
+  color: var(--color-secondary);
+  font-family: var(--font-cerebri-book);
+  font-size: 18px
 }
 .recycling-page .rte h3 {
-    font-size: 1.33333em;
-    padding-top: 4px;
-    font-family: var(--font-secondary-normal);
-    color: var(--color-Xdark-green);
+  font-size: 1.33333em;
+  padding-top: 4px;
+  font-family: var(--font-secondary-normal);
+  color: var(--color-Xdark-green);
 }
 .recycling-page .rte h2 {
-    font-size: 2em;
-    padding-top: 4px;
-    font-family: var(--font-secondary-normal);
-    color: var(--color-Xdark-green);
-    margin: 20px 0;
+  font-size: 2em;
+  padding-top: 4px;
+  font-family: var(--font-secondary-normal);
+  color: var(--color-Xdark-green);
+  margin: 20px 0;
 }
 .recycling-page .rte a {
-    color: var(--color-secondary);
+  color: var(--color-secondary);
 }
 .recycling-page .rte .packaging-divider {
-    margin-top: 40px;
+  margin-top: 40px;
 }
 .recycling-page .rte img {
-    height: auto;
+  height: auto;
 }
 .recycling-page .rte .packaging-outer {
-    display: flex;
-    margin-bottom: 35px;
+  display: flex;
+  margin-bottom: 35px;
 }
 .recycling-page .rte .packaging-img {
-    max-width: 217px;
-    flex: 217px;
-    height: 217px;
+  max-width: 217px;
+  flex: 217px;
+  height: 217px;
 }
 .recycling-page .rte .recycle-instructions {
-    flex: 1;
-    margin-left: 40px;
+  flex: 1;
+  margin-left: 40px;
 }
 .recycling-page .recycle-instructions h3 {
-    margin-top: 0;
-    color: var(--color-Xdark-green)
+  margin-top: 0;
+  color: var(--color-Xdark-green)
 }
 .recycling-page .recycle-instructions p {
-    line-height: 1.4;
+  line-height: 1.4;
 }
 .recycling-page .recycle-instructions b a {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 .recycling-page .image-with-text .text {
-    max-width: 440px;
-    margin: 20px 0 25px;
+  max-width: 440px;
+  margin: 20px 0 25px;
 }
 .recycling-page .image-with-text {
-    margin-top: 130px;
+  margin-top: 130px;
 }
 .recycling-page .image-with-text .content-wrap {
-    max-width: 470px;
+  max-width: 470px;
 }
 
 @media screen and (max-width: 991px) {
-    .recycling-page #MainContent {
-        margin-top: 72px;
-    }
-    .recycling-page  .page-width--narrow {
-        padding: 0 3.5rem;
-    }
-    .recycling-page .image-with-text {
-        margin-top: 100px;
-    }
+  .recycling-page #MainContent {
+    margin-top: 72px;
+  }
+  .recycling-page  .page-width--narrow {
+    padding: 0 3.5rem;
+  }
+  .recycling-page .image-with-text {
+    margin-top: 100px;
+  }
 }
 @media screen and (max-width: 767px) {
-    .recycling-page .page-width--narrow {
-        padding: 0 2rem;
-    }
-    .recycling-page .rte .packaging-outer {
-        flex-wrap: wrap;
-        margin-bottom: 28px
-    }
-    .recycling-page .rte .recycle-instructions {
-        flex: 100%;
-        max-width: 100%;
-        margin-left: 0;
-        margin-top: 20px;
-    }
-    .recycling-page .image-with-text {
-        margin-top: 70px;
-    }
-    .recycling-page .rte p {
-        font-size: 16px;
-    }
-    .recycling-page .image-with-text .text {
-        max-width: 340px;
-        margin: 20px auto 25px;
-        font-size: 17px;
-    }
+  .recycling-page .page-width--narrow {
+    padding: 0 2rem;
+  }
+  .recycling-page .rte .packaging-outer {
+    flex-wrap: wrap;
+    margin-bottom: 28px
+  }
+  .recycling-page .rte .recycle-instructions {
+    flex: 100%;
+    max-width: 100%;
+    margin-left: 0;
+    margin-top: 20px;
+  }
+  .recycling-page .image-with-text {
+    margin-top: 70px;
+  }
+  .recycling-page .rte p {
+    font-size: 16px;
+  }
+  .recycling-page .image-with-text .text {
+    max-width: 340px;
+    margin: 20px auto 25px;
+    font-size: 17px;
+  }
 }

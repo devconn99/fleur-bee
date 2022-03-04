@@ -1,0 +1,17 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-collection",
+      "settings": {
+        "bg_color": "#fcf8f5",
+        "main_title": "Naturally Effective Skincare",
+        "text": "We pack each jar with the best that nature and science have to offer. All products are clean, vegan, and cruelty-free.",
+        "product_per_row": "2",
+        "btn_style": "primary"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

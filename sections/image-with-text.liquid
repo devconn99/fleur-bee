@@ -2,6 +2,9 @@
   #shopify-section-{{ section.id }} .image-with-text {
     padding: {{ section.settings.vertical_spacing_desk }}px 0;
   }
+  #shopify-section-{{ section.id }} .main_title {
+    font-size: {{ section.settings.title_size_desk }}px;
+  }
   #shopify-section-{{ section.id }} .main-container {
     padding: 0 {{ section.settings.horizantal_spacing_desk }}px;
   }
@@ -80,6 +83,9 @@
     border-color: {{ section.settings.secondary_btn_border_color_hover}};
     background-color: {{ section.settings.secondary_btn_bg_color_hover}};
   }
+  #shopify-section-{{ section.id }} .button {
+    font-size: {{ section.settings.desk_btn_size }}px;
+  }
 
   @media screen and (max-width: 480px) {
     #shopify-section-{{ section.id }} .image-with-text {
@@ -93,7 +99,9 @@
       top: -{{ section.settings.top_position_mob }}px;
       right: -{{ section.settings.lr_position_mob }}px;
     }
-
+    #shopify-section-{{ section.id }} .main_title {
+      font-size: {{ section.settings.title_size_mob }}px !important;
+    }
     #shopify-section-{{ section.id }} .content-wrap {
       text-align: {{ section.settings.text_alignment_mob }};
     }
@@ -119,7 +127,13 @@
       #shopify-section-{{ section.id }} .image-group{
         justify-content: center;
       }
+      #shopify-section-{{ section.id }} .button {
+        font-size: {{ section.settings.mob_btn_size }}px;
+      }
     {% endif %}
+  }
+  .image-with-text .text b {
+    font-family: 'font-cerebri-medium';
   }
 </style>
 
@@ -306,7 +320,7 @@
       "label": "Pre Header"
     },
     {
-      "type": "text",
+      "type": "html",
       "id": "main_title",
       "label": "Main Title"
     },
@@ -465,6 +479,52 @@
     },
     {
       "type": "header",
+      "content": "Button Copy Size",
+      "info": "-------"
+    },
+    {
+      "type": "range",
+      "id": "desk_btn_size",
+      "label": "Button Font Size (Desktop)",
+      "min": 10,
+      "max": 40,
+      "step": 1,
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "mob_btn_size",
+      "label": "Button Font Size (Mobile)",
+      "min": 10,
+      "max": 30,
+      "step": 1,
+      "default": 12
+    },
+    {
+      "type": "header",
+      "content": "Button Width",
+      "info": "------"
+    },
+    {
+      "type": "range",
+      "id": "desk_btn_width",
+      "label": "Button Width (Desktop)",
+      "min": 50,
+      "max": 400,
+      "step": 5,
+      "default": 180
+    },
+    {
+      "type": "range",
+      "id": "mob_btn_width",
+      "label": "Button Width (Mobile)",
+      "min": 30,
+      "max": 300,
+      "step": 5,
+      "default": 100
+    },
+    {
+      "type": "header",
       "content": "Space Around Section",
       "info": "-------"
     },
@@ -596,7 +656,7 @@
       "id": "text_horizantal_space",
       "label": "Text Left Right Spacing",
       "min": 0,
-      "max": 50,
+      "max": 100,
       "step": 5,
       "default": 50
     }

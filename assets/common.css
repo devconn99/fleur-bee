@@ -1,14 +1,14 @@
 /* common css start */
 .rounded-button {
-    border-radius: 22px;
-    text-transform: uppercase;
+  border-radius: 22px;
+  text-transform: uppercase;
 }
 .main_container {
-    max-width: 1180px;
-    padding: 0 20px;
-    margin: 0 auto;
+  max-width: 1180px;
+  padding: 0 20px;
+  margin: 0 auto;
 }
 .text-center {
-    text-align: center
+  text-align: center
 }
 /* common css end */
